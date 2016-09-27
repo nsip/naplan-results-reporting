@@ -11,7 +11,7 @@ This version of the results reporting dataset is provided as an early access rel
 
 NSIP strongly recommends that users of this specificaiton register as GitHub users, and click on the 'Watch' button in the top right-hand corner of the GitHub web interface - this will ensure that if and when changes are made to the specification you will be notified automatically.
 
-NSIP has included sample data in XML format as part of this release, these are the files named with the convention **nap_object name_.xml**
+NSIP has included sample data in XML format as part of this release, these are the files named with the convention **nap _object name_ .xml**
 
 Please note, these files contain valid data in all elements, but do not constitute a realistc results dataset. NSIP will be working with ACARA to produce sample data that contains realistic values, but for now the data is there only for guidance in constructing integrations.
 
@@ -30,7 +30,7 @@ It is also important to know that in the final results reporting data file the N
   * _SIF_Message.xsd_
   * This is an xsd containing all of the object definitions and linkages, for use in validating results-reporting files or for constructing schemas/code to handle the data
 * Sample Data Files
-  * **nap_object name_.xml**
+  * **nap _object name_ .xml**
   * A series of files each containing sample data sets for the objects
 
 ## Specification Overview
