@@ -34,7 +34,6 @@ It is also important to know that in the final results reporting data file the N
   * A series of files each containing sample data sets for the objects
 
 ## Specification Overview
-
 The proposed results reporting objects are organised as follows:
 
 ![E-R diagram](https://raw.githubusercontent.com/nsip/naplan-results-reporting/master/NAPResponses.png "E-R diagram")
