@@ -1,180 +1,180 @@
 <NAPTests xmlns="http://www.sifassociation.org/datamodel/au/3.4">
-<NAPTest RefId="91000390-BBC5-4654-A123-0C663813F50E">
+<NAPTest RefId="973B1ED2-33DE-40E2-B46B-E0A241B6F589">
   <LocalId>NAPLAN-2017-0001</LocalId>
   <TestName>NAPLAN Reading Yr 3, 2017</TestName>
   <TestLevel><Code>3</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Reading</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="2C790FA8-42F8-49C4-8CBE-025B3F4D21E0">
+<NAPTest RefId="68ACB6A0-EF57-4934-AD3E-9D97CAE3F655">
   <LocalId>NAPLAN-2017-0002</LocalId>
   <TestName>NAPLAN Writing Yr 3, 2017</TestName>
   <TestLevel><Code>3</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Writing</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="6FE7832E-389E-4823-AF71-7E8AC6C7DF4E">
+<NAPTest RefId="927548D1-BE5C-4445-8A67-11D1C7A1294E">
   <LocalId>NAPLAN-2017-0003</LocalId>
   <TestName>NAPLAN Numeracy Yr 3, 2017</TestName>
   <TestLevel><Code>3</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Numeracy</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="BE2B9E1C-1ADF-40DD-9778-80AB1C918EAD">
+<NAPTest RefId="3DCBECE9-AD53-4122-8128-B2BD762A09AC">
   <LocalId>NAPLAN-2017-0004</LocalId>
   <TestName>NAPLAN Language Conventions Spelling Yr 3, 2017</TestName>
   <TestLevel><Code>3</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Language Conventions Spelling</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="4D46B07F-7699-4191-BEDF-47FA3889B95B">
+<NAPTest RefId="53CA2539-43BB-47FB-B17F-3E303085CF92">
   <LocalId>NAPLAN-2017-0005</LocalId>
   <TestName>NAPLAN Language Conventions Grammar and Punctuation Yr 3, 2017</TestName>
   <TestLevel><Code>3</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Language Conventions Grammar and Punctuation</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="9E88A855-1586-429E-9755-263D9AC56791">
+<NAPTest RefId="C9394CD8-E2B7-48F1-8AB9-C7B4E0F33D0D">
   <LocalId>NAPLAN-2017-0006</LocalId>
   <TestName>NAPLAN Reading Yr 5, 2017</TestName>
   <TestLevel><Code>5</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Reading</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="05F29AE6-AEFF-4B0E-8508-DC45A7226BF8">
+<NAPTest RefId="4BF0BCC3-04F5-451D-8AF6-B3A73DA9625C">
   <LocalId>NAPLAN-2017-0007</LocalId>
   <TestName>NAPLAN Writing Yr 5, 2017</TestName>
   <TestLevel><Code>5</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Writing</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="BF66DA7B-9B05-401F-94AA-6A971159DF9A">
+<NAPTest RefId="A5D7BF84-509E-46A4-AF21-0DC0A9C2EB3B">
   <LocalId>NAPLAN-2017-0008</LocalId>
   <TestName>NAPLAN Numeracy Yr 5, 2017</TestName>
   <TestLevel><Code>5</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Numeracy</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="BF2E3513-2AEE-4949-BB03-DA8D89150D52">
+<NAPTest RefId="76275BC4-F091-4978-A59F-1602AD76D126">
   <LocalId>NAPLAN-2017-0009</LocalId>
   <TestName>NAPLAN Language Conventions Spelling Yr 5, 2017</TestName>
   <TestLevel><Code>5</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Language Conventions Spelling</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="554AE640-F244-433A-9429-CA88E8827D42">
+<NAPTest RefId="DD034E1B-99A8-4DB5-B080-D2351CA95491">
   <LocalId>NAPLAN-2017-0010</LocalId>
   <TestName>NAPLAN Language Conventions Grammar and Punctuation Yr 5, 2017</TestName>
   <TestLevel><Code>5</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Language Conventions Grammar and Punctuation</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="82000D26-3D2D-458F-9A2C-AC72F7463C54">
+<NAPTest RefId="C8723C6E-333E-4689-9A50-E94FA74C713F">
   <LocalId>NAPLAN-2017-0011</LocalId>
   <TestName>NAPLAN Reading Yr 7, 2017</TestName>
   <TestLevel><Code>7</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Reading</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="21D6C8F6-381F-4ED0-B05A-F4ECE0F85A50">
+<NAPTest RefId="8638E968-7916-4021-B171-6198D136C84E">
   <LocalId>NAPLAN-2017-0012</LocalId>
   <TestName>NAPLAN Writing Yr 7, 2017</TestName>
   <TestLevel><Code>7</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Writing</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="5A5D5182-FBEA-4773-A30F-D9992F972208">
+<NAPTest RefId="5C264506-54E9-42F5-977E-B6E34BC46244">
   <LocalId>NAPLAN-2017-0013</LocalId>
   <TestName>NAPLAN Numeracy Yr 7, 2017</TestName>
   <TestLevel><Code>7</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Numeracy</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="A0407100-717A-494D-896F-54F9D3F587B5">
+<NAPTest RefId="B6295A7B-481C-42C9-AE84-297027FD4C51">
   <LocalId>NAPLAN-2017-0014</LocalId>
   <TestName>NAPLAN Language Conventions Spelling Yr 7, 2017</TestName>
   <TestLevel><Code>7</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Language Conventions Spelling</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="90ACFF80-D5C9-4747-8488-22E2DB367EA8">
+<NAPTest RefId="EF5A0979-670D-4F80-872B-829A844B6209">
   <LocalId>NAPLAN-2017-0015</LocalId>
   <TestName>NAPLAN Language Conventions Grammar and Punctuation Yr 7, 2017</TestName>
   <TestLevel><Code>7</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Language Conventions Grammar and Punctuation</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="F31BFBF0-D9FD-4B5C-9671-B64DAE4E14A9">
+<NAPTest RefId="45778CA5-AFA4-4162-8EC7-00B6A0A9DB6C">
   <LocalId>NAPLAN-2017-0016</LocalId>
   <TestName>NAPLAN Reading Yr 9, 2017</TestName>
   <TestLevel><Code>9</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Reading</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="64FF75E6-D402-4416-B7FA-9CB08017024A">
+<NAPTest RefId="9768D866-7F9A-4FA3-BC63-D5E39D0066F8">
   <LocalId>NAPLAN-2017-0017</LocalId>
   <TestName>NAPLAN Writing Yr 9, 2017</TestName>
   <TestLevel><Code>9</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Writing</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="580A0BDA-C787-4E74-8490-C39B9A93FE41">
+<NAPTest RefId="EE63110E-1850-4B19-B513-74C53F6BF17D">
   <LocalId>NAPLAN-2017-0018</LocalId>
   <TestName>NAPLAN Numeracy Yr 9, 2017</TestName>
   <TestLevel><Code>9</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Numeracy</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="DC81DAE4-F716-47D2-A81F-A66F7A65AA6F">
+<NAPTest RefId="501CA5FE-B771-4AFE-AD98-0F797A280490">
   <LocalId>NAPLAN-2017-0019</LocalId>
   <TestName>NAPLAN Language Conventions Spelling Yr 9, 2017</TestName>
   <TestLevel><Code>9</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Language Conventions Spelling</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
 
-<NAPTest RefId="27737D0F-198A-427E-89CB-4B5E078229AB">
+<NAPTest RefId="12E18C85-2ADE-43A0-A71C-43C20B5643C1">
   <LocalId>NAPLAN-2017-0020</LocalId>
   <TestName>NAPLAN Language Conventions Grammar and Punctuation Yr 9, 2017</TestName>
   <TestLevel><Code>9</Code></TestLevel>
-  <TestType>Normal</TestType>
+  <TestType>Main</TestType>
   <Domain>Language Conventions Grammar and Punctuation</Domain>
   <TestYear>2017</TestYear>
 </NAPTest>
