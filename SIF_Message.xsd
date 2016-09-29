@@ -35,7 +35,7 @@
       </xs:element>
       <xs:element name="OtherIdList" minOccurs="0" nillable="true" type="OtherIdListType">
         <xs:annotation>
-          <xs:documentation>Lists all "other" identifiers associated with the student.</xs:documentation>
+          <xs:documentation>Lists all "other" identifiers associated with the school.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="SchoolName" type="xs:normalizedString">
@@ -587,6 +587,11 @@
           <xs:documentation>Maximum score that student can achieve in this testlet.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="TestItemList" type="NAPTestItemListType">
+        <xs:annotation>
+          <xs:documentation>List of test items contained in the testlet.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="SIF_Metadata" minOccurs="0" nillable="true" type="SIF_MetadataType" />
       <xs:element name="SIF_ExtendedElements" minOccurs="0" nillable="true" type="SIF_ExtendedElementsType" />
     </xs:sequence>
@@ -761,34 +766,9 @@
           <xs:documentation>The publicly accessible location of an exemplar for the test item. Used if the test item itself has not been published.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="NAPTestletRefId" minOccurs="0" nillable="true" type="IdRefType">
+      <xs:element name="NAPTestletList" minOccurs="0" nillable="true" type="NAPTestletList2Type">
         <xs:annotation>
-          <xs:documentation>The GUID that identifies the NAP testlet that this test item belongs to. May be linking to prior codeframe download.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="NAPTestletLocalId" type="LocalIdType">
-        <xs:annotation>
-          <xs:documentation>Local identifier that identifies the NAP testlet that this test item belongs to.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="NAPTestletSequenceNumber" minOccurs="0" nillable="true" type="xs:integer">
-        <xs:annotation>
-          <xs:documentation>Location of test item in the first testlet, as an ordinal.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="OtherNAPTestletRefId" minOccurs="0" nillable="true" type="IdRefType">
-        <xs:annotation>
-          <xs:documentation>The GUID that identifies the second NAP testlet that this test item belongs to. May be linking to prior codeframe download.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="OtherNAPTestletLocalId" minOccurs="0" nillable="true" type="LocalIdType">
-        <xs:annotation>
-          <xs:documentation>Local identifier that identifies the second NAP testlet that this test item belongs to.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="OtherNAPTestletSequenceNumber" minOccurs="0" nillable="true" type="xs:integer">
-        <xs:annotation>
-          <xs:documentation>Location of test item in the second testlet, as an ordinal .</xs:documentation>
+          <xs:documentation>List of testlets that the test item belongs to.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="ItemSubstitutedForRefId" minOccurs="0" nillable="true" type="IdRefType">
@@ -23643,6 +23623,42 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <!--NAPTestItemListType-->
+
+  <xs:complexType name="NAPTestItemListType">
+    <xs:sequence>
+      <xs:element name="TestItem" maxOccurs="unbounded" type="NAPTestItem2Type">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--NAPTestItem2Type-->
+
+  <xs:complexType name="NAPTestItem2Type">
+    <xs:sequence>
+      <xs:element name="TestItemRefId" maxOccurs="unbounded" type="IdRefType">
+        <xs:annotation>
+          <xs:documentation>The GUID that identifies the test item.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TestItemLocalId" type="LocalIdType">
+        <xs:annotation>
+          <xs:documentation>Local identifier of the test item.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SequenceNumber" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Location of test item in testlet, as an ordinal.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
   <!--NAPTestItemTypeListType-->
 
   <xs:complexType name="NAPTestItemTypeListType">
@@ -23650,6 +23666,42 @@
       <xs:element name="ItemType" maxOccurs="unbounded" type="AUCodeSetsNAPTestItemTypeType">
         <xs:annotation>
           <xs:documentation>The response type for the test item.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--NAPTestletList2Type-->
+
+  <xs:complexType name="NAPTestletList2Type">
+    <xs:sequence>
+      <xs:element name="NAPTestlet" maxOccurs="unbounded" type="NAPTestlet2Type">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--NAPTestlet2Type-->
+
+  <xs:complexType name="NAPTestlet2Type">
+    <xs:sequence>
+      <xs:element name="NAPTestletRefId" minOccurs="0" nillable="true" type="IdRefType">
+        <xs:annotation>
+          <xs:documentation>The GUID that identifies the NAP testlet that this test item belongs to. May be linking to prior codeframe download.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NAPTestletLocalId" type="LocalIdType">
+        <xs:annotation>
+          <xs:documentation>Local identifier that identifies the NAP testlet that this test item belongs to.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SequenceNumber" minOccurs="0" nillable="true" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Location of test item in the first testlet, as an ordinal.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -26494,7 +26546,7 @@
           <xs:documentation>LocalId of the Staff member</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Name" type="NameOfRecordType">
+      <xs:element name="Name" minOccurs="0" nillable="true" type="NameOfRecordType">
         <xs:annotation>
           <xs:documentation>Name of Staff Member.</xs:documentation>
         </xs:annotation>
@@ -26541,7 +26593,7 @@
           <xs:documentation>Local Id of the Student </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Name" type="NameOfRecordType">
+      <xs:element name="Name" minOccurs="0" nillable="true" type="NameOfRecordType">
         <xs:annotation>
           <xs:documentation>Name of student</xs:documentation>
         </xs:annotation>
@@ -26847,12 +26899,12 @@
 
   <xs:complexType name="OtherIdListType">
     <xs:annotation>
-      <xs:documentation>Lists all "other" identifiers associated with the student.</xs:documentation>
+      <xs:documentation>Lists all "other" identifiers associated with the entity.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="OtherId" maxOccurs="unbounded" type="OtherIdType">
         <xs:annotation>
-          <xs:documentation>Lists an "other" identifier associated with the student.</xs:documentation>
+          <xs:documentation>Lists an "other" identifier associated with the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -26863,7 +26915,7 @@
 
   <xs:complexType name="OtherIdType">
     <xs:annotation>
-      <xs:documentation>Lists an "other" identifier associated with the student.</xs:documentation>
+      <xs:documentation>Lists an "other" identifier associated with the entity.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:normalizedString">
@@ -27435,26 +27487,10 @@
           <xs:documentation>The location of the address.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="MapReference" minOccurs="0" nillable="true">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="XCoordinate" type="xs:normalizedString">
-              <xs:annotation>
-                <xs:documentation>X Co-ordinate of reference</xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element name="YCoordinate" type="xs:normalizedString">
-              <xs:annotation>
-                <xs:documentation>Y Co-ordinate of reference</xs:documentation>
-              </xs:annotation>
-            </xs:element>
-          </xs:sequence>
-          <xs:attribute name="Type" use="required" type="xs:normalizedString">
-            <xs:annotation>
-              <xs:documentation>Type map reference</xs:documentation>
-            </xs:annotation>
-          </xs:attribute>
-        </xs:complexType>
+      <xs:element name="MapReference" minOccurs="0" nillable="true" type="MapReferenceType">
+        <xs:annotation>
+          <xs:documentation>A Map Reference in x-y co-ordinates.</xs:documentation>
+        </xs:annotation>
       </xs:element>
       <xs:element name="RadioContact" minOccurs="0" nillable="true" type="xs:string">
         <xs:annotation>
@@ -27478,48 +27514,10 @@
       </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="StatisticalAreas" minOccurs="0" nillable="true">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="StatisticalArea" minOccurs="0" nillable="true">
-              <xs:annotation>
-                <xs:documentation>
-        The Australian Standard Geographical Classification (ASGC) has now been replaced with the Australian Statistical Geography Standard (ASGS).
-        The level and method that this is collected would need to be discussed as the lowest level is now a lot lower than the previous classification to allow for more accurate data analysis and reporting.
-        There are different levels of spatial unit references by this code set and a MeshBlock refers to the lowest level of this classification.
-		The spatial unit should be validated against the correct classification which is being elaborated upon. The referenced levels are coded in these volumes of ABS 1270 		
-      </xs:documentation>
-              </xs:annotation>
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:normalizedString">
-                    <xs:attribute name="SpatialUnitType" use="required">
-                      <xs:annotation>
-                        <xs:documentation>Type of Spatial Unit contained within the StatisticalArea Element</xs:documentation>
-                      </xs:annotation>
-                      <xs:simpleType>
-                        <xs:restriction base="xs:token">
-                          <xs:enumeration value="MB" />
-                          <xs:enumeration value="SA1" />
-                          <xs:enumeration value="SA2" />
-                          <xs:enumeration value="SA3" />
-                          <xs:enumeration value="SA4" />
-                          <xs:enumeration value="GCCSA" />
-                          <xs:enumeration value="S/T" />
-                          <xs:enumeration value="LG" />
-                          <xs:enumeration value="TR" />
-                          <xs:enumeration value="ILOC" />
-                          <xs:enumeration value="IARE" />
-                          <xs:enumeration value="IREG" />
-                        </xs:restriction>
-                      </xs:simpleType>
-                    </xs:attribute>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
+      <xs:element name="StatisticalAreas" minOccurs="0" nillable="true" type="StatisticalAreasType">
+        <xs:annotation>
+          <xs:documentation>A list of Statistical Areas assoicated with an address that will be referenced back to ABS 1270.  Only applicable to a physical address, e.g. not relevant for a Post Office Box.</xs:documentation>
+        </xs:annotation>
       </xs:element>
     </xs:sequence>
     <xs:attribute name="Type" use="required" type="AUCodeSetsAddressTypeType">
@@ -27532,6 +27530,92 @@
         <xs:documentation>A facet of Address</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+  </xs:complexType>
+
+
+  <!--MapReferenceType-->
+
+  <xs:complexType name="MapReferenceType">
+    <xs:annotation>
+      <xs:documentation>A Map Reference in x-y co-ordinates.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="XCoordinate" type="xs:normalizedString">
+        <xs:annotation>
+          <xs:documentation>X Co-ordinate of reference</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="YCoordinate" type="xs:normalizedString">
+        <xs:annotation>
+          <xs:documentation>Y Co-ordinate of reference</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="Type" use="required" type="xs:normalizedString">
+      <xs:annotation>
+        <xs:documentation>Type map reference</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+
+  <!--StatisticalAreasType-->
+
+  <xs:complexType name="StatisticalAreasType">
+    <xs:annotation>
+      <xs:documentation>A list of Statistical Areas assoicated with an address that will be referenced back to ABS 1270.  Only applicable to a physical address, e.g. not relevant for a Post Office Box.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="StatisticalArea" minOccurs="0" maxOccurs="unbounded" type="StatisticalAreaType">
+        <xs:annotation>
+          <xs:documentation>
+        The Australian Standard Geographical Classification (ASGC) has now been replaced with the Australian Statistical Geography Standard (ASGS).
+        The level and method that this is collected would need to be discussed as the lowest level is now a lot lower than the previous classification to allow for more accurate data analysis and reporting.
+        There are different levels of spatial unit references by this code set and a MeshBlock refers to the lowest level of this classification.
+		The spatial unit should be validated against the correct classification which is being elaborated upon. The referenced levels are coded in these volumes of ABS 1270 		
+      </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--StatisticalAreaType-->
+
+  <xs:complexType name="StatisticalAreaType">
+    <xs:annotation>
+      <xs:documentation>
+        The Australian Standard Geographical Classification (ASGC) has now been replaced with the Australian Statistical Geography Standard (ASGS).
+        The level and method that this is collected would need to be discussed as the lowest level is now a lot lower than the previous classification to allow for more accurate data analysis and reporting.
+        There are different levels of spatial unit references by this code set and a MeshBlock refers to the lowest level of this classification.
+		The spatial unit should be validated against the correct classification which is being elaborated upon. The referenced levels are coded in these volumes of ABS 1270 		
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:normalizedString">
+        <xs:attribute name="SpatialUnitType" use="required">
+          <xs:annotation>
+            <xs:documentation>Type of Spatial Unit contained within the StatisticalArea Element</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:enumeration value="MB" />
+              <xs:enumeration value="SA1" />
+              <xs:enumeration value="SA2" />
+              <xs:enumeration value="SA3" />
+              <xs:enumeration value="SA4" />
+              <xs:enumeration value="GCCSA" />
+              <xs:enumeration value="S/T" />
+              <xs:enumeration value="LG" />
+              <xs:enumeration value="TR" />
+              <xs:enumeration value="ILOC" />
+              <xs:enumeration value="IARE" />
+              <xs:enumeration value="IREG" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
 
 
