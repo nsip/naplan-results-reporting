@@ -1,181 +1,497 @@
 <NAPTests xmlns="http://www.sifassociation.org/datamodel/au/3.4">
-<NAPTest RefId="2C4FEA37-E88A-4B92-AF6B-B913D9D58EC1">
+<NAPTest RefId="E97F563D-2CA8-45F6-8134-A25BFD6894EC">
   <LocalId>NAPLAN-2017-0001</LocalId>
   <TestName>NAPLAN Reading Yr 3, 2017</TestName>
   <TestLevel><Code>3</Code></TestLevel>
   <TestType>Main</TestType>
   <Domain>Reading</Domain>
   <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 
-<NAPTest RefId="6BFC031F-BB71-4738-9904-1346EDDB453B">
+<NAPTest RefId="37F085C7-5AB1-4762-A09B-6972CC7F70FF">
   <LocalId>NAPLAN-2017-0002</LocalId>
   <TestName>NAPLAN Writing Yr 3, 2017</TestName>
   <TestLevel><Code>3</Code></TestLevel>
   <TestType>Main</TestType>
   <Domain>Writing</Domain>
   <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 
-<NAPTest RefId="78CE7A36-E506-43A4-89A1-A95D0BF54A3B">
+<NAPTest RefId="7631DF72-8D5C-4F5E-AA32-ED0CD5B1F285">
   <LocalId>NAPLAN-2017-0003</LocalId>
   <TestName>NAPLAN Numeracy Yr 3, 2017</TestName>
   <TestLevel><Code>3</Code></TestLevel>
   <TestType>Main</TestType>
   <Domain>Numeracy</Domain>
   <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 
-<NAPTest RefId="C442D4E9-BB5E-4DF9-B329-33B3ED793F17">
+<NAPTest RefId="D290FCA9-6256-4BB1-95B5-ED27BD584E9E">
   <LocalId>NAPLAN-2017-0004</LocalId>
-  <TestName>NAPLAN Language Conventions Spelling Yr 3, 2017</TestName>
+  <TestName>NAPLAN Language Conventions Yr 3, 2017</TestName>
   <TestLevel><Code>3</Code></TestLevel>
   <TestType>Main</TestType>
-  <Domain>Language Conventions Spelling</Domain>
+  <Domain>Language Conventions</Domain>
   <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 
-<NAPTest RefId="42ADC66F-022A-4D75-B0AC-7BB02F9AEF1F">
+<NAPTest RefId="A1146FB3-3FA2-4C1A-BCE2-94C787F1C13F">
   <LocalId>NAPLAN-2017-0005</LocalId>
-  <TestName>NAPLAN Language Conventions Grammar and Punctuation Yr 3, 2017</TestName>
-  <TestLevel><Code>3</Code></TestLevel>
-  <TestType>Main</TestType>
-  <Domain>Language Conventions Grammar and Punctuation</Domain>
-  <TestYear>2017</TestYear>
-</NAPTest>
-
-<NAPTest RefId="DD822E8B-85A5-42AD-86AD-7814594A9C02">
-  <LocalId>NAPLAN-2017-0006</LocalId>
   <TestName>NAPLAN Reading Yr 5, 2017</TestName>
   <TestLevel><Code>5</Code></TestLevel>
   <TestType>Main</TestType>
   <Domain>Reading</Domain>
   <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 
-<NAPTest RefId="EC77839E-960E-4692-8A35-EB38A17FC05E">
-  <LocalId>NAPLAN-2017-0007</LocalId>
+<NAPTest RefId="82CAE524-B243-4E72-A3BB-0D3BE73F725B">
+  <LocalId>NAPLAN-2017-0006</LocalId>
   <TestName>NAPLAN Writing Yr 5, 2017</TestName>
   <TestLevel><Code>5</Code></TestLevel>
   <TestType>Main</TestType>
   <Domain>Writing</Domain>
   <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 
-<NAPTest RefId="BC80511A-6DEB-4F7E-8769-2B0EF231EA5E">
-  <LocalId>NAPLAN-2017-0008</LocalId>
+<NAPTest RefId="A905644F-4B8A-43BB-96B7-EC4A3F934C56">
+  <LocalId>NAPLAN-2017-0007</LocalId>
   <TestName>NAPLAN Numeracy Yr 5, 2017</TestName>
   <TestLevel><Code>5</Code></TestLevel>
   <TestType>Main</TestType>
   <Domain>Numeracy</Domain>
   <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 
-<NAPTest RefId="8024B024-E094-474E-A5B3-1FF3481A9971">
+<NAPTest RefId="4D214795-9E68-4B8D-BB08-6887E0397669">
+  <LocalId>NAPLAN-2017-0008</LocalId>
+  <TestName>NAPLAN Language Conventions Yr 5, 2017</TestName>
+  <TestLevel><Code>5</Code></TestLevel>
+  <TestType>Main</TestType>
+  <Domain>Language Conventions</Domain>
+  <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
+</NAPTest>
+
+<NAPTest RefId="2F8097CC-EC0C-4349-B41F-53AFA5C97F12">
   <LocalId>NAPLAN-2017-0009</LocalId>
-  <TestName>NAPLAN Language Conventions Spelling Yr 5, 2017</TestName>
-  <TestLevel><Code>5</Code></TestLevel>
-  <TestType>Main</TestType>
-  <Domain>Language Conventions Spelling</Domain>
-  <TestYear>2017</TestYear>
-</NAPTest>
-
-<NAPTest RefId="15877BA9-39DF-4A97-86E2-D638D8998203">
-  <LocalId>NAPLAN-2017-0010</LocalId>
-  <TestName>NAPLAN Language Conventions Grammar and Punctuation Yr 5, 2017</TestName>
-  <TestLevel><Code>5</Code></TestLevel>
-  <TestType>Main</TestType>
-  <Domain>Language Conventions Grammar and Punctuation</Domain>
-  <TestYear>2017</TestYear>
-</NAPTest>
-
-<NAPTest RefId="10F7BC2F-450D-4DDB-9EA0-5E55E05ADD23">
-  <LocalId>NAPLAN-2017-0011</LocalId>
   <TestName>NAPLAN Reading Yr 7, 2017</TestName>
   <TestLevel><Code>7</Code></TestLevel>
   <TestType>Main</TestType>
   <Domain>Reading</Domain>
   <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 
-<NAPTest RefId="B3756FF2-DA1D-4E2C-A2BD-037E8C62A64C">
-  <LocalId>NAPLAN-2017-0012</LocalId>
+<NAPTest RefId="939A89C5-3DAB-4796-B56B-54121D774380">
+  <LocalId>NAPLAN-2017-0010</LocalId>
   <TestName>NAPLAN Writing Yr 7, 2017</TestName>
   <TestLevel><Code>7</Code></TestLevel>
   <TestType>Main</TestType>
   <Domain>Writing</Domain>
   <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 
-<NAPTest RefId="6478283F-159F-43A5-AC3B-5B88E8572427">
-  <LocalId>NAPLAN-2017-0013</LocalId>
+<NAPTest RefId="2840C968-2113-4C8B-9ABF-26339ACDEF59">
+  <LocalId>NAPLAN-2017-0011</LocalId>
   <TestName>NAPLAN Numeracy Yr 7, 2017</TestName>
   <TestLevel><Code>7</Code></TestLevel>
   <TestType>Main</TestType>
   <Domain>Numeracy</Domain>
   <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 
-<NAPTest RefId="D7724297-B13B-4986-A6E2-3470454C237C">
-  <LocalId>NAPLAN-2017-0014</LocalId>
-  <TestName>NAPLAN Language Conventions Spelling Yr 7, 2017</TestName>
+<NAPTest RefId="9C17F5F0-0897-4914-9CA7-B2F176C56DB6">
+  <LocalId>NAPLAN-2017-0012</LocalId>
+  <TestName>NAPLAN Language Conventions Yr 7, 2017</TestName>
   <TestLevel><Code>7</Code></TestLevel>
   <TestType>Main</TestType>
-  <Domain>Language Conventions Spelling</Domain>
+  <Domain>Language Conventions</Domain>
   <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 
-<NAPTest RefId="7D90D550-F733-4D0F-A418-503D97CDE70E">
-  <LocalId>NAPLAN-2017-0015</LocalId>
-  <TestName>NAPLAN Language Conventions Grammar and Punctuation Yr 7, 2017</TestName>
-  <TestLevel><Code>7</Code></TestLevel>
-  <TestType>Main</TestType>
-  <Domain>Language Conventions Grammar and Punctuation</Domain>
-  <TestYear>2017</TestYear>
-</NAPTest>
-
-<NAPTest RefId="BE29F017-28A1-4046-A0BE-6781BD6E17E7">
-  <LocalId>NAPLAN-2017-0016</LocalId>
+<NAPTest RefId="AF9A540C-8154-41C6-B571-A14BA49D474E">
+  <LocalId>NAPLAN-2017-0013</LocalId>
   <TestName>NAPLAN Reading Yr 9, 2017</TestName>
   <TestLevel><Code>9</Code></TestLevel>
   <TestType>Main</TestType>
   <Domain>Reading</Domain>
   <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 
-<NAPTest RefId="92EDC186-AE95-40CA-8F9A-1BD97741F56A">
-  <LocalId>NAPLAN-2017-0017</LocalId>
+<NAPTest RefId="81A67E30-4D3A-4F15-9AC6-E4D4966DDC23">
+  <LocalId>NAPLAN-2017-0014</LocalId>
   <TestName>NAPLAN Writing Yr 9, 2017</TestName>
   <TestLevel><Code>9</Code></TestLevel>
   <TestType>Main</TestType>
   <Domain>Writing</Domain>
   <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 
-<NAPTest RefId="9820A18E-360A-4D09-BCF1-BD0FE9C07560">
-  <LocalId>NAPLAN-2017-0018</LocalId>
+<NAPTest RefId="15DF8589-CDD1-4D58-B943-B0FD0F26757C">
+  <LocalId>NAPLAN-2017-0015</LocalId>
   <TestName>NAPLAN Numeracy Yr 9, 2017</TestName>
   <TestLevel><Code>9</Code></TestLevel>
   <TestType>Main</TestType>
   <Domain>Numeracy</Domain>
   <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 
-<NAPTest RefId="3A7E57B5-7D7D-4E58-91C5-C11C230177EA">
-  <LocalId>NAPLAN-2017-0019</LocalId>
-  <TestName>NAPLAN Language Conventions Spelling Yr 9, 2017</TestName>
+<NAPTest RefId="DFC19EB1-7E6D-4E36-B5AF-7B9D7CB3F09E">
+  <LocalId>NAPLAN-2017-0016</LocalId>
+  <TestName>NAPLAN Language Conventions Yr 9, 2017</TestName>
   <TestLevel><Code>9</Code></TestLevel>
   <TestType>Main</TestType>
-  <Domain>Language Conventions Spelling</Domain>
+  <Domain>Language Conventions</Domain>
   <TestYear>2017</TestYear>
-</NAPTest>
-
-<NAPTest RefId="2C48C210-EDEF-40E0-9EC4-7E9CD9F4F262">
-  <LocalId>NAPLAN-2017-0020</LocalId>
-  <TestName>NAPLAN Language Conventions Grammar and Punctuation Yr 9, 2017</TestName>
-  <TestLevel><Code>9</Code></TestLevel>
-  <TestType>Main</TestType>
-  <Domain>Language Conventions Grammar and Punctuation</Domain>
-  <TestYear>2017</TestYear>
+  <DomainBands>
+    <Band1Lower>0</Band1Lower>
+    <Band1Upper>258</Band1Upper>
+    <Band2Lower>258</Band2Lower>
+    <Band2Upper>318</Band2Upper>
+    <Band3Lower>318</Band3Lower>
+    <Band3Upper>368</Band3Upper>
+    <Band4Lower>368</Band4Lower>
+    <Band4Upper>417</Band4Upper>
+    <Band5Lower>417</Band5Lower>
+    <Band5Upper>466</Band5Upper>
+    <Band6Lower>466</Band6Lower>
+    <Band6Upper>526</Band6Upper>
+    <Band7Lower>526</Band7Lower>
+    <Band7Upper>574</Band7Upper>
+    <Band8Lower>574</Band8Lower>
+    <Band8Upper>633</Band8Upper>
+    <Band9Lower>633</Band9Lower>
+    <Band9Upper>681</Band9Upper>
+    <Band10Lower>681</Band10Lower>
+    <Band10Upper>999</Band10Upper>
+  </DomainBands>
 </NAPTest>
 </NAPTests>
