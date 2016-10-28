@@ -47,7 +47,6 @@ This repository includes a cut-down SIF-AU XSD specific to the reporting objects
 * 800 students enrolled in four different schools, distributed among years 3, 5, 7, 9
 * test objects for all domains of NAPLAN
 * a selection of adaptive testlets and corresponding items for all tests, following  the NAPLAN node structure (A-F), and the allocation of testlets per node that ACARA has established. The items include adjustment substitutes.
-* 5 items per test, with randomised item types
 * student response sets for all students that have participated in all tests (90%)
 * test score summaries for all tests
 
