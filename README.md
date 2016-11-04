@@ -21,10 +21,10 @@ It is also important to know that in the final results reporting data file the N
 ## What you can find here
 
 * Technical Specification Document
-  * _Results and Reporting Dataset - Tech Spec 0.4.pdf_
+  * _Results and Reporting Dataset - Tech Spec 0.5.pdf_
   * This document describes the specification of the results reporting objects
 * Dataset Dictionary
-  * _Online NAPLAN Reporting Dataset 1.9.xslx_
+  * _Online NAPLAN Reporting Dataset 1.99.xslx_
   * This is an excel version of the object schema giving details of all field types 
 * XSD for Object Validation
   * _SIF_Message.xsd_
