@@ -23,6 +23,10 @@ Note also that in the final results reporting data file the NAPLAN Platform will
 * Technical Specification Document
   * _Results and Reporting Dataset - Tech Spec 0.6.docx_
   * This document describes the specification of the results reporting objects
+  * _NAP response Object Draft 16.pdf_
+  * Interim SIF XML specification, with mappings to the excel object schema
+  * _NAP SIF HTML.zip_
+  * SIF XML specification in the traditional HTML format
 * Dataset Dictionary
   * _Online NAPLAN Reporting Dataset 2 02 - For release.xslx_
   * This is an excel version of the object schema giving details of all field types 
