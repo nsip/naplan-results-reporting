@@ -1,5 +1,5 @@
 <!--
-		SIF Implementation Specification (Australia) 3.4 (September 27, 2016) Infrastructure Version: v3
+		SIF Implementation Specification (Australia) 3.4.1 NAPLAN Draft (November 16, 2016) Infrastructure Version: v3
 	-->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sifassociation.org/datamodel/au/3.4" targetNamespace="http://www.sifassociation.org/datamodel/au/3.4" elementFormDefault="qualified"
 >
@@ -176,7 +176,7 @@
       </xs:element>
       <xs:element name="SchoolGeographicLocation" minOccurs="0" nillable="true" type="AUCodeSetsSchoolLocationType">
         <xs:annotation>
-          <xs:documentation>School Location from MCEETCYA.</xs:documentation>
+          <xs:documentation>School Location</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="LocalGovernmentArea" minOccurs="0" nillable="true" type="xs:normalizedString">
@@ -441,10 +441,55 @@
           <xs:documentation>Local identifier of NAP test.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="SchoolSector" type="AUCodeSetsSchoolSectorCodeType">
+        <xs:annotation>
+          <xs:documentation>(Government, or Non-Government).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="System" minOccurs="0" nillable="true" type="AUCodeSetsSchoolSystemType">
+        <xs:annotation>
+          <xs:documentation>System if a systemic school.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SchoolGeolocation" minOccurs="0" nillable="true" type="AUCodeSetsSchoolLocationType">
+        <xs:annotation>
+          <xs:documentation>School Location</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportingSchoolName" minOccurs="0" nillable="true" type="xs:normalizedString">
+        <xs:annotation>
+          <xs:documentation>Name of school where reports will be sent to, in case of walk-ups</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NAPJurisdiction" minOccurs="0" nillable="true" type="AUCodeSetsNAPJurisdictionType">
+        <xs:annotation>
+          <xs:documentation>School Location</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="ParticipationCode" type="AUCodeSetsNAPParticipationCodeType" />
-      <xs:element name="ParticipationText" minOccurs="0" nillable="true" type="xs:normalizedString">
+      <xs:element name="ParticipationText" type="xs:normalizedString">
         <xs:annotation>
           <xs:documentation>Text added to reports indicating the participation status of the student for the NAP test. Determined by the Participation Code.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Device" minOccurs="0" nillable="true" type="xs:token">
+        <xs:annotation>
+          <xs:documentation>Device used to do the test.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Date" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Date student sat test.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StartTime" type="xs:time">
+        <xs:annotation>
+          <xs:documentation>Time student commenced test.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LapsedTimeTest" type="xs:duration">
+        <xs:annotation>
+          <xs:documentation>Time taken for student to complete test.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="ExemptionReason" minOccurs="0" nillable="true" type="xs:normalizedString">
@@ -452,12 +497,32 @@
           <xs:documentation>Reason given for student to be exempted from the NAP test.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="PersonalDetailsChanged" minOccurs="0" nillable="true" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Flag that the personal details of the student have changed since registration.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PSIOtherIdMatch" minOccurs="0" nillable="true" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Flag indicating possible Platform Student Identifier error.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PossibleDuplicate" minOccurs="0" nillable="true" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Flag indicating a possible duplicate record for a student.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DOBRange" minOccurs="0" nillable="true" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Flag indicating whether a student’s date of birth is in expected range.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="TestDisruptionList" minOccurs="0" nillable="true" type="TestDisruptionListType">
         <xs:annotation>
           <xs:documentation />
         </xs:annotation>
       </xs:element>
-      <xs:element name="AdjustmentList" minOccurs="0" nillable="true" type="AdjustmentListType">
+      <xs:element name="Adjustment" minOccurs="0" nillable="true" type="AdjustmentContainerType">
         <xs:annotation>
           <xs:documentation />
         </xs:annotation>
@@ -494,32 +559,7 @@
       <xs:documentation>This object represents an assessment assigned in the context of NAP, targeted at a particular domain and year level.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="LocalId" type="LocalIdType">
-        <xs:annotation>
-          <xs:documentation>Local identifier of NAP test.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="TestName" minOccurs="0" nillable="true" type="xs:normalizedString">
-        <xs:annotation>
-          <xs:documentation>Name of the NAP test.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="TestLevel" type="YearLevelType" />
-      <xs:element name="TestType" type="AUCodeSetsNAPTestTypeType">
-        <xs:annotation>
-          <xs:documentation>Type of NAP Test assigned in the session</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="Domain" type="AUCodeSetsNAPTestDomainType">
-        <xs:annotation>
-          <xs:documentation>Domain of the NAP test. Values: Writing, Reading, Language Conventions:Spelling, Language Conventions:Grammar and Punctuation, Numeracy.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="TestYear" type="SchoolYearType">
-        <xs:annotation>
-          <xs:documentation>Year that testing took place, e.g. 2017.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
+      <xs:element name="TestContent" type="NAPTestContentType" />
       <xs:element name="SIF_Metadata" minOccurs="0" nillable="true" type="SIF_MetadataType" />
       <xs:element name="SIF_ExtendedElements" minOccurs="0" nillable="true" type="SIF_ExtendedElementsType" />
     </xs:sequence>
@@ -552,11 +592,6 @@
       <xs:documentation>This object represents a student’s attempt to undergo NAP assessment in a particular test.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="LocalId" type="LocalIdType">
-        <xs:annotation>
-          <xs:documentation>Local identifier that identifies this NAP testlet.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="NAPTestRefId" minOccurs="0" nillable="true" type="IdRefType">
         <xs:annotation>
           <xs:documentation>The GUID for the test that the student is sitting. May be linking to prior codeframe download.</xs:documentation>
@@ -567,26 +602,7 @@
           <xs:documentation>Local identifier of NAP test.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="TestletName" type="xs:normalizedString">
-        <xs:annotation>
-          <xs:documentation>Testlet name allocated at test construction.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="TestletType" type="AUCodeSetsNAPTestletTypeType">
-        <xs:annotation>
-          <xs:documentation>Type of testlet being undertaken. Values: Normal, Equating, Override, Adjustment.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="Node" minOccurs="0" nillable="true" type="xs:token">
-        <xs:annotation>
-          <xs:documentation>Label of testlet used for testlet sequencing. Values: A,B,C,D,E,F,G.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="TestletSubscore" type="xs:decimal">
-        <xs:annotation>
-          <xs:documentation>Maximum score that student can achieve in this testlet.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
+      <xs:element name="TestletContent" type="NAPTestletContentType" />
       <xs:element name="TestItemList" type="NAPTestItemListType">
         <xs:annotation>
           <xs:documentation>List of test items contained in the testlet.</xs:documentation>
@@ -644,7 +660,7 @@
           <xs:documentation>Local identifier of NAP test.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="DomainNationalAverage" type="xs:decimal">
+      <xs:element name="DomainNationalAverage" minOccurs="0" nillable="true" type="xs:decimal">
         <xs:annotation>
           <xs:documentation>The numeric value of the national student scaled score average for the NAP domain and test level.</xs:documentation>
         </xs:annotation>
@@ -659,12 +675,12 @@
           <xs:documentation>The numeric value of the jurisdiction  student scaled score average for the NAP domain and test level.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="DomainTopNational60Percent" type="xs:decimal">
+      <xs:element name="DomainTopNational60Percent" minOccurs="0" nillable="true" type="xs:decimal">
         <xs:annotation>
           <xs:documentation>The numeric value representing the top scaled score of the National 60% band graphic for this NAP domain and test level.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="DomainBottomNational60Percent" type="xs:decimal">
+      <xs:element name="DomainBottomNational60Percent" minOccurs="0" nillable="true" type="xs:decimal">
         <xs:annotation>
           <xs:documentation>The numeric value representing the bottom scaled score of the National 60% band graphic for this NAP domain and test level.</xs:documentation>
         </xs:annotation>
@@ -701,102 +717,7 @@
       <xs:documentation>This object represents the description of a test item as context for response; may be exemplar item instead of the actual item.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="LocalId" type="LocalIdType">
-        <xs:annotation>
-          <xs:documentation>Local identifier of NAP test item.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ItemTypeList" type="NAPTestItemTypeListType">
-        <xs:annotation>
-          <xs:documentation>The response type for the test item.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="Domain" type="AUCodeSetsNAPTestDomainType">
-        <xs:annotation>
-          <xs:documentation>Domain descriptor for the test item.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="Subdomain" type="xs:normalizedString">
-        <xs:annotation>
-          <xs:documentation>Subdomain descriptor for the test item.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="WritingGenre" minOccurs="0" nillable="true" type="AUCodeSetsNAPWritingGenreType">
-        <xs:annotation>
-          <xs:documentation>Genre of writing for the test item. Values: Narrative, Persuasive.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ItemDescriptor" type="xs:normalizedString">
-        <xs:annotation>
-          <xs:documentation>Description of the test item.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ReleasedStatus" type="xs:boolean">
-        <xs:annotation>
-          <xs:documentation>Whether the test item has been publicly released.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="CorrectAnswer" minOccurs="0" nillable="true" type="xs:normalizedString">
-        <xs:annotation>
-          <xs:documentation>Τhe correct answer to the test item.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="MaximumScore" type="xs:decimal">
-        <xs:annotation>
-          <xs:documentation>Full marks allocated for correct response.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ItemDifficulty" type="xs:decimal">
-        <xs:annotation>
-          <xs:documentation>Item difficulty on same scale as Student Scaled Score.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ItemProficiencyBand" type="xs:integer">
-        <xs:annotation>
-          <xs:documentation>The item proficiency band. Uses the same classification as Student Scaled Score.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ItemProficiencyLevel" type="xs:normalizedString">
-        <xs:annotation>
-          <xs:documentation>The item proficiency level. Uses the same classification as Student Scaled Score.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ExemplarURL" minOccurs="0" nillable="true" type="xs:anyURI">
-        <xs:annotation>
-          <xs:documentation>The publicly accessible location of an exemplar for the test item. Used if the test item itself has not been published.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="NAPTestletList" minOccurs="0" nillable="true" type="NAPTestletList2Type">
-        <xs:annotation>
-          <xs:documentation>List of testlets that the test item belongs to.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ItemSubstitutedForRefId" minOccurs="0" nillable="true" type="IdRefType">
-        <xs:annotation>
-          <xs:documentation>The RefId of the main item for which this is a Substitute item.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="SubstituteItemPNPCodeList" minOccurs="0" nillable="true" type="PNPCodeListType">
-        <xs:annotation>
-          <xs:documentation>The RefId of the main item for which this is a Substitute item.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ContentDescriptionList" minOccurs="0" nillable="true" type="ContentDescriptionListType">
-        <xs:annotation>
-          <xs:documentation />
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="MarkingType" type="AUCodeSetsNAPTestItemMarkingTypeType">
-        <xs:annotation>
-          <xs:documentation>Method used to mark the test item. Values: AS Auto Scoring, MM Manual Marking, AES Auto Essay Scoring.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="StimulusList" minOccurs="0" nillable="true" type="StimulusListType">
-        <xs:annotation>
-          <xs:documentation />
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="NAPWritingRubricList" minOccurs="0" nillable="true" type="NAPWritingRubricListType">
+      <xs:element name="TestItemContent" type="NAPTestItemContentType">
         <xs:annotation>
           <xs:documentation />
         </xs:annotation>
@@ -850,7 +771,12 @@
       </xs:element>
       <xs:element name="PathTakenForDomain" type="xs:normalizedString">
         <xs:annotation>
-          <xs:documentation>Student's trajectory through adaptive test for the domain. Expressed as a sequence of testlet identifiers.</xs:documentation>
+          <xs:documentation>Student’s trajectory through adaptive test for the domain. Expressed as a sequence of node identifiers.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ParallelTest" type="xs:normalizedString">
+        <xs:annotation>
+          <xs:documentation>Student’s trajectory through adaptive test for the domain. Expressed as a sequence of testlet identifiers..</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="StudentPersonalRefId" minOccurs="0" nillable="true" type="IdRefType">
@@ -874,7 +800,7 @@
         </xs:annotation>
       </xs:element>
       <xs:element name="DomainScore" type="DomainScoreType" />
-      <xs:element name="TestletList" type="NAPTestletListType">
+      <xs:element name="TestletList" type="NAPStudentResponseTestletListType">
         <xs:annotation>
           <xs:documentation />
         </xs:annotation>
@@ -903,70 +829,118 @@
   </xs:complexType>
   <xs:element name="NAPStudentResponseSets" type="NAPStudentResponseSetCollectionType" />
 
+
+  <!--NAPCodeFrame-->
+
+  <xs:complexType name="NAPCodeFrameType">
+    <xs:annotation>
+      <xs:documentation>This object replicates the codeframe information about each NAPLAN test (per year level and domain), as a tree of GUIDs pointing to the relevant testlet and item/stimulus objects, so that the structure of the test can be traversed within one object.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="NAPTestRefId" minOccurs="0" nillable="true" type="IdRefType">
+        <xs:annotation>
+          <xs:documentation>The GUID that identifies the associated NAP test object.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TestContent" minOccurs="0" nillable="true" type="NAPTestContentType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TestletList" type="NAPCodeFrameTestletListType" />
+      <xs:element name="SIF_Metadata" minOccurs="0" nillable="true" type="SIF_MetadataType" />
+      <xs:element name="SIF_ExtendedElements" minOccurs="0" nillable="true" type="SIF_ExtendedElementsType" />
+    </xs:sequence>
+    <xs:attribute name="RefId" use="required" type="RefIdType">
+      <xs:annotation>
+        <xs:documentation>The GUID that uniquely identifies an instance of the object.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:element name="NAPCodeFrame" type="NAPCodeFrameType">
+    <xs:key name="NAPCodeFrameKey1">
+      <xs:selector xpath="." />
+      <xs:field xpath="@RefId" />
+    </xs:key>
+  </xs:element>
+
+  <xs:complexType name="NAPCodeFrameCollectionType">
+    <xs:sequence>
+      <xs:element name="NAPCodeFrame" type="NAPCodeFrameType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NAPCodeFrames" type="NAPCodeFrameCollectionType" />
+
   <xs:simpleType name="AUCodeSetsNAPResponseCorrectnessType">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="0">
+      <xs:enumeration value="Correct">
         <xs:annotation>
-          <xs:documentation>Incorrect/Score</xs:documentation>
+          <xs:documentation>Correct</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="1">
+      <xs:enumeration value="Incorrect">
         <xs:annotation>
-          <xs:documentation>Correct/Score 1/Choice</xs:documentation>
+          <xs:documentation>Incorrect</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="2">
+      <xs:enumeration value="NotInPath">
         <xs:annotation>
-          <xs:documentation>Correct/Score 2/Choice</xs:documentation>
+          <xs:documentation>NotInPath</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="3">
+      <xs:enumeration value="NotAttempted">
         <xs:annotation>
-          <xs:documentation>Correct/Score 3/Choice</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4">
-        <xs:annotation>
-          <xs:documentation>Correct/Score 4/Choice</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="5">
-        <xs:annotation>
-          <xs:documentation>Correct/Score 5/Choice</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="6">
-        <xs:annotation>
-          <xs:documentation>Correct/Score 6/Choice</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="7">
-        <xs:annotation>
-          <xs:documentation>Not present for this student due to a PNP substitution</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="8">
-        <xs:annotation>
-          <xs:documentation>Not present for this student due to not being in their pathway</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="9">
-        <xs:annotation>
-          <xs:documentation>No response</xs:documentation>
+          <xs:documentation>NotAttempted</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="AUCodeSetsNAPTestItemStimulusTypeType">
+  <xs:simpleType name="AUCodeSetsNAPJurisdictionType">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="Text">
+      <xs:enumeration value="1">
         <xs:annotation>
-          <xs:documentation>Text</xs:documentation>
+          <xs:documentation>New South Wales</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="Image">
+      <xs:enumeration value="2">
         <xs:annotation>
-          <xs:documentation>Image</xs:documentation>
+          <xs:documentation>Victoria</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Queensland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>South Australia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Western Australia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6">
+        <xs:annotation>
+          <xs:documentation>Tasmania</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7">
+        <xs:annotation>
+          <xs:documentation>Western Australia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="8">
+        <xs:annotation>
+          <xs:documentation>Australian Capital Territory</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9">
+        <xs:annotation>
+          <xs:documentation>Other Territories</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -976,11 +950,6 @@
       <xs:enumeration value="Text Structure">
         <xs:annotation>
           <xs:documentation>Text Structure</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Ideas">
-        <xs:annotation>
-          <xs:documentation>Ideas</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Ideas">
@@ -1065,6 +1034,11 @@
   </xs:simpleType>
   <xs:simpleType name="AUCodeSetsNAPTestItemTypeType">
     <xs:restriction base="xs:token">
+      <xs:enumeration value="CO">
+        <xs:annotation>
+          <xs:documentation>Composite</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="ET">
         <xs:annotation>
           <xs:documentation>Extended text</xs:documentation>
@@ -1154,38 +1128,14 @@
   </xs:simpleType>
   <xs:simpleType name="AUCodeSetsNAPTestTypeType">
     <xs:restriction base="xs:token">
-      <xs:enumeration value="Main">
-        <xs:annotation>
-          <xs:documentation>Main</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Survey">
-        <xs:annotation>
-          <xs:documentation>Survey</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="AUCodeSetsNAPTestletTypeType">
-    <xs:restriction base="xs:token">
       <xs:enumeration value="Normal">
         <xs:annotation>
           <xs:documentation>Normal</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="Override">
-        <xs:annotation>
-          <xs:documentation>Override</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="Equating">
         <xs:annotation>
           <xs:documentation>Equating</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Adjustment">
-        <xs:annotation>
-          <xs:documentation>Adjustment</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -1202,24 +1152,19 @@
           <xs:documentation>Writing</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="Writing">
-        <xs:annotation>
-          <xs:documentation>Writing</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="Numeracy">
         <xs:annotation>
           <xs:documentation>Numeracy</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="Language Conventions Spelling">
+      <xs:enumeration value="Language Conventions - Spelling">
         <xs:annotation>
-          <xs:documentation>Language Conventions Spelling</xs:documentation>
+          <xs:documentation>Language Conventions - Spelling</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="Language Conventions Grammar and Punctuation">
+      <xs:enumeration value="Language Conventions - Grammar and Punctuation">
         <xs:annotation>
-          <xs:documentation>Language Conventions Grammar and Punctuation</xs:documentation>
+          <xs:documentation>Language Conventions - Grammar and Punctuation</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -8449,6 +8394,66 @@
       <xs:enumeration value="99">
         <xs:annotation>
           <xs:documentation>No usual address (OT) Other Territories</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Metropolitan Zone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1.1">
+        <xs:annotation>
+          <xs:documentation>State Capital regions - State Capitals (except Hobart, Darwin)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1.2">
+        <xs:annotation>
+          <xs:documentation>Major urban Statistical Districts (Pop &gt;=100 000)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Provincial Zone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2.1.1">
+        <xs:annotation>
+          <xs:documentation>Provincial City Statistical Districts (Pop 50 000 - 99 999)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2.1.2">
+        <xs:annotation>
+          <xs:documentation>Provincial City Statistical Districts (Pop 25 000 - 49 999)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2.2.1">
+        <xs:annotation>
+          <xs:documentation>Inner Provincial areas (CD ARIA Plus score &lt;= 2.4)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2.2.2">
+        <xs:annotation>
+          <xs:documentation>Outer Provincial areas (CD ARIA Plus score &gt; 2.4 and &lt;= 5.92)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Remote Zone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3.1">
+        <xs:annotation>
+          <xs:documentation>Remote areas (CD ARIA Plus score &gt; 5.92 and &lt;= 10.53)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3.2">
+        <xs:annotation>
+          <xs:documentation>Very Remote areas (CD ARIA Plus score &gt; 10.53)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REDACTED">
+        <xs:annotation>
+          <xs:documentation>Redacted for privacy</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -18444,11 +18449,6 @@
           <xs:documentation>Bridging Visa - BVE</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="101">
-        <xs:annotation>
-          <xs:documentation>Child</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="186">
         <xs:annotation>
           <xs:documentation>Employer Nomination Scheme</xs:documentation>
@@ -23623,6 +23623,480 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <!--NAPTestItemContentType-->
+
+  <xs:complexType name="NAPTestItemContentType">
+    <xs:annotation>
+      <xs:documentation>Contents of a Test Item in the context of NAP.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="NAPTestItemLocalId" type="LocalIdType">
+        <xs:annotation>
+          <xs:documentation>Local identifier of NAP test item.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemName" type="xs:normalizedString">
+        <xs:annotation>
+          <xs:documentation>Name of NAP test item.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemType" type="AUCodeSetsNAPTestItemTypeType">
+        <xs:annotation>
+          <xs:documentation>Response type for the test item.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Subdomain" type="xs:normalizedString">
+        <xs:annotation>
+          <xs:documentation>Subdomain descriptor for the test item.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="WritingGenre" minOccurs="0" nillable="true" type="AUCodeSetsNAPWritingGenreType">
+        <xs:annotation>
+          <xs:documentation>Genre of writing for the test item. Values: Narrative, Persuasive.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemDescriptor" type="xs:normalizedString">
+        <xs:annotation>
+          <xs:documentation>Description of the test item.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReleasedStatus" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Whether the test item has been publicly released.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MarkingType" type="AUCodeSetsNAPTestItemMarkingTypeType">
+        <xs:annotation>
+          <xs:documentation>Method used to mark the test item. Values: AS Auto Scoring, MM Manual Marking, AES Auto Essay Scoring.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MultipleChoiceOptionCount" minOccurs="0" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>For multiple choice and multiple choices questions, the number of questions.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CorrectAnswer" minOccurs="0" nillable="true" type="xs:normalizedString">
+        <xs:annotation>
+          <xs:documentation>Τhe correct answer to the test item. (Mandatory for everything except writing).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaximumScore" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Full marks allocated for correct response.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemDifficulty" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Item difficulty on same scale as Student Scaled Score.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemDifficultyLogit5" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Item difficulty in logits at 0.5 probability.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemDifficultyLogit62" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Item difficulty in logits at 0.62 probability.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemDifficultyLogit5SE" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Standard Error for item difficulty in logits at 0.5 probability.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemDifficultyLogit62SE" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Standard Error for item difficulty in logits at 0.62 probability.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemProficiencyBand" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>The item proficiency band. Uses the same classification as Student Scaled Score.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemProficiencyLevel" type="xs:normalizedString">
+        <xs:annotation>
+          <xs:documentation>The item proficiency level. Uses the same classification as Student Scaled Score.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExemplarURL" minOccurs="0" nillable="true" type="xs:anyURI">
+        <xs:annotation>
+          <xs:documentation>The publicly accessible location of an exemplar for the test item. Used if the test item itself has not been published.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemSubstitutedForList" minOccurs="0" nillable="true" type="SubstituteItemListType">
+        <xs:annotation>
+          <xs:documentation>List of the RefId of the main item(s) for which this is a Substitute item.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ContentDescriptionList" minOccurs="0" nillable="true" type="ContentDescriptionListType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StimulusList" minOccurs="0" nillable="true" type="StimulusListType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NAPWritingRubricList" minOccurs="0" nillable="true" type="NAPWritingRubricListType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--NAPTestletContentType-->
+
+  <xs:complexType name="NAPTestletContentType">
+    <xs:annotation>
+      <xs:documentation>Contents of a Teslet in the context of NAP.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="NAPTestletLocalId" type="LocalIdType">
+        <xs:annotation>
+          <xs:documentation>Local identifier that identifies this NAP testlet.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TestletName" type="xs:normalizedString">
+        <xs:annotation>
+          <xs:documentation>Testlet name allocated at test construction.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Node" minOccurs="0" nillable="true" type="xs:token">
+        <xs:annotation>
+          <xs:documentation>Label of testlet used for testlet sequencing. Values: A,B,C,D,E,F,G.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LocationInStage" minOccurs="0" nillable="true" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Location of Testlet in stage.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TestletMaximumScore" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Weighted Maximum score that a student can achieve in this testlet.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--NAPTestContentType-->
+
+  <xs:complexType name="NAPTestContentType">
+    <xs:annotation>
+      <xs:documentation>Contents of an assessment assigned in the context of NAP, targeted at a particular domain and year level.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="NAPTestLocalId" type="LocalIdType">
+        <xs:annotation>
+          <xs:documentation>Local identifier of NAP test.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TestName" type="xs:normalizedString">
+        <xs:annotation>
+          <xs:documentation>Name of the NAP test.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TestLevel" type="YearLevelType" />
+      <xs:element name="TestType" type="AUCodeSetsNAPTestTypeType">
+        <xs:annotation>
+          <xs:documentation>Type of NAP Test assigned in the session</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Domain" type="AUCodeSetsNAPTestDomainType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TestYear" type="SchoolYearType">
+        <xs:annotation>
+          <xs:documentation>Year that testing took place, e.g. 2017.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StagesCount" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Number of branching stages in the test; 1 for a flat test.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DomainBands" type="DomainBandsContainerType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DomainProficiency" type="DomainProficiencyContainerType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--PlausibleScaledValueListType-->
+
+  <xs:complexType name="PlausibleScaledValueListType">
+    <xs:sequence>
+      <xs:element name="PlausibleScaledValue" maxOccurs="unbounded" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Plausible values used for reporting to determine cut points, there are 5 per student per domain.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--SubstituteItemListType-->
+
+  <xs:complexType name="SubstituteItemListType">
+    <xs:sequence>
+      <xs:element name="SubstituteItem" maxOccurs="unbounded" type="SubstituteItemType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--SubstituteItemType-->
+
+  <xs:complexType name="SubstituteItemType">
+    <xs:sequence>
+      <xs:element name="SubstituteItemRefId" type="IdRefType">
+        <xs:annotation>
+          <xs:documentation>The GUID that identifies the test item.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SubstituteItemLocalId" minOccurs="0" nillable="true" type="LocalIdType">
+        <xs:annotation>
+          <xs:documentation>Local identifier of the test item.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PNPCodeList" type="PNPCodeListType">
+        <xs:annotation>
+          <xs:documentation>Adjustment code for which the substitute item is applicable.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--CodeFrameTestItemListType-->
+
+  <xs:complexType name="CodeFrameTestItemListType">
+    <xs:sequence>
+      <xs:element name="TestItem" maxOccurs="unbounded" type="CodeFrameTestItemType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--CodeFrameTestItemType-->
+
+  <xs:complexType name="CodeFrameTestItemType">
+    <xs:sequence>
+      <xs:element name="TestItemRefId" type="IdRefType">
+        <xs:annotation>
+          <xs:documentation>The GUID of Test item object.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SequenceNumber" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Location of test item in testlet, as an ordinal.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TestItemContent" type="NAPTestItemContentType">
+        <xs:annotation>
+          <xs:documentation>N </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--StimulusLocalIdListType-->
+
+  <xs:complexType name="StimulusLocalIdListType">
+    <xs:sequence>
+      <xs:element name="StimulusLocalId" maxOccurs="unbounded" type="LocalIdType">
+        <xs:annotation>
+          <xs:documentation>LocalId of Stimulus</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--DomainBandsContainerType-->
+
+  <xs:complexType name="DomainBandsContainerType">
+    <xs:annotation>
+      <xs:documentation>Container for the NAP Domain Bands - Upper and Lower</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Band1Lower" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Lowest scaled score value for Band 1 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band1Upper" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Upper scaled score value for Band 1 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band2Lower" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Lowest scaled score value for Band 2 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band2Upper" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Upper scaled score value for Band 2 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band3Lower" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Lowest scaled score value for Band 3 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band3Upper" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Upper scaled score value for Band 3 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band4Lower" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Lowest scaled score value for Band 4 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band4Upper" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Upper scaled score value for Band 4 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band5Lower" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Lowest scaled score value for Band 5 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band5Upper" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Upper scaled score value for Band 5 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band6Lower" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Lowest scaled score value for Band 6 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band6Upper" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Upper scaled score value for Band 6 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band7Lower" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Lowest scaled score value for Band 7 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band7Upper" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Upper scaled score value for Band 7 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band8Lower" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Lowest scaled score value for Band 8 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band8Upper" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Upper scaled score value for Band 8 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band9Lower" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Lowest scaled score value for Band 9 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band9Upper" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Upper scaled score value for Band 9 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band10Lower" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Lowest scaled score value for Band 10 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Band10Upper" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Upper scaled score value for Band 10 in domain specified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--DomainProficiencyContainerType-->
+
+  <xs:complexType name="DomainProficiencyContainerType">
+    <xs:annotation>
+      <xs:documentation>Container for the NAP Proficiency Levels</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Level1Lower" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Lowest scaled score value for Proficiency Level 1 in doman specified (place holder).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Level1Upper" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Upper scaled score value for Proficiency Level 1 in doman specified (place holder).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Level2Lower" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Lowest scaled score value for Proficiency Level 2 in doman specified (place holder).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Level2Upper" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Upper scaled score value for Proficiency Level 2 in doman specified (place holder).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Level3Lower" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Lowest scaled score value for Proficiency Level 3 in doman specified (place holder).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Level3Upper" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Upper scaled score value for Proficiency Level 3 in doman specified (place holder).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Level4Lower" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Lowest scaled score value for Proficiency Level 4 in doman specified (place holder).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Level4Upper" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Upper scaled score value for Proficiency Level 4 in doman specified (place holder).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
   <!--NAPTestItemListType-->
 
   <xs:complexType name="NAPTestItemListType">
@@ -23640,7 +24114,7 @@
 
   <xs:complexType name="NAPTestItem2Type">
     <xs:sequence>
-      <xs:element name="TestItemRefId" maxOccurs="unbounded" type="IdRefType">
+      <xs:element name="TestItemRefId" type="IdRefType">
         <xs:annotation>
           <xs:documentation>The GUID that identifies the test item.</xs:documentation>
         </xs:annotation>
@@ -23659,24 +24133,11 @@
   </xs:complexType>
 
 
-  <!--NAPTestItemTypeListType-->
+  <!--NAPCodeFrameTestletListType-->
 
-  <xs:complexType name="NAPTestItemTypeListType">
+  <xs:complexType name="NAPCodeFrameTestletListType">
     <xs:sequence>
-      <xs:element name="ItemType" maxOccurs="unbounded" type="AUCodeSetsNAPTestItemTypeType">
-        <xs:annotation>
-          <xs:documentation>The response type for the test item.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-
-
-  <!--NAPTestletList2Type-->
-
-  <xs:complexType name="NAPTestletList2Type">
-    <xs:sequence>
-      <xs:element name="NAPTestlet" maxOccurs="unbounded" type="NAPTestlet2Type">
+      <xs:element name="Testlet" maxOccurs="unbounded" type="NAPTestletCodeFrameType">
         <xs:annotation>
           <xs:documentation />
         </xs:annotation>
@@ -23685,34 +24146,30 @@
   </xs:complexType>
 
 
-  <!--NAPTestlet2Type-->
+  <!--NAPTestletCodeFrameType-->
 
-  <xs:complexType name="NAPTestlet2Type">
+  <xs:complexType name="NAPTestletCodeFrameType">
     <xs:sequence>
       <xs:element name="NAPTestletRefId" minOccurs="0" nillable="true" type="IdRefType">
         <xs:annotation>
-          <xs:documentation>The GUID that identifies the NAP testlet that this test item belongs to. May be linking to prior codeframe download.</xs:documentation>
+          <xs:documentation>GUID of Testlet object.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="NAPTestletLocalId" type="LocalIdType">
+      <xs:element name="TestletContent" type="NAPTestletContentType" />
+      <xs:element name="TestItemList" type="CodeFrameTestItemListType">
         <xs:annotation>
-          <xs:documentation>Local identifier that identifies the NAP testlet that this test item belongs to.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="SequenceNumber" minOccurs="0" nillable="true" type="xs:integer">
-        <xs:annotation>
-          <xs:documentation>Location of test item in the first testlet, as an ordinal.</xs:documentation>
+          <xs:documentation />
         </xs:annotation>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
 
 
-  <!--NAPTestletListType-->
+  <!--NAPStudentResponseTestletListType-->
 
-  <xs:complexType name="NAPTestletListType">
+  <xs:complexType name="NAPStudentResponseTestletListType">
     <xs:sequence>
-      <xs:element name="Testlet" maxOccurs="unbounded" type="NAPTestletCommonType">
+      <xs:element name="Testlet" maxOccurs="unbounded" type="NAPTestletResponseType">
         <xs:annotation>
           <xs:documentation>Scores received by the student for each testlet in the test.</xs:documentation>
         </xs:annotation>
@@ -23721,9 +24178,9 @@
   </xs:complexType>
 
 
-  <!--NAPTestletCommonType-->
+  <!--NAPTestletResponseType-->
 
-  <xs:complexType name="NAPTestletCommonType">
+  <xs:complexType name="NAPTestletResponseType">
     <xs:sequence>
       <xs:element name="NAPTestletRefId" minOccurs="0" nillable="true" type="IdRefType">
         <xs:annotation>
@@ -23735,25 +24192,12 @@
           <xs:documentation>Local identifier of NAP testlet.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="TestletScore" type="xs:decimal">
+      <xs:element name="TestletSubScore" type="xs:decimal">
         <xs:annotation>
-          <xs:documentation>Raw Total score across all Marked Student Responses for the testlet.</xs:documentation>
+          <xs:documentation>Weighted Total score across all Marked Student Responses for the testlet.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="ItemList" type="NAPTestletItemListType">
-        <xs:annotation>
-          <xs:documentation>Weighted Likelihood Estimate for Domain, commonly known as scaled score.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-
-
-  <!--NAPTestletItemListType-->
-
-  <xs:complexType name="NAPTestletItemListType">
-    <xs:sequence>
-      <xs:element name="Item" maxOccurs="unbounded" type="NAPTestletItemType">
+      <xs:element name="ItemResponseList" type="NAPTestletItemResponseListType">
         <xs:annotation>
           <xs:documentation />
         </xs:annotation>
@@ -23762,26 +24206,39 @@
   </xs:complexType>
 
 
-  <!--NAPTestletItemType-->
+  <!--NAPTestletItemResponseListType-->
 
-  <xs:complexType name="NAPTestletItemType">
+  <xs:complexType name="NAPTestletItemResponseListType">
+    <xs:sequence>
+      <xs:element name="ItemResponse" maxOccurs="unbounded" type="NAPTestletResponseItemType">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--NAPTestletResponseItemType-->
+
+  <xs:complexType name="NAPTestletResponseItemType">
     <xs:annotation>
       <xs:documentation>Scores received by the student for teach item in the testlet</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="NAPTestItemRefId" minOccurs="0" nillable="true" type="IdRefType">
+      <xs:element name="NAPTestItemRefId" type="IdRefType">
         <xs:annotation>
           <xs:documentation>The GUID that identifies this NAPLAN test item.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="LocalId" minOccurs="0" nillable="true" type="LocalIdType">
+      <xs:element name="NAPTestItemLocalId" minOccurs="0" nillable="true" type="LocalIdType">
         <xs:annotation>
           <xs:documentation>Local identifier for the test item.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Response" type="xs:normalizedString">
+      <xs:element name="Response" type="xs:string">
         <xs:annotation>
-          <xs:documentation>Student's response to the test item.</xs:documentation>
+          <xs:documentation>Student's response to the test item; can include the HTML formatted original response for writing.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="ResponseCorrectness" minOccurs="0" nillable="true" type="AUCodeSetsNAPResponseCorrectnessType">
@@ -23794,9 +24251,9 @@
           <xs:documentation>Score received by student for item.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Script" minOccurs="0" nillable="true" type="xs:base64Binary">
+      <xs:element name="LapsedTimeItem" type="xs:duration">
         <xs:annotation>
-          <xs:documentation>Student's writing  response to the test item in raw format.</xs:documentation>
+          <xs:documentation>Time taken for student to complete item.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="SequenceNumber" type="xs:integer">
@@ -23804,7 +24261,7 @@
           <xs:documentation>Location of test item in testlet, as an ordinal.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="ItemWeight" type="xs:integer">
+      <xs:element name="ItemWeight" type="xs:decimal">
         <xs:annotation>
           <xs:documentation>Weighting for item in calculation of raw scores for testlets, tests.</xs:documentation>
         </xs:annotation>
@@ -23863,9 +24320,19 @@
           <xs:documentation>Weighted Likelihood Estimate for Domain, commonly known as scaled score.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="ScaledScoreLogitValue" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Student ability for Domain in logits at 0.5 probability level.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="ScaledScoreStandardError" type="xs:decimal">
         <xs:annotation>
           <xs:documentation>Standard Error for Domain Scaled Score for this student.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ScaledScoreLogitStandardError" type="xs:decimal">
+        <xs:annotation>
+          <xs:documentation>Standard Error for Domain Scaled Score for this student in logits.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="StudentDomainBand" type="xs:integer">
@@ -23876,6 +24343,11 @@
       <xs:element name="StudentProficiency" type="xs:normalizedString">
         <xs:annotation>
           <xs:documentation>The Skill Progression Level that the student’s score is in for the NAP test domain.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PlausibleScaledValueList" maxOccurs="unbounded" type="PlausibleScaledValueListType">
+        <xs:annotation>
+          <xs:documentation />
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -23902,19 +24374,9 @@
       <xs:documentation />
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="RubricName" type="xs:normalizedString">
-        <xs:annotation>
-          <xs:documentation>Name of rubric.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="RubricType" type="AUCodeSetsNAPWritingRubricTypeType">
         <xs:annotation>
           <xs:documentation>Category that rubric is scoring for.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ScoringGuideReference" minOccurs="0" nillable="true" type="xs:anyURI">
-        <xs:annotation>
-          <xs:documentation>Location of an online reference for writing rubric scoring.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="ScoreList" type="ScoreListType">
@@ -23987,14 +24449,9 @@
           <xs:documentation>Score point: Individual maximum score value that a student can achieve under the current rubric.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Description" type="xs:normalizedString">
+      <xs:element name="Descriptor" type="xs:normalizedString">
         <xs:annotation>
           <xs:documentation>Descriptor of Writing Rubric</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ScoreCommentCode" minOccurs="0" nillable="true" type="xs:normalizedString">
-        <xs:annotation>
-          <xs:documentation>Comment on how the given score description applies.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -24021,19 +24478,9 @@
       <xs:documentation>A Type of Disruption.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="LocalId" type="LocalIdType">
+      <xs:element name="StimulusLocalId" type="LocalIdType">
         <xs:annotation>
           <xs:documentation>Item Identifier for Writing Task Stimulus and Text.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="StimulusType" type="AUCodeSetsNAPTestItemStimulusTypeType">
-        <xs:annotation>
-          <xs:documentation> Whether stimulus is text or an image.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="Domain" minOccurs="0" nillable="true" type="AUCodeSetsNAPTestDomainType">
-        <xs:annotation>
-          <xs:documentation>Domain of Writing Task Stimulus and Text.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="TextGenre" minOccurs="0" nillable="true" type="xs:normalizedString">
@@ -24051,25 +24498,15 @@
           <xs:documentation>Word count for Reading Stimulus Text.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="Descriptor" type="xs:normalizedString">
+      <xs:element name="TextDescriptor" type="xs:normalizedString">
         <xs:annotation>
           <xs:documentation />
         </xs:annotation>
       </xs:element>
-      <xs:element name="Content">
+      <xs:element name="Content" type="xs:anyURI">
         <xs:annotation>
-          <xs:documentation>Image or textual content of Writing Task Stimulus and Text.</xs:documentation>
+          <xs:documentation>Link to Stimulus.</xs:documentation>
         </xs:annotation>
-        <xs:simpleType>
-          <xs:union>
-            <xs:simpleType>
-              <xs:restriction base="xs:base64Binary" />
-            </xs:simpleType>
-            <xs:simpleType>
-              <xs:restriction base="xs:normalizedString" />
-            </xs:simpleType>
-          </xs:union>
-        </xs:simpleType>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
@@ -24101,31 +24538,13 @@
   </xs:complexType>
 
 
-  <!--AdjustmentListType-->
+  <!--AdjustmentContainerType-->
 
-  <xs:complexType name="AdjustmentListType">
-    <xs:sequence>
-      <xs:element name="Adjustment" maxOccurs="unbounded" type="AdjustmentType">
-        <xs:annotation>
-          <xs:documentation>A type of Disruption.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-
-
-  <!--AdjustmentType-->
-
-  <xs:complexType name="AdjustmentType">
+  <xs:complexType name="AdjustmentContainerType">
     <xs:annotation>
-      <xs:documentation>A Type of Disruption.</xs:documentation>
+      <xs:documentation />
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="AdjustmentDomain" type="AUCodeSetsNAPTestDomainType">
-        <xs:annotation>
-          <xs:documentation>Domain to which Personal Needs and Preferences Code(s) are applied for a test.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="PNPCodeList" type="PNPCodeListType">
         <xs:annotation>
           <xs:documentation>Personal Needs and Preferences Code(s) applied.</xs:documentation>
@@ -24146,7 +24565,7 @@
     <xs:sequence>
       <xs:element name="TestDisruption" maxOccurs="unbounded" type="TestDisruptionType">
         <xs:annotation>
-          <xs:documentation>This is an alert message that is associated with the student.</xs:documentation>
+          <xs:documentation>An event disrupting a test session</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -24160,11 +24579,6 @@
       <xs:documentation>This is an alert message that is associated with the student.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="Code" minOccurs="0" nillable="true" type="xs:token">
-        <xs:annotation>
-          <xs:documentation>A code associated the event which disrupted the test session.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="Event" type="xs:normalizedString">
         <xs:annotation>
           <xs:documentation>A description of a special event which disrupted the test session.</xs:documentation>
@@ -25304,8 +25718,10 @@
   <!--AttendanceTimesType-->
 
   <xs:complexType name="AttendanceTimesType">
+    <xs:annotation>
+      <xs:documentation>Breakdown of times that the student entered or returned to school.</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element name="AttendanceTimes" />
       <xs:element name="AttendanceTime" maxOccurs="unbounded" type="AttendanceTimeType">
         <xs:annotation>
           <xs:documentation />
@@ -25319,7 +25735,7 @@
 
   <xs:complexType name="AttendanceTimeType">
     <xs:annotation>
-      <xs:documentation />
+      <xs:documentation>Time span that the student entered or returned to school</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="AttendanceCode" type="AttendanceCodeType">
@@ -25529,7 +25945,6 @@
 
   <xs:complexType name="AuthorsType">
     <xs:sequence>
-      <xs:element name="Authors" minOccurs="0" nillable="true" />
       <xs:element name="Author" minOccurs="0" maxOccurs="unbounded" type="xs:normalizedString">
         <xs:annotation>
           <xs:documentation>Name of the organization that authored the curriculum document, i.e. "ACARA". May be the same as "Organization" above.</xs:documentation>
@@ -25928,8 +26343,10 @@
   <!--HouseholdListType-->
 
   <xs:complexType name="HouseholdListType">
+    <xs:annotation>
+      <xs:documentation />
+    </xs:annotation>
     <xs:sequence>
-      <xs:element name="HouseholdList" minOccurs="0" nillable="true" />
       <xs:element name="Household" maxOccurs="unbounded" type="LocalIdType">
         <xs:annotation>
           <xs:documentation>Repeatable element containing the ID of a household.</xs:documentation>
@@ -25958,8 +26375,10 @@
   <!--StudentSubjectChoiceType-->
 
   <xs:complexType name="StudentSubjectChoiceType">
+    <xs:annotation>
+      <xs:documentation>Subjects Students Choose</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element name="StudentSubjectChoice" maxOccurs="unbounded" />
       <xs:element name="PreferenceNumber" minOccurs="0" nillable="true" type="xs:unsignedInt">
         <xs:annotation>
           <xs:documentation>Subject Priority</xs:documentation>
@@ -26637,7 +27056,7 @@
       </xs:element>
       <xs:element name="TimeTablePeriodList" type="TimeTablePeriodListType">
         <xs:annotation>
-          <xs:documentation>Title of Day eg. Monday or Day 1</xs:documentation>
+          <xs:documentation />
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -26648,7 +27067,7 @@
 
   <xs:complexType name="TimeTablePeriodListType">
     <xs:annotation>
-      <xs:documentation>Title of Day eg. Monday or Day 1</xs:documentation>
+      <xs:documentation />
     </xs:annotation>
     <xs:sequence>
       <xs:element name="TimeTablePeriod" maxOccurs="unbounded" type="TimeTablePeriodType">
@@ -26766,7 +27185,7 @@
 
   <xs:complexType name="YearLevelEnrollmentListType">
     <xs:annotation>
-      <xs:documentation>Container for number of students enrolled per year level.</xs:documentation>
+      <xs:documentation>List of number of students enrolled per year level.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="YearLevelEnrollment" maxOccurs="unbounded" type="YearLevelEnrollmentType">
@@ -26858,7 +27277,6 @@
 
   <xs:complexType name="MedicalAlertMessagesType">
     <xs:sequence>
-      <xs:element name="MedicalAlertMessages" minOccurs="0" nillable="true" />
       <xs:element name="MedicalAlertMessage" maxOccurs="unbounded" type="MedicalAlertMessageType">
         <xs:annotation>
           <xs:documentation>Medical alert associated with the student.</xs:documentation>
