@@ -1,5 +1,5 @@
 <NAPTests xmlns="http://www.sifassociation.org/datamodel/au/3.4">
-<NAPTest RefId="966CBEF2-9FEE-4247-9925-C5BF596D207A">
+<NAPTest RefId="BCEEF38C-5DFC-438D-A54E-CA5B0827015B">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0001-Reading</NAPTestLocalId>
     <TestName>NAPLAN Reading Yr 3, 2017</TestName>
@@ -43,7 +43,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="6AD25F4F-5814-4DA4-B259-A8A9B61ABDC1">
+<NAPTest RefId="F7A287BF-1E88-4760-BF1A-5CE78B5E7C6D">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0002-Writing</NAPTestLocalId>
     <TestName>NAPLAN Writing Yr 3, 2017</TestName>
@@ -87,7 +87,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="4E5893CE-0925-41BB-BB88-A566D547D0F8">
+<NAPTest RefId="5F44E921-0852-47AB-B00E-5C66B0819A72">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0003-Numeracy</NAPTestLocalId>
     <TestName>NAPLAN Numeracy Yr 3, 2017</TestName>
@@ -131,7 +131,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="EE7D1E78-1130-4A29-8C3F-062269A12C1D">
+<NAPTest RefId="283AA9F5-F13F-4905-813A-9DC096E929C8">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0004-Language Conventions - Grammar and Punctuation</NAPTestLocalId>
     <TestName>NAPLAN Language Conventions - Grammar and Punctuation Yr 3, 2017</TestName>
@@ -175,7 +175,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="7AA942F1-F3A2-4F29-B805-87B22D331AB3">
+<NAPTest RefId="D3F492DB-24F9-4F9D-8954-0F84A3BBBBF8">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0005-Language Conventions - Spelling</NAPTestLocalId>
     <TestName>NAPLAN Language Conventions - Spelling Yr 3, 2017</TestName>
@@ -219,7 +219,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="0930D1B2-1526-41BA-9B1C-09B71342AA65">
+<NAPTest RefId="0C032489-F91C-41B6-9639-F9D5BA33D0AE">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0006-Reading</NAPTestLocalId>
     <TestName>NAPLAN Reading Yr 5, 2017</TestName>
@@ -263,7 +263,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="A169E16B-3152-4868-B3B2-839F07745F26">
+<NAPTest RefId="B40DAE8C-F9BE-4E50-B575-620CF3577A44">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0007-Writing</NAPTestLocalId>
     <TestName>NAPLAN Writing Yr 5, 2017</TestName>
@@ -307,7 +307,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="92952191-BAFD-46E6-A881-ABE1EE6FCEAC">
+<NAPTest RefId="E32E1F4C-BE9B-45D4-A19C-B74D451EF426">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0008-Numeracy</NAPTestLocalId>
     <TestName>NAPLAN Numeracy Yr 5, 2017</TestName>
@@ -351,7 +351,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="01651579-2B1B-4E1D-87AD-C28488B61682">
+<NAPTest RefId="899E7C8B-CAE1-4D62-AED9-514E2BC04AE1">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0009-Language Conventions - Grammar and Punctuation</NAPTestLocalId>
     <TestName>NAPLAN Language Conventions - Grammar and Punctuation Yr 5, 2017</TestName>
@@ -395,7 +395,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="C73A7EF7-A3AA-469E-86B6-2DBD360263CC">
+<NAPTest RefId="F8CF2E19-DC28-4912-B62C-665DB969D6A2">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0010-Language Conventions - Spelling</NAPTestLocalId>
     <TestName>NAPLAN Language Conventions - Spelling Yr 5, 2017</TestName>
@@ -439,7 +439,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="430C283C-FF73-4B75-8CF9-95CF125325DD">
+<NAPTest RefId="41E08922-6FA8-4294-9619-CFEA96492812">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0011-Reading</NAPTestLocalId>
     <TestName>NAPLAN Reading Yr 7, 2017</TestName>
@@ -483,7 +483,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="67BA75B6-1B50-45B1-8544-776E469C1FEF">
+<NAPTest RefId="B39AC7FC-7877-4BE9-977A-AD0FCED8F4C6">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0012-Writing</NAPTestLocalId>
     <TestName>NAPLAN Writing Yr 7, 2017</TestName>
@@ -527,7 +527,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="C9567664-3AE0-4804-ABF9-C33E668D33CC">
+<NAPTest RefId="31589233-B2B2-4E0D-8C65-6F84E0C5E23A">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0013-Numeracy</NAPTestLocalId>
     <TestName>NAPLAN Numeracy Yr 7, 2017</TestName>
@@ -571,7 +571,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="1D5DA7EC-7195-4310-BB55-5757BB72BF73">
+<NAPTest RefId="DBC87E36-9494-47AE-AFA3-072CC4647F5E">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0014-Language Conventions - Grammar and Punctuation</NAPTestLocalId>
     <TestName>NAPLAN Language Conventions - Grammar and Punctuation Yr 7, 2017</TestName>
@@ -615,7 +615,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="DE9BC9EF-A04B-415C-B568-361C11911F72">
+<NAPTest RefId="3393FD54-3CA7-40FF-A39C-7184F17DD99F">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0015-Language Conventions - Spelling</NAPTestLocalId>
     <TestName>NAPLAN Language Conventions - Spelling Yr 7, 2017</TestName>
@@ -659,7 +659,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="902FBF2D-CADB-4E2F-A130-CA929BEF225F">
+<NAPTest RefId="1A6EB1B5-B561-4802-B765-A19A53AD0251">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0016-Reading</NAPTestLocalId>
     <TestName>NAPLAN Reading Yr 9, 2017</TestName>
@@ -703,7 +703,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="CD62B6A3-FC2A-453A-8104-65EDD17DC4D7">
+<NAPTest RefId="41886AA6-D482-4153-A121-27F9B9E95267">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0017-Writing</NAPTestLocalId>
     <TestName>NAPLAN Writing Yr 9, 2017</TestName>
@@ -747,7 +747,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="3D130D20-45A1-4851-B835-1ED98816BC20">
+<NAPTest RefId="EA613CF4-9792-4F30-8C3D-54BFA78E37F1">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0018-Numeracy</NAPTestLocalId>
     <TestName>NAPLAN Numeracy Yr 9, 2017</TestName>
@@ -791,7 +791,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="2F6ED4F4-B2ED-42F7-B5AE-0B54C277C6DB">
+<NAPTest RefId="95F8BBC0-8D61-4EB1-83F0-C70C1043A38A">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0019-Language Conventions - Grammar and Punctuation</NAPTestLocalId>
     <TestName>NAPLAN Language Conventions - Grammar and Punctuation Yr 9, 2017</TestName>
@@ -835,7 +835,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="4853ECE2-2F48-426D-AA20-0B924601FA1F">
+<NAPTest RefId="475E05F0-48FB-4E04-A3D6-001F263D19B4">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0020-Language Conventions - Spelling</NAPTestLocalId>
     <TestName>NAPLAN Language Conventions - Spelling Yr 9, 2017</TestName>
