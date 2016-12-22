@@ -1,5 +1,5 @@
 <!--
-		SIF Implementation Specification (Australia) 3.4.1 NAPLAN Draft (November 16, 2016) Infrastructure Version: v3
+		SIF Implementation Specification (Australia) 3.4.1 NAPLAN Draft (December 22, 2016) Infrastructure Version: v3
 	-->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sifassociation.org/datamodel/au/3.4" targetNamespace="http://www.sifassociation.org/datamodel/au/3.4" elementFormDefault="qualified"
 >
@@ -941,60 +941,6 @@
       <xs:enumeration value="9">
         <xs:annotation>
           <xs:documentation>Other Territories</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="AUCodeSetsNAPWritingRubricTypeType">
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="Text Structure">
-        <xs:annotation>
-          <xs:documentation>Text Structure</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Ideas">
-        <xs:annotation>
-          <xs:documentation>Ideas</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Persuasive Devices">
-        <xs:annotation>
-          <xs:documentation>Persuasive Devices</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Character and Setting">
-        <xs:annotation>
-          <xs:documentation>Character and Setting</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Vocabulary">
-        <xs:annotation>
-          <xs:documentation>Vocabulary</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Cohesion">
-        <xs:annotation>
-          <xs:documentation>Cohesion</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Paragraphing">
-        <xs:annotation>
-          <xs:documentation>Paragraphing</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Sentence Structure">
-        <xs:annotation>
-          <xs:documentation>Sentence Structure</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Punctuation">
-        <xs:annotation>
-          <xs:documentation> Punctuation</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Spelling">
-        <xs:annotation>
-          <xs:documentation>Spelling</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -24292,7 +24238,7 @@
 
   <xs:complexType name="NAPSubscoreType">
     <xs:sequence>
-      <xs:element name="SubscoreType" type="AUCodeSetsNAPWritingRubricTypeType">
+      <xs:element name="SubscoreType" type="xs:normalizedString">
         <xs:annotation>
           <xs:documentation>Subscoring category, under which student receives a mark contributing to the total mark.</xs:documentation>
         </xs:annotation>
@@ -24374,7 +24320,7 @@
       <xs:documentation />
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="RubricType" type="AUCodeSetsNAPWritingRubricTypeType">
+      <xs:element name="RubricType" type="xs:normalizedString">
         <xs:annotation>
           <xs:documentation>Category that rubric is scoring for.</xs:documentation>
         </xs:annotation>
@@ -25608,7 +25554,7 @@
     <xs:sequence>
       <xs:element name="HouseholdContactInfo" maxOccurs="unbounded" type="HouseholdContactInfoType">
         <xs:annotation>
-          <xs:documentation>Funding source of the special program</xs:documentation>
+          <xs:documentation>Common element used to supply information about a particular household a person is a member of.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -25619,7 +25565,7 @@
 
   <xs:complexType name="HouseholdContactInfoType">
     <xs:annotation>
-      <xs:documentation>Common element used to supply information for a contact person at a school, LEA, or other institution.</xs:documentation>
+      <xs:documentation>Common element used to supply information about a particular household a person is a member of.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="PreferenceNumber" type="xs:unsignedInt">
@@ -26957,12 +26903,12 @@
     <xs:sequence>
       <xs:element name="StaffPersonalRefId" minOccurs="0" nillable="true" type="IdRefType">
         <xs:annotation>
-          <xs:documentation>GUID from the StaffPersonal Object that identifies the Staff member</xs:documentation>
+          <xs:documentation>GUID from the StaffPersonal Object that identifies the Staff member.  Either StaffPersonalRefidId or StaffLocalId should be supplied.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="StaffLocalId" type="LocalIdType">
+      <xs:element name="StaffLocalId" minOccurs="0" nillable="true" type="LocalIdType">
         <xs:annotation>
-          <xs:documentation>LocalId of the Staff member</xs:documentation>
+          <xs:documentation>LocalId of the Staff member. Either StaffPersonalRefidId or StaffLocalId should be supplied.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="Name" minOccurs="0" nillable="true" type="NameOfRecordType">
@@ -27004,12 +26950,12 @@
     <xs:sequence>
       <xs:element name="StudentPersonalRefId" minOccurs="0" nillable="true" type="IdRefType">
         <xs:annotation>
-          <xs:documentation>GUID from the StudentPersonal or StudentSnapshot Object (if known), that identifies the student.</xs:documentation>
+          <xs:documentation>GUID from the StudentPersonal that identifies the student. Either StudentPersonalRefidId or StudentLocalId should be supplied.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="StudentLocalId" type="LocalIdType">
+      <xs:element name="StudentLocalId" minOccurs="0" nillable="true" type="LocalIdType">
         <xs:annotation>
-          <xs:documentation>Local Id of the Student </xs:documentation>
+          <xs:documentation>Local Id of the Student. Either StudentPersonalRefidId or StudentLocalId should be supplied.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="Name" minOccurs="0" nillable="true" type="NameOfRecordType">
