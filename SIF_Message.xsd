@@ -1,5 +1,5 @@
 <!--
-		SIF Implementation Specification (Australia) 3.4.1 NAPLAN Draft (December 22, 2016) Infrastructure Version: v3
+		SIF Implementation Specification (Australia) 3.4.1 NAPLAN Draft (January 10, 2017) Infrastructure Version: v3
 	-->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sifassociation.org/datamodel/au/3.4" targetNamespace="http://www.sifassociation.org/datamodel/au/3.4" elementFormDefault="qualified"
 >
@@ -1103,14 +1103,14 @@
           <xs:documentation>Numeracy</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="Language Conventions - Spelling">
+      <xs:enumeration value="Spelling">
         <xs:annotation>
-          <xs:documentation>Language Conventions - Spelling</xs:documentation>
+          <xs:documentation>Spelling</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="Language Conventions - Grammar and Punctuation">
+      <xs:enumeration value="Grammar and Punctuation">
         <xs:annotation>
-          <xs:documentation>Language Conventions - Grammar and Punctuation</xs:documentation>
+          <xs:documentation>Grammar and Punctuation</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -1229,6 +1229,11 @@
       <xs:enumeration value="R">
         <xs:annotation>
           <xs:documentation>Refused</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>No Longer Enrolled</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
