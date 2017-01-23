@@ -1,5 +1,5 @@
 <SchoolInfos xmlns="http://www.sifassociation.org/datamodel/au/3.4">
-<SchoolInfo RefId="A4159725-2B03-4218-A4BB-70235FBFCE77">
+<SchoolInfo RefId="FE0FFDD5-F72E-4A65-BFC3-8844749C3025">
   <LocalId>x72860</LocalId>
   <StateProvinceId>x72860</StateProvinceId>
   <ACARAId>21212</ACARAId>
@@ -118,7 +118,7 @@
   </SchoolGroupList>
 </SchoolInfo>
 
-<SchoolInfo RefId="24CAD12B-8AA5-4E7B-B227-5B0BB6BCAD3C">
+<SchoolInfo RefId="D0708BAB-192C-48D0-AB16-9BAC4BF16C8B">
   <LocalId>x72861</LocalId>
   <StateProvinceId>x72861</StateProvinceId>
   <ACARAId>21213</ACARAId>
@@ -237,7 +237,7 @@
   </SchoolGroupList>
 </SchoolInfo>
 
-<SchoolInfo RefId="8A095341-E9B9-4735-B2DA-52E3EA6599FF">
+<SchoolInfo RefId="7DC4D959-9955-42BB-9862-98D57B0B351E">
   <LocalId>x72862</LocalId>
   <StateProvinceId>x72862</StateProvinceId>
   <ACARAId>21214</ACARAId>
@@ -356,7 +356,7 @@
   </SchoolGroupList>
 </SchoolInfo>
 
-<SchoolInfo RefId="5A393243-56C1-406A-B52B-00E55D3D9DB9">
+<SchoolInfo RefId="6BF0BA2E-0F6D-452F-8747-88935C2BDBB3">
   <LocalId>x72863</LocalId>
   <StateProvinceId>x72863</StateProvinceId>
   <ACARAId>21215</ACARAId>
