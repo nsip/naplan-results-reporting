@@ -5,7 +5,11 @@
 This is a draft of objects to be used to  encode results from NAPLAN, for communicating results between the National Assessment Platform and Test Administration Authorities.
 
 ## Important Notes
-The NAPLAN Online Assessment Platform is still under development, and as a result this specification is likely to change.
+
+_Please note the version of the Results and Reporting Dataset for NAPLAN Online published here is a work in progress and is published as an indication of the likely data produced by the platform._
+ 
+_An Excel version was approved by OAWG at their November 2016 meeting but until the platform is actually producing  data files the final form of these datasets will not be known._ 
+
 
 This version of the results reporting dataset is provided as an early access release intended to help systems integrators who need to understand the high-level concepts of the results reporting data structure.
 
