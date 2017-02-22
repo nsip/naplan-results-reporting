@@ -247,20 +247,6 @@
 	</xs:complexType>
 	<xs:element name="SchoolInfos" type="SchoolInfoCollectionType"/>
 	
-	<xs:complexType name="NAPResultsReportingType">
-		<xs:choice  maxOccurs="unbounded">
-			<xs:element name="SchoolInfo" type="SchoolInfoType"/>
-			<xs:element name="StudentPersonal" type="StudentPersonalType"/>
-			<xs:element name="NAPTest" type="NAPTestType"/>
-			<xs:element name="NAPTestItem" type="NAPTestItemType"/>
-			<xs:element name="NAPTestlet" type="NAPTestletType"/>
-			<xs:element name="NAPEventStudentLink" type="NAPEventStudentLinkType"/>
-			<xs:element name="NAPStudentResponseSet" type="NAPStudentResponseSetType"/>
-			<xs:element name="NAPTestScoreSummary" type="NAPTestScoreSummaryType"/>
-			<xs:element name="NAPCodeFrame" type="NAPCodeFrameType"/>
-		</xs:choice>
-	</xs:complexType>
-	<xs:element name="NAPResultsReporting" type="NAPResultsReportingType"/>
 	
 	
 	
