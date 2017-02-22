@@ -1,5 +1,5 @@
 <NAPTests xmlns="http://www.sifassociation.org/datamodel/au/3.4">
-<NAPTest RefId="CF3689DA-D7BF-47C1-95BA-0BD3087C6737">
+<NAPTest RefId="226A4BE4-83D5-4AEB-8C11-C949FDD92173">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0001-Reading</NAPTestLocalId>
     <TestName>NAPLAN Reading Yr 3, 2017</TestName>
@@ -43,7 +43,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="D2156D27-3DC9-4B4B-BFAF-7F35F7E65000">
+<NAPTest RefId="FCC39019-3C8C-49DE-86BE-D3CCAF4B2303">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0002-Writing</NAPTestLocalId>
     <TestName>NAPLAN Writing Yr 3, 2017</TestName>
@@ -87,7 +87,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="8C41BCBA-EA17-4354-8ED2-7D0D48BD0F62">
+<NAPTest RefId="63335C3F-7D79-428E-925F-D911CCD02C9F">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0003-Numeracy</NAPTestLocalId>
     <TestName>NAPLAN Numeracy Yr 3, 2017</TestName>
@@ -131,7 +131,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="D18CF9D6-D4CC-4793-9900-850E9FBE2B65">
+<NAPTest RefId="561C01C3-91A9-4012-9E01-4A4FE04C5AA4">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0004-Grammar and Punctuation</NAPTestLocalId>
     <TestName>NAPLAN Grammar and Punctuation Yr 3, 2017</TestName>
@@ -175,7 +175,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="D080A136-5AF0-4165-B958-F2BF9EED80EA">
+<NAPTest RefId="4BFFDD50-ED72-4A81-9C1D-BD4A2BF9029F">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0005-Spelling</NAPTestLocalId>
     <TestName>NAPLAN Spelling Yr 3, 2017</TestName>
@@ -219,7 +219,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="4D0D647E-6338-4C34-8932-70AB1B439559">
+<NAPTest RefId="27035BC7-256C-4BE8-8F23-E1F6441A94C7">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0006-Reading</NAPTestLocalId>
     <TestName>NAPLAN Reading Yr 5, 2017</TestName>
@@ -263,7 +263,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="C455128E-CF49-4C11-B2B1-7B255769518C">
+<NAPTest RefId="30A5111C-C6B3-4658-B225-E61ADD029CFA">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0007-Writing</NAPTestLocalId>
     <TestName>NAPLAN Writing Yr 5, 2017</TestName>
@@ -307,7 +307,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="0ECDBA33-785D-4A28-87EE-ABC579DBD40E">
+<NAPTest RefId="FC4060A5-670C-4525-AAE2-B6324078541D">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0008-Numeracy</NAPTestLocalId>
     <TestName>NAPLAN Numeracy Yr 5, 2017</TestName>
@@ -351,7 +351,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="C7DEC9EE-63FC-45E3-BDB8-7BBED51D6065">
+<NAPTest RefId="D0093902-DE7D-46D1-B508-833862993F58">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0009-Grammar and Punctuation</NAPTestLocalId>
     <TestName>NAPLAN Grammar and Punctuation Yr 5, 2017</TestName>
@@ -395,7 +395,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="6DFA1C19-ED9B-4603-9953-3ACAF0BF587A">
+<NAPTest RefId="4BBDC0F8-9EA2-4D58-AF53-0C05315B2C34">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0010-Spelling</NAPTestLocalId>
     <TestName>NAPLAN Spelling Yr 5, 2017</TestName>
@@ -439,7 +439,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="B947CEF6-0570-4434-A5A1-B5D4AFC39EC1">
+<NAPTest RefId="9F2CC069-D88A-4643-963A-1CA9BA8D8EC3">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0011-Reading</NAPTestLocalId>
     <TestName>NAPLAN Reading Yr 7, 2017</TestName>
@@ -483,7 +483,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="28155853-481C-4EA4-9E96-3D65A03584D7">
+<NAPTest RefId="40CB1201-B20D-4677-B161-D55DF292CDE2">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0012-Writing</NAPTestLocalId>
     <TestName>NAPLAN Writing Yr 7, 2017</TestName>
@@ -527,7 +527,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="2BCFFE15-2E12-4A1C-B867-B5C1692ABCDE">
+<NAPTest RefId="3C6D8BDA-163B-4781-915A-6E19ED34C8A9">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0013-Numeracy</NAPTestLocalId>
     <TestName>NAPLAN Numeracy Yr 7, 2017</TestName>
@@ -571,7 +571,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="BAFC109D-D145-4377-A92F-5C70F18CC004">
+<NAPTest RefId="B1459055-061E-46AD-807A-CF478EACE16A">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0014-Grammar and Punctuation</NAPTestLocalId>
     <TestName>NAPLAN Grammar and Punctuation Yr 7, 2017</TestName>
@@ -615,7 +615,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="BD5DF3E5-DB32-4816-A9FF-9DAA348FF11B">
+<NAPTest RefId="56D3C4B5-B31E-4721-8D5A-AB58AAE02CE9">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0015-Spelling</NAPTestLocalId>
     <TestName>NAPLAN Spelling Yr 7, 2017</TestName>
@@ -659,7 +659,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="159A9CFA-6638-4714-9F80-7E4AC1AD4A31">
+<NAPTest RefId="144608F7-36CC-407C-B6A7-23B98E74908A">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0016-Reading</NAPTestLocalId>
     <TestName>NAPLAN Reading Yr 9, 2017</TestName>
@@ -703,7 +703,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="1923EE8C-70EC-4FD3-8163-C762C086DCFC">
+<NAPTest RefId="7161B388-FABE-42C0-9E81-15067EE8F23D">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0017-Writing</NAPTestLocalId>
     <TestName>NAPLAN Writing Yr 9, 2017</TestName>
@@ -747,7 +747,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="20CC0FF0-1CD6-461C-BACC-DE927A7D2AE6">
+<NAPTest RefId="6E05DBCD-88AE-4E99-9122-C8D2F0B1A65D">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0018-Numeracy</NAPTestLocalId>
     <TestName>NAPLAN Numeracy Yr 9, 2017</TestName>
@@ -791,7 +791,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="E86E278B-7D0D-4315-B791-2D67F7FDB6F0">
+<NAPTest RefId="303D4CB3-0335-4167-9A84-CFE4A7EA81FD">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0019-Grammar and Punctuation</NAPTestLocalId>
     <TestName>NAPLAN Grammar and Punctuation Yr 9, 2017</TestName>
@@ -835,7 +835,7 @@
   </TestContent>
 </NAPTest>
 
-<NAPTest RefId="B848E2C2-E60F-4163-B8F3-2BCEC75C6C99">
+<NAPTest RefId="28A1080F-73AB-404C-8857-4F5CFBC15FC0">
   <TestContent>
     <NAPTestLocalId>NAPLAN-2017-0020-Spelling</NAPTestLocalId>
     <TestName>NAPLAN Spelling Yr 9, 2017</TestName>
