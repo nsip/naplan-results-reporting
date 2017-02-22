@@ -1,961 +1,961 @@
 <NAPTestScoreSummarys xmlns="http://www.sifassociation.org/datamodel/au/3.4">
-<NAPTestScoreSummary RefId="405337CF-A5BB-4245-99CC-4FF5FC5B36DB">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
+<NAPTestScoreSummary RefId="5B047A21-CE76-4451-BAD5-81D8290E6118">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
   <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>D18CF9D6-D4CC-4793-9900-850E9FBE2B65</NAPTestRefId>
+  <NAPTestRefId>561C01C3-91A9-4012-9E01-4A4FE04C5AA4</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0004-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>401</DomainNationalAverage>
-  <DomainSchoolAverage>398</DomainSchoolAverage>
-  <DomainJurisdictionAverage>404</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>414</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>373</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="BC4315F6-9240-4DBD-9763-7C548E87F23B">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
-  <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>8C41BCBA-EA17-4354-8ED2-7D0D48BD0F62</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0003-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>392</DomainNationalAverage>
-  <DomainSchoolAverage>398</DomainSchoolAverage>
-  <DomainJurisdictionAverage>398</DomainJurisdictionAverage>
+  <DomainNationalAverage>397</DomainNationalAverage>
+  <DomainSchoolAverage>395</DomainSchoolAverage>
+  <DomainJurisdictionAverage>392</DomainJurisdictionAverage>
   <DomainTopNational60Percent>425</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>381</DomainBottomNational60Percent>
+  <DomainBottomNational60Percent>383</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="C0118788-45C7-49FA-AC76-00EACDBF7754">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
+<NAPTestScoreSummary RefId="9ED4BB94-30F2-46FF-A43A-7DEEAAB19666">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
   <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>CF3689DA-D7BF-47C1-95BA-0BD3087C6737</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0001-Reading</NAPTestLocalId>
-  <DomainNationalAverage>403</DomainNationalAverage>
-  <DomainSchoolAverage>400</DomainSchoolAverage>
-  <DomainJurisdictionAverage>395</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>410</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>380</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="CA83D54C-1B80-467A-A11D-584AAD41E14C">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
-  <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>D080A136-5AF0-4165-B958-F2BF9EED80EA</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0005-Spelling</NAPTestLocalId>
-  <DomainNationalAverage>405</DomainNationalAverage>
-  <DomainSchoolAverage>402</DomainSchoolAverage>
-  <DomainJurisdictionAverage>409</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>429</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>381</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="B934A0C8-97AC-4789-94DC-BBA9B522BDD5">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
-  <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>D2156D27-3DC9-4B4B-BFAF-7F35F7E65000</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0002-Writing</NAPTestLocalId>
+  <NAPTestRefId>63335C3F-7D79-428E-925F-D911CCD02C9F</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0003-Numeracy</NAPTestLocalId>
   <DomainNationalAverage>398</DomainNationalAverage>
-  <DomainSchoolAverage>406</DomainSchoolAverage>
-  <DomainJurisdictionAverage>391</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>417</DomainTopNational60Percent>
+  <DomainSchoolAverage>403</DomainSchoolAverage>
+  <DomainJurisdictionAverage>405</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>411</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>374</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="B033826E-3998-4FC8-A398-88E150A00F3C">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
+  <SchoolACARAId>21212</SchoolACARAId>
+  <NAPTestRefId>226A4BE4-83D5-4AEB-8C11-C949FDD92173</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0001-Reading</NAPTestLocalId>
+  <DomainNationalAverage>400</DomainNationalAverage>
+  <DomainSchoolAverage>397</DomainSchoolAverage>
+  <DomainJurisdictionAverage>404</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>421</DomainTopNational60Percent>
   <DomainBottomNational60Percent>384</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="A9FF3C82-D64A-4015-BEFE-82BBA5643CD9">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
+<NAPTestScoreSummary RefId="8048DECC-EE4B-41D4-9D40-917565AAD404">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
   <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>C7DEC9EE-63FC-45E3-BDB8-7BBED51D6065</NAPTestRefId>
+  <NAPTestRefId>4BFFDD50-ED72-4A81-9C1D-BD4A2BF9029F</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0005-Spelling</NAPTestLocalId>
+  <DomainNationalAverage>409</DomainNationalAverage>
+  <DomainSchoolAverage>391</DomainSchoolAverage>
+  <DomainJurisdictionAverage>394</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>415</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>371</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="EB013702-EB42-4807-8E73-24E6145AE8AC">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
+  <SchoolACARAId>21212</SchoolACARAId>
+  <NAPTestRefId>FCC39019-3C8C-49DE-86BE-D3CCAF4B2303</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0002-Writing</NAPTestLocalId>
+  <DomainNationalAverage>390</DomainNationalAverage>
+  <DomainSchoolAverage>404</DomainSchoolAverage>
+  <DomainJurisdictionAverage>402</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>416</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>370</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="C523DFB1-78A3-4FEF-B1DF-B30D55D56F3A">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
+  <SchoolACARAId>21212</SchoolACARAId>
+  <NAPTestRefId>D0093902-DE7D-46D1-B508-833862993F58</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0009-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>517</DomainNationalAverage>
-  <DomainSchoolAverage>519</DomainSchoolAverage>
-  <DomainJurisdictionAverage>516</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>522</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>499</DomainBottomNational60Percent>
+  <DomainNationalAverage>507</DomainNationalAverage>
+  <DomainSchoolAverage>505</DomainSchoolAverage>
+  <DomainJurisdictionAverage>510</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>528</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>489</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="90A2F230-E95F-4EC8-BC3E-A86A378BFC8D">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
+<NAPTestScoreSummary RefId="23EC9A75-F03C-4E6F-9E9A-BAF9CED0FC3D">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
   <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>0ECDBA33-785D-4A28-87EE-ABC579DBD40E</NAPTestRefId>
+  <NAPTestRefId>FC4060A5-670C-4525-AAE2-B6324078541D</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0008-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>504</DomainNationalAverage>
-  <DomainSchoolAverage>506</DomainSchoolAverage>
-  <DomainJurisdictionAverage>519</DomainJurisdictionAverage>
+  <DomainNationalAverage>500</DomainNationalAverage>
+  <DomainSchoolAverage>511</DomainSchoolAverage>
+  <DomainJurisdictionAverage>508</DomainJurisdictionAverage>
   <DomainTopNational60Percent>534</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>481</DomainBottomNational60Percent>
+  <DomainBottomNational60Percent>487</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="7619A94D-41FD-41C7-8F0F-BC36FCE1637E">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
+<NAPTestScoreSummary RefId="9A360B10-10E8-45DA-9496-DE814D3859BF">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
   <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>4D0D647E-6338-4C34-8932-70AB1B439559</NAPTestRefId>
+  <NAPTestRefId>27035BC7-256C-4BE8-8F23-E1F6441A94C7</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0006-Reading</NAPTestLocalId>
-  <DomainNationalAverage>502</DomainNationalAverage>
-  <DomainSchoolAverage>509</DomainSchoolAverage>
-  <DomainJurisdictionAverage>501</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>536</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>482</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="57514F3E-7366-424B-A9A4-70E0DF74926E">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
-  <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>6DFA1C19-ED9B-4603-9953-3ACAF0BF587A</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0010-Spelling</NAPTestLocalId>
-  <DomainNationalAverage>504</DomainNationalAverage>
-  <DomainSchoolAverage>512</DomainSchoolAverage>
-  <DomainJurisdictionAverage>514</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>534</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>491</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="C48E0CFA-DF52-4E71-AF88-F89EC4B9C758">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
-  <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>C455128E-CF49-4C11-B2B1-7B255769518C</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0007-Writing</NAPTestLocalId>
-  <DomainNationalAverage>510</DomainNationalAverage>
-  <DomainSchoolAverage>502</DomainSchoolAverage>
-  <DomainJurisdictionAverage>516</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>529</DomainTopNational60Percent>
+  <DomainNationalAverage>512</DomainNationalAverage>
+  <DomainSchoolAverage>518</DomainSchoolAverage>
+  <DomainJurisdictionAverage>502</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>530</DomainTopNational60Percent>
   <DomainBottomNational60Percent>483</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="A973127B-9052-44C6-81B3-3A0B43C65D95">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
+<NAPTestScoreSummary RefId="B81F4FA3-D543-4261-A2FC-1A84A6DB5E81">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
   <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>BAFC109D-D145-4377-A92F-5C70F18CC004</NAPTestRefId>
+  <NAPTestRefId>4BBDC0F8-9EA2-4D58-AF53-0C05315B2C34</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0010-Spelling</NAPTestLocalId>
+  <DomainNationalAverage>516</DomainNationalAverage>
+  <DomainSchoolAverage>517</DomainSchoolAverage>
+  <DomainJurisdictionAverage>505</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>531</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>483</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="FE266F1A-3D3C-47F3-B2F6-6EBBBB35503F">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
+  <SchoolACARAId>21212</SchoolACARAId>
+  <NAPTestRefId>30A5111C-C6B3-4658-B225-E61ADD029CFA</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0007-Writing</NAPTestLocalId>
+  <DomainNationalAverage>510</DomainNationalAverage>
+  <DomainSchoolAverage>505</DomainSchoolAverage>
+  <DomainJurisdictionAverage>506</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>535</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>485</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="64B1C366-419F-447B-9C6F-66A215630385">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
+  <SchoolACARAId>21212</SchoolACARAId>
+  <NAPTestRefId>B1459055-061E-46AD-807A-CF478EACE16A</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0014-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>553</DomainNationalAverage>
-  <DomainSchoolAverage>567</DomainSchoolAverage>
-  <DomainJurisdictionAverage>557</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>584</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>535</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="657874E2-B5AA-4D36-BF6C-9DADDAE3C0AC">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
-  <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>2BCFFE15-2E12-4A1C-B867-B5C1692ABCDE</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0013-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>568</DomainNationalAverage>
-  <DomainSchoolAverage>550</DomainSchoolAverage>
-  <DomainJurisdictionAverage>554</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>571</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>543</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="AEF4CF51-627A-4885-8DA6-10D51C8649E1">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
-  <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>B947CEF6-0570-4434-A5A1-B5D4AFC39EC1</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0011-Reading</NAPTestLocalId>
-  <DomainNationalAverage>567</DomainNationalAverage>
-  <DomainSchoolAverage>551</DomainSchoolAverage>
-  <DomainJurisdictionAverage>561</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>570</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>537</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="CC4CCD3B-DB0B-4A0B-8382-B0D875292BA4">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
-  <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>BD5DF3E5-DB32-4816-A9FF-9DAA348FF11B</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0015-Spelling</NAPTestLocalId>
   <DomainNationalAverage>552</DomainNationalAverage>
-  <DomainSchoolAverage>563</DomainSchoolAverage>
-  <DomainJurisdictionAverage>561</DomainJurisdictionAverage>
+  <DomainSchoolAverage>556</DomainSchoolAverage>
+  <DomainJurisdictionAverage>554</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>574</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>544</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="B533535A-8104-465A-BCD4-CE4FB36A39EF">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
+  <SchoolACARAId>21212</SchoolACARAId>
+  <NAPTestRefId>3C6D8BDA-163B-4781-915A-6E19ED34C8A9</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0013-Numeracy</NAPTestLocalId>
+  <DomainNationalAverage>558</DomainNationalAverage>
+  <DomainSchoolAverage>558</DomainSchoolAverage>
+  <DomainJurisdictionAverage>560</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>570</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>539</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="4C74DCAD-7B64-4486-A56D-C2C48A2493ED">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
+  <SchoolACARAId>21212</SchoolACARAId>
+  <NAPTestRefId>9F2CC069-D88A-4643-963A-1CA9BA8D8EC3</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0011-Reading</NAPTestLocalId>
+  <DomainNationalAverage>560</DomainNationalAverage>
+  <DomainSchoolAverage>569</DomainSchoolAverage>
+  <DomainJurisdictionAverage>553</DomainJurisdictionAverage>
   <DomainTopNational60Percent>581</DomainTopNational60Percent>
   <DomainBottomNational60Percent>533</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="A7A81E33-D35D-4105-95CB-B4635DFD287F">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
+<NAPTestScoreSummary RefId="BF33DBD6-62F0-41ED-A6C4-8D728E1D77F5">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
   <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>28155853-481C-4EA4-9E96-3D65A03584D7</NAPTestRefId>
+  <NAPTestRefId>56D3C4B5-B31E-4721-8D5A-AB58AAE02CE9</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0015-Spelling</NAPTestLocalId>
+  <DomainNationalAverage>552</DomainNationalAverage>
+  <DomainSchoolAverage>551</DomainSchoolAverage>
+  <DomainJurisdictionAverage>567</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>574</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>535</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="85FC9460-E9A8-4A57-9D62-DFCC22EB6373">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
+  <SchoolACARAId>21212</SchoolACARAId>
+  <NAPTestRefId>40CB1201-B20D-4677-B161-D55DF292CDE2</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0012-Writing</NAPTestLocalId>
-  <DomainNationalAverage>551</DomainNationalAverage>
-  <DomainSchoolAverage>560</DomainSchoolAverage>
-  <DomainJurisdictionAverage>551</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>572</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>539</DomainBottomNational60Percent>
+  <DomainNationalAverage>569</DomainNationalAverage>
+  <DomainSchoolAverage>558</DomainSchoolAverage>
+  <DomainJurisdictionAverage>558</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>581</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>530</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="7FDD260D-535A-4C2F-9966-66689C547B9F">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
+<NAPTestScoreSummary RefId="F07C5B30-795E-4D63-AAE0-E6EA5CF1A336">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
   <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>E86E278B-7D0D-4315-B791-2D67F7FDB6F0</NAPTestRefId>
+  <NAPTestRefId>303D4CB3-0335-4167-9A84-CFE4A7EA81FD</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0019-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>592</DomainNationalAverage>
-  <DomainSchoolAverage>597</DomainSchoolAverage>
-  <DomainJurisdictionAverage>587</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>600</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>571</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="03652D3D-8F63-4A21-8DE9-85A6965698DC">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
-  <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>20CC0FF0-1CD6-461C-BACC-DE927A7D2AE6</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0018-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>597</DomainNationalAverage>
-  <DomainSchoolAverage>585</DomainSchoolAverage>
-  <DomainJurisdictionAverage>587</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>613</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>571</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="032ECF26-7A7B-43C0-92B2-2DDE1658757F">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
-  <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>159A9CFA-6638-4714-9F80-7E4AC1AD4A31</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0016-Reading</NAPTestLocalId>
-  <DomainNationalAverage>592</DomainNationalAverage>
-  <DomainSchoolAverage>593</DomainSchoolAverage>
-  <DomainJurisdictionAverage>599</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>604</DomainTopNational60Percent>
+  <DomainNationalAverage>583</DomainNationalAverage>
+  <DomainSchoolAverage>592</DomainSchoolAverage>
+  <DomainJurisdictionAverage>596</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>617</DomainTopNational60Percent>
   <DomainBottomNational60Percent>575</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="B55BEA92-6CBE-468B-B74A-2E0E71258A73">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
+<NAPTestScoreSummary RefId="1EE2715B-E34D-441C-9D7A-205E3B2AD09F">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
   <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>B848E2C2-E60F-4163-B8F3-2BCEC75C6C99</NAPTestRefId>
+  <NAPTestRefId>6E05DBCD-88AE-4E99-9122-C8D2F0B1A65D</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0018-Numeracy</NAPTestLocalId>
+  <DomainNationalAverage>583</DomainNationalAverage>
+  <DomainSchoolAverage>586</DomainSchoolAverage>
+  <DomainJurisdictionAverage>582</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>603</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>571</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="9087EB2A-8B61-422A-8245-5CE41F98BDC9">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
+  <SchoolACARAId>21212</SchoolACARAId>
+  <NAPTestRefId>144608F7-36CC-407C-B6A7-23B98E74908A</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0016-Reading</NAPTestLocalId>
+  <DomainNationalAverage>581</DomainNationalAverage>
+  <DomainSchoolAverage>586</DomainSchoolAverage>
+  <DomainJurisdictionAverage>583</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>614</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>572</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="2D140453-AFAB-405D-B73E-480927357894">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
+  <SchoolACARAId>21212</SchoolACARAId>
+  <NAPTestRefId>28A1080F-73AB-404C-8857-4F5CFBC15FC0</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0020-Spelling</NAPTestLocalId>
-  <DomainNationalAverage>587</DomainNationalAverage>
-  <DomainSchoolAverage>583</DomainSchoolAverage>
-  <DomainJurisdictionAverage>585</DomainJurisdictionAverage>
+  <DomainNationalAverage>580</DomainNationalAverage>
+  <DomainSchoolAverage>597</DomainSchoolAverage>
+  <DomainJurisdictionAverage>597</DomainJurisdictionAverage>
   <DomainTopNational60Percent>613</DomainTopNational60Percent>
   <DomainBottomNational60Percent>568</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="AACBB204-A3DC-4DAA-AE34-260019D71500">
-  <SchoolInfoRefId>FE0FFDD5-F72E-4A65-BFC3-8844749C3025</SchoolInfoRefId>
+<NAPTestScoreSummary RefId="BCC7A1F0-463B-48CF-AC4D-59264C81FD93">
+  <SchoolInfoRefId>E33E019D-EF1A-44A1-B6E0-DEBD38D84348</SchoolInfoRefId>
   <SchoolACARAId>21212</SchoolACARAId>
-  <NAPTestRefId>1923EE8C-70EC-4FD3-8163-C762C086DCFC</NAPTestRefId>
+  <NAPTestRefId>7161B388-FABE-42C0-9E81-15067EE8F23D</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0017-Writing</NAPTestLocalId>
-  <DomainNationalAverage>582</DomainNationalAverage>
-  <DomainSchoolAverage>598</DomainSchoolAverage>
-  <DomainJurisdictionAverage>596</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>613</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>572</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="C12F60EB-57C4-44B4-9255-8DB5F06D70B1">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>D18CF9D6-D4CC-4793-9900-850E9FBE2B65</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0004-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>396</DomainNationalAverage>
-  <DomainSchoolAverage>407</DomainSchoolAverage>
-  <DomainJurisdictionAverage>397</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>410</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>389</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="158FB060-E42B-4F0A-85ED-7ABE39931C2A">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>8C41BCBA-EA17-4354-8ED2-7D0D48BD0F62</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0003-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>399</DomainNationalAverage>
-  <DomainSchoolAverage>408</DomainSchoolAverage>
-  <DomainJurisdictionAverage>394</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>425</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>377</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="0DEA5243-2790-4284-AA78-0833CF1A090F">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>CF3689DA-D7BF-47C1-95BA-0BD3087C6737</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0001-Reading</NAPTestLocalId>
-  <DomainNationalAverage>401</DomainNationalAverage>
-  <DomainSchoolAverage>393</DomainSchoolAverage>
-  <DomainJurisdictionAverage>400</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>419</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>380</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="5D6A7599-70BA-41C9-8F1C-B871092E0BCE">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>D080A136-5AF0-4165-B958-F2BF9EED80EA</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0005-Spelling</NAPTestLocalId>
-  <DomainNationalAverage>403</DomainNationalAverage>
-  <DomainSchoolAverage>401</DomainSchoolAverage>
-  <DomainJurisdictionAverage>405</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>419</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>383</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="C6A80A2D-AFB0-49AC-923B-19EC09FFB3B9">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>D2156D27-3DC9-4B4B-BFAF-7F35F7E65000</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0002-Writing</NAPTestLocalId>
-  <DomainNationalAverage>399</DomainNationalAverage>
-  <DomainSchoolAverage>394</DomainSchoolAverage>
-  <DomainJurisdictionAverage>408</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>428</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>371</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="D162814F-68B9-4D7A-AA4F-7B1B5A52078C">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>C7DEC9EE-63FC-45E3-BDB8-7BBED51D6065</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0009-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>517</DomainNationalAverage>
-  <DomainSchoolAverage>504</DomainSchoolAverage>
-  <DomainJurisdictionAverage>500</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>531</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>491</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="75AA617B-5710-42FD-B39A-472796F65A3F">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>0ECDBA33-785D-4A28-87EE-ABC579DBD40E</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0008-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>517</DomainNationalAverage>
-  <DomainSchoolAverage>504</DomainSchoolAverage>
-  <DomainJurisdictionAverage>509</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>531</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>485</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="BEE13097-39E5-4BEB-9359-688A120C5E72">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>4D0D647E-6338-4C34-8932-70AB1B439559</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0006-Reading</NAPTestLocalId>
-  <DomainNationalAverage>518</DomainNationalAverage>
-  <DomainSchoolAverage>505</DomainSchoolAverage>
-  <DomainJurisdictionAverage>515</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>524</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>498</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="BD899F1B-3A04-476B-AF3A-224ED5084BCD">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>6DFA1C19-ED9B-4603-9953-3ACAF0BF587A</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0010-Spelling</NAPTestLocalId>
-  <DomainNationalAverage>507</DomainNationalAverage>
-  <DomainSchoolAverage>517</DomainSchoolAverage>
-  <DomainJurisdictionAverage>509</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>535</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>482</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="D3EC55FB-A21E-4268-B9E6-E49DF67ACC42">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>C455128E-CF49-4C11-B2B1-7B255769518C</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0007-Writing</NAPTestLocalId>
-  <DomainNationalAverage>503</DomainNationalAverage>
-  <DomainSchoolAverage>510</DomainSchoolAverage>
-  <DomainJurisdictionAverage>513</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>536</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>483</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="382AD084-C6B5-4A45-A9CD-CDD938AAD6FE">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>BAFC109D-D145-4377-A92F-5C70F18CC004</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0014-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>559</DomainNationalAverage>
-  <DomainSchoolAverage>550</DomainSchoolAverage>
-  <DomainJurisdictionAverage>567</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>587</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>538</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="9D04D0F7-8A5D-4FEE-8352-B7449F0FEED4">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>2BCFFE15-2E12-4A1C-B867-B5C1692ABCDE</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0013-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>551</DomainNationalAverage>
-  <DomainSchoolAverage>556</DomainSchoolAverage>
-  <DomainJurisdictionAverage>561</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>581</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>541</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="83AA5CAD-747C-485F-84D7-E12EBD8EDDD8">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>B947CEF6-0570-4434-A5A1-B5D4AFC39EC1</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0011-Reading</NAPTestLocalId>
-  <DomainNationalAverage>563</DomainNationalAverage>
-  <DomainSchoolAverage>567</DomainSchoolAverage>
-  <DomainJurisdictionAverage>567</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>579</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>546</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="0C57799E-1611-4A26-BE8E-660C1B09C401">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>BD5DF3E5-DB32-4816-A9FF-9DAA348FF11B</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0015-Spelling</NAPTestLocalId>
-  <DomainNationalAverage>555</DomainNationalAverage>
-  <DomainSchoolAverage>563</DomainSchoolAverage>
-  <DomainJurisdictionAverage>561</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>585</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>548</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="6EF7499B-22CC-434D-8A50-80EE710F2291">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>28155853-481C-4EA4-9E96-3D65A03584D7</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0012-Writing</NAPTestLocalId>
-  <DomainNationalAverage>561</DomainNationalAverage>
-  <DomainSchoolAverage>557</DomainSchoolAverage>
-  <DomainJurisdictionAverage>562</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>580</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>545</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="9D23F793-1064-4724-8C1D-7A840BF60D6B">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>E86E278B-7D0D-4315-B791-2D67F7FDB6F0</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0019-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>597</DomainNationalAverage>
-  <DomainSchoolAverage>592</DomainSchoolAverage>
-  <DomainJurisdictionAverage>597</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>619</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>575</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="39A42DBD-5F86-4DC3-8DC8-FF1DF5C98BD6">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>20CC0FF0-1CD6-461C-BACC-DE927A7D2AE6</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0018-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>591</DomainNationalAverage>
-  <DomainSchoolAverage>596</DomainSchoolAverage>
-  <DomainJurisdictionAverage>587</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>618</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>565</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="7CA287D4-2203-4435-B258-2742D06DA077">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>159A9CFA-6638-4714-9F80-7E4AC1AD4A31</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0016-Reading</NAPTestLocalId>
-  <DomainNationalAverage>581</DomainNationalAverage>
-  <DomainSchoolAverage>587</DomainSchoolAverage>
-  <DomainJurisdictionAverage>590</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>618</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>569</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="71D6AF46-A4ED-4FB9-B8A7-D91BA32DFEEC">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
-  <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>B848E2C2-E60F-4163-B8F3-2BCEC75C6C99</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0020-Spelling</NAPTestLocalId>
-  <DomainNationalAverage>590</DomainNationalAverage>
-  <DomainSchoolAverage>586</DomainSchoolAverage>
-  <DomainJurisdictionAverage>584</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>619</DomainTopNational60Percent>
+  <DomainNationalAverage>596</DomainNationalAverage>
+  <DomainSchoolAverage>597</DomainSchoolAverage>
+  <DomainJurisdictionAverage>581</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>614</DomainTopNational60Percent>
   <DomainBottomNational60Percent>562</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="C3468BBD-2377-47F7-992F-70B2A698AA40">
-  <SchoolInfoRefId>D0708BAB-192C-48D0-AB16-9BAC4BF16C8B</SchoolInfoRefId>
+<NAPTestScoreSummary RefId="83E04229-93FC-4945-8E93-072FAF34C235">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
   <SchoolACARAId>21213</SchoolACARAId>
-  <NAPTestRefId>1923EE8C-70EC-4FD3-8163-C762C086DCFC</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0017-Writing</NAPTestLocalId>
-  <DomainNationalAverage>589</DomainNationalAverage>
-  <DomainSchoolAverage>582</DomainSchoolAverage>
-  <DomainJurisdictionAverage>590</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>607</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>569</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="A1AC836C-DB65-4302-9579-526503E061EA">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>D18CF9D6-D4CC-4793-9900-850E9FBE2B65</NAPTestRefId>
+  <NAPTestRefId>561C01C3-91A9-4012-9E01-4A4FE04C5AA4</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0004-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>398</DomainNationalAverage>
-  <DomainSchoolAverage>404</DomainSchoolAverage>
-  <DomainJurisdictionAverage>408</DomainJurisdictionAverage>
+  <DomainNationalAverage>403</DomainNationalAverage>
+  <DomainSchoolAverage>397</DomainSchoolAverage>
+  <DomainJurisdictionAverage>399</DomainJurisdictionAverage>
   <DomainTopNational60Percent>413</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>389</DomainBottomNational60Percent>
+  <DomainBottomNational60Percent>371</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="FD2E7526-88B6-4CB9-8063-4D9E4F95CDF4">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>8C41BCBA-EA17-4354-8ED2-7D0D48BD0F62</NAPTestRefId>
+<NAPTestScoreSummary RefId="45A586B6-86EF-40B3-A600-653DD058CF18">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>63335C3F-7D79-428E-925F-D911CCD02C9F</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0003-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>405</DomainNationalAverage>
-  <DomainSchoolAverage>392</DomainSchoolAverage>
-  <DomainJurisdictionAverage>400</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>424</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>388</DomainBottomNational60Percent>
+  <DomainNationalAverage>403</DomainNationalAverage>
+  <DomainSchoolAverage>395</DomainSchoolAverage>
+  <DomainJurisdictionAverage>403</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>413</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>373</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="8F96966B-A5A4-45A5-8E3D-B423C70D28C7">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>CF3689DA-D7BF-47C1-95BA-0BD3087C6737</NAPTestRefId>
+<NAPTestScoreSummary RefId="40B32432-7EF5-4BAE-B8D4-05CA5B578460">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>226A4BE4-83D5-4AEB-8C11-C949FDD92173</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0001-Reading</NAPTestLocalId>
   <DomainNationalAverage>398</DomainNationalAverage>
-  <DomainSchoolAverage>390</DomainSchoolAverage>
-  <DomainJurisdictionAverage>400</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>411</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>382</DomainBottomNational60Percent>
+  <DomainSchoolAverage>391</DomainSchoolAverage>
+  <DomainJurisdictionAverage>404</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>415</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>381</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="D8AA61DC-1250-4A62-9890-C320D74A44FF">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>D080A136-5AF0-4165-B958-F2BF9EED80EA</NAPTestRefId>
+<NAPTestScoreSummary RefId="FA08D307-54F4-4937-8B3F-125E61586A64">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>4BFFDD50-ED72-4A81-9C1D-BD4A2BF9029F</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0005-Spelling</NAPTestLocalId>
-  <DomainNationalAverage>409</DomainNationalAverage>
-  <DomainSchoolAverage>392</DomainSchoolAverage>
-  <DomainJurisdictionAverage>406</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>417</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>384</DomainBottomNational60Percent>
+  <DomainNationalAverage>402</DomainNationalAverage>
+  <DomainSchoolAverage>405</DomainSchoolAverage>
+  <DomainJurisdictionAverage>399</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>411</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>373</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="4641C741-08A1-4B34-8E80-8824F5A92707">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>D2156D27-3DC9-4B4B-BFAF-7F35F7E65000</NAPTestRefId>
+<NAPTestScoreSummary RefId="540C16D9-23C9-4631-B22F-F720A6631BC6">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>FCC39019-3C8C-49DE-86BE-D3CCAF4B2303</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0002-Writing</NAPTestLocalId>
-  <DomainNationalAverage>395</DomainNationalAverage>
-  <DomainSchoolAverage>397</DomainSchoolAverage>
-  <DomainJurisdictionAverage>408</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>421</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>389</DomainBottomNational60Percent>
+  <DomainNationalAverage>399</DomainNationalAverage>
+  <DomainSchoolAverage>406</DomainSchoolAverage>
+  <DomainJurisdictionAverage>395</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>424</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>387</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="90DC8F5B-C0AF-4B07-979E-B283F3DCF2C6">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>C7DEC9EE-63FC-45E3-BDB8-7BBED51D6065</NAPTestRefId>
+<NAPTestScoreSummary RefId="79448111-1FC2-4E52-A727-4A666D7E2B51">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>D0093902-DE7D-46D1-B508-833862993F58</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0009-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>512</DomainNationalAverage>
-  <DomainSchoolAverage>518</DomainSchoolAverage>
-  <DomainJurisdictionAverage>503</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>532</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>490</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="BF026565-07B8-420A-89F7-F1D329B4A855">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>0ECDBA33-785D-4A28-87EE-ABC579DBD40E</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0008-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>513</DomainNationalAverage>
-  <DomainSchoolAverage>514</DomainSchoolAverage>
-  <DomainJurisdictionAverage>510</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>538</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>492</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="884E8B50-AC30-40FA-B57C-525ABFCBA36E">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>4D0D647E-6338-4C34-8932-70AB1B439559</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0006-Reading</NAPTestLocalId>
-  <DomainNationalAverage>502</DomainNationalAverage>
-  <DomainSchoolAverage>510</DomainSchoolAverage>
-  <DomainJurisdictionAverage>504</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>531</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>496</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="074D4C36-B26A-4B5B-A9A8-D784D3584B6C">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>6DFA1C19-ED9B-4603-9953-3ACAF0BF587A</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0010-Spelling</NAPTestLocalId>
-  <DomainNationalAverage>510</DomainNationalAverage>
-  <DomainSchoolAverage>501</DomainSchoolAverage>
-  <DomainJurisdictionAverage>516</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>531</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>484</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="142CB735-17C8-4731-A7C2-3AF6DAABCDBB">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>C455128E-CF49-4C11-B2B1-7B255769518C</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0007-Writing</NAPTestLocalId>
-  <DomainNationalAverage>507</DomainNationalAverage>
+  <DomainNationalAverage>501</DomainNationalAverage>
   <DomainSchoolAverage>502</DomainSchoolAverage>
-  <DomainJurisdictionAverage>515</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>520</DomainTopNational60Percent>
+  <DomainJurisdictionAverage>508</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>536</DomainTopNational60Percent>
   <DomainBottomNational60Percent>497</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="F8BADC91-32B9-4D39-9AF2-C5E2D81CAD38">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>BAFC109D-D145-4377-A92F-5C70F18CC004</NAPTestRefId>
+<NAPTestScoreSummary RefId="9C8C4356-9577-4B57-B1C8-A6E5EBEA701A">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>FC4060A5-670C-4525-AAE2-B6324078541D</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0008-Numeracy</NAPTestLocalId>
+  <DomainNationalAverage>500</DomainNationalAverage>
+  <DomainSchoolAverage>516</DomainSchoolAverage>
+  <DomainJurisdictionAverage>504</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>532</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>484</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="C16347BF-049B-4CF6-8378-4605DC9804FD">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>27035BC7-256C-4BE8-8F23-E1F6441A94C7</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0006-Reading</NAPTestLocalId>
+  <DomainNationalAverage>508</DomainNationalAverage>
+  <DomainSchoolAverage>515</DomainSchoolAverage>
+  <DomainJurisdictionAverage>511</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>534</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>480</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="26F0ED7E-DA2D-421C-8EB4-9789DECFFFCC">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>4BBDC0F8-9EA2-4D58-AF53-0C05315B2C34</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0010-Spelling</NAPTestLocalId>
+  <DomainNationalAverage>507</DomainNationalAverage>
+  <DomainSchoolAverage>504</DomainSchoolAverage>
+  <DomainJurisdictionAverage>501</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>530</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>486</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="59BFBC0F-5900-45DC-9774-D6C575867681">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>30A5111C-C6B3-4658-B225-E61ADD029CFA</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0007-Writing</NAPTestLocalId>
+  <DomainNationalAverage>517</DomainNationalAverage>
+  <DomainSchoolAverage>505</DomainSchoolAverage>
+  <DomainJurisdictionAverage>501</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>530</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>483</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="4C2D869D-903F-49BC-872D-DF50E77DA061">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>B1459055-061E-46AD-807A-CF478EACE16A</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0014-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>557</DomainNationalAverage>
-  <DomainSchoolAverage>558</DomainSchoolAverage>
-  <DomainJurisdictionAverage>561</DomainJurisdictionAverage>
+  <DomainNationalAverage>550</DomainNationalAverage>
+  <DomainSchoolAverage>569</DomainSchoolAverage>
+  <DomainJurisdictionAverage>566</DomainJurisdictionAverage>
   <DomainTopNational60Percent>574</DomainTopNational60Percent>
   <DomainBottomNational60Percent>533</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="6C6C9142-01B0-46FA-ADE4-74B713A7151E">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>2BCFFE15-2E12-4A1C-B867-B5C1692ABCDE</NAPTestRefId>
+<NAPTestScoreSummary RefId="3D8F6B0C-D5C7-4236-B40D-8B695314F9BD">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>3C6D8BDA-163B-4781-915A-6E19ED34C8A9</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0013-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>563</DomainNationalAverage>
-  <DomainSchoolAverage>565</DomainSchoolAverage>
-  <DomainJurisdictionAverage>569</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>583</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>543</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="7F7FB25B-4293-4A7E-B18A-F0BD516EB220">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>B947CEF6-0570-4434-A5A1-B5D4AFC39EC1</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0011-Reading</NAPTestLocalId>
-  <DomainNationalAverage>552</DomainNationalAverage>
+  <DomainNationalAverage>560</DomainNationalAverage>
   <DomainSchoolAverage>561</DomainSchoolAverage>
-  <DomainJurisdictionAverage>552</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>581</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>544</DomainBottomNational60Percent>
+  <DomainJurisdictionAverage>568</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>583</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>549</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="5D427F3F-5A8A-4654-9A64-8402E4D6EFC8">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>BD5DF3E5-DB32-4816-A9FF-9DAA348FF11B</NAPTestRefId>
+<NAPTestScoreSummary RefId="476E2246-F221-4963-B2DD-7F9B7D021588">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>9F2CC069-D88A-4643-963A-1CA9BA8D8EC3</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0011-Reading</NAPTestLocalId>
+  <DomainNationalAverage>558</DomainNationalAverage>
+  <DomainSchoolAverage>558</DomainSchoolAverage>
+  <DomainJurisdictionAverage>556</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>584</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>541</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="FE83D154-C5ED-404F-9261-43B027A1FA04">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>56D3C4B5-B31E-4721-8D5A-AB58AAE02CE9</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0015-Spelling</NAPTestLocalId>
-  <DomainNationalAverage>563</DomainNationalAverage>
-  <DomainSchoolAverage>563</DomainSchoolAverage>
-  <DomainJurisdictionAverage>552</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>588</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>535</DomainBottomNational60Percent>
+  <DomainNationalAverage>565</DomainNationalAverage>
+  <DomainSchoolAverage>552</DomainSchoolAverage>
+  <DomainJurisdictionAverage>557</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>584</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>548</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="895F073D-22E4-44C7-BEDD-692D08EEBBB9">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>28155853-481C-4EA4-9E96-3D65A03584D7</NAPTestRefId>
+<NAPTestScoreSummary RefId="B364BAE0-0E13-4D39-AA37-29707C13C97F">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>40CB1201-B20D-4677-B161-D55DF292CDE2</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0012-Writing</NAPTestLocalId>
-  <DomainNationalAverage>559</DomainNationalAverage>
-  <DomainSchoolAverage>551</DomainSchoolAverage>
-  <DomainJurisdictionAverage>564</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>580</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>539</DomainBottomNational60Percent>
+  <DomainNationalAverage>554</DomainNationalAverage>
+  <DomainSchoolAverage>564</DomainSchoolAverage>
+  <DomainJurisdictionAverage>568</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>575</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>549</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="6BABF904-C37F-4867-A78C-1CEFA5E139E1">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>E86E278B-7D0D-4315-B791-2D67F7FDB6F0</NAPTestRefId>
+<NAPTestScoreSummary RefId="7BF3CA49-2656-423F-A047-CE681DAAD5DA">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>303D4CB3-0335-4167-9A84-CFE4A7EA81FD</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0019-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>588</DomainNationalAverage>
-  <DomainSchoolAverage>598</DomainSchoolAverage>
-  <DomainJurisdictionAverage>586</DomainJurisdictionAverage>
+  <DomainNationalAverage>598</DomainNationalAverage>
+  <DomainSchoolAverage>581</DomainSchoolAverage>
+  <DomainJurisdictionAverage>582</DomainJurisdictionAverage>
   <DomainTopNational60Percent>613</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>578</DomainBottomNational60Percent>
+  <DomainBottomNational60Percent>572</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="8304748D-96B8-4EA4-9269-964A096766A4">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>20CC0FF0-1CD6-461C-BACC-DE927A7D2AE6</NAPTestRefId>
+<NAPTestScoreSummary RefId="B4E1A7B5-CC1E-496B-BD42-F6C74DA4CF91">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>6E05DBCD-88AE-4E99-9122-C8D2F0B1A65D</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0018-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>588</DomainNationalAverage>
-  <DomainSchoolAverage>599</DomainSchoolAverage>
-  <DomainJurisdictionAverage>590</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>618</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>577</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="22647F6A-0183-456F-811E-CBC2E1D484AD">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>159A9CFA-6638-4714-9F80-7E4AC1AD4A31</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0016-Reading</NAPTestLocalId>
-  <DomainNationalAverage>599</DomainNationalAverage>
-  <DomainSchoolAverage>587</DomainSchoolAverage>
-  <DomainJurisdictionAverage>597</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>614</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>573</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="86568BC1-A543-4F80-949A-BB0C2F06EF2A">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>B848E2C2-E60F-4163-B8F3-2BCEC75C6C99</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0020-Spelling</NAPTestLocalId>
   <DomainNationalAverage>589</DomainNationalAverage>
-  <DomainSchoolAverage>599</DomainSchoolAverage>
-  <DomainJurisdictionAverage>584</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>608</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>574</DomainBottomNational60Percent>
+  <DomainSchoolAverage>584</DomainSchoolAverage>
+  <DomainJurisdictionAverage>596</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>609</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>567</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="EA968B6B-F61B-4E7D-A0A5-26CA21C0F56D">
-  <SchoolInfoRefId>7DC4D959-9955-42BB-9862-98D57B0B351E</SchoolInfoRefId>
-  <SchoolACARAId>21214</SchoolACARAId>
-  <NAPTestRefId>1923EE8C-70EC-4FD3-8163-C762C086DCFC</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0017-Writing</NAPTestLocalId>
-  <DomainNationalAverage>594</DomainNationalAverage>
-  <DomainSchoolAverage>591</DomainSchoolAverage>
-  <DomainJurisdictionAverage>591</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>612</DomainTopNational60Percent>
+<NAPTestScoreSummary RefId="3F0B33C2-86B4-4C31-969B-19DCD3E86382">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>144608F7-36CC-407C-B6A7-23B98E74908A</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0016-Reading</NAPTestLocalId>
+  <DomainNationalAverage>587</DomainNationalAverage>
+  <DomainSchoolAverage>583</DomainSchoolAverage>
+  <DomainJurisdictionAverage>588</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>601</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>566</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="62AE57A9-DFAF-4A8F-9667-C8F7C76FAD09">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>28A1080F-73AB-404C-8857-4F5CFBC15FC0</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0020-Spelling</NAPTestLocalId>
+  <DomainNationalAverage>587</DomainNationalAverage>
+  <DomainSchoolAverage>586</DomainSchoolAverage>
+  <DomainJurisdictionAverage>588</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>605</DomainTopNational60Percent>
   <DomainBottomNational60Percent>571</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="6B4CA639-C8FA-4DF8-8C9E-B3EC027FBF51">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>D18CF9D6-D4CC-4793-9900-850E9FBE2B65</NAPTestRefId>
+<NAPTestScoreSummary RefId="76B1C0BB-32E8-4D1A-B99B-0B5CDC590EB5">
+  <SchoolInfoRefId>76065B77-0A8A-4801-8DBA-97C0A468F629</SchoolInfoRefId>
+  <SchoolACARAId>21213</SchoolACARAId>
+  <NAPTestRefId>7161B388-FABE-42C0-9E81-15067EE8F23D</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0017-Writing</NAPTestLocalId>
+  <DomainNationalAverage>586</DomainNationalAverage>
+  <DomainSchoolAverage>591</DomainSchoolAverage>
+  <DomainJurisdictionAverage>594</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>614</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>563</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="58599BF5-D63F-4DC4-BC3C-99CED1872C61">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>561C01C3-91A9-4012-9E01-4A4FE04C5AA4</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0004-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>399</DomainNationalAverage>
-  <DomainSchoolAverage>401</DomainSchoolAverage>
-  <DomainJurisdictionAverage>390</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>420</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>371</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="A0987CEA-115F-47AA-924C-3AF83CD70519">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>8C41BCBA-EA17-4354-8ED2-7D0D48BD0F62</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0003-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>406</DomainNationalAverage>
-  <DomainSchoolAverage>409</DomainSchoolAverage>
-  <DomainJurisdictionAverage>391</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>414</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>382</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="E341D762-CD0D-42C7-A9E5-3A3C5FFD3FE3">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>CF3689DA-D7BF-47C1-95BA-0BD3087C6737</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0001-Reading</NAPTestLocalId>
-  <DomainNationalAverage>405</DomainNationalAverage>
-  <DomainSchoolAverage>403</DomainSchoolAverage>
-  <DomainJurisdictionAverage>393</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>423</DomainTopNational60Percent>
+  <DomainNationalAverage>400</DomainNationalAverage>
+  <DomainSchoolAverage>393</DomainSchoolAverage>
+  <DomainJurisdictionAverage>399</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>418</DomainTopNational60Percent>
   <DomainBottomNational60Percent>386</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="3063772F-93D6-4486-AFF7-313C97C49E31">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>D080A136-5AF0-4165-B958-F2BF9EED80EA</NAPTestRefId>
+<NAPTestScoreSummary RefId="7E4FA745-6307-454C-8FFF-6CCCCE46CD89">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>63335C3F-7D79-428E-925F-D911CCD02C9F</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0003-Numeracy</NAPTestLocalId>
+  <DomainNationalAverage>390</DomainNationalAverage>
+  <DomainSchoolAverage>401</DomainSchoolAverage>
+  <DomainJurisdictionAverage>395</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>417</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>380</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="8174F064-9B40-4606-B9C9-74AA8F2EA6D5">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>226A4BE4-83D5-4AEB-8C11-C949FDD92173</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0001-Reading</NAPTestLocalId>
+  <DomainNationalAverage>406</DomainNationalAverage>
+  <DomainSchoolAverage>404</DomainSchoolAverage>
+  <DomainJurisdictionAverage>394</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>415</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>384</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="713A974B-E336-48F8-8B4A-2F98DCD1A698">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>4BFFDD50-ED72-4A81-9C1D-BD4A2BF9029F</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0005-Spelling</NAPTestLocalId>
-  <DomainNationalAverage>395</DomainNationalAverage>
-  <DomainSchoolAverage>405</DomainSchoolAverage>
-  <DomainJurisdictionAverage>396</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>424</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>375</DomainBottomNational60Percent>
+  <DomainNationalAverage>394</DomainNationalAverage>
+  <DomainSchoolAverage>403</DomainSchoolAverage>
+  <DomainJurisdictionAverage>400</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>415</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>382</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="AB9F8779-AEE5-444F-94C5-145106703907">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>D2156D27-3DC9-4B4B-BFAF-7F35F7E65000</NAPTestRefId>
+<NAPTestScoreSummary RefId="F30A14A1-0D91-4994-A039-AB5F9D5EA9F4">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>FCC39019-3C8C-49DE-86BE-D3CCAF4B2303</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0002-Writing</NAPTestLocalId>
-  <DomainNationalAverage>408</DomainNationalAverage>
-  <DomainSchoolAverage>392</DomainSchoolAverage>
+  <DomainNationalAverage>390</DomainNationalAverage>
+  <DomainSchoolAverage>394</DomainSchoolAverage>
   <DomainJurisdictionAverage>396</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>429</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>372</DomainBottomNational60Percent>
+  <DomainTopNational60Percent>419</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>376</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="8288AFF2-A56D-40EC-8013-317121119EBA">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>C7DEC9EE-63FC-45E3-BDB8-7BBED51D6065</NAPTestRefId>
+<NAPTestScoreSummary RefId="282082CF-2083-47FD-BE70-E1AE8179F130">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>D0093902-DE7D-46D1-B508-833862993F58</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0009-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>500</DomainNationalAverage>
-  <DomainSchoolAverage>511</DomainSchoolAverage>
-  <DomainJurisdictionAverage>515</DomainJurisdictionAverage>
+  <DomainNationalAverage>507</DomainNationalAverage>
+  <DomainSchoolAverage>507</DomainSchoolAverage>
+  <DomainJurisdictionAverage>503</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>522</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>495</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="735D5079-A242-41D3-BCBA-A7330317E801">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>FC4060A5-670C-4525-AAE2-B6324078541D</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0008-Numeracy</NAPTestLocalId>
+  <DomainNationalAverage>514</DomainNationalAverage>
+  <DomainSchoolAverage>515</DomainSchoolAverage>
+  <DomainJurisdictionAverage>503</DomainJurisdictionAverage>
   <DomainTopNational60Percent>526</DomainTopNational60Percent>
   <DomainBottomNational60Percent>485</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="E5369486-2E34-40A3-BB6E-6D42882FA342">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>0ECDBA33-785D-4A28-87EE-ABC579DBD40E</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0008-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>505</DomainNationalAverage>
-  <DomainSchoolAverage>514</DomainSchoolAverage>
-  <DomainJurisdictionAverage>500</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>521</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>483</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="784871D1-EA2A-4CA3-8CE1-78E1143EC70A">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>4D0D647E-6338-4C34-8932-70AB1B439559</NAPTestRefId>
+<NAPTestScoreSummary RefId="CBEC8A4E-6A62-42DD-910F-BAB0413C15F1">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>27035BC7-256C-4BE8-8F23-E1F6441A94C7</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0006-Reading</NAPTestLocalId>
-  <DomainNationalAverage>506</DomainNationalAverage>
-  <DomainSchoolAverage>519</DomainSchoolAverage>
-  <DomainJurisdictionAverage>509</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>527</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>483</DomainBottomNational60Percent>
+  <DomainNationalAverage>513</DomainNationalAverage>
+  <DomainSchoolAverage>506</DomainSchoolAverage>
+  <DomainJurisdictionAverage>505</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>520</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>481</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="87B6DA38-C5FB-45F3-8B91-7BD2F92DB8F0">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>6DFA1C19-ED9B-4603-9953-3ACAF0BF587A</NAPTestRefId>
+<NAPTestScoreSummary RefId="86267629-1691-42A4-B6FE-C9ECFD2AF3CC">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>4BBDC0F8-9EA2-4D58-AF53-0C05315B2C34</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0010-Spelling</NAPTestLocalId>
   <DomainNationalAverage>506</DomainNationalAverage>
-  <DomainSchoolAverage>518</DomainSchoolAverage>
-  <DomainJurisdictionAverage>507</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>527</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>484</DomainBottomNational60Percent>
+  <DomainSchoolAverage>507</DomainSchoolAverage>
+  <DomainJurisdictionAverage>500</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>525</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>485</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="A67211AE-9BAB-467B-884C-9DE1B7058FD6">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>C455128E-CF49-4C11-B2B1-7B255769518C</NAPTestRefId>
+<NAPTestScoreSummary RefId="D65F3059-107C-43B8-9A05-C5A9BD3D6F35">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>30A5111C-C6B3-4658-B225-E61ADD029CFA</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0007-Writing</NAPTestLocalId>
-  <DomainNationalAverage>501</DomainNationalAverage>
-  <DomainSchoolAverage>516</DomainSchoolAverage>
-  <DomainJurisdictionAverage>501</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>526</DomainTopNational60Percent>
+  <DomainNationalAverage>504</DomainNationalAverage>
+  <DomainSchoolAverage>509</DomainSchoolAverage>
+  <DomainJurisdictionAverage>515</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>534</DomainTopNational60Percent>
   <DomainBottomNational60Percent>490</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="C3570425-1C98-4A0F-9AE6-0ACDC2D24F6F">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>BAFC109D-D145-4377-A92F-5C70F18CC004</NAPTestRefId>
+<NAPTestScoreSummary RefId="B265A09B-D1B4-42ED-80AA-4DE2022BF828">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>B1459055-061E-46AD-807A-CF478EACE16A</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0014-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>550</DomainNationalAverage>
-  <DomainSchoolAverage>568</DomainSchoolAverage>
-  <DomainJurisdictionAverage>560</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>582</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>531</DomainBottomNational60Percent>
+  <DomainNationalAverage>561</DomainNationalAverage>
+  <DomainSchoolAverage>561</DomainSchoolAverage>
+  <DomainJurisdictionAverage>561</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>576</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>545</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="A75E8071-18BB-43C1-9F2A-E3DE9ABF34D7">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>2BCFFE15-2E12-4A1C-B867-B5C1692ABCDE</NAPTestRefId>
+<NAPTestScoreSummary RefId="8154B926-22D5-41A6-A2E5-01A6872760BA">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>3C6D8BDA-163B-4781-915A-6E19ED34C8A9</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0013-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>567</DomainNationalAverage>
+  <DomainNationalAverage>566</DomainNationalAverage>
+  <DomainSchoolAverage>551</DomainSchoolAverage>
+  <DomainJurisdictionAverage>563</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>570</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>546</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="9FCCD872-F2CD-4F46-8538-314C6E284B68">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>9F2CC069-D88A-4643-963A-1CA9BA8D8EC3</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0011-Reading</NAPTestLocalId>
+  <DomainNationalAverage>562</DomainNationalAverage>
   <DomainSchoolAverage>564</DomainSchoolAverage>
-  <DomainJurisdictionAverage>553</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>589</DomainTopNational60Percent>
+  <DomainJurisdictionAverage>558</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>573</DomainTopNational60Percent>
   <DomainBottomNational60Percent>538</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="E84A80BC-8F1A-4F12-AFCE-579AAE3771D8">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>B947CEF6-0570-4434-A5A1-B5D4AFC39EC1</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0011-Reading</NAPTestLocalId>
-  <DomainNationalAverage>556</DomainNationalAverage>
-  <DomainSchoolAverage>567</DomainSchoolAverage>
-  <DomainJurisdictionAverage>553</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>580</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>531</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="51A81B5E-381F-46DE-B401-511FF13F5D78">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>BD5DF3E5-DB32-4816-A9FF-9DAA348FF11B</NAPTestRefId>
+<NAPTestScoreSummary RefId="F1D373AC-B043-4288-A3FE-0F805DEB573F">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>56D3C4B5-B31E-4721-8D5A-AB58AAE02CE9</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0015-Spelling</NAPTestLocalId>
-  <DomainNationalAverage>561</DomainNationalAverage>
-  <DomainSchoolAverage>562</DomainSchoolAverage>
-  <DomainJurisdictionAverage>560</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>587</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>548</DomainBottomNational60Percent>
+  <DomainNationalAverage>567</DomainNationalAverage>
+  <DomainSchoolAverage>556</DomainSchoolAverage>
+  <DomainJurisdictionAverage>563</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>575</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>541</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="C5E25B11-0C20-4F00-99AC-B8F9BB2AD2D7">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>28155853-481C-4EA4-9E96-3D65A03584D7</NAPTestRefId>
+<NAPTestScoreSummary RefId="42990AC5-C99B-4003-984C-3CF65C221534">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>40CB1201-B20D-4677-B161-D55DF292CDE2</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0012-Writing</NAPTestLocalId>
-  <DomainNationalAverage>562</DomainNationalAverage>
-  <DomainSchoolAverage>561</DomainSchoolAverage>
-  <DomainJurisdictionAverage>564</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>573</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>537</DomainBottomNational60Percent>
+  <DomainNationalAverage>561</DomainNationalAverage>
+  <DomainSchoolAverage>565</DomainSchoolAverage>
+  <DomainJurisdictionAverage>551</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>588</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>532</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="B361ED1F-0C36-45D2-AE7F-82529140F6AC">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>E86E278B-7D0D-4315-B791-2D67F7FDB6F0</NAPTestRefId>
+<NAPTestScoreSummary RefId="39676FEB-66AD-480B-80F0-6962000B46BE">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>303D4CB3-0335-4167-9A84-CFE4A7EA81FD</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0019-Grammar and Punctuation</NAPTestLocalId>
-  <DomainNationalAverage>589</DomainNationalAverage>
-  <DomainSchoolAverage>598</DomainSchoolAverage>
-  <DomainJurisdictionAverage>587</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>601</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>574</DomainBottomNational60Percent>
+  <DomainNationalAverage>585</DomainNationalAverage>
+  <DomainSchoolAverage>594</DomainSchoolAverage>
+  <DomainJurisdictionAverage>589</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>611</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>564</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="4DD18E9D-A26E-429E-A200-3BFB2880C2B4">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>20CC0FF0-1CD6-461C-BACC-DE927A7D2AE6</NAPTestRefId>
+<NAPTestScoreSummary RefId="8F313497-C04B-445D-B91A-059690667007">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>6E05DBCD-88AE-4E99-9122-C8D2F0B1A65D</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0018-Numeracy</NAPTestLocalId>
-  <DomainNationalAverage>599</DomainNationalAverage>
-  <DomainSchoolAverage>596</DomainSchoolAverage>
-  <DomainJurisdictionAverage>596</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>615</DomainTopNational60Percent>
+  <DomainNationalAverage>586</DomainNationalAverage>
+  <DomainSchoolAverage>598</DomainSchoolAverage>
+  <DomainJurisdictionAverage>581</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>618</DomainTopNational60Percent>
   <DomainBottomNational60Percent>575</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="6FB7A369-7BDF-4643-956C-8678ED3063D6">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>159A9CFA-6638-4714-9F80-7E4AC1AD4A31</NAPTestRefId>
+<NAPTestScoreSummary RefId="548B3067-BB30-467F-9575-72180D4835F5">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>144608F7-36CC-407C-B6A7-23B98E74908A</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0016-Reading</NAPTestLocalId>
-  <DomainNationalAverage>594</DomainNationalAverage>
-  <DomainSchoolAverage>593</DomainSchoolAverage>
-  <DomainJurisdictionAverage>597</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>601</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>578</DomainBottomNational60Percent>
-</NAPTestScoreSummary>
-
-<NAPTestScoreSummary RefId="60A71344-46BD-4E4D-9ADC-469A1EA5EBD9">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>B848E2C2-E60F-4163-B8F3-2BCEC75C6C99</NAPTestRefId>
-  <NAPTestLocalId>NAPLAN-2017-0020-Spelling</NAPTestLocalId>
-  <DomainNationalAverage>595</DomainNationalAverage>
-  <DomainSchoolAverage>592</DomainSchoolAverage>
+  <DomainNationalAverage>581</DomainNationalAverage>
+  <DomainSchoolAverage>581</DomainSchoolAverage>
   <DomainJurisdictionAverage>593</DomainJurisdictionAverage>
-  <DomainTopNational60Percent>605</DomainTopNational60Percent>
+  <DomainTopNational60Percent>614</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>567</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="E051D907-54D3-4F61-AFBA-211FFD527D04">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>28A1080F-73AB-404C-8857-4F5CFBC15FC0</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0020-Spelling</NAPTestLocalId>
+  <DomainNationalAverage>590</DomainNationalAverage>
+  <DomainSchoolAverage>594</DomainSchoolAverage>
+  <DomainJurisdictionAverage>594</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>610</DomainTopNational60Percent>
   <DomainBottomNational60Percent>578</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 
-<NAPTestScoreSummary RefId="4C8357E2-8207-4B23-A84B-281FFE0C2FF1">
-  <SchoolInfoRefId>6BF0BA2E-0F6D-452F-8747-88935C2BDBB3</SchoolInfoRefId>
-  <SchoolACARAId>21215</SchoolACARAId>
-  <NAPTestRefId>1923EE8C-70EC-4FD3-8163-C762C086DCFC</NAPTestRefId>
+<NAPTestScoreSummary RefId="439C373F-75A9-4FC9-8183-CEB0E046130B">
+  <SchoolInfoRefId>60686029-43B1-49CC-8C1A-6CA8F8B198A2</SchoolInfoRefId>
+  <SchoolACARAId>21214</SchoolACARAId>
+  <NAPTestRefId>7161B388-FABE-42C0-9E81-15067EE8F23D</NAPTestRefId>
   <NAPTestLocalId>NAPLAN-2017-0017-Writing</NAPTestLocalId>
-  <DomainNationalAverage>594</DomainNationalAverage>
-  <DomainSchoolAverage>599</DomainSchoolAverage>
-  <DomainJurisdictionAverage>585</DomainJurisdictionAverage>
+  <DomainNationalAverage>581</DomainNationalAverage>
+  <DomainSchoolAverage>593</DomainSchoolAverage>
+  <DomainJurisdictionAverage>588</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>613</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>570</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="FFDE7166-1A96-4A4E-BA68-316DB06E1EFC">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>561C01C3-91A9-4012-9E01-4A4FE04C5AA4</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0004-Grammar and Punctuation</NAPTestLocalId>
+  <DomainNationalAverage>398</DomainNationalAverage>
+  <DomainSchoolAverage>390</DomainSchoolAverage>
+  <DomainJurisdictionAverage>400</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>429</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>389</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="EE6C3409-B9E1-4E0D-AF66-35E18177D913">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>63335C3F-7D79-428E-925F-D911CCD02C9F</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0003-Numeracy</NAPTestLocalId>
+  <DomainNationalAverage>396</DomainNationalAverage>
+  <DomainSchoolAverage>396</DomainSchoolAverage>
+  <DomainJurisdictionAverage>398</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>427</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>380</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="5CA5B5CB-A353-4EB8-829B-9D7677A5533D">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>226A4BE4-83D5-4AEB-8C11-C949FDD92173</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0001-Reading</NAPTestLocalId>
+  <DomainNationalAverage>394</DomainNationalAverage>
+  <DomainSchoolAverage>407</DomainSchoolAverage>
+  <DomainJurisdictionAverage>396</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>424</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>373</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="82E7BB29-4AC0-4D67-9347-E24514AEA163">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>4BFFDD50-ED72-4A81-9C1D-BD4A2BF9029F</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0005-Spelling</NAPTestLocalId>
+  <DomainNationalAverage>391</DomainNationalAverage>
+  <DomainSchoolAverage>397</DomainSchoolAverage>
+  <DomainJurisdictionAverage>407</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>419</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>387</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="0967C402-F50F-42E3-A7E6-FF034D2E9952">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>FCC39019-3C8C-49DE-86BE-D3CCAF4B2303</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0002-Writing</NAPTestLocalId>
+  <DomainNationalAverage>397</DomainNationalAverage>
+  <DomainSchoolAverage>400</DomainSchoolAverage>
+  <DomainJurisdictionAverage>399</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>426</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>386</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="FB061560-D252-46FF-88CB-FC6A41EB0D98">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>D0093902-DE7D-46D1-B508-833862993F58</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0009-Grammar and Punctuation</NAPTestLocalId>
+  <DomainNationalAverage>516</DomainNationalAverage>
+  <DomainSchoolAverage>515</DomainSchoolAverage>
+  <DomainJurisdictionAverage>502</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>524</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>498</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="CA0DC777-72A4-498B-8BDB-006B19B15C50">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>FC4060A5-670C-4525-AAE2-B6324078541D</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0008-Numeracy</NAPTestLocalId>
+  <DomainNationalAverage>516</DomainNationalAverage>
+  <DomainSchoolAverage>500</DomainSchoolAverage>
+  <DomainJurisdictionAverage>516</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>522</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>492</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="C992A074-D056-44B0-8BDE-9DAC0A0FF40F">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>27035BC7-256C-4BE8-8F23-E1F6441A94C7</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0006-Reading</NAPTestLocalId>
+  <DomainNationalAverage>505</DomainNationalAverage>
+  <DomainSchoolAverage>512</DomainSchoolAverage>
+  <DomainJurisdictionAverage>515</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>522</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>496</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="067B0CAB-7BD6-4578-A356-D0C3D1D2C1AE">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>4BBDC0F8-9EA2-4D58-AF53-0C05315B2C34</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0010-Spelling</NAPTestLocalId>
+  <DomainNationalAverage>504</DomainNationalAverage>
+  <DomainSchoolAverage>507</DomainSchoolAverage>
+  <DomainJurisdictionAverage>510</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>524</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>491</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="03326E89-CCD4-48F6-B9FA-48A6934C09DF">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>30A5111C-C6B3-4658-B225-E61ADD029CFA</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0007-Writing</NAPTestLocalId>
+  <DomainNationalAverage>516</DomainNationalAverage>
+  <DomainSchoolAverage>500</DomainSchoolAverage>
+  <DomainJurisdictionAverage>513</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>532</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>496</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="354767F6-E426-4B63-B6F5-8447023869D8">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>B1459055-061E-46AD-807A-CF478EACE16A</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0014-Grammar and Punctuation</NAPTestLocalId>
+  <DomainNationalAverage>558</DomainNationalAverage>
+  <DomainSchoolAverage>567</DomainSchoolAverage>
+  <DomainJurisdictionAverage>558</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>583</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>548</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="30859B50-608D-4D50-931D-E4957BABFFEC">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>3C6D8BDA-163B-4781-915A-6E19ED34C8A9</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0013-Numeracy</NAPTestLocalId>
+  <DomainNationalAverage>552</DomainNationalAverage>
+  <DomainSchoolAverage>566</DomainSchoolAverage>
+  <DomainJurisdictionAverage>551</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>570</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>533</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="2009892D-8B91-4E69-B90B-9F90FF203A19">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>9F2CC069-D88A-4643-963A-1CA9BA8D8EC3</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0011-Reading</NAPTestLocalId>
+  <DomainNationalAverage>554</DomainNationalAverage>
+  <DomainSchoolAverage>569</DomainSchoolAverage>
+  <DomainJurisdictionAverage>551</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>572</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>536</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="43FB20C4-7B10-4BBE-B10B-7E66FF6259C9">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>56D3C4B5-B31E-4721-8D5A-AB58AAE02CE9</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0015-Spelling</NAPTestLocalId>
+  <DomainNationalAverage>552</DomainNationalAverage>
+  <DomainSchoolAverage>560</DomainSchoolAverage>
+  <DomainJurisdictionAverage>554</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>585</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>532</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="37F834DA-19AE-44E3-83F9-413DFEDE4511">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>40CB1201-B20D-4677-B161-D55DF292CDE2</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0012-Writing</NAPTestLocalId>
+  <DomainNationalAverage>565</DomainNationalAverage>
+  <DomainSchoolAverage>558</DomainSchoolAverage>
+  <DomainJurisdictionAverage>557</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>583</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>541</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="F832CA62-7E13-4BDF-A3FD-3A16E7134A7F">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>303D4CB3-0335-4167-9A84-CFE4A7EA81FD</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0019-Grammar and Punctuation</NAPTestLocalId>
+  <DomainNationalAverage>592</DomainNationalAverage>
+  <DomainSchoolAverage>585</DomainSchoolAverage>
+  <DomainJurisdictionAverage>596</DomainJurisdictionAverage>
   <DomainTopNational60Percent>611</DomainTopNational60Percent>
-  <DomainBottomNational60Percent>562</DomainBottomNational60Percent>
+  <DomainBottomNational60Percent>566</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="7411AE26-5122-4570-B90B-5EEB2EC3EA26">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>6E05DBCD-88AE-4E99-9122-C8D2F0B1A65D</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0018-Numeracy</NAPTestLocalId>
+  <DomainNationalAverage>597</DomainNationalAverage>
+  <DomainSchoolAverage>588</DomainSchoolAverage>
+  <DomainJurisdictionAverage>587</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>619</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>574</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="84713440-101F-4468-8392-D602F21CEA8D">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>144608F7-36CC-407C-B6A7-23B98E74908A</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0016-Reading</NAPTestLocalId>
+  <DomainNationalAverage>599</DomainNationalAverage>
+  <DomainSchoolAverage>583</DomainSchoolAverage>
+  <DomainJurisdictionAverage>581</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>612</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>574</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="B164099A-6EA1-4C10-BF1F-AD07BB933DF2">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>28A1080F-73AB-404C-8857-4F5CFBC15FC0</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0020-Spelling</NAPTestLocalId>
+  <DomainNationalAverage>585</DomainNationalAverage>
+  <DomainSchoolAverage>584</DomainSchoolAverage>
+  <DomainJurisdictionAverage>593</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>616</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>575</DomainBottomNational60Percent>
+</NAPTestScoreSummary>
+
+<NAPTestScoreSummary RefId="8E93D157-A679-491A-A6E5-ABA045423089">
+  <SchoolInfoRefId>A3DCE532-23EF-4F75-9950-517DE2D4428F</SchoolInfoRefId>
+  <SchoolACARAId>21215</SchoolACARAId>
+  <NAPTestRefId>7161B388-FABE-42C0-9E81-15067EE8F23D</NAPTestRefId>
+  <NAPTestLocalId>NAPLAN-2017-0017-Writing</NAPTestLocalId>
+  <DomainNationalAverage>582</DomainNationalAverage>
+  <DomainSchoolAverage>589</DomainSchoolAverage>
+  <DomainJurisdictionAverage>589</DomainJurisdictionAverage>
+  <DomainTopNational60Percent>601</DomainTopNational60Percent>
+  <DomainBottomNational60Percent>563</DomainBottomNational60Percent>
 </NAPTestScoreSummary>
 </NAPTestScoreSummarys>
