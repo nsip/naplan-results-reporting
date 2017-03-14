@@ -25,21 +25,21 @@ Note also that in the final results reporting data file the NAPLAN Platform will
 ## What you can find here
 
 * Technical Specification Document
-  * _Results and Reporting Dataset - Tech Spec 0.6.docx_
+  * _Results and Reporting Dataset - Tech Spec 0.91.docx_
   * This document describes the specification of the results reporting objects (Currently removed)
   * _NAP response Object Draft 16.pdf_
   * Interim SIF XML specification, with mappings to the excel object schema
   * _NAP SIF HTML.zip_
   * SIF XML specification in the traditional HTML format
 * Dataset Dictionary
-  * _Online NAPLAN Reporting Dataset 2 051.xslx_
+  * _Online NAPLAN Reporting Dataset 2 054.xslx_
   * This is an excel version of the object schema giving details of all field types 
 * XSD for Object Validation
   * _SIF_Message.xsd_
   * This is an xsd containing all of the object definitions and linkages, for use in validating results-reporting files or for constructing schemas/code to handle the data
 * Sample Data Files
-  * **nap _object name_ .xml**
-  * A series of files containing sample data sets for each object
+  * **nap _object name_ .xml**, **nap _object name_ .xml.zip*
+  * A series of files containing sample data sets for each object (some are compressed for size)
   * **master_nap.xml**
   * A single file containing all the sample data files
   * **nap-samplefile.xml**
@@ -56,14 +56,14 @@ This repository includes a cut-down SIF-AU XSD specific to the reporting objects
 
 * 800 students enrolled in four different schools, distributed among years 3, 5, 7, 9
 * test objects for all domains of NAPLAN
-* student response sets for all students that have participated in all tests (90%)
-* a selection of adaptive testlets and corresponding items for all tests, following  the NAPLAN node structure (A-F), and the allocation of testlets per node that ACARA has established. The items include adjustment substitutes.
+* student response sets for all students that have participated in all tests (86%)
+* a selection of adaptive testlets and corresponding items for all tests, following the NAPLAN node structure (A-F), and the allocation of testlets per node that ACARA has established. The items include adjustment substitutes.
   * The testlets and items are made available both as a single codeframe object per test, which we assume jurisdictions will consume in advance, and as separate testlet and test item objects, which are referenced from the student response sets
 * test score summaries for all tests
 
 The data is randomised, and is not intended to represent real test constructs. However the values included in the dataset are intended to be as realistic as possible.
 
-We will be including codeframe information in the results reporting dataset, and will update this specification as soon as the final structure of this data has been agreed.
+We are including codeframe information in the results reporting dataset, and will update this specification as soon as the final structure of this data has been agreed.
 
 As guidance for any database design intended to ingest this data, the following diagram presents all lists included within the objects, which a relational database would need to represent as separate tables. Again, the codeframe object replicates the content of the test, testlet and test item objects, and it is highlighted in blue:
 
