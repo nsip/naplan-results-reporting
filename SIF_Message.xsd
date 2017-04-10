@@ -1,7 +1,7 @@
 <!--
 		SIF Implementation Specification (Australia) 3.4.1 Draft (March 16, 2017) Infrastructure Version: v3
 	-->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sifassociation.org/datamodel/au/3.4.1" targetNamespace="http://www.sifassociation.org/datamodel/au/3.4.1" elementFormDefault="qualified"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sifassociation.org/datamodel/au/3.4" targetNamespace="http://www.sifassociation.org/datamodel/au/3.4" elementFormDefault="qualified" version="3.4.1"
 >
   <!--SIFAU-->
 
@@ -1068,6 +1068,11 @@
       <xs:enumeration value="TE">
         <xs:annotation>
           <xs:documentation>Text entry</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -25287,7 +25292,7 @@
             <xs:extension base="xs:unsignedInt">
               <xs:attribute name="Units" use="required">
                 <xs:annotation>
-                  <xs:documentation>Unit of time of the Duration value. </xs:documentation>
+                  <xs:documentation>Unit of time of the Duration value. </xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                   <xs:restriction base="xs:token">
