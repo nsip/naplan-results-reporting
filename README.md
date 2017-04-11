@@ -8,7 +8,7 @@ This is a draft of objects to be used to  encode results from NAPLAN, for commun
 
 _Please note the version of the Results and Reporting Dataset for NAPLAN Online published here is a work in progress and is published as an indication of the likely data produced by the platform._
  
-_An Excel version was approved by OAWG at their November 2016 meeting but until the platform is actually producing  data files the final form of these datasets will not be known._ 
+_An Excel version was approved by OAWG at their November 2016 meeting. This format applies to the 2017 NAPLAN cycle only, and is expected to be revised for future cycles._ 
 
 
 This version of the results reporting dataset is provided as an early access release intended to help systems integrators who need to understand the high-level concepts of the results reporting data structure.
