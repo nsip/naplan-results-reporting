@@ -15,33 +15,29 @@ This version of the results reporting dataset is provided as an early access rel
 
 NSIP strongly recommends that users of this specification register as GitHub users, and click on the 'Watch' button in the top right-hand corner of the GitHub web interface - this will ensure that if and when changes are made to the specification you will be notified automatically.
 
-NSIP has included sample data in XML format as part of this release: these are the files named with the convention **nap _object name_ .xml**
+NSIP has included sample data in XML format as part of this release: the file containing the sample data is `master_nap.xml.zip`. As with the final results reporting data file the NAPLAN Platform will produce, all objects are  in a single file.
 
 Please note, these files contain valid data in all elements, but do not constitute a realistic results dataset. NSIP has been working with ACARA to produce sample data that contains realistic values, and many of the fields are now realistic, but the data is primarily there for guidance in constructing integrations.
-
-Note also that in the final results reporting data file the NAPLAN Platform will produce, all objects will be in a single file. We have provided both a single output file and separate individual object files, in order to make working with and understanding each object easier.
 
 
 ## What you can find here
 
 * Technical Specification Document
-  * _Results and Reporting Dataset - Tech Spec 0.91.docx_
+  * _Results and Reporting Dataset - Tech Spec 0.92.docx_
   * This document describes the specification of the results reporting objects (Currently removed)
   * _NAP response Object Draft 16.pdf_
   * Interim SIF XML specification, with mappings to the excel object schema
   * _NAP SIF HTML.zip_
   * SIF XML specification in the traditional HTML format
 * Dataset Dictionary
-  * _Online NAPLAN Reporting Dataset 2 054.xslx_
+  * _Online NAPLAN Reporting Dataset 2 056.xslx_
   * This is an excel version of the object schema giving details of all field types 
 * XSD for Object Validation
-  * _SIF_Message.xsd_
-  * This is an xsd containing all of the object definitions and linkages, for use in validating results-reporting files or for constructing schemas/code to handle the data
+  * _SIF_MessageWithNAPWrapper.xsd_
+  * This is an xsd containing all of the object definitions and linkages, for use in validating results-reporting files or for constructing schemas/code to handle the data. The xsd is a subset of the SIF-AU 3.4.1 XSD, with the element `NAPResultsReporting` added to act as a wrapper for the different SIF objects relevant to NAP.
 * Sample Data Files
-  * **nap _object name_ .xml**, **nap _object name_ .xml.zip*
-  * A series of files containing sample data sets for each object (some are compressed for size)
-  * **master_nap.xml**
-  * A single file containing all the sample data files
+  * **master_nap.xml.zip**
+  * A single file containing  sample data for all relevant object types
   * **nap-samplefile.xml**
   * A single file containing one instance for each object, to illustrate the inclusion of all object types in the one file
 
