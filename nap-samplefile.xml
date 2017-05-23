@@ -1,0 +1,329 @@
+
+<NAPResultsReporting xmlns="http://www.sifassociation.org/datamodel/au/3.4"> 
+    <StudentPersonal RefId="10000000-0000-0000-0000-000000000000">
+        <LocalId>S1234567</LocalId>
+        <StateProvinceId>ABC1234</StateProvinceId>
+        <OtherIdList>
+            <OtherId Type="DiocesanStudentId">1234</OtherId>
+            <OtherId Type="TAAStudentId">1234</OtherId>
+            <OtherId Type="OtherStudentId">1234</OtherId>
+            <OtherId Type="NationalStudentId">1234</OtherId>
+            <OtherId Type="SectorStudentId">1234</OtherId>
+            <OtherId Type="NAPPlaftormStudentId">R100000000K</OtherId>
+            <OtherId Type="PreviousLocalStudentId">1234</OtherId>
+            <OtherId Type="PreviousSectorStudentId">1234</OtherId>
+            <OtherId Type="PreviousNAPPlatformStudentId">R100000000K</OtherId>
+            <OtherId Type="PreviousDiocesanStudentId">1234</OtherId>
+            <OtherId Type="PreviousOtherStudentId">1234</OtherId>
+            <OtherId Type="PreviousTAAStudentId">1234</OtherId>
+            <OtherId Type="PreviousStateProvinceId">1234</OtherId>
+            <OtherId Type="PreviousNationalStudentId">1234</OtherId>
+        </OtherIdList>
+        <PersonInfo>
+            <Name Type="LGL">
+                <FamilyName>Smith</FamilyName>
+                <GivenName>Fred</GivenName>
+                <MiddleName>John</MiddleName>
+                <PreferredGivenName>Fred</PreferredGivenName>
+            </Name>
+            <Demographics>
+                <IndigenousStatus>3</IndigenousStatus>
+                <Sex>1</Sex>
+                <BirthDate>1990-09-26</BirthDate>
+                <CountryOfBirth>1101</CountryOfBirth>
+                <LanguageList>
+                    <Language>
+                        <Code>0001</Code>
+                        <LanguageType>4</LanguageType>
+                    </Language>
+                </LanguageList>
+                <VisaSubClass>101</VisaSubClass>
+                <LBOTE>N</LBOTE>
+            </Demographics>
+            <AddressList>
+                <Address Type="0123" Role="2382">
+                    <Street>
+                        <Line1>Unit1/10</Line1>
+                        <Line2>Barkley Street</Line2>
+                    </Street>
+                    <City>Yarra Glenn</City>
+                    <StateProvince>VIC</StateProvince>                   
+                    <PostalCode>9999</PostalCode>
+                </Address>
+             </AddressList>
+        </PersonInfo>
+        <MostRecent>
+            <SchoolLocalId>S1234567</SchoolLocalId>
+            <YearLevel>
+                <Code>3</Code>
+            </YearLevel>
+            <FTE>0.5</FTE>
+            <Parent1Language>1201</Parent1Language>
+            <Parent2Language>1201</Parent2Language>
+            <Parent1EmploymentType>1</Parent1EmploymentType>
+            <Parent2EmploymentType>1</Parent2EmploymentType>
+            <Parent1SchoolEducationLevel>0</Parent1SchoolEducationLevel>
+            <Parent2SchoolEducationLevel>0</Parent2SchoolEducationLevel>
+            <Parent1NonSchoolEducation>0</Parent1NonSchoolEducation>
+            <Parent2NonSchoolEducation>0</Parent2NonSchoolEducation>
+            <LocalCampusId>D</LocalCampusId>
+            <SchoolACARAId>VIC687</SchoolACARAId>
+            <TestLevel>
+                <Code>3</Code>
+            </TestLevel>
+            <Homegroup>7A</Homegroup>
+            <ClassCode>English 7D</ClassCode>
+            <MembershipType>02</MembershipType>
+            <FFPOS>2</FFPOS>
+            <ReportingSchoolId>VIC670</ReportingSchoolId>
+            <OtherEnrollmentSchoolACARAId>VIC6273</OtherEnrollmentSchoolACARAId>
+        </MostRecent>
+        <HomeSchooledStudent>N</HomeSchooledStudent>
+        <Sensitive>N</Sensitive>
+        <OfflineDelivery>N</OfflineDelivery>
+    </StudentPersonal>
+
+
+    <NAPEventStudentLink RefId="00000000-0000-0000-0000-000000000000">
+        <StudentPersonalRefId>10000000-0000-0000-0000-000000000000</StudentPersonalRefId>
+        <PlatformStudentIdentifier>R100000000K</PlatformStudentIdentifier>
+        <SchoolInfoRefId>20000000-0000-0000-0000-000000000000</SchoolInfoRefId>
+        <SchoolACARAId>21212</SchoolACARAId>
+        <NAPTestRefId>50000000-0000-0000-0000-000000000000</NAPTestRefId>
+        <NAPTestLocalId>NAPLAN-Writing-Yr3-2017</NAPTestLocalId>
+        <SchoolSector>NG</SchoolSector>
+        <System>0001</System>
+        <SchoolGeolocation>1</SchoolGeolocation>
+        <ParticipationCode>P</ParticipationCode>
+        <ParticipationText>Participated</ParticipationText>
+        <Device>iPad</Device>
+        <Date>2017-06-01</Date>
+        <StartTime>09:00:00</StartTime>
+        <LapsedTimeTest>PT2H57M37S</LapsedTimeTest>
+        <ExemptionReason>Did not attend</ExemptionReason>
+        <TestDisruptionList>
+            <TestDisruption>
+                <Event>Test centre on fire</Event>
+            </TestDisruption>
+        </TestDisruptionList>
+        <AdjustmentList>
+            <Adjustment>
+                <AdjustmentDomain>Writing</AdjustmentDomain>
+                <PNPCodeList>
+                    <PNPCode>AIA</PNPCode>
+                    <PNPCode>AIM</PNPCode>
+                </PNPCodeList>
+                <BookletType>Braille</BookletType>
+            </Adjustment>
+        </AdjustmentList>
+    </NAPEventStudentLink>
+    
+
+    <NAPTest RefId="50000000-0000-0000-0000-000000000000">
+        <LocalId>NAPLAN-Writing-Yr3-2017</LocalId>
+        <TestName>NAPLAN Writing Yr 3, 2017</TestName>
+        <TestLevel><Code>3</Code></TestLevel>
+        <TestType>Survey</TestType>
+        <Domain>Writing</Domain>
+        <TestYear>2017</TestYear>
+        <DomainBands>
+            <Band1Lower>0</Band1Lower>
+            <Band1Upper>258</Band1Upper>
+            <Band2Lower>258</Band2Lower>
+            <Band2Upper>318</Band2Upper>
+            <Band3Lower>318</Band3Lower>
+            <Band3Upper>3687</Band3Upper>
+            <Band4Lower>3687</Band4Lower>
+            <Band4Upper>417</Band4Upper>
+            <Band5Lower>417</Band5Lower>
+            <Band5Upper>466</Band5Upper>
+            <Band6Lower>466</Band6Lower>
+            <Band6Upper>526</Band6Upper>
+            <Band7Lower>526</Band7Lower>
+            <Band7Upper>574</Band7Upper>
+            <Band8Lower>574</Band8Lower>
+            <Band8Upper>633</Band8Upper>
+            <Band9Lower>633</Band9Lower>
+            <Band9Upper>681</Band9Upper>
+            <Band10Lower>681</Band10Lower>
+            <Band10Upper>999</Band10Upper> 
+        </DomainBands>
+    </NAPTest>
+        
+    <NAPTestlet RefId="60000000-0000-0000-0000-000000000000">
+        <LocalId>N-3</LocalId>
+        <NAPTestRefId>50000000-0000-0000-0000-000000000000</NAPTestRefId>
+        <NAPTestLocalId>NAPLAN-Writing-Yr3-2017</NAPTestLocalId>
+        <TestletName>Testlet 3 for Writing</TestletName>
+        <TestletType>Normal</TestletType>
+        <Node>A</Node>
+        <LocationInStage>1</LocationInStage>
+        <TestletSubscore>5</TestletSubscore>
+        <BranchingScores>
+            <Stage1ScoreUp>4</Stage1ScoreUp>
+            <Stage1ScoreDown>2</Stage1ScoreDown>
+            <Stage1SameUpper>3</Stage1SameUpper>
+            <Stage1SameLower>3</Stage1SameLower>
+            <Stage2ScoreUp>4</Stage2ScoreUp>
+            <Stage2ScoreDown>2</Stage2ScoreDown>
+            <Stage2SameUpper>3</Stage2SameUpper>
+            <Stage2SameLower>3</Stage2SameLower>
+        </BranchingScores>
+        <TestItemList>
+            <TestItem>
+                <TestItemRefId>40000000-0000-0000-0000-000000000000</TestItemRefId>
+                <TestItemLocalId>7834</TestItemLocalId>
+                <SequenceNumber>1</SequenceNumber>
+            </TestItem>
+            <TestItem>
+                <TestItemRefId>40000000-0000-0000-0000-000000000001</TestItemRefId>
+                <TestItemLocalId>7835</TestItemLocalId>
+                <SequenceNumber>2</SequenceNumber>
+            </TestItem>
+        </TestItemList>
+    </NAPTestlet>
+    
+
+    <NAPTestItem RefId="40000000-0000-0000-0000-000000000000">
+        <LocalId>7834</LocalId>
+        <ItemTypeList>
+            <ItemType>MC</ItemType>
+        </ItemTypeList>
+        <Domain>Writing</Domain>
+        <Subdomain>N3</Subdomain>
+        <WritingGenre>Persuasive</WritingGenre>
+        <ItemDescriptor>Adding two integers</ItemDescriptor>
+        <ReleasedStatus>false</ReleasedStatus>
+        <CorrectAnswer>7</CorrectAnswer>
+        <MaximumScore>10</MaximumScore>
+        <ItemDifficulty>3</ItemDifficulty>
+        <ItemDifficultyLogit>2.7</ItemDifficultyLogit>
+        <ItemProficiencyBand>3</ItemProficiencyBand>
+        <ItemProficiencyLevel>Proficient</ItemProficiencyLevel>
+        <ExemplarURL>http://example.com/n3.xml</ExemplarURL>
+        <NAPTestletList>
+            <NAPTestlet>
+                <NAPTestletRefId>60000000-0000-0000-0000-000000000000</NAPTestletRefId>
+                <NAPTestletLocalId>N-3</NAPTestletLocalId>
+                <SequenceNumber>1</SequenceNumber>
+            </NAPTestlet>
+            <NAPTestlet>
+                <NAPTestletRefId>61000000-0000-0000-0000-000000000000</NAPTestletRefId>
+                <NAPTestletLocalId>N-3a</NAPTestletLocalId>
+                <SequenceNumber>2</SequenceNumber>
+            </NAPTestlet>
+        </NAPTestletList>
+        <ItemSubstitutedForRefId>41000000-0000-0000-0000-000000000000</ItemSubstitutedForRefId>
+        <SubstituteItemPNPCodeList>
+            <PNPCode>ALL</PNPCode>
+        </SubstituteItemPNPCodeList>
+        <ContentDescriptionList>
+            <ContentDescription>MNA32</ContentDescription>
+            <ContentDescription>MNA37</ContentDescription>
+        </ContentDescriptionList>
+        <MarkingType>MM</MarkingType>
+        <StimulusList>
+            <Stimulus>
+                <LocalId>7834-1</LocalId>
+                <StimulusType>Text</StimulusType>
+                <Domain>Reading</Domain>
+                <TextGenre>Narrative</TextGenre>
+                <TextType>Simple</TextType>
+                <WordCount>300</WordCount>
+                <Descriptor>Narrative example</Descriptor>
+                <Content>This is an example narrative.</Content>
+            </Stimulus>
+        </StimulusList>
+        <NAPWritingRubricList>
+            <NAPWritingRubric>
+                <RubricName>Writing sentence structure #3</RubricName>
+                <RubricType>Sentence Structure</RubricType>
+                <ScoringGuideReference>http://example.com/writing/struct/3.xml</ScoringGuideReference>
+                <ScoreList>
+                    <Score>
+                        <MaxScoreValue>7</MaxScoreValue>
+                        <ScoreDescriptionList>
+                            <ScoreDescription>
+                                <ScoreValue>3</ScoreValue>
+                                <Description>Uses verb</Description>
+                                <ScoreCommentCode>Where is verb?</ScoreCommentCode>
+                            </ScoreDescription>
+                            <ScoreDescription>
+                                <ScoreValue>3</ScoreValue>
+                                <Description>Uses noun</Description>
+                                <ScoreCommentCode>Where is noun?</ScoreCommentCode>
+                            </ScoreDescription>
+                            <ScoreDescription>
+                                <ScoreValue>1</ScoreValue>
+                                <Description>Noun precedes verb</Description>
+                                <ScoreCommentCode>Noun before verb?</ScoreCommentCode>
+                            </ScoreDescription>
+                        </ScoreDescriptionList>
+                    </Score>
+                </ScoreList>
+                <Descriptor>Rubric for NAP sentence structure scoring</Descriptor>
+            </NAPWritingRubric>
+        </NAPWritingRubricList>
+    </NAPTestItem>
+
+    <NAPTestScoreSummary RefId="70000000-0000-0000-0000-000000000000">
+        <SchoolInfoRefId>20000000-0000-0000-0000-000000000000</SchoolInfoRefId>
+        <SchoolACARAId>21212</SchoolACARAId>
+        <NAPTestRefId>50000000-0000-0000-0000-000000000000</NAPTestRefId>
+        <NAPTestLocalId>NAPLAN-Writing-Yr3-2017</NAPTestLocalId>
+        <DomainNationalAverage>60.4</DomainNationalAverage>
+        <DomainSchoolAverage>55.6</DomainSchoolAverage>
+        <DomainJurisdictionAverage>57.6</DomainJurisdictionAverage>
+        <DomainTopNational60Percent>75.2</DomainTopNational60Percent>
+        <DomainBottomNational60Percent>65.3</DomainBottomNational60Percent>
+    </NAPTestScoreSummary>
+
+    <NAPStudentResponseSet RefId="80000000-0000-0000-0000-000000000000">
+        <ReportExclusionFlag>false</ReportExclusionFlag>
+        <CalibrationSampleFlag>N</CalibrationSampleFlag>
+        <EquatingSampleFlag>N</EquatingSampleFlag>
+        <PathTakenForDomain>A3-B4-D-F</PathTakenForDomain>
+        <StudentPersonalRefId>10000000-0000-0000-0000-000000000000</StudentPersonalRefId>
+        <PlatformStudentIdentifier>R100000000K</PlatformStudentIdentifier>
+        <NAPTestRefId>50000000-0000-0000-0000-000000000000</NAPTestRefId>
+        <NAPTestLocalId>NAPLAN-Writing-Yr3-2017</NAPTestLocalId>
+        <DomainScore>
+            <RawScore>78</RawScore>
+            <ScaledScoreValue>77.4</ScaledScoreValue>
+            <ScaledScoreStandardError>2.1</ScaledScoreStandardError>
+            <StudentDomainBand>5</StudentDomainBand>
+            <StudentProficiency>Proficient</StudentProficiency>
+        </DomainScore>
+        <TestletList>
+            <Testlet>
+                <NAPTestletRefId>60000000-0000-0000-0000-000000000000</NAPTestletRefId>
+                <NAPTestletLocalId>N-3</NAPTestletLocalId>
+                <TestletScore>6</TestletScore>
+                <ItemList>
+                    <Item>
+                        <NAPTestItemRefId>40000000-0000-0000-0000-000000000000</NAPTestItemRefId>
+                        <LocalId>X13</LocalId>
+                        <Response>12</Response>
+                        <ResponseCorrectness>0</ResponseCorrectness>
+                        <Score>6</Score>
+                        <LapsedTimeItem>PT50S</LapsedTimeItem>
+                        <Script>BLOB</Script>
+                        <SequenceNumber>1</SequenceNumber>
+                        <ItemWeight>0</ItemWeight>                       
+                        <SubscoreList>
+                            <Subscore>
+                                <SubscoreType>Cohesion</SubscoreType>
+                                <SubscoreValue>4.3</SubscoreValue>
+                            </Subscore>
+                            <Subscore>
+                                <SubscoreType>Ideas</SubscoreType>
+                                <SubscoreValue>2.1</SubscoreValue>
+                            </Subscore>
+                        </SubscoreList>
+                    </Item>
+                </ItemList>
+            </Testlet>
+        </TestletList>
+    </NAPStudentResponseSet>
+</NAPResultsReporting>
+
