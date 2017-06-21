@@ -23,14 +23,14 @@ Please note, these files contain valid data in all elements, but do not constitu
 ## What you can find here
 
 * Technical Specification Document
-  * _Results and Reporting Dataset - Tech Spec 0.92.docx_
+  * _Results and Reporting Dataset - Tech Spec 0.94.docx_
   * This document describes the specification of the results reporting objects (Currently removed)
-  * _NAP response Object Draft 16.pdf_
+  * _NAP response Object Draft 17.pdf_
   * Interim SIF XML specification, with mappings to the excel object schema
   * _NAP SIF HTML.zip_
   * SIF XML specification in the traditional HTML format
 * Dataset Dictionary
-  * _Online NAPLAN Reporting Dataset 2 056.xslx_
+  * _Online NAPLAN Reporting Dataset 2 059.xslx_
   * This is an excel version of the object schema giving details of all field types 
 * XSD for Object Validation
   * _SIF_MessageWithNAPWrapper.xsd_
@@ -67,9 +67,7 @@ As guidance for any database design intended to ingest this data, the following 
 
 ## Release Notes
 
-The objects described here are proposed for inclusion in the Australian Schools Data Model - SIF-AU 3.4.x (see [SIF spec](http://specification.sifassociation.org/Implementation/AU/1.4/html/); we expect that the definition of the dataset will be refined in the next few months, through discussion with both the National Assessment Platform developers, ACARA and the Test Administration Authorities.
-
-NSIP will be working with all jurisdictions and system stakeholders to refine the dataset to final status as quickly as possible.
+The objects described here have been included in the Australian Schools Data Model - SIF-AU 3.4.1 (see [SIF spec](http://specification.sifassociation.org/Implementation/AU/3.4.1/html/).
 
 If you have any questions about the schemas, the datasets or how to effectively use SIF Frameworks or other tools NSIP provides please contact us directly at info@nsip.edu.au
 
