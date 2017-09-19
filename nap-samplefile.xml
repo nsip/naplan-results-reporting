@@ -246,6 +246,7 @@
     <NAPTestItem RefId="40000000-0000-0000-0000-000000000000">
      <TestItemContent>
        <NAPTestItemLocalId>7834</NAPTestItemLocalId>
+        <ItemName>Test Item 7834</ItemName>
         <ItemType>MC</ItemType>
         <Subdomain>N3</Subdomain>
         <WritingGenre>Persuasive</WritingGenre>
