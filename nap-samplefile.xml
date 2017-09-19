@@ -314,6 +314,7 @@
                 <Descriptor>Rubric for NAP sentence structure scoring</Descriptor>
             </NAPWritingRubric>
         </NAPWritingRubricList>
+     </TestItemContent>
     </NAPTestItem>
 
     <NAPTestScoreSummary RefId="70000000-0000-0000-0000-000000000000">
