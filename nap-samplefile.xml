@@ -112,16 +112,13 @@
                 <Event>Test centre on fire</Event>
             </TestDisruption>
         </TestDisruptionList>
-        <AdjustmentList>
-            <Adjustment>
-                <AdjustmentDomain>Writing</AdjustmentDomain>
-                <PNPCodeList>
-                    <PNPCode>AIA</PNPCode>
-                    <PNPCode>AIM</PNPCode>
-                </PNPCodeList>
-                <BookletType>Braille</BookletType>
-            </Adjustment>
-        </AdjustmentList>
+        <Adjustment>
+                     <PNPCodeList>
+                         <PNPCode>AIA</PNPCode>
+                     <PNPCode>AIM</PNPCode>
+                     </PNPCodeList>
+                     <BookletType>Braille</BookletType>
+                 </Adjustment>
     </NAPEventStudentLink>
     
 
