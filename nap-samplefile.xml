@@ -102,8 +102,8 @@
         <Date>2017-06-01</Date>
         <StartTime>09:00:00</StartTime>
         <LapsedTimeTest>PT2H57M37S</LapsedTimeTest>
-        <PersonalDetailsChanged>false</PersonalDetailsChanged>
         <ExemptionReason>Did not attend</ExemptionReason>
+        <PersonalDetailsChanged>false</PersonalDetailsChanged>
         <PSIOtherIdMatch>false</PSIOtherIdMatch>
         <PossibleDuplicate>false</PossibleDuplicate>
         <DOBRange>false</DOBRange>
