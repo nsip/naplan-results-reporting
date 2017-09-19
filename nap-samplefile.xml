@@ -276,7 +276,6 @@
             <ContentDescription>MNA32</ContentDescription>
             <ContentDescription>MNA37</ContentDescription>
         </ContentDescriptionList>
-        <MarkingType>MM</MarkingType>
         <StimulusList>
             <Stimulus>
                 <StimulusLocalId>7834-1</StimulusLocalId>
