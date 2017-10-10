@@ -51,6 +51,10 @@
                     <PostalCode>9999</PostalCode>
                 </Address>
              </AddressList>
+            <EmailList>
+              <Email Type="01">fsmith@yahoo.com</Email>
+              <Email Type="02">freddy@gmail.com</Email>
+            </EmailList>
         </PersonInfo>
         <MostRecent>
             <SchoolLocalId>S1234567</SchoolLocalId>
