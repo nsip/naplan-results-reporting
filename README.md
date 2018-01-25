@@ -71,7 +71,7 @@ As guidance for any database design intended to ingest this data, the following 
 
 ## Release Notes
 
-The objects described here have been included in the Australian Schools Data Model - SIF-AU 3.4.2 (see [SIF spec](http://specification.sifassociation.org/Implementation/AU/3.4.2/ ).
+The objects described here have been included in the Australian Schools Data Model - SIF-AU 3.4.2 (see [SIF spec](http://specification.sifassociation.org/Implementation/AU/3.4.2/ )).
 
 If you have any questions about the schemas, the datasets or how to effectively use SIF Frameworks or other tools NSIP provides please contact us directly at info@nsip.edu.au
 
