@@ -1,3 +1,5 @@
+# call with ARGV[0] and ARGV[1] as student per school count and school count
+
 use Data::GUID::Any 'guid_as_string';
 use Data::Random::Contact;
 use Data::Random::WordList;
@@ -49,8 +51,8 @@ my @writing_rubrics = (
 
 my %testletcountpernode = (A => 2, B => 2, D => 2, E => 2, C => 1, F => 1, Blank => 1,
 Clc => 2, Elc => 2, Flc => 2, S1 => 2, S2 => 2, S3 => 2, P1 => 2, P2 => 2);
-my $studentsperschool = 200;
-my $schoolcount = 200;
+my $studentsperschool = $ARGV[0];
+my $schoolcount = $ARGV[1];
 my %yearlevel_averages = (3 => 390, 5 => 500, 7 => 550, 9 => 580);
 
 =pod=
@@ -459,7 +461,6 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
 		if($domain_out eq 'Numeracy' && $j == itempertestlet($testlevel, $node) - 1) {
 			foreach $p (qw(AIM AVM ALL)) {
     		$itemrefid2 = lc guid_as_string();
-                # $itemlocalid2 = sprintf ("%s-%02d-%s", $localid, $j, $p);
                 $itemlocalid2 = sprintf "x001%05d", ++$asset;
             $itemlist{$itemrefid2}{LOCALID} = $itemlocalid2;
             $itemlist{$itemrefid2}{DOMAIN} = $domain;
@@ -1120,6 +1121,7 @@ rand(200)+$yearlevel_averages{$yearlevel}-20,
 
 }}}}
 
+%x = ();
 
 printf F qq{\n<NAPStudentResponseSets xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
 foreach $d (@domainsLC_tests) {
@@ -1177,15 +1179,21 @@ foreach $e (@{$events{$d}}) {
         my $itemrefid = $$i{GUID};
         my $itemlocalid = $$i{LOCALID};
 	next unless $itemrefid ;
+        next if (exists $itemlist{$$i{GUID}}{SUBSTITUTES});
 	if(exists $itemlist{$$i{GUID}}{SUBSTITUTED}) {
 	foreach $p (@{$itemlist{$$i{GUID}}{SUBSTITUTED}}) {
         $lc = List::Compare->new($adjustment_link{$$e{STUDENTGUID}}{$$e{DOMAIN}}, $$p{PNP});
-        if($lc->get_intersection) {
+        if($lc->get_intersection and index($items, $$p{REFID}) == -1 ) {
+          # don't substitute item if the student has already sat it
             $itemrefid = $$p{REFID};
             $itemlocald = $$p{LOCALID};
-            printf STDERR "SUB! %s %s\n", $$e{DOMAIN}, join(':', $lc->get_intersection);
+            printf STDERR "SUB! %s %s:\tStudent %s\tItem %s\tSubItem %s\n", $$e{DOMAIN}, join(':', $lc->get_intersection),
+            $$e{STUDENTGUID}, $$i{GUID}, $$p{REFID};
         }
 	}}
+      if ($x{$$e{STUDENTGUID}}{$itemrefid}++) {
+      printf STDERR "!!!!! %s %s\n", $$e{STUDENTGUID}, $itemrefid ;
+    }
         $correctness =                 $hasresponse ? response_correctness($itemlist{$itemrefid}{TYPE}) : 'NotAttempted';
         $response = response($correctness, $itemlist{$itemrefid}{TYPE});
         $is_correct = ($correctness eq 'Correct'); 
