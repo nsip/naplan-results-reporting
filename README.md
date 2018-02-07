@@ -44,7 +44,7 @@ Please note, these files contain valid data in all elements, but do not constitu
   * **sample.platform.xml.zip**
   * **nap-samplefile.xml**
 * Data file generation scripts:
-  * _nap_platformdata_generator.pl_ generates data in as close a format to the current (PRT 2017) platform output format as possible, though it does not preserve indentation. The variables `$studentsperschool` and `$schoolcount` set the number of students per school and schools in the sample.
+  * _nap_platformdata_generator.pl_ generates data in as close a format to the current (PRT 2017) platform output format as possible, though it does not preserve indentation. The two command line variables set the number of students per school, and the number of schools in the sample. So _perl nap_platformdata_generator.pl 200 5_ creates a sample file with 5 schools, and 200 students per school.
 
 ## Specification Overview
 The proposed results reporting objects are organised as follows:
