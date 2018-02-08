@@ -1233,8 +1233,8 @@ $items,
     $test_score += $testlet_score;
     }
     
-    $testletpath = print_node_path(join('-', @path));
-    $nodepath= print_node_path(join('-', map { substr($_, 0, -1)} @path));
+    $testletpath = print_node_path(join(':', @path));
+    $nodepath= print_node_path(join(':', map { substr($_, 0, -1)} @path));
     
     printf F qq{
 <NAPStudentResponseSet RefId="%s">
