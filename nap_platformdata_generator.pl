@@ -1252,7 +1252,7 @@ $items,
     rand() > .95 ? 'true' : 'false' ,
     ($$e{DOMAIN} eq 'Writing' ? 
       qq{<PathTakenForDomain xsi:nil="true" />\n    <ParallelTest xsi:nil="true" />} : 
-      sprintf("<PathTakenForDomain>%s</PathTakenForDomain>\n    <ParallelTest>%s</ParallelTest>",$nodepath, $testletpath)),
+      sprintf("<PathTakenForDomain>%s</PathTakenForDomain>\n    <ParallelTest>%s</ParallelTest>",check_path_sep($nodepath), check_path_sep($testletpath))),
     $$e{STUDENTGUID},
     $$e{PSI},
     $$e{NAPTESTGUID},
@@ -1721,6 +1721,18 @@ sub print_node_path($) {
     # return qq{<Node xsi:nil="true" />} if $ret eq 'Blank';
     $ret =~ s/lc//g;
     return $ret;
+}
+
+sub check_path_sep() {
+	my ($ret) = @_;
+	if (length($ret) == 3) {
+		return substr($ret,1,2);
+	} elsif (substr($ret,0,1) eq '0') {
+		return substr($ret,2);
+	}
+	else {
+		return @_;
+	}
 }
 
 sub itempertestlet($$) {
