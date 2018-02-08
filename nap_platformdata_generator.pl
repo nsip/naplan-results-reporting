@@ -9,7 +9,6 @@ use Algorithm::LUHN qw(check_digit);
 use MIME::Base64;
 use Storable qw(dclone);
 use List::Compare;
-use Algorithm::LUHN qw(check_digit);
 
 my $randomizer = Data::Random::Contact->new();
 my $string_gen = String::Random->new;
