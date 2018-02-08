@@ -9,7 +9,6 @@ use Algorithm::LUHN qw(check_digit);
 use MIME::Base64;
 use Storable qw(dclone);
 use List::Compare;
-use Algorithm::LUHN qw(check_digit);
 
 my $randomizer = Data::Random::Contact->new();
 my $string_gen = String::Random->new;
@@ -1234,8 +1233,8 @@ $items,
     $test_score += $testlet_score;
     }
     
-    $testletpath = print_node_path(join('-', @path));
-    $nodepath= print_node_path(join('-', map { substr($_, 0, -1)} @path));
+    $testletpath = print_node_path(join(':', @path));
+    $nodepath= print_node_path(join(':', map { substr($_, 0, -1)} @path));
     
     printf F qq{
 <NAPStudentResponseSet RefId="%s">
