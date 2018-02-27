@@ -444,6 +444,9 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
 	    $itemlist{$itemrefid}{TYPE} =  item_type($node);
 	    $itemlist{$itemrefid}{NODE} =  $node;
 	    $itemlist{$itemrefid}{RELEASED} = ($node =~ m#^(A|B|E)$# && $i == 0);
+            $itemlist{$itemrefid}{ANSWER} = response("", $itemlist{$itemrefid}{TYPE}, "");
+
+
 	      push @{$itemlist{$itemrefid}{TESTLET}}, {REFID => $refid, LOCALID => $localid, SEQ => $j, NODE =>  $node, TESTLETNO => $i};
 		
 		
@@ -465,6 +468,7 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
             $itemlist{$itemrefid2}{DOMAIN} = $domain;
 	        $itemlist{$itemrefid2}{TYPE} =  item_type($node);
             $itemlist{$itemrefid2}{TESTLEVEL} = $testlevel;
+            $itemlist{$itemrefid2}{ANSWER} = response("", $itemlist{$itemrefid2}{TYPE}, "");
 		push @{$naptestitem{$refid}}, {GUID => $itemrefid2, LOCALID => $itemlocalid2, SEQ => $j, TOTAL => itempertestlet($testlevel, $node)};
               push @{$itemlist{$itemrefid2}{TESTLET}}, {REFID => $refid, LOCALID => $localid, SEQ => $j, NODE =>  $node, TESTLETNO => $i};
 		    push @{$itemlist{$itemrefid}{SUBSTITUTED}} , {REFID => $itemrefid2, LOCALID => $itemlocalid2, PNP => [$p]};
@@ -998,7 +1002,7 @@ $itemlist{$refid}{XML} = sprintf qq{    <ItemName>%s</ItemName>
         ($main_item_type eq 'MC' or $main_item_type eq 'MCS' ) ? qq{
     <MultipleChoiceOptionCount>4</MultipleChoiceOptionCount>} : '',
     #$testlet,
-    $domain_out eq 'Writing' ? "<CorrectAnswer />" : "<CorrectAnswer>7</CorrectAnswer>",
+    $domain_out eq 'Writing' ? "<CorrectAnswer />" : sprintf("<CorrectAnswer>%s</CorrectAnswer>", $itemlist{$refid}{ANSWER}),
     $substitute,
     $stimulus,
     $rubrics,
@@ -1011,11 +1015,14 @@ printf F qq{
   </TestItemContent>
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
-</NAPTestItem>},
-$refid,
-$localid,
+</NAPTestItem>}, 
+$refid, 
+$localid, 
 $itemlist{$refid}{XML};
+    
+    
 }
+
 print F "\n</NAPTestItems>\n";
 
 foreach $school (sort keys %students) {
@@ -1191,7 +1198,7 @@ foreach $e (@{$events{$d}}) {
       printf STDERR "!!!!! %s %s\n", $$e{STUDENTGUID}, $itemrefid ;
     }
         $correctness =                 $hasresponse ? response_correctness($itemlist{$itemrefid}{TYPE}) : 'NotAttempted';
-        $response = response($correctness, $itemlist{$itemrefid}{TYPE});
+        $response = response($correctness, $itemlist{$itemrefid}{TYPE}, $itemlist{$itemrefid}{ANSWER});
         $is_correct = ($correctness eq 'Correct'); 
         $itemscore = ($is_correct ? 1 : 0);
         $items .= sprintf qq{
@@ -1450,7 +1457,7 @@ printf F qq{
     1,
     ($itemlist{$refid}{TYPE} eq 'MC' or $itemlist{$refid}{TYPE} eq 'MCS' ) ? qq{
     <MultipleChoiceOptionCount>4</MultipleChoiceOptionCount>} : '',
-    7,
+    $domain_out eq "Writing ? "" : $itemlist{$refid}{ANSWER},
     $stimulus,
     $substitutes,
     ;
@@ -1718,15 +1725,15 @@ sub print_node_path($) {
 }
 
 sub check_path_sep() {
-	my ($ret) = @_;
-	if (length($ret) == 3) {
-		return substr($ret,1,2);
-	} elsif (substr($ret,0,1) eq '0') {
-		return substr($ret,2);
-	}
-	else {
-		return @_;
-	}
+       my ($ret) = @_;
+       if (length($ret) == 3) {
+               return substr($ret,1,2);
+       } elsif (substr($ret,0,1) eq '0') {
+               return substr($ret,2);
+       }
+       else {
+               return @_;
+       }
 }
 
 sub itempertestlet($$) {
@@ -1770,12 +1777,18 @@ sub response_correctness($) {
 	return 'NotAttempted';
 }
 
-sub response($$) {
-    my ($correctness, $type) = @_;
+sub response($$$) {
+    my ($correctness, $type, $answer) = @_;
     return "" if $correctness eq 'NotAttempted';
-    return chr(ord('A') + int(rand(4)) ) if $type eq 'MC'; 
-    return chr(ord('A') + int(rand(4)) ) if $type eq 'MCS'; 
+    return $answer if $correctness eq 'Correct';
+    if ($type eq 'MC' || $type eq "MCS") {
+      while (1) {
+        my $ret = chr(ord('A') + int(rand(4)) );
+        return $ret unless $ret eq $answer;
+      }
+    } else {
     return $string_gen->randregex('[a-zA-Z]{10}');
+  }
 
 }
 
@@ -1857,3 +1870,5 @@ sub subdomain($$){
     return 'Spelling' if $domain eq 'Spelling';
     return '??';
 }
+
+
