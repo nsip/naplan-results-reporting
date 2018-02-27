@@ -1017,13 +1017,15 @@ printf F qq{
   </TestItemContent>
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
-</NAPTestItem>
-}, $refid, $localid, $itemlist{$refid}{XML};
+</NAPTestItem>}, 
+$refid, 
+$localid, 
+$itemlist{$refid}{XML};
     
     
 }
 
-print F "</NAPTestItems>\n";
+print F "\n</NAPTestItems>\n";
 
 foreach $school (sort keys %students) {
 foreach $yearlevel (sort keys %{$students{$school}}) {
@@ -1726,6 +1728,18 @@ sub print_node_path($) {
     # return qq{<Node xsi:nil="true" />} if $ret eq 'Blank';
     $ret =~ s/lc//g;
     return $ret;
+}
+
+sub check_path_sep() {
+       my ($ret) = @_;
+       if (length($ret) == 3) {
+               return substr($ret,1,2);
+       } elsif (substr($ret,0,1) eq '0') {
+               return substr($ret,2);
+       }
+       else {
+               return @_;
+       }
 }
 
 sub itempertestlet($$) {
