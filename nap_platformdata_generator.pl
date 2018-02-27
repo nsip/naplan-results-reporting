@@ -9,6 +9,7 @@ use Algorithm::LUHN qw(check_digit);
 use MIME::Base64;
 use Storable qw(dclone);
 use List::Compare;
+use Algorithm::LUHN qw(check_digit);
 
 my $randomizer = Data::Random::Contact->new();
 my $string_gen = String::Random->new;
@@ -77,10 +78,10 @@ $school[$i] = {LOCALID => 'x7286' . $i , ACARAID =>  21212 + $i, GUID => lc guid
 }
 
 open F, ">sif.xml";
-print F "<sif>";
+print F "<sif>\n";
 foreach $s (@school) {
 printf F qq{
-  <SchoolInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
+<SchoolInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <LocalId>%s</LocalId>
   <StateProvinceId xsi:nil="true" />
   <CommonwealthId xsi:nil="true" />
@@ -119,8 +120,7 @@ printf F qq{
   <SchoolGroupList xsi:nil="true" />
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
-</SchoolInfo>
-}, 
+</SchoolInfo> }, 
 $$s{GUID},
 $$s{LOCALID},
 $$s{ACARAID},
@@ -315,7 +315,8 @@ foreach $domain (@domainsLC_tests) {
     $domain_out =~ s/_alt//;
     next if $domain_out eq 'Writing' and $testlevel == 3;
     
-    printf F qq{<NAPTest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
+    printf F qq{
+<NAPTest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <TestContent>
     <NAPTestLocalId>%s</NAPTestLocalId>
     <TestName>%s Year %s</TestName>
@@ -444,6 +445,9 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
 	    $itemlist{$itemrefid}{TYPE} =  item_type($node);
 	    $itemlist{$itemrefid}{NODE} =  $node;
 	    $itemlist{$itemrefid}{RELEASED} = ($node =~ m#^(A|B|E)$# && $i == 0);
+            $itemlist{$itemrefid}{ANSWER} = response("", $itemlist{$itemrefid}{TYPE}, "");
+
+
 	      push @{$itemlist{$itemrefid}{TESTLET}}, {REFID => $refid, LOCALID => $localid, SEQ => $j, NODE =>  $node, TESTLETNO => $i};
 		
 		
@@ -465,6 +469,7 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
             $itemlist{$itemrefid2}{DOMAIN} = $domain;
 	        $itemlist{$itemrefid2}{TYPE} =  item_type($node);
             $itemlist{$itemrefid2}{TESTLEVEL} = $testlevel;
+            $itemlist{$itemrefid2}{ANSWER} = response("", $itemlist{$itemrefid2}{TYPE}, "");
 		push @{$naptestitem{$refid}}, {GUID => $itemrefid2, LOCALID => $itemlocalid2, SEQ => $j, TOTAL => itempertestlet($testlevel, $node)};
               push @{$itemlist{$itemrefid2}{TESTLET}}, {REFID => $refid, LOCALID => $localid, SEQ => $j, NODE =>  $node, TESTLETNO => $i};
 		    push @{$itemlist{$itemrefid}{SUBSTITUTED}} , {REFID => $itemrefid2, LOCALID => $itemlocalid2, PNP => [$p]};
@@ -518,7 +523,8 @@ printf F qq{
 %s  </TestItemList>
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
-</NAPTestlet>},
+</NAPTestlet>
+},
 $refid,
 $naptests{$domain}{$testlevel}{GUID},
 $naptests{$domain}{$testlevel}{LOCALID},
@@ -543,7 +549,7 @@ $items,
 push @{$naptestlet{$domain}{$testlevel}{$node}}, {GUID => $refid, LOCALID => $localid, NAME => $testletname, SUBSCORE => $testletsubscore, RULES => $testletrulelist};
 
 }}}}
-print F "\n</NAPTestlets>\n";
+print F "</NAPTestlets>\n";
 
 
 printf F qq{<NAPTestItems xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
@@ -998,7 +1004,7 @@ $itemlist{$refid}{XML} = sprintf qq{    <ItemName>%s</ItemName>
         ($main_item_type eq 'MC' or $main_item_type eq 'MCS' ) ? qq{
     <MultipleChoiceOptionCount>4</MultipleChoiceOptionCount>} : '',
     #$testlet,
-    $domain_out eq 'Writing' ? "<CorrectAnswer />" : "<CorrectAnswer>7</CorrectAnswer>",
+    $domain_out eq 'Writing' ? "<CorrectAnswer />" : sprintf("<CorrectAnswer>%s</CorrectAnswer>", $itemlist{$refid}{ANSWER}),
     $substitute,
     $stimulus,
     $rubrics,
@@ -1011,12 +1017,13 @@ printf F qq{
   </TestItemContent>
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
-</NAPTestItem>},
-$refid,
-$localid,
-$itemlist{$refid}{XML};
+</NAPTestItem>
+}, $refid, $localid, $itemlist{$refid}{XML};
+    
+    
 }
-print F "\n</NAPTestItems>\n";
+
+print F "</NAPTestItems>\n";
 
 foreach $school (sort keys %students) {
 foreach $yearlevel (sort keys %{$students{$school}}) {
@@ -1034,7 +1041,8 @@ foreach $domain (sort keys %naptests) {
     my @adjustments = adjustments($domain_out);
     $adjustment_link{$$student{GUID}}{$domain_out} = dclone(\@adjustments);
 
-printf F qq{<NAPEventStudentLink xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
+printf F qq{
+<NAPEventStudentLink xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <StudentPersonalRefId>%s</StudentPersonalRefId>
   <PlatformStudentIdentifier>%s</PlatformStudentIdentifier>
   <SchoolInfoRefId>%s</SchoolInfoRefId>
@@ -1088,7 +1096,8 @@ foreach $domain (sort keys %naptests) {
     $refid = lc guid_as_string();
 #printf STDERR "%s\t%s\t%s\n", $school, $domain, $yearlevel;
 
-printf F qq{<NAPTestScoreSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
+printf F qq{
+<NAPTestScoreSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <SchoolInfoRefId>%s</SchoolInfoRefId>
   <SchoolACARAId>%s</SchoolACARAId>
   <NAPTestRefId>%s</NAPTestRefId>
@@ -1100,8 +1109,7 @@ printf F qq{<NAPTestScoreSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xm
   <DomainBottomNational60Percent>%.2d</DomainBottomNational60Percent>
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
-</NAPTestScoreSummary>
-},
+</NAPTestScoreSummary>},
 $refid,
 $school[$school]{GUID},
 $school[$school]{ACARAID},
@@ -1119,7 +1127,7 @@ rand(200)+$yearlevel_averages{$yearlevel}-20,
 
 %x = ();
 
-printf F qq{<NAPStudentResponseSets xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
+printf F qq{\n<NAPStudentResponseSets xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
 foreach $d (@domainsLC_tests) {
 foreach $e (@{$events{$d}}) {
     next if $$e{PARTICIPATION} eq 'A';
@@ -1191,7 +1199,7 @@ foreach $e (@{$events{$d}}) {
       printf STDERR "!!!!! %s %s\n", $$e{STUDENTGUID}, $itemrefid ;
     }
         $correctness =                 $hasresponse ? response_correctness($itemlist{$itemrefid}{TYPE}) : 'NotAttempted';
-        $response = response($correctness, $itemlist{$itemrefid}{TYPE});
+        $response = response($correctness, $itemlist{$itemrefid}{TYPE}, $itemlist{$itemrefid}{ANSWER});
         $is_correct = ($correctness eq 'Correct'); 
         $itemscore = ($is_correct ? 1 : 0);
         $items .= sprintf qq{
@@ -1230,8 +1238,8 @@ $items,
     $test_score += $testlet_score;
     }
     
-    $testletpath = print_node_path(join(':', @path));
-    $nodepath= print_node_path(join(':', map { substr($_, 0, -1)} @path));
+    $testletpath = print_node_path(join('-', @path));
+    $nodepath= print_node_path(join('-', map { substr($_, 0, -1)} @path));
     
     printf F qq{
 <NAPStudentResponseSet RefId="%s">
@@ -1249,7 +1257,7 @@ $items,
     rand() > .95 ? 'true' : 'false' ,
     ($$e{DOMAIN} eq 'Writing' ? 
       qq{<PathTakenForDomain xsi:nil="true" />\n    <ParallelTest xsi:nil="true" />} : 
-      sprintf("<PathTakenForDomain>%s</PathTakenForDomain>\n    <ParallelTest>%s</ParallelTest>",check_path_sep($nodepath), check_path_sep($testletpath))),
+      sprintf("<PathTakenForDomain>%s</PathTakenForDomain>\n    <ParallelTest>%s</ParallelTest>",$nodepath, $testletpath)),
     $$e{STUDENTGUID},
     $$e{PSI},
     $$e{NAPTESTGUID},
@@ -1298,13 +1306,15 @@ $items,
     domain_band($test_score, $max_score, $$e{YEARLEVEL}),
     if ($$e{PARTICIPATION} eq 'P' );
     printf F qq{
-    <TestletList>%s
+    <TestletList>
+%s
     </TestletList> },
     $testlets if ($$e{PARTICIPATION} eq 'P' || $$e{PARTICIPATION} eq 'S') ;
     print F qq{
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
-</NAPStudentResponseSet>}
+</NAPStudentResponseSet>    
+}
 
 }}
 print F "</NAPStudentResponseSets>\n";
@@ -1373,7 +1383,8 @@ foreach $testlet (@{$naptestlet{$domain}{$testlevel}{$node}}) {
 
 
 
-printf F qq{<Testlet>
+printf F qq{
+    <Testlet>
       <NAPTestletRefId>%s</NAPTestletRefId>
       <TestletContent>
         <NAPTestletLocalId>%s</NAPTestletLocalId>
@@ -1450,7 +1461,7 @@ printf F qq{
     1,
     ($itemlist{$refid}{TYPE} eq 'MC' or $itemlist{$refid}{TYPE} eq 'MCS' ) ? qq{
     <MultipleChoiceOptionCount>4</MultipleChoiceOptionCount>} : '',
-    7,
+    $domain_out eq "Writing ? "" : $itemlist{$refid}{ANSWER},
     $stimulus,
     $substitutes,
     ;
@@ -1717,18 +1728,6 @@ sub print_node_path($) {
     return $ret;
 }
 
-sub check_path_sep() {
-	my ($ret) = @_;
-	if (length($ret) == 3) {
-		return substr($ret,1,2);
-	} elsif (substr($ret,0,1) eq '0') {
-		return substr($ret,2);
-	}
-	else {
-		return @_;
-	}
-}
-
 sub itempertestlet($$) {
     my ($yrlevel, $node) = @_;
     return 25 if $node eq 'Clc';
@@ -1770,12 +1769,18 @@ sub response_correctness($) {
 	return 'NotAttempted';
 }
 
-sub response($$) {
-    my ($correctness, $type) = @_;
+sub response($$$) {
+    my ($correctness, $type, $answer) = @_;
     return "" if $correctness eq 'NotAttempted';
-    return chr(ord('A') + int(rand(4)) ) if $type eq 'MC'; 
-    return chr(ord('A') + int(rand(4)) ) if $type eq 'MCS'; 
+    return $answer if $correctness eq 'Correct';
+    if ($type eq 'MC' || $type eq "MCS") {
+      while (1) {
+        my $ret = chr(ord('A') + int(rand(4)) );
+        return $ret unless $ret eq $answer;
+      }
+    } else {
     return $string_gen->randregex('[a-zA-Z]{10}');
+  }
 
 }
 
@@ -1857,3 +1862,5 @@ sub subdomain($$){
     return 'Spelling' if $domain eq 'Spelling';
     return '??';
 }
+
+
