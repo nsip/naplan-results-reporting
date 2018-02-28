@@ -9,7 +9,6 @@ use Algorithm::LUHN qw(check_digit);
 use MIME::Base64;
 use Storable qw(dclone);
 use List::Compare;
-use Algorithm::LUHN qw(check_digit);
 
 my $randomizer = Data::Random::Contact->new();
 my $string_gen = String::Random->new;
@@ -78,10 +77,10 @@ $school[$i] = {LOCALID => 'x7286' . $i , ACARAID =>  21212 + $i, GUID => lc guid
 }
 
 open F, ">sif.xml";
-print F "<sif>\n";
+print F "<sif>";
 foreach $s (@school) {
 printf F qq{
-<SchoolInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
+  <SchoolInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <LocalId>%s</LocalId>
   <StateProvinceId xsi:nil="true" />
   <CommonwealthId xsi:nil="true" />
@@ -120,7 +119,8 @@ printf F qq{
   <SchoolGroupList xsi:nil="true" />
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
-</SchoolInfo> }, 
+</SchoolInfo>
+}, 
 $$s{GUID},
 $$s{LOCALID},
 $$s{ACARAID},
@@ -315,8 +315,7 @@ foreach $domain (@domainsLC_tests) {
     $domain_out =~ s/_alt//;
     next if $domain_out eq 'Writing' and $testlevel == 3;
     
-    printf F qq{
-<NAPTest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
+    printf F qq{<NAPTest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <TestContent>
     <NAPTestLocalId>%s</NAPTestLocalId>
     <TestName>%s Year %s</TestName>
@@ -523,8 +522,7 @@ printf F qq{
 %s  </TestItemList>
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
-</NAPTestlet>
-},
+</NAPTestlet>},
 $refid,
 $naptests{$domain}{$testlevel}{GUID},
 $naptests{$domain}{$testlevel}{LOCALID},
@@ -549,7 +547,7 @@ $items,
 push @{$naptestlet{$domain}{$testlevel}{$node}}, {GUID => $refid, LOCALID => $localid, NAME => $testletname, SUBSCORE => $testletsubscore, RULES => $testletrulelist};
 
 }}}}
-print F "</NAPTestlets>\n";
+print F "\n</NAPTestlets>\n";
 
 
 printf F qq{<NAPTestItems xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
@@ -1043,8 +1041,7 @@ foreach $domain (sort keys %naptests) {
     my @adjustments = adjustments($domain_out);
     $adjustment_link{$$student{GUID}}{$domain_out} = dclone(\@adjustments);
 
-printf F qq{
-<NAPEventStudentLink xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
+printf F qq{<NAPEventStudentLink xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <StudentPersonalRefId>%s</StudentPersonalRefId>
   <PlatformStudentIdentifier>%s</PlatformStudentIdentifier>
   <SchoolInfoRefId>%s</SchoolInfoRefId>
@@ -1098,8 +1095,7 @@ foreach $domain (sort keys %naptests) {
     $refid = lc guid_as_string();
 #printf STDERR "%s\t%s\t%s\n", $school, $domain, $yearlevel;
 
-printf F qq{
-<NAPTestScoreSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
+printf F qq{<NAPTestScoreSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <SchoolInfoRefId>%s</SchoolInfoRefId>
   <SchoolACARAId>%s</SchoolACARAId>
   <NAPTestRefId>%s</NAPTestRefId>
@@ -1111,7 +1107,8 @@ printf F qq{
   <DomainBottomNational60Percent>%.2d</DomainBottomNational60Percent>
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
-</NAPTestScoreSummary>},
+</NAPTestScoreSummary>
+},
 $refid,
 $school[$school]{GUID},
 $school[$school]{ACARAID},
@@ -1129,7 +1126,7 @@ rand(200)+$yearlevel_averages{$yearlevel}-20,
 
 %x = ();
 
-printf F qq{\n<NAPStudentResponseSets xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
+printf F qq{<NAPStudentResponseSets xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
 foreach $d (@domainsLC_tests) {
 foreach $e (@{$events{$d}}) {
     next if $$e{PARTICIPATION} eq 'A';
@@ -1240,8 +1237,8 @@ $items,
     $test_score += $testlet_score;
     }
     
-    $testletpath = print_node_path(join('-', @path));
-    $nodepath= print_node_path(join('-', map { substr($_, 0, -1)} @path));
+    $testletpath = print_node_path(join(':', @path));
+    $nodepath= print_node_path(join(':', map { substr($_, 0, -1)} @path));
     
     printf F qq{
 <NAPStudentResponseSet RefId="%s">
@@ -1259,7 +1256,7 @@ $items,
     rand() > .95 ? 'true' : 'false' ,
     ($$e{DOMAIN} eq 'Writing' ? 
       qq{<PathTakenForDomain xsi:nil="true" />\n    <ParallelTest xsi:nil="true" />} : 
-      sprintf("<PathTakenForDomain>%s</PathTakenForDomain>\n    <ParallelTest>%s</ParallelTest>",$nodepath, $testletpath)),
+      sprintf("<PathTakenForDomain>%s</PathTakenForDomain>\n    <ParallelTest>%s</ParallelTest>",check_path_sep($nodepath), check_path_sep($testletpath))),
     $$e{STUDENTGUID},
     $$e{PSI},
     $$e{NAPTESTGUID},
@@ -1308,15 +1305,13 @@ $items,
     domain_band($test_score, $max_score, $$e{YEARLEVEL}),
     if ($$e{PARTICIPATION} eq 'P' );
     printf F qq{
-    <TestletList>
-%s
+    <TestletList>%s
     </TestletList> },
     $testlets if ($$e{PARTICIPATION} eq 'P' || $$e{PARTICIPATION} eq 'S') ;
     print F qq{
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
-</NAPStudentResponseSet>    
-}
+</NAPStudentResponseSet>}
 
 }}
 print F "</NAPStudentResponseSets>\n";
@@ -1385,8 +1380,7 @@ foreach $testlet (@{$naptestlet{$domain}{$testlevel}{$node}}) {
 
 
 
-printf F qq{
-    <Testlet>
+printf F qq{<Testlet>
       <NAPTestletRefId>%s</NAPTestletRefId>
       <TestletContent>
         <NAPTestletLocalId>%s</NAPTestletLocalId>
