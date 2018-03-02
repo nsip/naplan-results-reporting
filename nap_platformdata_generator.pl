@@ -1092,6 +1092,8 @@ foreach $school (sort keys %students) {
 foreach $yearlevel (sort keys %{$students{$school}}) {
 foreach $domain (sort keys %naptests) {
 
+  next unless $naptests{$domain}{$yearlevel}{GUID};
+
     $refid = lc guid_as_string();
 #printf STDERR "%s\t%s\t%s\n", $school, $domain, $yearlevel;
 
