@@ -9,7 +9,9 @@ use Algorithm::LUHN qw(check_digit);
 use MIME::Base64;
 use Storable qw(dclone);
 use List::Compare;
+use Text::Lorem;
 
+my $lorem = Text::Lorem->new();
 my $randomizer = Data::Random::Contact->new();
 my $string_gen = String::Random->new;
 my $random_word = new Data::Random::WordList( wordlist => '/usr/share/dict/words' );
@@ -444,7 +446,7 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
 	    $itemlist{$itemrefid}{TYPE} =  item_type($node);
 	    $itemlist{$itemrefid}{NODE} =  $node;
 	    $itemlist{$itemrefid}{RELEASED} = ($node =~ m#^(A|B|E)$# && $i == 0);
-            $itemlist{$itemrefid}{ANSWER} = response("", $itemlist{$itemrefid}{TYPE}, "");
+            $itemlist{$itemrefid}{ANSWER} = response("", $itemlist{$itemrefid}{TYPE}, "", $domain);
 
 
 	      push @{$itemlist{$itemrefid}{TESTLET}}, {REFID => $refid, LOCALID => $localid, SEQ => $j, NODE =>  $node, TESTLETNO => $i};
@@ -468,7 +470,7 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
             $itemlist{$itemrefid2}{DOMAIN} = $domain;
 	        $itemlist{$itemrefid2}{TYPE} =  item_type($node);
             $itemlist{$itemrefid2}{TESTLEVEL} = $testlevel;
-            $itemlist{$itemrefid2}{ANSWER} = response("", $itemlist{$itemrefid2}{TYPE}, "");
+            $itemlist{$itemrefid2}{ANSWER} = response("", $itemlist{$itemrefid2}{TYPE}, "", $domain);
 		push @{$naptestitem{$refid}}, {GUID => $itemrefid2, LOCALID => $itemlocalid2, SEQ => $j, TOTAL => itempertestlet($testlevel, $node)};
               push @{$itemlist{$itemrefid2}{TESTLET}}, {REFID => $refid, LOCALID => $localid, SEQ => $j, NODE =>  $node, TESTLETNO => $i};
 		    push @{$itemlist{$itemrefid}{SUBSTITUTED}} , {REFID => $itemrefid2, LOCALID => $itemlocalid2, PNP => [$p]};
@@ -1200,7 +1202,7 @@ foreach $e (@{$events{$d}}) {
       printf STDERR "!!!!! %s %s\n", $$e{STUDENTGUID}, $itemrefid ;
     }
         $correctness =                 $hasresponse ? response_correctness($itemlist{$itemrefid}{TYPE}) : 'NotAttempted';
-        $response = response($correctness, $itemlist{$itemrefid}{TYPE}, $itemlist{$itemrefid}{ANSWER});
+        $response = response($correctness, $itemlist{$itemrefid}{TYPE}, $itemlist{$itemrefid}{ANSWER}, $$e{DOMAIN});
         $is_correct = ($correctness eq 'Correct'); 
         $itemscore = ($is_correct ? 1 : 0);
         $items .= sprintf qq{
@@ -1779,11 +1781,30 @@ sub response_correctness($) {
 	return 'NotAttempted';
 }
 
-sub response($$$) {
-    my ($correctness, $type, $answer) = @_;
+sub response($$$$) {
+    my ($correctness, $type, $answer, $domain) = @_;
     return "" if $correctness eq 'NotAttempted';
     return $answer if $correctness eq 'Correct';
-    if ($type eq 'MC' || $type eq "MCS") {
+    if ($domain eq 'Writing') {
+      my $text = $lorem->words(250+int(rand(50)));
+      my @response = split / /, $text;
+      for(my $i = 0; $i < 3; $i++) {
+        $j = int(rand(scalar @response));
+        next if $response[$j] =~ /^\&lt;/;
+        $response[$j] = '&lt;b&gt;' . $response[$j] . '&lt;/b&gt;';
+      }
+      for(my $i = 0; $i < 3; $i++) {
+        $j = int(rand(scalar @response));
+        next if $response[$j] =~ /^\&lt;/;
+        $response[$j] = '&lt;i&gt;' . $response[$j] . '&lt;/i&gt;';
+      }
+      for(my $i = 0; $i < 3; $i++) {
+        $j = int(rand(scalar @response));
+        next if $response[$j] =~ /^\&lt;/;
+        $response[$j] = "&lt;/p&gt;\n&lt;p&gt;" . $response[$j];
+      }
+      return sprintf "&lt;p&gt;%s&lt;/p&gt;", join(" ", @response);
+  } elsif ($type eq 'MC' || $type eq "MCS") {
       while (1) {
         my $ret = chr(ord('A') + int(rand(4)) );
         return $ret unless $ret eq $answer;
