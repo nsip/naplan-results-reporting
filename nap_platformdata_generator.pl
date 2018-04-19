@@ -1822,12 +1822,12 @@ sub writing() {
   for(my $i = 0; $i < 3; $i++) {
     $j = int(rand(scalar @response));
     next if $response[$j] =~ /^\&/;
-    $response[$j] = '&lt;b&gt;' . $response[$j] . '&lt;/b&gt;';
+    $response[$j] = '&lt;strong&gt;' . $response[$j] . '&lt;/strong&gt;';
   }
   for(my $i = 0; $i < 3; $i++) {
     $j = int(rand(scalar @response));
     next if $response[$j] =~ /^\&/;
-    $response[$j] = '&lt;i&gt;' . $response[$j] . '&lt;/i&gt;';
+    $response[$j] = '&lt;em&gt;' . $response[$j] . '&lt;/em&gt;';
   }
   for(my $i = 0; $i < 3; $i++) {
     $j = int(rand(scalar @response));
@@ -1848,9 +1848,9 @@ sub writing() {
     $response[$j] = "&lt;/p&gt;\n&lt;p$style&gt;" . $response[$j];
   }
   $i = int(rand(scalar @response));
-  $response[$i] .= "\n&lt;ul&gt;\n&lt;li&gt;Rationarium Incompositum I&lt;/li&gt;\n&lt;li&gt;Rationarium Incompositum II&lt;/li&gt;\n&lt;li&gt;Rationarium Incompositum III&lt;/li&gt;\n&lt;ul&gt;\n";
+  $response[$i] .= "\n&lt;ul&gt;\n&lt;li&gt;Rationarium Incompositum I&lt;/li&gt;\n&lt;li&gt;Rationarium Incompositum II&lt;/li&gt;\n&lt;li&gt;Rationarium Incompositum III&lt;/li&gt;\n&lt;/ul&gt;\n";
   $i = int(rand(scalar @response));
-  $response[$i] .= "\n&lt;ol&gt;\n&lt;li&gt;Rationarium Compositum I&lt;/li&gt;\n&lt;li&gt;Rationarium Compositum II&lt;/li&gt;\n&lt;li&gt;Rationarium Compositum III&lt;/li&gt;\n&lt;ol&gt;\n";
+  $response[$i] .= "\n&lt;ol&gt;\n&lt;li&gt;Rationarium Compositum I&lt;/li&gt;\n&lt;li&gt;Rationarium Compositum II&lt;/li&gt;\n&lt;li&gt;Rationarium Compositum III&lt;/li&gt;\n&lt;/ol&gt;\n";
   $response[0] = $preface . $response[0];
   return sprintf "&lt;p&gt;%s&lt;/p&gt;", join(" ", @response);
 }
