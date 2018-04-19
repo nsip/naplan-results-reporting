@@ -15,6 +15,7 @@ my $lorem = Text::Lorem->new();
 my $randomizer = Data::Random::Contact->new();
 my $string_gen = String::Random->new;
 my $random_word = new Data::Random::WordList( wordlist => '/usr/share/dict/words' );
+my @emojis = ("&#x1f638;", "&#x1f63e;", "&#x1f63f;");
 
 my $previtemrefid = $previtemlocalid = '';
 
@@ -1781,117 +1782,155 @@ sub response_correctness($) {
 	return 'NotAttempted';
 }
 
+sub writing() {
+  $size = rand() > .7 ? 875 : rand() > .4 ? 575 : 275;
+  $preface = sprintf("This is a sample of %d words&lt;/p&gt;\n\n&lt;p&gt;", $size+25);
+  my $text = $lorem->words($size);
+  my @response = split / /, $text;
+  for(my $i = 0; $i < 10; $i++) {
+    $j = int(rand(scalar @response));
+    $response[$j] .= ",";
+  }
+  for(my $i = 0; $i < 10; $i++) {
+    $j = int(rand(scalar @response));
+    $response[$j] .= ".";
+  }
+  for(my $i = 0; $i < 3; $i++) {
+    $j = int(rand(scalar @response));
+    next if $response[$j] =~ /^\&/;
+    $response[$j] = $emojis[$i];
+  }
+  for(my $i = 0; $i < 3; $i++) {
+    $j = int(rand(scalar @response));
+    next if $response[$j] =~ /^\&/;
+    $response[$j] = '&lt;b&gt;' . $response[$j] . '&lt;/b&gt;';
+  }
+  for(my $i = 0; $i < 3; $i++) {
+    $j = int(rand(scalar @response));
+    next if $response[$j] =~ /^\&/;
+    $response[$j] = '&lt;i&gt;' . $response[$j] . '&lt;/i&gt;';
+  }
+  for(my $i = 0; $i < 3; $i++) {
+    $j = int(rand(scalar @response));
+    next if $response[$j] =~ /^\&/;
+    $response[$j] = '&lt;span style="text-decoration:underline"&gt;' . $response[$j] . '&lt;/span&gt;';
+  }
+  for(my $i = 0; $i < 3; $i++) {
+    $j = int(rand(scalar @response));
+    next if $response[$j] =~ /^\&/;
+    $response[$j] = '&lt;span style="font-size:16pt"&gt;' . $response[$j] . '&lt;/span&gt;';
+  }
+  for(my $i = 0; $i < 3; $i++) {
+    $j = int(rand(scalar @response));
+    next if $response[$j] =~ /^\&/;
+    $style = "";
+    $style = ' style="text-align:left"' if $i==0;
+    $style = ' style="text-align:center"' if $i==1;
+    $response[$j] = "&lt;/p&gt;\n&lt;p$style&gt;" . $response[$j];
+  }
+  $i = int(rand(scalar @response));
+  $response[$i] .= "\n&lt;ul&gt;\n&lt;li&gt;Rationarium Incompositum I&lt;/li&gt;\n&lt;li&gt;Rationarium Incompositum II&lt;/li&gt;\n&lt;li&gt;Rationarium Incompositum III&lt;/li&gt;\n&lt;ul&gt;\n";
+  $i = int(rand(scalar @response));
+  $response[$i] .= "\n&lt;ol&gt;\n&lt;li&gt;Rationarium Compositum I&lt;/li&gt;\n&lt;li&gt;Rationarium Compositum II&lt;/li&gt;\n&lt;li&gt;Rationarium Compositum III&lt;/li&gt;\n&lt;ol&gt;\n";
+  $response[0] = $preface . $response[0];
+  return sprintf "&lt;p&gt;%s&lt;/p&gt;", join(" ", @response);
+}
+
 sub response($$$$) {
-    my ($correctness, $type, $answer, $domain) = @_;
-    return "" if $correctness eq 'NotAttempted';
-    return $answer if $correctness eq 'Correct';
-    if ($domain eq 'Writing') {
-      my $text = $lorem->words(250+int(rand(50)));
-      my @response = split / /, $text;
-      for(my $i = 0; $i < 3; $i++) {
-        $j = int(rand(scalar @response));
-        next if $response[$j] =~ /^\&lt;/;
-        $response[$j] = '&lt;b&gt;' . $response[$j] . '&lt;/b&gt;';
-      }
-      for(my $i = 0; $i < 3; $i++) {
-        $j = int(rand(scalar @response));
-        next if $response[$j] =~ /^\&lt;/;
-        $response[$j] = '&lt;i&gt;' . $response[$j] . '&lt;/i&gt;';
-      }
-      for(my $i = 0; $i < 3; $i++) {
-        $j = int(rand(scalar @response));
-        next if $response[$j] =~ /^\&lt;/;
-        $response[$j] = "&lt;/p&gt;\n&lt;p&gt;" . $response[$j];
-      }
-      return sprintf "&lt;p&gt;%s&lt;/p&gt;", join(" ", @response);
+  my ($correctness, $type, $answer, $domain) = @_;
+  return "" if $correctness eq 'NotAttempted';
+  return $answer if $correctness eq 'Correct';
+  if ($domain eq 'Writing') {
+    my $text = $lorem->words(250+int(rand(50)));
+    return writing();
   } elsif ($type eq 'MC' || $type eq "MCS") {
-      while (1) {
-        my $ret = chr(ord('A') + int(rand(4)) );
-        return $ret unless $ret eq $answer;
-      }
-    } else {
+    while (1) {
+      my $ret = chr(ord('A') + int(rand(4)) );
+      return $ret unless $ret eq $answer;
+    }
+  } else {
     return $string_gen->randregex('[a-zA-Z]{10}');
   }
 
 }
 
 sub node2domain($$) {
-	my ($node, $domain) = @_;
-	return $domain unless $domain eq 'Language Conventions';
-	my $ret = 'Language Conventions - Grammar and Punctuation';
-	$ret = 'Language Conventions - Spelling' if $node eq 'S1' or $node eq 'S2' or $node eq 'S3';
-	return $ret;
+  my ($node, $domain) = @_;
+  return $domain unless $domain eq 'Language Conventions';
+  my $ret = 'Language Conventions - Grammar and Punctuation';
+  $ret = 'Language Conventions - Spelling' if $node eq 'S1' or $node eq 'S2' or $node eq 'S3';
+  return $ret;
 }
 
 # going to put forward only one sample node
 sub sample_next_sequence($$) {
-	my ($node, $n) = @_;
-	return 'B' if $node eq 'A';
-	return 'C' if $node eq 'B';
-	return 'E' if $node eq 'D';
-	return 'B' if $node eq 'C' and $n eq '1';
-	return 'E' if $node eq 'C' and $n eq '2';
-	return 'S2' if $node eq 'S2';
+  my ($node, $n) = @_;
+  return 'B' if $node eq 'A';
+  return 'C' if $node eq 'B';
+  return 'E' if $node eq 'D';
+  return 'B' if $node eq 'C' and $n eq '1';
+  return 'E' if $node eq 'C' and $n eq '2';
+  return 'S2' if $node eq 'S2';
 }
 
 sub testletrulelist($){
-	my ($node) = @_;
-	return "" if $node eq 'E';
-	return "" if $node eq 'F';
-	return "" if $node eq 'S2';
-	return "" if $node eq 'S3';
-	return "" if $node eq 'P1';
-	return "" if $node eq 'P2';
-	return "" if $node eq 'Blank';
-	my @stage = (qw(1));
-	@stage = (qw(2)) if $node eq 'B';
-	@stage = (qw(2)) if $node eq 'D';
-	@stage = (qw(1 2)) if $node eq 'C';
-	my $ret = '';
-	my $n;
-	foreach $n (@stage) {
-	    my $seq = sample_next_sequence($node, $n);
-		$ret .= sprintf qq{
-   <TestletRule>
+  my ($node) = @_;
+  return "" if $node eq 'E';
+  return "" if $node eq 'F';
+  return "" if $node eq 'S2';
+  return "" if $node eq 'S3';
+  return "" if $node eq 'P1';
+  return "" if $node eq 'P2';
+  return "" if $node eq 'Blank';
+  my @stage = (qw(1));
+  @stage = (qw(2)) if $node eq 'B';
+  @stage = (qw(2)) if $node eq 'D';
+  @stage = (qw(1 2)) if $node eq 'C';
+  my $ret = '';
+  my $n;
+  foreach $n (@stage) {
+    my $seq = sample_next_sequence($node, $n);
+    $ret .= sprintf qq{
+    <TestletRule>
     <Stage>%s</Stage>
     <Difficulty>Harder</Difficulty>
     <DestinationNode>%s1</DestinationNode>
     <LowerBoundInc>25</LowerBoundInc>
     <UpperBoundMax>30</UpperBoundMax>
-   </TestletRule>
-   <TestletRule>
+    </TestletRule>
+    <TestletRule>
     <Stage>%s</Stage>
     <Difficulty>Easier</Difficulty>
     <DestinationNode>%s3</DestinationNode>
     <LowerBoundMin>0</LowerBoundMin>
     <UpperBoundExc>15</UpperBoundExc>
-   </TestletRule>
-   <TestletRule>
+    </TestletRule>
+    <TestletRule>
     <Stage>%s</Stage>
     <Difficulty>Same</Difficulty>
     <DestinationNode>%s2</DestinationNode>
     <LowerBoundInc>15</LowerBoundInc>
     <UpperBoundMax>25</UpperBoundMax>
-   </TestletRule> }, 
+    </TestletRule> }, 
     $n, $seq,
     $n, $seq,
     $n, $seq,
     ;
-	}
-	return sprintf qq{
+  }
+  return sprintf qq{
   <TestletRuleList>	%s
   </TestletRuleList>}, $ret;
 }
 
 sub subdomain($$){
-    my ($domain, $node) = @_;
-    return 'Numbers' if $domain eq 'Numeracy';
-    return 'Letters' if $domain eq 'Reading';
-    return 'Expressive Writing' if $domain eq 'Writing';
-    return 'Punctuation' if $domain eq 'Grammar and Punctuation' and $node =~ m/^P/;
-    return 'Grammar' if $domain eq 'Grammar and Punctuation' and $node !~ m/^P/;
-    return 'Spelling' if $domain eq 'Spelling';
-    return '??';
+  my ($domain, $node) = @_;
+  return 'Numbers' if $domain eq 'Numeracy';
+  return 'Letters' if $domain eq 'Reading';
+  return 'Expressive Writing' if $domain eq 'Writing';
+  return 'Punctuation' if $domain eq 'Grammar and Punctuation' and $node =~ m/^P/;
+  return 'Grammar' if $domain eq 'Grammar and Punctuation' and $node !~ m/^P/;
+  return 'Spelling' if $domain eq 'Spelling';
+  return '??';
 }
 
 
