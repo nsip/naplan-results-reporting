@@ -385,6 +385,9 @@ print F qq{<NAPTestlets xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="
 foreach $domain (sort keys %naptests) {
 foreach $testlevel (sort keys %{$naptests{$domain}}) {
   $domain_out = $domain;
+  if($domain_out eq 'Writing_alt'){
+$domain_out;
+  }
   $domain_out =~ s/_alt//;
 my @localnodes = @nodesRWN;
 @localnodes = @nodesLCS if $domain_out eq 'Spelling';
@@ -569,7 +572,7 @@ foreach $refid (keys  %itemlist) {
     $stimulus1 = stimulus( $stimulus1id, 
         rand() < .7 ? 'Text' : 'Image', $domain_out, $itemlist{$refid}{TESTLET}[0]{NODE});
     $stimulus2 = $stimulus2id = "";
-    if($$i{SEQ} > $$i{TOTAL}/2 and 
+    if($itemlist{$refid}{SEQ} > $itemlist{$refid}{TOTAL}/2 and 
     $itemlist{$refid}{TESTLET}[0]{NODE} ne 'S1') {
         $stimulus2id = $string_gen->randregex('[a-z]{5}\d{3}');
         $stimulus2 = stimulus( $stimulus2id, 
@@ -1159,6 +1162,11 @@ foreach $e (@{$events{$d}}) {
     }
     $test_score = 0;
     $max_score = 0;
+
+    if($d eq 'Writing_alt'){
+      $d = $d;
+    }
+
     foreach $node (@pathway) {
 	$hasresponse = 0; # random for S, 0 for R
 	$hasresponse = 1 if $$e{PARTICIPATION} eq 'P';
@@ -1170,7 +1178,7 @@ foreach $e (@{$events{$d}}) {
         $items = '';
         $j = 0;
         $testlet_score = 0;
-        foreach $i (@{$naptestitem{$$current_testlet{GUID}}}){
+        foreach $item (@{$naptestitem{$$current_testlet{GUID}}}){
         $subscores = '';
         if($$e{DOMAIN} eq 'Writing' && ($$e{PARTICIPATION} eq 'P' || $$e{PARTICIPATION} eq 'R' )) {
             foreach $w (@writing_rubrics) {
@@ -1183,25 +1191,30 @@ foreach $e (@{$events{$d}}) {
             $subscores = "\n                    <SubscoreList>\n                    " . $subscores . "</SubscoreList>";
         }
         $subscores = qq{\n                    <SubscoreList xsi:nil="true" />} unless $subscores;
-	next unless ($i and exists $$i{GUID});
-        my $itemrefid = $$i{GUID};
-        my $itemlocalid = $$i{LOCALID};
+	next unless ($item and exists $$item{GUID});
+        my $itemrefid = $$item{GUID};
+        my $itemlocalid = $$item{LOCALID};
 	next unless $itemrefid ;
-        next if (exists $itemlist{$$i{GUID}}{SUBSTITUTES});
-	if(exists $itemlist{$$i{GUID}}{SUBSTITUTED}) {
-	foreach $p (@{$itemlist{$$i{GUID}}{SUBSTITUTED}}) {
+        next if (exists $itemlist{$$item{GUID}}{SUBSTITUTES});
+	if(exists $itemlist{$$item{GUID}}{SUBSTITUTED}) {
+	foreach $p (@{$itemlist{$$item{GUID}}{SUBSTITUTED}}) {
         $lc = List::Compare->new($adjustment_link{$$e{STUDENTGUID}}{$$e{DOMAIN}}, $$p{PNP});
         if($lc->get_intersection and index($items, $$p{REFID}) == -1 ) {
           # don't substitute item if the student has already sat it
             $itemrefid = $$p{REFID};
             $itemlocald = $$p{LOCALID};
             printf STDERR "SUB! %s %s:\tStudent %s\tItem %s\tSubItem %s\n", $$e{DOMAIN}, join(':', $lc->get_intersection),
-            $$e{STUDENTGUID}, $$i{GUID}, $$p{REFID};
+            $$e{STUDENTGUID}, $$item{GUID}, $$p{REFID};
         }
 	}}
       if ($x{$$e{STUDENTGUID}}{$itemrefid}++) {
       printf STDERR "!!!!! %s %s\n", $$e{STUDENTGUID}, $itemrefid ;
     }
+
+
+    #printf STDERR
+
+
         $correctness =                 $hasresponse ? response_correctness($itemlist{$itemrefid}{TYPE}) : 'NotAttempted';
         $response = response($correctness, $itemlist{$itemrefid}{TYPE}, $itemlist{$itemrefid}{ANSWER}, $$e{DOMAIN});
         $is_correct = ($correctness eq 'Correct'); 
@@ -1239,6 +1252,12 @@ $$current_testlet{LOCALID},
 $hasreponse ? sprintf("\n            <TestletSubScore>%d</TestletSubScore>",$testlet_score) : '',
 $items,
 ;
+
+#if($$e{PARTICIPATION} eq 'P' and $$e{DOMAIN} eq "Writing" and $hasresponse == 0) {
+#$hasresponse = $hasresponse;
+#}
+
+
     $test_score += $testlet_score;
     }
     
@@ -1818,7 +1837,7 @@ sub writing() {
   for(my $i = 0; $i < 3; $i++) {
     $j = int(rand(scalar @response));
     next if $response[$j] =~ /^\&/;
-    $response[$j] = '&lt;span style="font-size:16pt"&gt;' . $response[$j] . '&lt;/span&gt;';
+    $response[$j] = '&lt;span style="font-size:16px"&gt;' . $response[$j] . '&lt;/span&gt;';
   }
   for(my $i = 0; $i < 3; $i++) {
     $j = int(rand(scalar @response));
@@ -1841,7 +1860,6 @@ sub response($$$$) {
   return "" if $correctness eq 'NotAttempted';
   return $answer if $correctness eq 'Correct';
   if ($domain eq 'Writing') {
-    my $text = $lorem->words(250+int(rand(50)));
     return writing();
   } elsif ($type eq 'MC' || $type eq "MCS") {
     while (1) {
