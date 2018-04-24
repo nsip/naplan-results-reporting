@@ -1340,10 +1340,11 @@ $items,
 }}
 print F "</NAPStudentResponseSets>\n";
 
-foreach $domain (@domainsLC_test) {
+foreach $domain (@domainsLC_tests) {
 foreach $testlevel (@testlevels) {
   $domain_out = $domain;
   $domain_out =~ s/_alt//;
+  next if $domain_out eq 'Writing' and $testlevel == 3;
 
     printf F qq{
 <NAPCodeFrame RefId="%s">
