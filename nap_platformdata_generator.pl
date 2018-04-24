@@ -1812,13 +1812,15 @@ sub writing() {
   }
   for(my $i = 0; $i < 10; $i++) {
     $j = int(rand(scalar @response));
-    $response[$j] .= ".";
+    $response[$j] .= "." unless $response[$j] =~ /,$/;
   }
+=pod=
   for(my $i = 0; $i < 3; $i++) {
     $j = int(rand(scalar @response));
     next if $response[$j] =~ /^\&/;
     $response[$j] = $emojis[$i];
   }
+=cut=
   for(my $i = 0; $i < 3; $i++) {
     $j = int(rand(scalar @response));
     next if $response[$j] =~ /^\&/;
@@ -1848,10 +1850,10 @@ sub writing() {
     $response[$j] = "&lt;/p&gt;\n&lt;p$style&gt;" . $response[$j];
   }
   $i = int(rand((scalar @response)-1));
-  $response[$i] .= "&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Rationarium Incompositum I&lt;/li&gt;\n&lt;li&gt;Rationarium Incompositum II&lt;/li&gt;\n&lt;li&gt;Rationarium Incompositum III&lt;/li&gt;\n";
+  $response[$i] .= "&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Rationarium Incompositum I&lt;/li&gt;\n&lt;li&gt;Rationarium Incompositum II&lt;/li&gt;\n&lt;li&gt;Rationarium Incompositum III&lt;/li&gt;&lt;/p&gt;\n";
   $response[$i+1] = "&lt;p&gt;" . $response[$i+1];
   $i = int(rand((scalar @response)-1));
-  $response[$i] .= "&lt;/p&gt;\n&lt;ol&gt;\n&lt;li&gt;Rationarium Compositum I&lt;/li&gt;\n&lt;li&gt;Rationarium Compositum II&lt;/li&gt;\n&lt;li&gt;Rationarium Compositum III&lt;/li&gt;\n";
+  $response[$i] .= "&lt;/p&gt;\n&lt;ol&gt;\n&lt;li&gt;Rationarium Compositum I&lt;/li&gt;\n&lt;li&gt;Rationarium Compositum II&lt;/li&gt;\n&lt;li&gt;Rationarium Compositum III&lt;/li&gt;&lt;/p&gt;\n";
   $response[$i+1] = "&lt;p&gt;" . $response[$i+1];
   $response[0] = $preface . $response[0];
   return sprintf "&lt;p&gt;%s&lt;/p&gt;", join(" ", @response);
