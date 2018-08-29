@@ -28,26 +28,23 @@ Please note, these files contain valid data in all elements, but do not constitu
 ## What you can find here
 
 * Technical Specification Document
-  * _Results and Reporting Dataset - Tech Spec 0.95.docx_
-    * This document describes the specification of the results reporting objects
-  * _2018 Tech Spec Addenda v3.pdf_
-    * Updates to the technical specification for 2018
-  * _NAP response Object Draft 18.pdf_
-    * SIF XML specification, with mappings to the excel object schema
-  * _NAP SIF HTML.zip_
-  * SIF XML specification in the traditional HTML format
+  * _Results and Reporting Dataset - Tech Spec 0.95.docx_: This document describes the specification of the results reporting objects
+  * _2018 Tech Spec Addenda v3.pdf_: Updates to the technical specification for 2018
+  * _NAP response Object Draft 18.pdf_: SIF XML specification, with mappings to the excel object schema
+  * _NAP SIF HTML.zip_: SIF XML specification in the traditional HTML format
 * Dataset Dictionary
-  * _Online NAPLAN Reporting Dataset 2 061.xslx_
-  * This is an excel version of the object schema giving details of all field types 
+  * _Online NAPLAN Reporting Dataset 2 061.xslx_: This is an Excel version of the object schema giving details of all field types 
 * XSD for Object Validation
-  * _SIF_MessageWithNAPWrapper.xsd_
-  * This is an xsd containing all of the object definitions and linkages, for use in validating results-reporting files or for constructing schemas/code to handle the data. The xsd is a subset of the SIF-AU 3.4.1 XSD, with the element `NAPResultsReporting` added to act as a wrapper for the different SIF objects relevant to NAP.
+  * _SIF_MessageWithNAPWrapper.xsd_: This is an xsd containing all of the object definitions and linkages, for use in validating results-reporting files or for constructing schemas/code to handle the data. The xsd has been updated to include the proposed `NAPLANResultsReporting` wrapper for API responses and RRD data sets, which consist of different SIF objects relevant to NAP.
 * Sample Data Files (see discussion above)
   * **master_nap.xml.zip**
   * **sample.platform.xml.zip**
   * **nap-samplefile.xml**
+  * **NAPLANAPITestData.zip**
 * Data file generation scripts:
   * _nap_platformdata_generator.pl_ generates data in as close a format to the current (PRT 2017) platform output format as possible, though it does not preserve indentation. The two command line variables set the number of students per school, and the number of schools in the sample. So _perl nap_platformdata_generator.pl 200 5_ creates a sample file with 5 schools, and 200 students per school.
+* NAPLAN Results & Reporting API
+  * _naplan_api.zip_: Node package which generates timestamped SIF_HMACSHA256 authentication tokens, and inserts them into the headers of HTTP requests originating from the [Insomnia](https://insomnia.rest) REST client. Used to enable Insomnia to generate correctly authorised NAPLAN Results & Reporting API requests; users will need to edit the script to insert their own credentials.
 
 ## Specification Overview
 The proposed results reporting objects are organised as follows:
@@ -76,7 +73,7 @@ As guidance for any database design intended to ingest this data, the following 
 
 ## Release Notes
 
-The objects described here have been included in the Australian Schools Data Model - SIF-AU 3.4.2 (see [SIF spec](http://specification.sifassociation.org/Implementation/AU/3.4.2/ )).
+The objects described here have been included in the Australian Schools Data Model - SIF-AU 3.4.3 (see [SIF spec](http://specification.sifassociation.org/Implementation/AU/3.4.3/ )).
 
 If you have any questions about the schemas, the datasets or how to effectively use SIF Frameworks or other tools NSIP provides please contact us directly at info@nsip.edu.au
 
