@@ -18,7 +18,6 @@ NSIP strongly recommends that users of this specification register as GitHub use
 NSIP has included four sample data files in XML format as part of this release: 
 
 * `nap-samplefile.xml` has a single record for each object type, and is meant to illustrate the full range of object content.
-* `master_nap.xml.zip` is a sample data file with randomised data, containing records as NSIP had envisioned them for use in design, with comprehensive data for all record types
 * `sample.platform.xml.zip` is a sample data file with randomised data, reflecting the data as it has been exported from the National Assessment Platform for the 2018 test. This file seeks to give a realistic representation of NAPLAN Results & Reporting data, including two writing tests per year level, no branching information for writing, no Yr 3 Writing tests, and opaque test and test item names. It also follows the Platform's practice of using `xsl:nil` or empty elements for missing elements, rather than omitting them. On the other hand, the sample file also includes substitute items in the codeframe; that will not be the case from the platform at least for 2018.
 * `NAPLANAPITestData.zip` presents sample data file in the three chunks it is expected to be distributed as through the NAPLAN Results & Reporting API: Test Data (for the codeframes, tests, testlets and test items), SchoolList (for the SchoolInfo objects describing the schools whose data the client has access to) and SchoolData (the students, test events, test results and score summaries for a specific school).
 
@@ -37,7 +36,6 @@ Please note, these files contain valid data in all elements, but do not constitu
 * XSD for Object Validation
   * _SIF_MessageWithNAPWrapper.xsd_: This is an xsd containing all of the object definitions and linkages, for use in validating results-reporting files or for constructing schemas/code to handle the data. The xsd has been updated to include the proposed `NAPLANResultsReporting` wrapper for API responses and RRD data sets, which consist of different SIF objects relevant to NAP.
 * Sample Data Files (see discussion above)
-  * **master_nap.xml.zip**
   * **sample.platform.xml.zip**
   * **nap-samplefile.xml**
   * **NAPLANAPITestData.zip**
