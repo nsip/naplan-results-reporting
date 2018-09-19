@@ -30,8 +30,8 @@ Please note, these files contain valid data in all elements, but do not constitu
 * Technical Specification Document
   * _Results and Reporting Dataset - Tech Spec 0.95.docx_: This document describes the specification of the results reporting objects
   * _2018 Tech Spec Addenda v3.pdf_: Updates to the technical specification for 2018
-  * _NAP response Object Draft 18.pdf_: SIF XML specification, with mappings to the excel object schema
-  * _NAP SIF HTML.zip_: SIF XML specification in the traditional HTML format
+  * _NAP response Object Draft 18.pdf_: SIF XML specification, with mappings to the Dataset Dictionary (infra)
+  * For specifics of the SIF specification about these objects, refer to http://specification.sifassociation.org/Implementation/AU/3.4.3/ under each object name
 * Dataset Dictionary
   * _Online NAPLAN Reporting Dataset 2 061.xslx_: This is an Excel version of the object schema giving details of all field types 
 * XSD for Object Validation
