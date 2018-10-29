@@ -125,7 +125,7 @@
     </Adjustment>
   </NAPEventStudentLink>
   
-  <NAPCodeframe RefId="31438EF6-9D80-45D5-8954-AFE33143D737">
+  <NAPCodeFrame RefId="31438EF6-9D80-45D5-8954-AFE33143D737">
     <NAPTestRefId>50000000-0000-0000-0000-000000000000</NAPTestRefId>    
     <TestContent>
       <NAPTestLocalId>NAPLAN-2017-0001-Reading</NAPTestLocalId>
@@ -186,6 +186,7 @@
             <SequenceNumber>1</SequenceNumber>
             <TestItemContent>
               <NAPTestItemLocalId>NAPLAN-2017-0001-Reading-C-00-01</NAPTestItemLocalId>
+              <ItemName>Item 1</ItemName>
               <ItemType>MC</ItemType>
               <Subdomain>Letters</Subdomain>
               <ItemDescriptor>Descriptor #1</ItemDescriptor>
@@ -221,7 +222,7 @@
         </TestItemList>
       </Testlet>
     </TestletList>
-  </NAPCodeframe>
+  </NAPCodeFrame>
   
   <NAPTest RefId="50000000-0000-0000-0000-000000000000">
     <TestContent>
