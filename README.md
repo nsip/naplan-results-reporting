@@ -27,14 +27,13 @@ Please note, these files contain valid data in all elements, but do not constitu
 ## What you can find here
 
 * Technical Specification Document
-  * _Results and Reporting Dataset - Tech Spec 0.95.docx_: This document describes the specification of the results reporting objects
-  * _2018 Tech Spec Addenda v3.pdf_: Updates to the technical specification for 2018
+  * _Results and Reporting Dataset - Specifications 2.00.pdf_: This document describes the specification of the results reporting objects
   * _NAP response Object Draft 18.pdf_: SIF XML specification, with mappings to the Dataset Dictionary (infra)
   * For specifics of the SIF specification about these objects, refer to http://specification.sifassociation.org/Implementation/AU/3.4.3/ under each object name
 * Dataset Dictionary
-  * _Online NAPLAN Reporting Dataset 2 061.xslx_: This is an Excel version of the object schema giving details of all field types 
+  * _Online NAPLAN Reporting Dataset 2 07.xslx_: This is an Excel version of the object schema giving details of all field types 
 * XSD for Object Validation
-  * _SIF_MessageWithNAPWrapper.xsd_: This is an xsd containing all of the object definitions and linkages, for use in validating results-reporting files or for constructing schemas/code to handle the data. The xsd has been updated to include the proposed `NAPLANResultsReporting` wrapper for API responses and RRD data sets, which consist of different SIF objects relevant to NAP.
+  * _SIF_MessageWithNAPWrapper Oct 2018.xsd_: This is an xsd containing all of the object definitions and linkages, for use in validating results-reporting files or for constructing schemas/code to handle the data updated for use in readiness for NAPLAN 2019 testing. The xsd has been updated to include the proposed `NAPLANResultsReporting` wrapper for API responses and RRD data sets, which consist of different SIF objects relevant to NAP.
 * Sample Data Files (see discussion above)
   * **sample.platform.xml.zip**
   * **nap-samplefile.xml**
