@@ -93,7 +93,7 @@ foreach $s (@school) {
   open F, ">schooldata_$$s{GUID}.xml";
     print F qq{<NAPResultsReporting xmlns="http://www.sifassociation.org/datamodel/au/3.4">\n};
 $schoolxml = sprintf qq{
-  <SchoolInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
+<SchoolInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <LocalId>%s</LocalId>
   <StateProvinceId xsi:nil="true" />
   <CommonwealthId xsi:nil="true" />
@@ -108,10 +108,22 @@ $schoolxml = sprintf qq{
   <SchoolEmailList xsi:nil="true" />
   <PrincipalInfo xsi:nil="true" />
   <SchoolContactList xsi:nil="true" />
+    <AddressList>
+    <Address Type="0123" Role="012A">
+      <StateProvince>OS</StateProvince>
+      <GridLocation xsi:nil="true" />
+      <RadioContact xsi:nil="true" />
+      <Community xsi:nil="true" />
+      <LocalId xsi:nil="true" />
+      <AddressGlobalUID xsi:nil="true" />
+      <StatisticalAreas xsi:nil="true" />
+    </Address>
+  </AddressList>
   <PhoneNumberList xsi:nil="true" />
   <YearLevels xsi:nil="true" />
   <Campus xsi:nil="true" />
   <SchoolSector>NG</SchoolSector>
+  <SchoolGeographicLocation>15</SchoolGeographicLocation>
   <LocalGovernmentArea xsi:nil="true" />
   <JurisdictionLowerHouse xsi:nil="true" />
   <YearLevelEnrollmentList xsi:nil="true" />
@@ -217,10 +229,41 @@ printf F qq{<StudentPersonal xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:
       <VisaStatisticalCode xsi:nil="true" />
       <VisaSubClassList xsi:nil="true" />
     </Demographics>
+    <AddressList>
+      <Address Type="0123" Role="012A">
+        <Street>
+          <Line1 />
+          <Line2 />
+          <Line3 xsi:nil="true" />
+          <Complex xsi:nil="true" />
+          <StreetNumber xsi:nil="true" />
+          <StreetPrefix xsi:nil="true" />
+          <StreetName xsi:nil="true" />
+          <StreetType xsi:nil="true" />
+          <StreetSuffix xsi:nil="true" />
+          <ApartmentType xsi:nil="true" />
+          <ApartmentNumberPrefix xsi:nil="true" />
+          <ApartmentNumber xsi:nil="true" />
+          <ApartmentNumberSuffix xsi:nil="true" />
+        </Street>
+        <City />
+        <StateProvince />
+        <PostalCode />
+        <GridLocation xsi:nil="true" />
+        <RadioContact xsi:nil="true" />
+        <Community xsi:nil="true" />
+        <LocalId xsi:nil="true" />
+        <AddressGlobalUID xsi:nil="true" />
+        <StatisticalAreas xsi:nil="true" />
+      </Address>
+    </AddressList>
     <PhoneNumberList xsi:nil="true" />
     <EmailList xsi:nil="true" />
     <HouseholdContactInfoList xsi:nil="true" />
   </PersonInfo>
+  <ProjectedGraduationYear xsi:nil="true" />
+  <OnTimeGraduationYear xsi:nil="true" />
+  <GraduationDate xsi:nil="true" />
   <MostRecent>
     <SchoolLocalId />
     <HomeroomLocalId xsi:nil="true" />
@@ -246,6 +289,10 @@ printf F qq{<StudentPersonal xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:
     <ReportingSchoolId />
     <OtherEnrollmentSchoolACARAId />
   </MostRecent>
+  <EducationSupport>N</EducationSupport>
+  <HomeSchooledStudent>N</HomeSchooledStudent>
+  <Sensitive>N</Sensitive>
+  <OfflineDelivery>N</OfflineDelivery>
   <PrePrimaryEducation xsi:nil="true" />
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
@@ -991,7 +1038,7 @@ $itemlist{$refid}{XML} = sprintf qq{    <ItemName>%s</ItemName>
     #$testlet,
     #$domain_out eq 'Writing' ? "<CorrectAnswer />" : sprintf("<CorrectAnswer>%s</CorrectAnswer>", $itemlist{$refid}{ANSWER}),
     # SUPPRESS ITEM ANSWERS 2019
-    "<CorrectAnswer />",
+    '<CorrectAnswer xsi:nil="true" />',
     $substitute,
     $stimulus,
     $rubrics,
@@ -1041,6 +1088,7 @@ printf F qq{<NAPEventStudentLink xmlns:xsd="http://www.w3.org/2001/XMLSchema" xm
   <NAPTestRefId>%s</NAPTestRefId>
   <NAPTestLocalId>%s</NAPTestLocalId>
   <SchoolSector>NG</SchoolSector>
+  <SchoolGeolocation>15</SchoolGeolocation>
   <ReportingSchoolName />
   <ParticipationCode>%s</ParticipationCode>
   <ParticipationText>%s</ParticipationText>
@@ -1104,8 +1152,6 @@ printf F qq{<NAPTestScoreSummary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xm
   <NAPTestRefId>%s</NAPTestRefId>
   <NAPTestLocalId>%s</NAPTestLocalId>
   <DomainNationalAverage>%.2d</DomainNationalAverage>
-  <DomainSchoolAverage>%.2d</DomainSchoolAverage>
-  <DomainJurisdictionAverage>%.2d</DomainJurisdictionAverage>
   <DomainTopNational60Percent>%.2d</DomainTopNational60Percent>
   <DomainBottomNational60Percent>%.2d</DomainBottomNational60Percent>
   <SIF_Metadata xsi:nil="true" />
@@ -1118,8 +1164,8 @@ $school[$school]{ACARAID},
 $naptests{$domain}{$yearlevel}{GUID},
 $naptests{$domain}{$yearlevel}{LOCALID},
 rand(200)+$yearlevel_averages{$yearlevel}, 
-rand(200)+$yearlevel_averages{$yearlevel}, 
-rand(200)+$yearlevel_averages{$yearlevel}, 
+#rand(200)+$yearlevel_averages{$yearlevel}, 
+#rand(200)+$yearlevel_averages{$yearlevel}, 
 rand(200)+$yearlevel_averages{$yearlevel}+20, 
 rand(200)+$yearlevel_averages{$yearlevel}-20,
 ;
@@ -1232,7 +1278,7 @@ foreach $e (@{$events{$d}}) {
                 # SUPPRESS ITEM ANSWERS 2019
                 ($hasresponse && $$e{DOMAIN} eq 'Writing') ?
                         sprintf("\n                    <Response>%s</Response>",$response) :
-                        qq{\n                    <Response />},
+                        qq{\n                    <Response xsi:nil="true" />},
                 $correctness,
 		$$e{PARTICIPATION} eq 'P' ? sprintf("\n                    <Score>%d</Score>", $itemscore) : '',
                 $hasresponse ? sprintf("\n                    <LapsedTimeItem>PT50S</LapsedTimeItem>"):'',
@@ -1474,6 +1520,9 @@ $substitutes = sprintf qq{
           </SubstituteItemList>}, $substitutes;
 }
 
+# <CorrectAnswer xsi:nil="true" >%s%s
+# SUPPRESS ITEM ANSWERS 2019
+#
 printf TESTDATA qq{
         <TestItem>
           <TestItemRefId>%s</TestItemRefId>
@@ -1483,7 +1532,7 @@ printf TESTDATA qq{
             <ItemName>%s</ItemName>
             <ItemType>%s</ItemType>
             <MaximumScore>%s</MaximumScore>%s
-            <CorrectAnswer>%s</CorrectAnswer>%s%s
+            <CorrectAnswer xsi:nil="true" >%s%s
 	  </TestItemContent>
         </TestItem>   },
     $refid ,
@@ -1496,7 +1545,6 @@ printf TESTDATA qq{
     <MultipleChoiceOptionCount>4</MultipleChoiceOptionCount>} : '',
     # $domain_out eq "Writing ? "" : $itemlist{$refid}{ANSWER},
     # SUPPRESS ITEM ANSWERS 2019
-    "",
     $stimulus,
     $substitutes,
     ;
