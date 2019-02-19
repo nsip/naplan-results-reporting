@@ -11,6 +11,8 @@ use Storable qw(dclone);
 use List::Compare;
 use Text::Lorem;
 
+system "rm -f schooldata_*xml";
+
 my $lorem = Text::Lorem->new();
 my $randomizer = Data::Random::Contact->new();
 my $string_gen = String::Random->new;
@@ -42,10 +44,10 @@ my @valid_node_pathways = (
 	['A', 'D', 'F'],
 	['A', 'C', 'B'],
 );
-my @pnp_codes = qw(AIA AIM AIV AST AAM AVM ALL COL BRA OSS RBK SCR SUP);
-my @pnp_extratime = qw(ETA ETB ETC);
+#my @pnp_codes = qw(AIA AIV AST COL OSS RBK SCR SUP);
+my @pnp_extratime = qw(ETA ETB ETC ETD);
 my @pnp_unlockedbrowser = qw(AST COL);
-my @pnp_nosystemaction = qw(SUP OSS SCR BRK BRA);
+my @pnp_nosystemaction = qw(SUP OSS SCR RBK OFF BNB BNG BNL BNW BNY ENZ EST LFS RZL ZOF ZTFAO);
 my @item_types = qw(ET HS HT IA IC IGA IGGM IGM IGO IM IO MC MCS PO SL SP TE CO);
 my @item_types_remainder = qw(ET HS HT IA IC IGA IGGM IGM IGO IM IO MCS PO SL SP CO);
 my @writing_rubrics = (
@@ -76,22 +78,29 @@ my $randomizer = Data::Random::Contact->new();
 
 @schoolnames = $random_word->get_words($schoolcount);
 for ($i=0; $i < $schoolcount; $i++) {
-$school[$i] = {LOCALID => 'x7286' . $i , ACARAID =>  21212 + $i, GUID => lc guid_as_string(), NAME => ucfirst $schoolnames[$i]};
+  $level = rand();
+$school[$i] = {LOCALID => 'x7286' . $i , ACARAID =>  21212 + $i, GUID => lc guid_as_string(), NAME => ucfirst $schoolnames[$i],
+LEVEL => $level > 0.66 ? "Secondary" : $level > 0.33 ? "Primary" : "Combined" };
 }
 
-open F, ">sif.xml";
-print F "<sif>";
+open SCHOOLLIST, ">schoollist.xml";
+
+open TESTDATA, ">testdata.xml";
+    print SCHOOLLIST qq{<NAPResultsReporting xmlns="http://www.sifassociation.org/datamodel/au/3.4">\n};
+    print TESTDATA qq{<NAPResultsReporting xmlns="http://www.sifassociation.org/datamodel/au/3.4">\n};
+
 foreach $s (@school) {
-printf F qq{
+  open F, ">schooldata_$$s{GUID}.xml";
+    print F qq{<NAPResultsReporting xmlns="http://www.sifassociation.org/datamodel/au/3.4">\n};
+$schoolxml = sprintf qq{
   <SchoolInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <LocalId>%s</LocalId>
   <StateProvinceId xsi:nil="true" />
   <CommonwealthId xsi:nil="true" />
   <ACARAId>%s</ACARAId>
   <OtherIdList xsi:nil="true" />
-  <SchoolName>%s Secondary College</SchoolName>
+  <SchoolName>%s %s College</SchoolName>
   <LEAInfoRefId xsi:nil="true" />
-  <OtherLEA xsi:nil="true" />
   <SchoolDistrict xsi:nil="true" />
   <SchoolDistrictLocalId xsi:nil="true" />
   <SchoolFocusList xsi:nil="true" />
@@ -99,18 +108,6 @@ printf F qq{
   <SchoolEmailList xsi:nil="true" />
   <PrincipalInfo xsi:nil="true" />
   <SchoolContactList xsi:nil="true" />
-  <AddressList>
-    <Address Type="0123" Role="012A">
-      <StateProvince />
-      <GridLocation xsi:nil="true" />
-      <MapReference xsi:nil="true" />
-      <RadioContact xsi:nil="true" />
-      <Community xsi:nil="true" />
-      <LocalId xsi:nil="true" />
-      <AddressGlobalUID xsi:nil="true" />
-      <StatisticalAreas xsi:nil="true" />
-    </Address>
-  </AddressList>
   <PhoneNumberList xsi:nil="true" />
   <YearLevels xsi:nil="true" />
   <Campus xsi:nil="true" />
@@ -128,11 +125,20 @@ $$s{GUID},
 $$s{LOCALID},
 $$s{ACARAID},
 $$s{NAME},
+$$s{LEVEL},
 ;
+print F $schoolxml;
+print SCHOOLLIST $schoolxml;
+close F;
 }
 
+    print SCHOOLLIST qq{</NAPResultsReporting>\n};
+close SCHOOLLIST;
 
 for ($j=0;$j<$schoolcount;$j++){
+  $guid = $school[$j]{GUID};
+    open F, ">>schooldata_$guid.xml";
+
 for ($i=0;$i<$studentsperschool;$i++){
 
 $refid = lc guid_as_string();
@@ -141,6 +147,12 @@ my $person = $randomizer->person();
 $$person{'address'}{'home'}{'street_1'} =~ s/\&/\&amp;/g;
 
 my $yearlevel = ceil(rand(4))*2+1;
+if ($school[$j]{LEVEL} eq "Secondary") {
+$yearlevel = ceil(rand(2))*2+5;
+}
+if ($school[$j]{LEVEL} eq "Primary") {
+$yearlevel = ceil(rand(2))*2+1;
+}
 my $localid =  ceil(rand(1000000000));
 
 printf F qq{<StudentPersonal xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
@@ -167,10 +179,6 @@ printf F qq{<StudentPersonal xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:
     <OtherId Type="PreviousJurisdictionStudentId"></OtherId>
     <OtherId Type="OtherSchoolId"></OtherId>
     <OtherId Type="Locality"></OtherId>
-    <OtherId Type="DOBRange">true</OtherId>
-    <OtherId Type="PersonalDetailsChanged">false</OtherId>
-    <OtherId Type="PossibleDuplicate">false</OtherId>
-    <OtherId Type="PsiOtherIdMismatch">false</OtherId>
   </OtherIdList>
   <PersonInfo>
     <Name Type="LGL">
@@ -209,35 +217,6 @@ printf F qq{<StudentPersonal xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:
       <VisaStatisticalCode xsi:nil="true" />
       <VisaSubClassList xsi:nil="true" />
     </Demographics>
-    <AddressList>
-      <Address Type="0123" Role="012A">
-        <Street>
-          <Line1 />
-          <Line2 />
-          <Line3 xsi:nil="true" />
-          <Complex xsi:nil="true" />
-          <StreetNumber xsi:nil="true" />
-          <StreetPrefix xsi:nil="true" />
-          <StreetName xsi:nil="true" />
-          <StreetType xsi:nil="true" />
-          <StreetSuffix xsi:nil="true" />
-          <ApartmentType xsi:nil="true" />
-          <ApartmentNumberPrefix xsi:nil="true" />
-          <ApartmentNumber xsi:nil="true" />
-          <ApartmentNumberSuffix xsi:nil="true" />
-        </Street>
-        <City />
-        <StateProvince />
-        <PostalCode />
-        <GridLocation xsi:nil="true" />
-        <MapReference xsi:nil="true" />
-        <RadioContact xsi:nil="true" />
-        <Community xsi:nil="true" />
-        <LocalId xsi:nil="true" />
-        <AddressGlobalUID xsi:nil="true" />
-        <StatisticalAreas xsi:nil="true" />
-      </Address>
-    </AddressList>
     <PhoneNumberList xsi:nil="true" />
     <EmailList xsi:nil="true" />
     <HouseholdContactInfoList xsi:nil="true" />
@@ -303,7 +282,9 @@ ceil(rand(2)),
 push @{$students{$j}{$yearlevel}}, {GUID => $refid, PSI => $psi};
 
 
-}}
+}
+close F;
+}
 
 
 
@@ -318,7 +299,7 @@ foreach $domain (@domainsLC_tests) {
     $domain_out =~ s/_alt//;
     next if $domain_out eq 'Writing' and $testlevel == 3;
     
-    printf F qq{<NAPTest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
+    printf TESTDATA qq{<NAPTest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <TestContent>
     <NAPTestLocalId>%s</NAPTestLocalId>
     <TestName>%s Year %s</TestName>
@@ -380,7 +361,7 @@ foreach $domain (@domainsLC_tests) {
 
 $asset = 0;
 
-print F qq{<NAPTestlets xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
+#print TESTDATA qq{<NAPTestlets xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
 
 foreach $domain (sort keys %naptests) {
 foreach $testlevel (sort keys %{$naptests{$domain}}) {
@@ -467,7 +448,7 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
 
 		# add substitute items
 		if($domain_out eq 'Numeracy' && $j == itempertestlet($testlevel, $node) - 1) {
-			foreach $p (qw(AIM AVM ALL)) {
+			foreach $p (qw(CAL)) {
     		$itemrefid2 = lc guid_as_string();
                 $itemlocalid2 = sprintf "x001%05d", ++$asset;
             $itemlist{$itemrefid2}{LOCALID} = $itemlocalid2;
@@ -513,8 +494,8 @@ my $testletname = sprintf "%s%d", $node, $i+1;
 
 my $testletrulelist = testletrulelist($node);
 
-printf F qq{
-<NAPTestlet RefId="%s">
+printf TESTDATA qq{
+<NAPTestlet RefId="%s" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <NAPTestRefId>%s</NAPTestRefId>
   <NAPTestLocalId>%s</NAPTestLocalId>
   <TestletContent>
@@ -553,10 +534,10 @@ $items,
 push @{$naptestlet{$domain}{$testlevel}{$node}}, {GUID => $refid, LOCALID => $localid, NAME => $testletname, SUBSCORE => $testletsubscore, RULES => $testletrulelist};
 
 }}}}
-print F "\n</NAPTestlets>\n";
+#print TESTDATA "\n</NAPTestlets>\n";
 
 
-printf F qq{<NAPTestItems xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
+#printf TESTDATA qq{<NAPTestItems xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
 
 
 foreach $refid (keys  %itemlist) {
@@ -1008,13 +989,15 @@ $itemlist{$refid}{XML} = sprintf qq{    <ItemName>%s</ItemName>
         ($main_item_type eq 'MC' or $main_item_type eq 'MCS' ) ? qq{
     <MultipleChoiceOptionCount>4</MultipleChoiceOptionCount>} : '',
     #$testlet,
-    $domain_out eq 'Writing' ? "<CorrectAnswer />" : sprintf("<CorrectAnswer>%s</CorrectAnswer>", $itemlist{$refid}{ANSWER}),
+    #$domain_out eq 'Writing' ? "<CorrectAnswer />" : sprintf("<CorrectAnswer>%s</CorrectAnswer>", $itemlist{$refid}{ANSWER}),
+    # SUPPRESS ITEM ANSWERS 2019
+    "<CorrectAnswer />",
     $substitute,
     $stimulus,
     $rubrics,
     ;
-printf F qq{
-<NAPTestItem RefId="%s">
+printf TESTDATA qq{
+<NAPTestItem RefId="%s" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <TestItemContent>
     <NAPTestItemLocalId>%s</NAPTestItemLocalId>
 %s
@@ -1029,9 +1012,12 @@ $itemlist{$refid}{XML};
     
 }
 
-print F "\n</NAPTestItems>\n";
+#print TESTDATA "\n</NAPTestItems>\n";
 
 foreach $school (sort keys %students) {
+  $guid = $school[$school]{GUID};
+      open F, ">>schooldata_$guid.xml";
+
 foreach $yearlevel (sort keys %{$students{$school}}) {
 foreach $student (@{$students{$school}{$yearlevel}}) {
 $alt_writing_test = rand() > .5;
@@ -1061,6 +1047,10 @@ printf F qq{<NAPEventStudentLink xmlns:xsd="http://www.w3.org/2001/XMLSchema" xm
   <Device xsi:nil="true" />
   <LapsedTimeTest xsi:nil="true" />
   %s
+  <PersonalDetailsChanged>false</PersonalDetailsChanged>
+  <PSIOtherIdMatch>false</PSIOtherIdMatch>
+  <PossibleDuplicate>false</PossibleDuplicate>
+  <DOBRange>true</DOBRange>
   %s
   %s
   <SIF_Metadata xsi:nil="true" />
@@ -1089,11 +1079,16 @@ push @{$events{$domain}}, {
     DOMAIN => $domain_out,
     PARTICIPATION => $participation,
     YEARLEVEL => $yearlevel,
+    SCHOOL => $school[$school]{GUID},
 } ;
 
-}}}}
+}}}
+close F;
+}
 
 foreach $school (sort keys %students) {
+  $guid = $school[$school]{GUID};
+      open F, ">>schooldata_$guid.xml";
 	if($school[$school]{GUID}) {
 foreach $yearlevel (sort keys %{$students{$school}}) {
 foreach $domain (sort keys %naptests) {
@@ -1130,11 +1125,14 @@ rand(200)+$yearlevel_averages{$yearlevel}-20,
 ;
 
 
-}}}}
+}}}
+
+close F;
+}
 
 %x = ();
 
-printf F qq{<NAPStudentResponseSets xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
+#printf F qq{<NAPStudentResponseSets xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
 foreach $d (@domainsLC_tests) {
 foreach $e (@{$events{$d}}) {
     next if $$e{PARTICIPATION} eq 'A';
@@ -1143,6 +1141,8 @@ foreach $e (@{$events{$d}}) {
     next if $$e{PARTICIPATION} eq 'W';
     next if $$e{PARTICIPATION} eq 'X';
 
+    $guid = $$e{SCHOOL};
+    open F, ">>schooldata_$guid.xml";
 
     $refid = lc guid_as_string();
     @path = ();
@@ -1228,7 +1228,10 @@ foreach $e (@{$events{$d}}) {
                     <ItemWeight>1</ItemWeight>%s
                 </ItemResponse>        }, 
                 $itemrefid, $itemlocalid,
-                $hasresponse ? sprintf("\n                    <Response>%s</Response>",$response) :
+                #$hasresponse ? 
+                # SUPPRESS ITEM ANSWERS 2019
+                ($hasresponse && $$e{DOMAIN} eq 'Writing') ?
+                        sprintf("\n                    <Response>%s</Response>",$response) :
                         qq{\n                    <Response />},
                 $correctness,
 		$$e{PARTICIPATION} eq 'P' ? sprintf("\n                    <Score>%d</Score>", $itemscore) : '',
@@ -1265,7 +1268,7 @@ $items,
     $nodepath= print_node_path(join(':', map { substr($_, 0, -1)} @path));
     
     printf F qq{
-<NAPStudentResponseSet RefId="%s">
+<NAPStudentResponseSet RefId="%s" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
     <ReportExclusionFlag>%s</ReportExclusionFlag>
     <CalibrationSampleFlag>%s</CalibrationSampleFlag>
     <EquatingSampleFlag>%s</EquatingSampleFlag>
@@ -1335,10 +1338,19 @@ $items,
     print F qq{
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
-</NAPStudentResponseSet>}
+</NAPStudentResponseSet>
+}
 
-}}
-print F "</NAPStudentResponseSets>\n";
+}
+close F;
+}
+
+#print F "</NAPStudentResponseSets>\n";
+#
+foreach $s (@school) {
+  open F, ">>schooldata_$$s{GUID}.xml";
+  print F "</NAPResultsReporting>";
+}
 
 foreach $domain (@domainsLC_tests) {
 foreach $testlevel (@testlevels) {
@@ -1346,8 +1358,8 @@ foreach $testlevel (@testlevels) {
   $domain_out =~ s/_alt//;
   next if $domain_out eq 'Writing' and $testlevel == 3;
 
-    printf F qq{
-<NAPCodeFrame RefId="%s">
+    printf TESTDATA qq{
+<NAPCodeFrame xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <NAPTestRefId>%s</NAPTestRefId>
   <TestContent>
     <NAPTestLocalId>%s</NAPTestLocalId>
@@ -1405,7 +1417,7 @@ foreach $testlet (@{$naptestlet{$domain}{$testlevel}{$node}}) {
 
 
 
-printf F qq{<Testlet>
+printf TESTDATA qq{<Testlet>
       <NAPTestletRefId>%s</NAPTestletRefId>
       <TestletContent>
         <NAPTestletLocalId>%s</NAPTestletLocalId>
@@ -1462,7 +1474,7 @@ $substitutes = sprintf qq{
           </SubstituteItemList>}, $substitutes;
 }
 
-printf F qq{
+printf TESTDATA qq{
         <TestItem>
           <TestItemRefId>%s</TestItemRefId>
           <TestItemLocalId>%s</TestItemLocalId>
@@ -1482,7 +1494,9 @@ printf F qq{
     1,
     ($itemlist{$refid}{TYPE} eq 'MC' or $itemlist{$refid}{TYPE} eq 'MCS' ) ? qq{
     <MultipleChoiceOptionCount>4</MultipleChoiceOptionCount>} : '',
-    $domain_out eq "Writing ? "" : $itemlist{$refid}{ANSWER},
+    # $domain_out eq "Writing ? "" : $itemlist{$refid}{ANSWER},
+    # SUPPRESS ITEM ANSWERS 2019
+    "",
     $stimulus,
     $substitutes,
     ;
@@ -1491,7 +1505,7 @@ printf F qq{
     
     
 =cut  
-printf F qq{
+printf TESTDATA qq{
         <TestItem>
           <TestItemRefId>%s</TestItemRefId>
           <SequenceNumber>%s</SequenceNumber>
@@ -1502,7 +1516,7 @@ printf F qq{
         </TestItem>},
         $refid, $$item{SEQ}, $$item{LOCALID}, $itemlist{$refid}{XML};
   }  
-printf F qq{
+printf TESTDATA qq{
       </TestItemList>
     </Testlet>
 };
@@ -1512,7 +1526,7 @@ printf F qq{
 }}  
   
   
-    printf F qq{  </TestletList>
+    printf TESTDATA qq{  </TestletList>
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
 </NAPCodeFrame>
@@ -1522,8 +1536,24 @@ printf F qq{
 
 }
 }
-print F "</sif>\n";
+print TESTDATA "</NAPResultsReporting>\n";
+close TESTDATA;
+
+
+# now concatenate all of the above into an RRD file
+#
+system "cat schooldata_*xml testdata.xml > rrd1.xml";
+open F, "<rrd1.xml";
+open OUT, ">rrd.xml";
+printf OUT qq{<NAPResultsReporting xmlns="http://www.sifassociation.org/datamodel/au/3.4">\n};
+while (<F>) {
+next if /NAPResultsReporting/;
+print OUT $_;
+}
 close F;
+printf OUT qq{</NAPResultsReporting>\n};
+close OUT;
+system "rm -f rrd1.xml";
 
 
 sub scaled_score($$$){
@@ -1652,16 +1682,12 @@ sub adjustments($) {
     	$pnp{$pnp_extratime[int(rand(@pnp_extratime))]}++;
     } elsif ($r > .9) {
     	$pnp{$pnp_unlockedbrowser[int(rand(@pnp_unlockedbrowser))]}++;
-    } elsif ($r > .89) {
-	$pnp{'AIM'}++;
     } elsif ($r > .88) {
+	$pnp{'CAL'}++;
+    } elsif ($r > .86) {
 	$pnp{'AIV'}++;
-    } elsif ($r < .87) {
+    } elsif ($r < .84) {
 	$pnp{'AIA'}++;
-    } elsif ($r < .86) {
-	$pnp{'AVM'}++;
-    } elsif ($r > .85) {
-	$pnp{'ALL'}++;
     } elsif ($r > .8)  {
     	$pnp{$pnp_nosystemaction[int(rand(@pnp_nosystemaction))]}++;
     }
@@ -1683,7 +1709,7 @@ return sprintf qq{<Adjustment>
     <PNPCodeList>
 %s    </PNPCodeList>%s
   </Adjustment>},
-  $pnpout, ($pnp[0] eq 'BRA') ? qq{\n      <BookletType>Braille</BookletType>} : '';
+  $pnpout, ($pnp[0] eq 'OFF') ? qq{\n      <BookletType>Braille</BookletType>} : '';
 }
 
 sub marking_type($){
@@ -1798,7 +1824,7 @@ sub response_correctness($) {
 	my $r = rand();
 	return 'Correct' if $r < .7;
 	return 'Incorrect' if $r < .9;
-	return 'NotInPath' if $r < .95;
+        #return 'NotInPath' if $r < .95;
 	return 'NotAttempted';
 }
 

@@ -15,10 +15,10 @@ This version of the results reporting dataset is provided as an early access rel
 
 NSIP strongly recommends that users of this specification register as GitHub users, and click on the 'Watch' button in the top right-hand corner of the GitHub web interface - this will ensure that if and when changes are made to the specification you will be notified automatically.
 
-NSIP has included four sample data files in XML format as part of this release: 
+NSIP has included three sample data file sets in XML format as part of this release: 
 
 * `nap-samplefile.xml` has a single record for each object type, and is meant to illustrate the full range of object content.
-* `sample.platform.xml.zip` is a sample data file with randomised data, reflecting the data as it has been exported from the National Assessment Platform for the 2018 test. This file seeks to give a realistic representation of NAPLAN Results & Reporting data, including two writing tests per year level, no branching information for writing, no Yr 3 Writing tests, and opaque test and test item names. It also follows the Platform's practice of using `xsl:nil` or empty elements for missing elements, rather than omitting them. On the other hand, the sample file also includes substitute items in the codeframe; that will not be the case from the platform at least for 2018.
+* `sample.platform.xml.zip` is a sample data file with randomised data, reflecting the data as it has been exported from the National Assessment Platform for the 2018 test. This file seeks to give a realistic representation of NAPLAN Results & Reporting data, including two writing tests per year level, no branching information for writing, no Yr 3 Writing tests, and opaque test and test item names. It also follows the Platform's practice of using `xsl:nil` or empty elements for missing elements, rather than omitting them. On the other hand, the sample file also includes substitute items in the codeframe; that will not be the case from the platform at least for 2019.
 * `NAPLANAPITestData.zip` presents sample data file in the three chunks it is expected to be distributed as through the NAPLAN Results & Reporting API: Test Data (for the codeframes, tests, testlets and test items), SchoolList (for the SchoolInfo objects describing the schools whose data the client has access to) and SchoolData (the students, test events, test results and score summaries for a specific school).
 
 Please note, these files contain valid data in all elements, but do not constitute a realistic results dataset. The data is primarily there for guidance in constructing integrations.
@@ -39,12 +39,12 @@ Please note, these files contain valid data in all elements, but do not constitu
   * **nap-samplefile.xml**
   * **NAPLANAPITestData.zip**
 * Data file generation scripts:
-  * _nap_platformdata_generator.pl_ generates data in as close a format to the current (PRT 2017) platform output format as possible, though it does not preserve indentation. The two command line variables set the number of students per school, and the number of schools in the sample. So _perl nap_platformdata_generator.pl 200 5_ creates a sample file with 5 schools, and 200 students per school.
+  * _nap_platformdata_generator.pl_ generates data in as close a format to the current (PRT 2017) platform output format as possible, though it does not preserve indentation. The two command line variables set the number of students per school, and the number of schools in the sample. So _perl nap_platformdata_generator.pl 200 5_ creates a sample file with 5 schools, and 200 students per school. The script generates output both in a single file (`rrd.xml`), and in the file chunks expected through the NAPLAN Results & Reporting API (as described above)
 * NAPLAN Results & Reporting API
   * _naplan_api.zip_: Node package which generates timestamped SIF_HMACSHA256 authentication tokens, and inserts them into the headers of HTTP requests originating from the [Insomnia](https://insomnia.rest) REST client. Used to enable Insomnia to generate correctly authorised NAPLAN Results & Reporting API requests; users will need to edit the script to insert their own credentials.
 
 ## Specification Overview
-The proposed results reporting objects are organised as follows:
+The results reporting objects are organised as follows:
 
 ![E-R diagram](https://raw.githubusercontent.com/nsip/naplan-results-reporting/master/NAPResponses.png "E-R diagram")
 
@@ -70,7 +70,7 @@ As guidance for any database design intended to ingest this data, the following 
 
 ## Release Notes
 
-The objects described here have been included in the Australian Schools Data Model - SIF-AU 3.4.3 (see [SIF spec](http://specification.sifassociation.org/Implementation/AU/3.4.3/ )).
+The objects described here have been included in the Australian Schools Data Model - SIF-AU 3.4.4 (see [SIF spec](http://specification.sifassociation.org/Implementation/AU/3.4.4/ )).
 
 If you have any questions about the schemas, the datasets or how to effectively use SIF Frameworks or other tools NSIP provides please contact us directly at info@nsip.edu.au
 
