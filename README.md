@@ -74,3 +74,13 @@ The objects described here have been included in the Australian Schools Data Mod
 
 If you have any questions about the schemas, the datasets or how to effectively use SIF Frameworks or other tools NSIP provides please contact us directly at info@nsip.edu.au
 
+## Scott notes library Install (to be cleaned up)
+
+cpan install Data::GUID::Any
+cpan install Data::Random::Contact
+cpan install String::Random
+cpan install Algorithm::LUHN
+cpan install List::Compare
+cpan install Text::Lorem
+cpan install List::Compare
+apt-get install wbritish
