@@ -31,9 +31,11 @@ my @domainsLC_tests = (
 
 my @testlevels = (3, 5, 7, 9);
 my @nodesRWN = qw(A B C D E F);
-my @nodesLC = qw(C E F S1 S2 S3 P1 P2);
-my @nodesLCS = qw(S1 S2 S3);
-my @nodesLCGP = qw(C E F P1 P2);
+my @nodesN3 = qw(A CA NC B C D E F);
+my @nodesN7 = qw(CA NC B C D E F);
+my @nodesLC = qw(C E F SA SB SD PB PD);
+my @nodesLCS = qw(SA SB SD);
+my @nodesLCGP = qw(C E F PB PD);
 my @nodesW = qw(Blank);
 my @valid_node_pathways = ( 
 	['A', 'B', 'C'],
@@ -44,6 +46,50 @@ my @valid_node_pathways = (
 	['A', 'D', 'F'],
 	['A', 'C', 'B'],
 );
+my @valid_node_pathways_numeracy3 = (
+        ['A', 'B', 'C'],
+        ['A', 'B', 'E'],
+        ['A', 'B', 'F'],
+        ['A', 'D', 'C'],
+        ['A', 'D', 'E'],
+        ['A', 'D', 'F'],
+        ['A', 'B', 'C'],
+        ['CA', 'B', 'E'],
+        ['CA', 'B', 'F'],
+        ['CA', 'D', 'C'],
+        ['CA', 'D', 'E'],
+        ['CA', 'D', 'F'],
+        ['CA', 'B', 'C'],
+        ['NC', 'B', 'E'],
+        ['NC', 'B', 'F'],
+        ['NC', 'D', 'C'],
+        ['NC', 'D', 'E'],
+        ['NC', 'D', 'F'],
+        ['NC', 'C', 'B'],
+);
+my @valid_node_pathways_numeracy7 = (
+        ['A', 'B', 'C'],
+        ['A', 'B', 'E'],
+        ['A', 'B', 'F'],
+        ['A', 'D', 'C'],
+        ['A', 'D', 'E'],
+        ['A', 'D', 'F'],
+        ['A', 'B', 'C'],
+        ['CA', 'B', 'E'],
+        ['CA', 'B', 'F'],
+        ['CA', 'D', 'C'],
+        ['CA', 'D', 'E'],
+        ['CA', 'D', 'F'],
+        ['CA', 'B', 'C'],
+        ['NC', 'B', 'E'],
+        ['NC', 'B', 'F'],
+        ['NC', 'D', 'C'],
+        ['NC', 'D', 'E'],
+        ['NC', 'D', 'F'],
+        ['NC', 'C', 'B'],
+);
+
+
 #my @pnp_codes = qw(AIA AIV AST COL OSS RBK SCR SUP);
 my @pnp_extratime = qw(ETA ETB ETC ETD);
 my @pnp_unlockedbrowser = qw(AST COL);
@@ -53,8 +99,8 @@ my @item_types_remainder = qw(ET HS HT IA IC IGA IGGM IGM IGO IM IO MCS PO SL SP
 my @writing_rubrics = (
 "Text Structure", "Ideas", "Persuasive Devices", "Character and Setting", "Vocabulary", "Cohesion", "Paragraphing", "Sentence Structure", "Punctuation", "Spelling");
 
-my %testletcountpernode = (A => 2, B => 2, D => 2, E => 2, C => 1, F => 1, Blank => 1,
-Clc => 2, Elc => 2, Flc => 2, S1 => 2, S2 => 2, S3 => 2, P1 => 2, P2 => 2);
+my %testletcountpernode = (A => 4, CA => 2, NC => 2, B => 2, D => 2, E => 2, C => 1, F => 1, Blank => 1,
+GC => 2, GE => 2, GF => 2, SA => 2, SB => 2, SD => 2, PB => 2, PD => 2);
 my $studentsperschool = $ARGV[0];
 my $schoolcount = $ARGV[1];
 my %yearlevel_averages = (3 => 390, 5 => 500, 7 => 550, 9 => 580);
@@ -413,14 +459,13 @@ $asset = 0;
 foreach $domain (sort keys %naptests) {
 foreach $testlevel (sort keys %{$naptests{$domain}}) {
   $domain_out = $domain;
-  if($domain_out eq 'Writing_alt'){
-$domain_out;
-  }
   $domain_out =~ s/_alt//;
 my @localnodes = @nodesRWN;
 @localnodes = @nodesLCS if $domain_out eq 'Spelling';
 @localnodes = @nodesLCGP if $domain_out eq 'Grammar and Punctuation';
 @localnodes = @nodesW if $domain_out eq 'Writing';
+@localnodes = @nodesN3 if $domain_out eq 'Numeracy' && ($testlevel == 3||$testlevel == 5);
+@localnodes = @nodesN7 if $domain_out eq 'Numeracy' && ($testlevel == 7||$testlevel == 9);
 
 foreach $node (@localnodes) {
 for($i = 0; $i < $testletcountpernode{$node}; $i++) {
@@ -430,15 +475,15 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
     # $localid = sprintf "%s-%s-%02d", $naptests{$domain}{$testlevel}{LOCALID}, $node, $i;
     $localid = sprintf "x001%05d", ++$asset;
     $items = '';
-	for($j = 0; $j < itempertestlet($testlevel, $node); $j++) {
+	for($j = 0; $j < itempertestlet($testlevel, $node, $domain_out); $j++) {
     	$itemrefid = lc guid_as_string();
 		$itemlocalid = sprintf "x001%05d", ++$asset;
 		# cross linkages
 		my $replaceitem = 0;
 		if($domain_out eq 'Reading') {
-			if($testlevel > 3 && $j >= itempertestlet($testlevel, $node)/2 && ($node eq 'A' or $node eq 'B')) {
-				$link_testlet =  $naptestlet_refids{$domain}{$testlevel-2}{$node eq 'A' ? 'D' : 'E'}[$i];
-				my $x = $naptestitem{$link_testlet}[$j-itempertestlet($testlevel, $node)/2];
+			if($testlevel > 3 && $j >= itempertestlet($testlevel, $node, $domain_out)/2 && ($node eq 'A' or $node eq 'B')) {
+				$link_testlet =  $naptestlet_refids{$domain}{$testlevel-2}{$node eq 'A' ? 'D' : 'E'}[$i % 2];
+				my $x = $naptestitem{$link_testlet}[$j-itempertestlet($testlevel, $node, $domain_out)/2];
 				$itemrefid = $$x{GUID};
 				if (!$itemrefid) {
 				print STDERR "ALERT!\n" ;
@@ -448,9 +493,9 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
 			}
 		}
 		if($domain_out eq 'Numeracy') {
-			if($testlevel > 3 && $j < itempertestlet($testlevel-2, $node)/2 && ($node eq 'A' )) {
-				$link_testlet =  $naptestlet_refids{$domain}{$testlevel-2}{'A'}[$i];
-				my $x = $naptestitem{$link_testlet}[$j+itempertestlet($testlevel-2, $node)/2];
+			if($testlevel > 3 && $j < itempertestlet($testlevel-2, $node, $domain_out)/2 && ($node eq 'A' || $node eq 'CA' || $node eq 'NC')) {
+				$link_testlet =  $naptestlet_refids{$domain}{$testlevel-2}{$node}[$i % 2];
+				my $x = $naptestitem{$link_testlet}[$j+itempertestlet($testlevel-2, $node, $domain_out)/2];
 				$itemrefid = $$x{GUID};
 				if (!$itemrefid) {
 				print STDERR "ALERT2!\n" ;
@@ -458,9 +503,9 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
 				$itemlocalid = $$x{LOCALID};
 				$replaceitem = 1;
 			}
-            if($testlevel > 3 && $j >= itempertestlet($testlevel, $node)/2 && ($node eq 'B')) {
-				$link_testlet =  $naptestlet_refids{$domain}{$testlevel-2}{'E'}[$i];
-				my $x = $naptestitem{$link_testlet}[$j-itempertestlet($testlevel, $node)/2];
+            if($testlevel > 3 && $j >= itempertestlet($testlevel, $node, $domain_out)/2 && ($node eq 'B')) {
+				$link_testlet =  $naptestlet_refids{$domain}{$testlevel-2}{'E'}[$i % 2];
+				my $x = $naptestitem{$link_testlet}[$j-itempertestlet($testlevel, $node, $domain_out)/2];
 				$itemrefid = $$x{GUID};
 				if (!$itemrefid) {
 				print STDERR "ALERT3!\n" ;
@@ -471,7 +516,7 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
 		}
 
 
-		push @{$naptestitem{$refid}}, {GUID => $itemrefid, LOCALID => $itemlocalid, SEQ => $j, TOTAL => itempertestlet($testlevel, $node)};
+		push @{$naptestitem{$refid}}, {GUID => $itemrefid, LOCALID => $itemlocalid, SEQ => $j, TOTAL => itempertestlet($testlevel, $node, $domain_out)};
 	    $itemlist{$itemrefid}{LOCALID} = $itemlocalid;
 	    $itemlist{$itemrefid}{DOMAIN} = $domain;
 	    $itemlist{$itemrefid}{TESTLEVEL} = $testlevel;
@@ -494,7 +539,7 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
 
 
 		# add substitute items
-		if($domain_out eq 'Numeracy' && $j == itempertestlet($testlevel, $node) - 1) {
+		if($domain_out eq 'Numeracy' && $j == itempertestlet($testlevel, $node, $domain_out) - 1) {
 			foreach $p (qw(CAL)) {
     		$itemrefid2 = lc guid_as_string();
                 $itemlocalid2 = sprintf "x001%05d", ++$asset;
@@ -503,13 +548,13 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
 	        $itemlist{$itemrefid2}{TYPE} =  item_type($node);
             $itemlist{$itemrefid2}{TESTLEVEL} = $testlevel;
             $itemlist{$itemrefid2}{ANSWER} = response("", $itemlist{$itemrefid2}{TYPE}, "", $domain);
-		push @{$naptestitem{$refid}}, {GUID => $itemrefid2, LOCALID => $itemlocalid2, SEQ => $j, TOTAL => itempertestlet($testlevel, $node)};
+		push @{$naptestitem{$refid}}, {GUID => $itemrefid2, LOCALID => $itemlocalid2, SEQ => $j, TOTAL => itempertestlet($testlevel, $node, $domain_out)};
               push @{$itemlist{$itemrefid2}{TESTLET}}, {REFID => $refid, LOCALID => $localid, SEQ => $j, NODE =>  $node, TESTLETNO => $i};
 		    push @{$itemlist{$itemrefid}{SUBSTITUTED}} , {REFID => $itemrefid2, LOCALID => $itemlocalid2, PNP => [$p]};
 		    push @{$itemlist{$itemrefid2}{SUBSTITUTES}} , {REFID => $itemrefid, LOCALID => $itemlocalid, PNP => [$p]};
 		    }	   
 	    }
-		if($domain_out eq 'Spelling' && $node eq 'S1') {
+		if($domain_out eq 'Spelling' && $node eq 'SA') {
 		    if($j==0){
     		    $previtemrefid = $itemrefid;
 		        $previtemlocalid = $itemlocalid;
@@ -529,14 +574,14 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
 		        push @{$itemlist{$itemrefid2}{SUBSTITUTES}} , {REFID => $previtemrefid, LOCALID => $previtemlocalid, PNP => ["AIA"]} ;
 		        push @{$itemlist{$previtemrefid}{SUBSTITUTED}} , {REFID => $itemrefid2, LOCALID => $itemlocalid2, PNP => ["AIA"]} ;
 		    } else {
-		push @{$naptestitem{$refid}}, {GUID => $itemrefid2, LOCALID => $itemlocalid2, SEQ => $j, TOTAL => itempertestlet($testlevel, $node)};
+		push @{$naptestitem{$refid}}, {GUID => $itemrefid2, LOCALID => $itemlocalid2, SEQ => $j, TOTAL => itempertestlet($testlevel, $node, $domain_out)};
 	}
 		    
 		}
 
 	}
 
-$testletsubscore = itempertestlet($testlevel, $node);
+$testletsubscore = itempertestlet($testlevel, $node, $domain_out);
 my $testletname = sprintf "%s%d", $node, $i+1;
 
 my $testletrulelist = testletrulelist($node);
@@ -566,14 +611,6 @@ $testletname,
 print_node($node), 
 ($node == 'Blank' ? '<LocationInStage xsi:nil="true" />' : sprintf("<LocationInStage>%d</LocationInStage>", $i+1)),
 $testletsubscore,
-#0.8 * $testletsubscore,
-#0.5 * $testletsubscore,
-#0.7 * $testletsubscore,
-#0.6 * $testletsubscore,
-#0.8 * $testletsubscore,
-#0.5 * $testletsubscore,
-#0.7 * $testletsubscore,
-#0.6 * $testletsubscore,
 #$testletrulelist,
 $items,
 ;
@@ -601,7 +638,7 @@ foreach $refid (keys  %itemlist) {
         rand() < .7 ? 'Text' : 'Image', $domain_out, $itemlist{$refid}{TESTLET}[0]{NODE});
     $stimulus2 = $stimulus2id = "";
     if($itemlist{$refid}{SEQ} > $itemlist{$refid}{TOTAL}/2 and 
-    $itemlist{$refid}{TESTLET}[0]{NODE} ne 'S1') {
+    $itemlist{$refid}{TESTLET}[0]{NODE} ne 'SA') {
         $stimulus2id = $string_gen->randregex('[a-z]{5}\d{3}');
         $stimulus2 = stimulus( $stimulus2id, 
             rand() < .7 ? 'Text' : 'Image', $domain_out, $itemlist{$refid}{TESTLET}[0]{NODE})
@@ -616,7 +653,7 @@ foreach $refid (keys  %itemlist) {
         }
     }
     $stimulus = '<StimulusList xsi:nil="true" />' unless ($domain_out eq 'Reading' or $domain_out eq 'Writing' or
-        ($domain_out eq 'Spelling' and $itemlist{$refid}{TESTLET}[0]{NODE} eq 'S1'));
+        ($domain_out eq 'Spelling' and $itemlist{$refid}{TESTLET}[0]{NODE} eq 'SA'));
     $rubrics = qq{\n    <NAPWritingRubricList xsi:nil="true" />};
     if($domain_out eq 'Writing') {
       $rubrics = qq{
@@ -1194,6 +1231,12 @@ foreach $e (@{$events{$d}}) {
     @path = ();
     $testlets = '';
     @pathway = @{$valid_node_pathways[int(rand(@valid_node_pathways))]};
+    if($$e{DOMAIN} eq 'Numeracy' && ($$e{YEARLEVEL} == 3 || $$e{YEARLEVEL} == 5)) {
+    @pathway = @{$valid_node_pathways_numeracy3[int(rand(@valid_node_pathways_numeracy3))]};
+    }
+    if($$e{DOMAIN} eq 'Numeracy' && ($$e{YEARLEVEL} == 7 || $$e{YEARLEVEL} == 9)) {
+    @pathway = @{$valid_node_pathways_numeracy7[int(rand(@valid_node_pathways_numeracy7))]};
+    }
     if($$e{DOMAIN} eq 'Reading') {
         $reading_end{$$e{STUDENTGUID}} = $pathway[-1];
     }
@@ -1769,7 +1812,7 @@ sub marking_type($){
 
 sub item_type($){
     my ($node) = @_;
-    return 'TE' if $node eq 'S1';
+    return 'TE' if $node eq 'SA';
     return 'ET' if $node eq 'Blank';
 	my $r = rand();
 	return 'MC' if $r < .5;
@@ -1778,7 +1821,7 @@ sub item_type($){
 }
 sub stimulus(@) {
     my ($id, $type, $domain, $node) = @_;
-    $type = 'Audio' if $node eq 'S1';
+    $type = 'Audio' if $node eq 'SA';
     return sprintf qq{
       <Stimulus>
         <StimulusLocalId>%s</StimulusLocalId>
@@ -1794,14 +1837,14 @@ sub stimulus(@) {
 sub lang_conv_pathway($) {
     my ($first_node) = @_;
     my @ret = ($first_node . 'lc');
-    push @ret, (rand() < .5 ? 'P1' : 'P2');
+    push @ret, (rand() < .5 ? 'PB' : 'PD');
     return @ret;
 }
 
 sub spelling_pathway($) {
     my @ret = ();
-    push @ret, 'S1';
-    push @ret, (rand() < .5 ? 'S2' : 'S3');
+    push @ret, 'SA';
+    push @ret, (rand() < .5 ? 'SB' : 'SD');
     return @ret;
 }
 
@@ -1835,19 +1878,21 @@ sub check_path_sep() {
        }
 }
 
-sub itempertestlet($$) {
-    my ($yrlevel, $node) = @_;
-    return 25 if $node eq 'Clc';
-    return 25 if $node eq 'Elc';
-    return 25 if $node eq 'Flc';
-    return 10 if $node eq 'S1';
-    return 5 if $node eq 'S2';
-    return 5 if $node eq 'S3';
-    return 10 if $node eq 'P1';
-    return 10 if $node eq 'P2';
+sub itempertestlet($$$) {
+    my ($yrlevel, $node, $domain) = @_;
+    return 25 if $node eq 'GC';
+    return 25 if $node eq 'GE';
+    return 25 if $node eq 'GF';
+    return 6 if $node eq 'SA';
+    return 9 if $node eq 'SB';
+    return 9 if $node eq 'SD';
+    return 10 if $node eq 'PB';
+    return 10 if $node eq 'PD';
     return 1 if $node eq 'Blank';
-    return 12 if $yrlevel == 3;
-    return 14 if $yrlevel == 5;
+    return 13 if $yrlevel == 3 && $domain == "Reading";
+    return 15 if $yrlevel == 5 && $domain == "Reading";
+    return 12 if $yrlevel == 3 && $domain == "Numeracy";
+    return 14 if $yrlevel == 5 && $domain == "Numeracy";
     return 16 if $yrlevel == 7;
     return 16 if $yrlevel == 9;
     print "ITEM COUNT ERROR\n";
@@ -1955,7 +2000,7 @@ sub node2domain($$) {
   my ($node, $domain) = @_;
   return $domain unless $domain eq 'Language Conventions';
   my $ret = 'Language Conventions - Grammar and Punctuation';
-  $ret = 'Language Conventions - Spelling' if $node eq 'S1' or $node eq 'S2' or $node eq 'S3';
+  $ret = 'Language Conventions - Spelling' if $node eq 'SA' or $node eq 'SB' or $node eq 'SD';
   return $ret;
 }
 
@@ -1963,21 +2008,23 @@ sub node2domain($$) {
 sub sample_next_sequence($$) {
   my ($node, $n) = @_;
   return 'B' if $node eq 'A';
+  return 'B' if $node eq 'CA';
+  return 'B' if $node eq 'NC';
   return 'C' if $node eq 'B';
   return 'E' if $node eq 'D';
   return 'B' if $node eq 'C' and $n eq '1';
   return 'E' if $node eq 'C' and $n eq '2';
-  return 'S2' if $node eq 'S2';
+  return 'SB' if $node eq 'SB';
 }
 
 sub testletrulelist($){
   my ($node) = @_;
   return "" if $node eq 'E';
   return "" if $node eq 'F';
-  return "" if $node eq 'S2';
-  return "" if $node eq 'S3';
-  return "" if $node eq 'P1';
-  return "" if $node eq 'P2';
+  return "" if $node eq 'SB';
+  return "" if $node eq 'SD';
+  return "" if $node eq 'PB';
+  return "" if $node eq 'PD';
   return "" if $node eq 'Blank';
   my @stage = (qw(1));
   @stage = (qw(2)) if $node eq 'B';
