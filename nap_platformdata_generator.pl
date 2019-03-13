@@ -33,9 +33,9 @@ my @testlevels = (3, 5, 7, 9);
 my @nodesRWN = qw(A B C D E F);
 my @nodesN3 = qw(A CA NC B C D E F);
 my @nodesN7 = qw(CA NC B C D E F);
-my @nodesLC = qw(C E F SA SB SD PB PD);
-my @nodesLCS = qw(SA SB SD);
-my @nodesLCGP = qw(C E F PB PD);
+my @nodesLC = qw(GC GE GF SA SB SD PB PD);
+my @nodesLCS = qw(SA SB SD PB PD);
+my @nodesLCGP = qw(GC GE GF);
 my @nodesW = qw(Blank);
 my @valid_node_pathways = ( 
 	['A', 'B', 'C'],
@@ -53,7 +53,7 @@ my @valid_node_pathways_numeracy3 = (
         ['A', 'D', 'C'],
         ['A', 'D', 'E'],
         ['A', 'D', 'F'],
-        ['A', 'B', 'C'],
+        ['CA', 'B', 'C'],
         ['CA', 'B', 'E'],
         ['CA', 'B', 'F'],
         ['CA', 'D', 'C'],
@@ -65,28 +65,26 @@ my @valid_node_pathways_numeracy3 = (
         ['NC', 'D', 'C'],
         ['NC', 'D', 'E'],
         ['NC', 'D', 'F'],
-        ['NC', 'C', 'B'],
 );
 my @valid_node_pathways_numeracy7 = (
-        ['A', 'B', 'C'],
-        ['A', 'B', 'E'],
-        ['A', 'B', 'F'],
-        ['A', 'D', 'C'],
-        ['A', 'D', 'E'],
-        ['A', 'D', 'F'],
-        ['A', 'B', 'C'],
-        ['CA', 'B', 'E'],
-        ['CA', 'B', 'F'],
-        ['CA', 'D', 'C'],
-        ['CA', 'D', 'E'],
-        ['CA', 'D', 'F'],
-        ['CA', 'B', 'C'],
-        ['NC', 'B', 'E'],
-        ['NC', 'B', 'F'],
-        ['NC', 'D', 'C'],
-        ['NC', 'D', 'E'],
-        ['NC', 'D', 'F'],
-        ['NC', 'C', 'B'],
+        ['A', 'B', 'C', 'E'],
+        ['A', 'B', 'E', 'F'],
+        ['A', 'B', 'C', 'F'],
+        ['A', 'D', 'C', 'E'],
+        ['A', 'D', 'E', 'F'],
+        ['A', 'D', 'C', 'F'],
+        ['CA', 'B', 'C', 'E'],
+        ['CA', 'B', 'E', 'F'],
+        ['CA', 'B', 'C', 'F'],
+        ['CA', 'D', 'C', 'E'],
+        ['CA', 'D', 'E', 'F'],
+        ['CA', 'D', 'C', 'F'],
+        ['CA', 'B', 'C', 'E'],
+        ['NC', 'B', 'E', 'F'],
+        ['NC', 'B', 'C', 'F'],
+        ['NC', 'D', 'C', 'E'],
+        ['NC', 'D', 'E', 'F'],
+        ['NC', 'D', 'C', 'F'],
 );
 
 
@@ -97,7 +95,7 @@ my @pnp_nosystemaction = qw(SUP OSS SCR RBK OFF BNB BNG BNL BNW BNY ENZ EST LFS 
 my @item_types = qw(ET HS HT IA IC IGA IGGM IGM IGO IM IO MC MCS PO SL SP TE CO);
 my @item_types_remainder = qw(ET HS HT IA IC IGA IGGM IGM IGO IM IO MCS PO SL SP CO);
 my @writing_rubrics = (
-"Text Structure", "Ideas", "Persuasive Devices", "Character and Setting", "Vocabulary", "Cohesion", "Paragraphing", "Sentence Structure", "Punctuation", "Spelling");
+"Text Structure", "Ideas", "Persuasive Devices", "Audience", "Vocabulary", "Cohesion", "Paragraphing", "Sentence structure", "Punctuation", "Spelling");
 
 my %testletcountpernode = (A => 4, CA => 2, NC => 2, B => 2, D => 2, E => 2, C => 1, F => 1, Blank => 1,
 GC => 2, GE => 2, GF => 2, SA => 2, SB => 2, SD => 2, PB => 2, PD => 2);
@@ -861,7 +859,7 @@ foreach $refid (keys  %itemlist) {
                 <Descriptor>The control of multiple threads and relationships over the whole text, achieved through the use of referring words, substitutions, word associations and text connectives.</Descriptor>
               </NAPWritingRubric>
               <NAPWritingRubric>
-                <RubricType>Paragraphs</RubricType>
+                <RubricType>Paragraping</RubricType>
                 <ScoreList>
                   <Score>
                     <MaxScoreValue>3</MaxScoreValue>
@@ -1836,8 +1834,7 @@ sub stimulus(@) {
 
 sub lang_conv_pathway($) {
     my ($first_node) = @_;
-    my @ret = ($first_node . 'lc');
-    push @ret, (rand() < .5 ? 'PB' : 'PD');
+    @ret = ( 'G'.$first_node);
     return @ret;
 }
 
@@ -1845,6 +1842,7 @@ sub spelling_pathway($) {
     my @ret = ();
     push @ret, 'SA';
     push @ret, (rand() < .5 ? 'SB' : 'SD');
+    push @ret, (rand() < .5 ? 'PB' : 'PD');
     return @ret;
 }
 
