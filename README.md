@@ -25,15 +25,15 @@ Please note, these files contain valid data in all elements, but do not constitu
 
 ## What you can find here
 
-* `Specs/`: Specifications
+* `Specifications/`: Specifications
   * Technical Specification Document
-    * _Specs/Results and Reporting Dataset - Specifications 2.00.pdf_: This document describes the specification of the results reporting objects
-    * _Specs/NAP response Object Draft 18.pdf_: SIF XML specification, with mappings to the Dataset Dictionary (infra)
+    * _Specifications/Results and Reporting Dataset - Specifications 2.00.pdf_: This document describes the specification of the results reporting objects
+    * _Specifications/NAP response Object Draft 18.pdf_: SIF XML specification, with mappings to the Dataset Dictionary (infra)
     * For specifics of the SIF specification about these objects, refer to http://specification.sifassociation.org/Implementation/AU/3.4.3/ under each object name
   * Dataset Dictionary
-    * _Specs/Online NAPLAN Reporting Dataset 2 08.xslx_: This is an Excel version of the object schema giving details of all field types 
+    * _Specifications/Online NAPLAN Reporting Dataset 2 08.xslx_: This is an Excel version of the object schema giving details of all field types 
   * XSD for Object Validation
-    * _Specs/SIF_MessageWithNAPWrapper Oct 2018.xsd_: This is an xsd containing all of the object definitions and linkages, for use in validating results-reporting files or for constructing schemas/code to handle the data updated for use in readiness for NAPLAN 2019 testing. The xsd has been updated to include the proposed `NAPLANResultsReporting` wrapper for API responses and RRD data sets, which consist of different SIF objects relevant to NAP.
+    * _Specifications/SIF_MessageWithNAPWrapper Oct 2018.xsd_: This is an xsd containing all of the object definitions and linkages, for use in validating results-reporting files or for constructing schemas/code to handle the data updated for use in readiness for NAPLAN 2019 testing. The xsd has been updated to include the proposed `NAPLANResultsReporting` wrapper for API responses and RRD data sets, which consist of different SIF objects relevant to NAP.
 * `SampleData`: Sample Data Files (see discussion above)
   * **SampleData/sample.platform.xml.zip**
   * **SampleData/NAPLANAPITestData.zip**
