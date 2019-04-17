@@ -33,7 +33,7 @@ Please note, these files contain valid data in all elements, but do not constitu
   * Dataset Dictionary
     * _Specifications/Online NAPLAN Reporting Dataset 2 08.xslx_: This is an Excel version of the object schema giving details of all field types 
   * XSD for Object Validation
-    * _Specifications/SIF_MessageWithNAPWrapper Oct 2018.xsd_: This is an xsd containing all of the object definitions and linkages, for use in validating results-reporting files or for constructing schemas/code to handle the data updated for use in readiness for NAPLAN 2019 testing. The xsd has been updated to include the proposed `NAPLANResultsReporting` wrapper for API responses and RRD data sets, which consist of different SIF objects relevant to NAP.
+    * _SIF_Message_WITH_WRAPPER_3.4.4_2019-04-17.xsd_: This is an xsd containing all of the object definitions and linkages, for use in validating results-reporting files or for constructing schemas/code to handle the data updated for use in readiness for NAPLAN 2019 testing. The xsd has been updated to include the proposed `NAPLANResultsReporting` wrapper for API responses and RRD data sets, which consist of different SIF objects relevant to NAP.
 * `SampleData`: Sample Data Files (see discussion above)
   * **SampleData/sample.platform.xml.zip**
   * **SampleData/NAPLANAPITestData.zip**

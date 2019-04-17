@@ -1,8 +1,8 @@
 <!--
-		SIF Implementation Specification (Australia) 3.4.4 3.4.4 (Draft)- NAPLAN 2019
+		SIF Implementation Specification (Australia) 3.4.4
 
 
-		(October 8, 2018)
+		(April 16, 2019)
 		
 		Infrastructure Version: v3
 	-->
@@ -438,7 +438,7 @@
 	</xs:complexType>
 	<xs:element name="SchoolInfo" type="SchoolInfoType">
 		<xs:key name="SchoolInfoKey1">
-			<xs:selector xpath="./SchoolInfo"/>
+			<xs:selector xpath="."/>
 			<xs:field xpath="@RefId"/>
 		</xs:key>
 	</xs:element>
@@ -670,6 +670,15 @@
 					<xs:documentation>Note that the student is unable to sit an assessment via an online delivery mode.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="ESLSupport" type="AUCodeSetsYesOrNoCategoryType" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating>High</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>Is the student in receipt of ESL support?</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="PrePrimaryEducation" type="xs:normalizedString" nillable="true" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
@@ -719,7 +728,7 @@
 	</xs:complexType>
 	<xs:element name="StudentPersonal" type="StudentPersonalType">
 		<xs:key name="StudentPersonalKey1">
-			<xs:selector xpath="./StudentPersonal"/>
+			<xs:selector xpath="."/>
 			<xs:field xpath="@RefId"/>
 		</xs:key>
 	</xs:element>
@@ -736,7 +745,7 @@
 				<sifChar/>
 				<privacyRating>High</privacyRating>
 			</xs:appinfo>
-			<xs:documentation>This object represents a student’s attempt to undergo NAP assessment in a particular test.</xs:documentation>
+			<xs:documentation>This object represents a student's attempt to undergo NAP assessment in a particular test.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="StudentPersonalRefId" type="IdRefType" nillable="true" minOccurs="0">
@@ -934,7 +943,7 @@
 						<sifChar>O</sifChar>
 						<privacyRating>High</privacyRating>
 					</xs:appinfo>
-					<xs:documentation>Flag indicating whether a student’s date of birth is in expected range.</xs:documentation>
+					<xs:documentation>Flag indicating whether a student's date of birth is in expected range.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="TestDisruptionList" type="TestDisruptionListType" nillable="true" minOccurs="0">
@@ -986,7 +995,7 @@
 	</xs:complexType>
 	<xs:element name="NAPEventStudentLink" type="NAPEventStudentLinkType">
 		<xs:key name="NAPEventStudentLinkKey1">
-			<xs:selector xpath="./NAPEventStudentLink"/>
+			<xs:selector xpath="."/>
 			<xs:field xpath="@RefId"/>
 		</xs:key>
 	</xs:element>
@@ -1046,7 +1055,7 @@
 	</xs:complexType>
 	<xs:element name="NAPTest" type="NAPTestType">
 		<xs:key name="NAPTestKey1">
-			<xs:selector xpath="./NAPTest"/>
+			<xs:selector xpath="."/>
 			<xs:field xpath="@RefId"/>
 		</xs:key>
 	</xs:element>
@@ -1063,7 +1072,7 @@
 				<sifChar/>
 				<privacyRating>Low</privacyRating>
 			</xs:appinfo>
-			<xs:documentation>This object represents a student’s attempt to undergo NAP assessment in a particular test.</xs:documentation>
+			<xs:documentation>This object represents a student's attempt to undergo NAP assessment in a particular test.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="NAPTestRefId" type="IdRefType" nillable="true" minOccurs="0">
@@ -1133,7 +1142,7 @@
 	</xs:complexType>
 	<xs:element name="NAPTestlet" type="NAPTestletType">
 		<xs:key name="NAPTestletKey1">
-			<xs:selector xpath="./NAPTestlet"/>
+			<xs:selector xpath="."/>
 			<xs:field xpath="@RefId"/>
 		</xs:key>
 	</xs:element>
@@ -1265,7 +1274,7 @@
 	</xs:complexType>
 	<xs:element name="NAPTestScoreSummary" type="NAPTestScoreSummaryType">
 		<xs:key name="NAPTestScoreSummaryKey1">
-			<xs:selector xpath="./NAPTestScoreSummary"/>
+			<xs:selector xpath="."/>
 			<xs:field xpath="@RefId"/>
 		</xs:key>
 	</xs:element>
@@ -1325,7 +1334,7 @@
 	</xs:complexType>
 	<xs:element name="NAPTestItem" type="NAPTestItemType">
 		<xs:key name="NAPTestItemKey1">
-			<xs:selector xpath="./NAPTestItem"/>
+			<xs:selector xpath="."/>
 			<xs:field xpath="@RefId"/>
 		</xs:key>
 	</xs:element>
@@ -1342,7 +1351,7 @@
 				<sifChar/>
 				<privacyRating>High</privacyRating>
 			</xs:appinfo>
-			<xs:documentation>Capture of student’s responses to a NAP test.</xs:documentation>
+			<xs:documentation>Capture of student's responses to a NAP test.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ReportExclusionFlag" type="xs:boolean">
@@ -1378,7 +1387,7 @@
 						<sifChar>C</sifChar>
 						<privacyRating>High</privacyRating>
 					</xs:appinfo>
-					<xs:documentation>Student’s trajectory through adaptive test for the domain. Expressed as a sequence of node identifiers.Not provided if test is not adaptive (e.g. Writing).</xs:documentation>
+					<xs:documentation>Student's trajectory through adaptive test for the domain. Expressed as a sequence of node identifiers. Not provided if test is not adaptive (e.g. Writing).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ParallelTest" type="xs:normalizedString" nillable="true" minOccurs="0">
@@ -1387,7 +1396,7 @@
 						<sifChar>C</sifChar>
 						<privacyRating>High</privacyRating>
 					</xs:appinfo>
-					<xs:documentation>Student’s trajectory through adaptive test for the domain. Expressed as a sequence of testlet identifiers.Not provided if test is not adaptive (e.g. Writing).</xs:documentation>
+					<xs:documentation>Student's trajectory through adaptive test for the domain. Expressed as a sequence of testlet identifiers. Not provided if test is not adaptive (e.g. Writing).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="StudentPersonalRefId" type="IdRefType" nillable="true" minOccurs="0">
@@ -1475,7 +1484,7 @@
 	</xs:complexType>
 	<xs:element name="NAPStudentResponseSet" type="NAPStudentResponseSetType">
 		<xs:key name="NAPStudentResponseSetKey1">
-			<xs:selector xpath="./NAPStudentResponseSet"/>
+			<xs:selector xpath="."/>
 			<xs:field xpath="@RefId"/>
 		</xs:key>
 	</xs:element>
@@ -1553,7 +1562,7 @@
 	</xs:complexType>
 	<xs:element name="NAPCodeFrame" type="NAPCodeFrameType">
 		<xs:key name="NAPCodeFrameKey1">
-			<xs:selector xpath="./NAPCodeFrame"/>
+			<xs:selector xpath="."/>
 			<xs:field xpath="@RefId"/>
 		</xs:key>
 	</xs:element>
@@ -1563,7 +1572,7 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="NAPCodeFrames" type="NAPCodeFrameCollectionType"/>
-		<!--NAP Wrapper Added for validation - NAPLAN 2019  - 08/10/2018-->
+	<!--NAP Wrapper Added for validation - NAPLAN 2019  - 17/04/2019-->
 	<!--NAP ResultsReporting-->
 	<xs:complexType name="NAPResultsReportingType">
 		<xs:annotation>
@@ -1667,7 +1676,7 @@
 			</xs:enumeration>
 			<xs:enumeration value="MH-17">
 				<xs:annotation>
-					<xs:documentation>Tourette’s Syndrome</xs:documentation>
+					<xs:documentation>Tourette's Syndrome</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="MH-18">
@@ -2041,7 +2050,7 @@
 			</xs:enumeration>
 			<xs:enumeration value="MMS">
 				<xs:annotation>
-					<xs:documentation>Musculo – skeletal conditions</xs:documentation>
+					<xs:documentation>Musculo - skeletal conditions</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="MEM">
@@ -2056,7 +2065,7 @@
 			</xs:enumeration>
 			<xs:enumeration value="MAA">
 				<xs:annotation>
-					<xs:documentation>Allergy – Anaphylaxis</xs:documentation>
+					<xs:documentation>Allergy - Anaphylaxis</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="MH">
@@ -2418,7 +2427,7 @@
 			</xs:enumeration>
 			<xs:enumeration value="B3h">
 				<xs:annotation>
-					<xs:documentation>Gives value to others’ opinions</xs:documentation>
+					<xs:documentation>Gives value to others' opinions</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="B3i">
@@ -2618,7 +2627,7 @@
 			</xs:enumeration>
 			<xs:enumeration value="B7d">
 				<xs:annotation>
-					<xs:documentation>Puts others’ needs before own</xs:documentation>
+					<xs:documentation>Puts others' needs before own</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="B7e">
@@ -2693,7 +2702,7 @@
 			</xs:enumeration>
 			<xs:enumeration value="B8e">
 				<xs:annotation>
-					<xs:documentation>Is attentive to others’ reactions</xs:documentation>
+					<xs:documentation>Is attentive to others' reactions</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="B8f">
@@ -3689,13 +3698,19 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="AUCodeSetsNAPTestItemTypeType">
-		<xs:restriction base="xs:token">
+          <xs:restriction base="xs:token">
+            <!-- NN 20190417 Putting in legacy values just in case
+                 HT  > TS
+                 CO > COMP
+            -->
+                        <xs:enumeration value="HT"/>
+                        <xs:enumeration value="CO"/>
 			<xs:enumeration value="ET">
 				<xs:annotation>
 					<xs:documentation>Extended text</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="CO">
+			<xs:enumeration value="COMP">
 				<xs:annotation>
 					<xs:documentation>Composite</xs:documentation>
 				</xs:annotation>
@@ -3705,7 +3720,7 @@
 					<xs:documentation>Hot spot</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="HT">
+			<xs:enumeration value="TS">
 				<xs:annotation>
 					<xs:documentation>Hot text</xs:documentation>
 				</xs:annotation>
@@ -3747,7 +3762,7 @@
 			</xs:enumeration>
 			<xs:enumeration value="IO">
 				<xs:annotation>
-					<xs:documentation>Order interaction</xs:documentation>
+					<xs:documentation>Interactive order NOTE: Will not be used in NAPLAN 2019</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="MC">
@@ -3939,7 +3954,7 @@
 			</xs:enumeration>
 			<xs:enumeration value="ETD">
 				<xs:annotation>
-					<xs:documentation>Extra Time – double total test time</xs:documentation>
+					<xs:documentation>Extra Time - double total test time</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="CAL">
@@ -4258,6 +4273,11 @@
 			<xs:enumeration value="618">
 				<xs:annotation>
 					<xs:documentation>Temporary Employment</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="619">
+				<xs:annotation>
+					<xs:documentation>School-endorsed religious event</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="700">
@@ -21480,179 +21500,9 @@
 	</xs:simpleType>
 	<xs:simpleType name="AUCodeSetsVisaSubClassType">
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="10">
-				<xs:annotation>
-					<xs:documentation>Bridging Visa A - BVA</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="20">
-				<xs:annotation>
-					<xs:documentation>Bridging Visa B - BVB</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="30">
-				<xs:annotation>
-					<xs:documentation>Bridging Visa C - BVC</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="40">
-				<xs:annotation>
-					<xs:documentation>Bridging Visa (Prospective Applicant) - BVD</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="41">
-				<xs:annotation>
-					<xs:documentation>Bridging Visa (Non-Applicant) - BVD</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="51">
-				<xs:annotation>
-					<xs:documentation>Bridging Visa - BVE</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="186">
-				<xs:annotation>
-					<xs:documentation>Employer Nomination Scheme</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="187">
-				<xs:annotation>
-					<xs:documentation>Regional Sponsor Migration Scheme</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="188">
-				<xs:annotation>
-					<xs:documentation>Business Innovation and Investment (provisional)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="189">
-				<xs:annotation>
-					<xs:documentation>Skilled Independent visa </xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="190">
-				<xs:annotation>
-					<xs:documentation>Skilled Nominated</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="400">
-				<xs:annotation>
-					<xs:documentation>Temporary Work (short stay)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="401">
-				<xs:annotation>
-					<xs:documentation>Temporary Work (long stay)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="402">
-				<xs:annotation>
-					<xs:documentation>Training and Research</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="403">
-				<xs:annotation>
-					<xs:documentation>Temporary Work (International Relations)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="405">
-				<xs:annotation>
-					<xs:documentation>Investment Retirement</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="407">
-				<xs:annotation>
-					<xs:documentation>Training visa</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="408">
-				<xs:annotation>
-					<xs:documentation>Temporary Activity visa</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="410">
-				<xs:annotation>
-					<xs:documentation>Retirement</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="416">
-				<xs:annotation>
-					<xs:documentation>Special program visa for the Seasonal Worker Program</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="417">
-				<xs:annotation>
-					<xs:documentation>Working holiday</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="444">
-				<xs:annotation>
-					<xs:documentation>Special Category - New Zealand Citizen</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="459">
 				<xs:annotation>
 					<xs:documentation>Sponsored Business Visitor (short stay) (repealed)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="461">
-				<xs:annotation>
-					<xs:documentation>New Zealand Citizen Family Relationship (Temporary)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="462">
-				<xs:annotation>
-					<xs:documentation>Work and Holiday</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="488">
-				<xs:annotation>
-					<xs:documentation>Superyacht Crew</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="489">
-				<xs:annotation>
-					<xs:documentation>Skilled Regional (provisional)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="500">
-				<xs:annotation>
-					<xs:documentation>Student visa</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="590">
-				<xs:annotation>
-					<xs:documentation>Student Guardian visa</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="600">
-				<xs:annotation>
-					<xs:documentation>Visitor</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="601">
-				<xs:annotation>
-					<xs:documentation>Electronic Travel Authority</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="602">
-				<xs:annotation>
-					<xs:documentation>Medical Treatment</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="651">
-				<xs:annotation>
-					<xs:documentation>eVisitor Visa</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="675">
-				<xs:annotation>
-					<xs:documentation>Medical treatment - short stay (repealed)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="676">
-				<xs:annotation>
-					<xs:documentation>Tourist - short stay (repealed)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="679">
@@ -21660,54 +21510,9 @@
 					<xs:documentation>Sponsored Family Visitor (short stay) (repealed)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="685">
-				<xs:annotation>
-					<xs:documentation>Medical treatment - Long Stay (repealed)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="771">
-				<xs:annotation>
-					<xs:documentation>Transit</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="888">
-				<xs:annotation>
-					<xs:documentation>Business Innovation and Investment (permanent)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="942">
-				<xs:annotation>
-					<xs:documentation>Crew Travel Authority</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="956">
-				<xs:annotation>
-					<xs:documentation>Electronic Travel Authority - Business - Long (repealed)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="976">
-				<xs:annotation>
-					<xs:documentation>Electronic Travel Authority - Visitor (repealed)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="977">
-				<xs:annotation>
-					<xs:documentation>Electronic Travel Authority - Business - Short (repealed)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="988">
-				<xs:annotation>
-					<xs:documentation>Maritime Crew</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="42">
 				<xs:annotation>
 					<xs:documentation>Bridging Visa Class A (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="50">
-				<xs:annotation>
-					<xs:documentation>Bridging Visa (General) (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="60">
@@ -21718,26 +21523,6 @@
 			<xs:enumeration value="70">
 				<xs:annotation>
 					<xs:documentation>Removal Pending Bridging Visa (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="100">
-				<xs:annotation>
-					<xs:documentation>Spouse (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="101">
-				<xs:annotation>
-					<xs:documentation>Child (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="102">
-				<xs:annotation>
-					<xs:documentation>Adoption (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="103">
-				<xs:annotation>
-					<xs:documentation>Parent (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="104">
@@ -21765,49 +21550,9 @@
 					<xs:documentation>Aged Parent (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="114">
-				<xs:annotation>
-					<xs:documentation>Aged Dependent Relative (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="115">
-				<xs:annotation>
-					<xs:documentation>Remaining Relative (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="116">
-				<xs:annotation>
-					<xs:documentation>Carer (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="117">
-				<xs:annotation>
-					<xs:documentation>Orphan Relative (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="118">
 				<xs:annotation>
 					<xs:documentation>Designated Parent (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="119">
-				<xs:annotation>
-					<xs:documentation>Regional Sponsored Migration Scheme (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="120">
-				<xs:annotation>
-					<xs:documentation>Labour Agreement (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="121">
-				<xs:annotation>
-					<xs:documentation>Employer nomination (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="124">
-				<xs:annotation>
-					<xs:documentation>Distinguished talent (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="125">
@@ -21845,11 +21590,6 @@
 					<xs:documentation>Investment-linked (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="132">
-				<xs:annotation>
-					<xs:documentation>Business Talent (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="134">
 				<xs:annotation>
 					<xs:documentation>Skill Matching (No longer issued)</xs:documentation>
@@ -21880,19 +21620,9 @@
 					<xs:documentation>Skilled Designated Area-sponsored (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="143">
-				<xs:annotation>
-					<xs:documentation>Contributory Parent (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="150">
 				<xs:annotation>
 					<xs:documentation>Former citizen (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="151">
-				<xs:annotation>
-					<xs:documentation>Former resident (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="152">
@@ -21905,99 +21635,14 @@
 					<xs:documentation>Resident Return (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="155">
-				<xs:annotation>
-					<xs:documentation>Five year resident return (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="156">
 				<xs:annotation>
 					<xs:documentation>One Year Resident Return (No longer Issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="157">
-				<xs:annotation>
-					<xs:documentation>Three month resident return (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="159">
 				<xs:annotation>
 					<xs:documentation>Provisional resident return (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="160">
-				<xs:annotation>
-					<xs:documentation>Business Owner (Provisional) (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="161">
-				<xs:annotation>
-					<xs:documentation>Senior Executive (Provisional) (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="162">
-				<xs:annotation>
-					<xs:documentation>Investor (Provisional) (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="163">
-				<xs:annotation>
-					<xs:documentation>State/Territory Sponsored Business Owner (Prov.) (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="164">
-				<xs:annotation>
-					<xs:documentation>State/Territory Sponsored Senior Executive (Prov.) (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="165">
-				<xs:annotation>
-					<xs:documentation>State/Territory Sponsored Investor (Provisional) (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="173">
-				<xs:annotation>
-					<xs:documentation>Contributory Parent (Temporary) (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="175">
-				<xs:annotation>
-					<xs:documentation>Skilled - independent (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="176">
-				<xs:annotation>
-					<xs:documentation>Skilled - sponsored (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="200">
-				<xs:annotation>
-					<xs:documentation>Refugee (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="201">
-				<xs:annotation>
-					<xs:documentation>In-country special humanitarian (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="202">
-				<xs:annotation>
-					<xs:documentation>Global special humanitarian (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="203">
-				<xs:annotation>
-					<xs:documentation>Emergency rescue (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="204">
-				<xs:annotation>
-					<xs:documentation>Woman at risk (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="205">
-				<xs:annotation>
-					<xs:documentation>Camp clearance (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="208">
@@ -22050,11 +21695,6 @@
 					<xs:documentation>Vietnamese (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="300">
-				<xs:annotation>
-					<xs:documentation>Prospective marriage (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="302">
 				<xs:annotation>
 					<xs:documentation>Emergency (Permanent Visa Applicant) (No longer issued)</xs:documentation>
@@ -22065,24 +21705,9 @@
 					<xs:documentation>Emergency (Temporary Visa Applicant) (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="309">
-				<xs:annotation>
-					<xs:documentation>Spouse (provisional) (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="310">
 				<xs:annotation>
 					<xs:documentation>Interdependency (provisional) (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="406">
-				<xs:annotation>
-					<xs:documentation>Government Agreement (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="411">
-				<xs:annotation>
-					<xs:documentation>Exchange (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="412">
@@ -22100,39 +21725,9 @@
 					<xs:documentation>Business Specialist (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="415">
-				<xs:annotation>
-					<xs:documentation>Foreign government agency (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="418">
 				<xs:annotation>
 					<xs:documentation>Educational (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="419">
-				<xs:annotation>
-					<xs:documentation>Visiting academic (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="420">
-				<xs:annotation>
-					<xs:documentation>Entertainment (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="421">
-				<xs:annotation>
-					<xs:documentation>Sport (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="422">
-				<xs:annotation>
-					<xs:documentation>Medical practitioner (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="423">
-				<xs:annotation>
-					<xs:documentation>Media and film staff (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="424">
@@ -22145,19 +21740,9 @@
 					<xs:documentation>Family relationship (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="426">
-				<xs:annotation>
-					<xs:documentation>Domestic worker - diplomatic or consular (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="427">
 				<xs:annotation>
 					<xs:documentation>Domestic worker - executive (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="428">
-				<xs:annotation>
-					<xs:documentation>Religious worker (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="430">
@@ -22220,16 +21805,6 @@
 					<xs:documentation>Secondary Movement Relocation (Temporary) (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="456">
-				<xs:annotation>
-					<xs:documentation>Business - Short Stay (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="457">
-				<xs:annotation>
-					<xs:documentation>Business - long stay (Closed to new applicants)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="470">
 				<xs:annotation>
 					<xs:documentation>Professional Development (No longer issued)</xs:documentation>
@@ -22238,41 +21813,6 @@
 			<xs:enumeration value="471">
 				<xs:annotation>
 					<xs:documentation>Trade Skills Training (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="475">
-				<xs:annotation>
-					<xs:documentation>Skilled Regional Sponsored (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="476">
-				<xs:annotation>
-					<xs:documentation>Skilled - Recognised Graduate (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="482">
-				<xs:annotation>
-					<xs:documentation>Temporary Skill Shortage (TSS)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="485">
-				<xs:annotation>
-					<xs:documentation>Skilled - Graduate (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="487">
-				<xs:annotation>
-					<xs:documentation>Skilled - Regional Sponsored (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="495">
-				<xs:annotation>
-					<xs:documentation>Skilled Independent Regional (Temporary) (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="496">
-				<xs:annotation>
-					<xs:documentation>Skilled - Designated Area Sponsored (Provisional) (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="497">
@@ -22298,46 +21838,6 @@
 			<xs:enumeration value="563">
 				<xs:annotation>
 					<xs:documentation>Iranian Postgraduate Student Dependent (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="570">
-				<xs:annotation>
-					<xs:documentation>Student - ELICOS (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="571">
-				<xs:annotation>
-					<xs:documentation>Student - Schools (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="572">
-				<xs:annotation>
-					<xs:documentation>Student - VET (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="573">
-				<xs:annotation>
-					<xs:documentation>Student - Higher Education (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="574">
-				<xs:annotation>
-					<xs:documentation>Student - Masters &amp; Doctorate (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="575">
-				<xs:annotation>
-					<xs:documentation>Student - Non-Award Foundation (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="576">
-				<xs:annotation>
-					<xs:documentation>Student - AusAID &amp; Defence (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="580">
-				<xs:annotation>
-					<xs:documentation>Student Guardian Visa (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="686">
@@ -22370,21 +21870,6 @@
 					<xs:documentation>Territorial Asylum (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="801">
-				<xs:annotation>
-					<xs:documentation>Spouse (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="802">
-				<xs:annotation>
-					<xs:documentation>Child (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="804">
-				<xs:annotation>
-					<xs:documentation>Aged Parent (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="805">
 				<xs:annotation>
 					<xs:documentation>Skilled (No longer issued)</xs:documentation>
@@ -22395,11 +21880,6 @@
 					<xs:documentation>Family (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="808">
-				<xs:annotation>
-					<xs:documentation>Confirmatory Residence (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="814">
 				<xs:annotation>
 					<xs:documentation>Interdependency (No longer issued)</xs:documentation>
@@ -22408,11 +21888,6 @@
 			<xs:enumeration value="819">
 				<xs:annotation>
 					<xs:documentation>Aged Parent (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="820">
-				<xs:annotation>
-					<xs:documentation>Spouse (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="826">
@@ -22445,26 +21920,6 @@
 					<xs:documentation>Permanent resident of Norfolk Island (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="835">
-				<xs:annotation>
-					<xs:documentation>Remaining Relative (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="836">
-				<xs:annotation>
-					<xs:documentation>Carer (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="837">
-				<xs:annotation>
-					<xs:documentation>Orphan Relative (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="838">
-				<xs:annotation>
-					<xs:documentation>Aged Dependant Relative (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="840">
 				<xs:annotation>
 					<xs:documentation>Business Owner (No longer issued)</xs:documentation>
@@ -22490,16 +21945,6 @@
 					<xs:documentation>Investment-linked (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="845">
-				<xs:annotation>
-					<xs:documentation>Established Business in Australia (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="846">
-				<xs:annotation>
-					<xs:documentation>State/Territory Sponsored Regional Established Business (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="850">
 				<xs:annotation>
 					<xs:documentation>Resolution Status (Temporary) (No longer issued)</xs:documentation>
@@ -22513,26 +21958,6 @@
 			<xs:enumeration value="852">
 				<xs:annotation>
 					<xs:documentation>Witness Protection (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="855">
-				<xs:annotation>
-					<xs:documentation>Labour Agreement (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="856">
-				<xs:annotation>
-					<xs:documentation>Employer Nomination Scheme (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="857">
-				<xs:annotation>
-					<xs:documentation>Regional Sponsored Migration Scheme (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="858">
-				<xs:annotation>
-					<xs:documentation>Distinguished Talent (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="859">
@@ -22555,16 +21980,6 @@
 					<xs:documentation>Skilled Designated Area-sponsored New Zealand Citizen (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="864">
-				<xs:annotation>
-					<xs:documentation>Contributory Aged Parent (Residence) (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="866">
-				<xs:annotation>
-					<xs:documentation>Protection (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="880">
 				<xs:annotation>
 					<xs:documentation>Skilled - Independent Overseas Student (No longer issued)</xs:documentation>
@@ -22585,46 +22000,6 @@
 					<xs:documentation>Skilled Designated Area Sponsored (Residence) (No longer issued)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="884">
-				<xs:annotation>
-					<xs:documentation>Contributory Aged Parent (Temporary) (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="885">
-				<xs:annotation>
-					<xs:documentation>Skilled - Independent (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="886">
-				<xs:annotation>
-					<xs:documentation>Skilled - Sponsored (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="887">
-				<xs:annotation>
-					<xs:documentation>Skilled - Regional (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="890">
-				<xs:annotation>
-					<xs:documentation>Business Owner (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="891">
-				<xs:annotation>
-					<xs:documentation>Investor (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="892">
-				<xs:annotation>
-					<xs:documentation>State/Territory sponsored business owner (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="893">
-				<xs:annotation>
-					<xs:documentation>State/Territory sponsored senior executive (No longer issued)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 			<xs:enumeration value="944">
 				<xs:annotation>
 					<xs:documentation>APEC Travel Authority (No longer issued)</xs:documentation>
@@ -22638,6 +22013,656 @@
 			<xs:enumeration value="998">
 				<xs:annotation>
 					<xs:documentation>Declaratory (No longer issued)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Bridging visa A - BVA</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Bridging visa B - BVB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="30">
+				<xs:annotation>
+					<xs:documentation>Bridging visa C - BVC</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="40">
+				<xs:annotation>
+					<xs:documentation>Bridging visa D - BVD (No longer issued)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="41">
+				<xs:annotation>
+					<xs:documentation>Bridging (Non-Applicant) D (No longer issued) </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="50">
+				<xs:annotation>
+					<xs:documentation>Bridging (General) - BE</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="51">
+				<xs:annotation>
+					<xs:documentation>Bridging (Protection Visa Applicant) – BVE</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="100">
+				<xs:annotation>
+					<xs:documentation>Partner (Migrant) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="101">
+				<xs:annotation>
+					<xs:documentation>Child visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="102">
+				<xs:annotation>
+					<xs:documentation>Adoption visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="103">
+				<xs:annotation>
+					<xs:documentation>Parent visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="114">
+				<xs:annotation>
+					<xs:documentation>Aged Dependent Relative visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="115">
+				<xs:annotation>
+					<xs:documentation>Remaining Relative visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="116">
+				<xs:annotation>
+					<xs:documentation>Carer visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="117">
+				<xs:annotation>
+					<xs:documentation>Orphan Relative</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="119">
+				<xs:annotation>
+					<xs:documentation>Repealed - Regional Sponsor Migration Scheme</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="120">
+				<xs:annotation>
+					<xs:documentation>Repealed - Labour Agreement visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="121">
+				<xs:annotation>
+					<xs:documentation>Repealed - Employer Nomination Scheme</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="124">
+				<xs:annotation>
+					<xs:documentation>Distinguished Talent visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="132">
+				<xs:annotation>
+					<xs:documentation>Business Talent (Permanent) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="143">
+				<xs:annotation>
+					<xs:documentation>Contributory Parent visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="151">
+				<xs:annotation>
+					<xs:documentation>Former Resident visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="155">
+				<xs:annotation>
+					<xs:documentation>Resident Return visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="157">
+				<xs:annotation>
+					<xs:documentation>Resident Return visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="160">
+				<xs:annotation>
+					<xs:documentation>Repealed - Business Skills (Provisional) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="161">
+				<xs:annotation>
+					<xs:documentation>Repealed - Business Skills (Provisional) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="162">
+				<xs:annotation>
+					<xs:documentation>Repealed - Business Skills (Provisional) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="163">
+				<xs:annotation>
+					<xs:documentation>Repealed - Business Skills (Provisional) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="164">
+				<xs:annotation>
+					<xs:documentation>Repealed - Business Skills (Provisional) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="165">
+				<xs:annotation>
+					<xs:documentation>Repealed - Business Skills (Provisional) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="173">
+				<xs:annotation>
+					<xs:documentation>Contributory Parent (Temporary) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="175">
+				<xs:annotation>
+					<xs:documentation>Repealed - Skilled Independent visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="176">
+				<xs:annotation>
+					<xs:documentation>Repealed - Skilled Sponsored visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="186">
+				<xs:annotation>
+					<xs:documentation>Employer Nomination Scheme</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="187">
+				<xs:annotation>
+					<xs:documentation>Regional Sponsor Migration Scheme</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="188">
+				<xs:annotation>
+					<xs:documentation>Business Innovation and Investment (provisional) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="189">
+				<xs:annotation>
+					<xs:documentation>Skilled Independent visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="190">
+				<xs:annotation>
+					<xs:documentation>Skilled Nominated visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="200">
+				<xs:annotation>
+					<xs:documentation>Refugee visas</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="201">
+				<xs:annotation>
+					<xs:documentation>In-country Special Humanitarian</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="202">
+				<xs:annotation>
+					<xs:documentation>Global Special Humanitarian</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="203">
+				<xs:annotation>
+					<xs:documentation>Emergency Rescue</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="204">
+				<xs:annotation>
+					<xs:documentation>Woman at Risk</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="205">
+				<xs:annotation>
+					<xs:documentation>Camp Clearance</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="300">
+				<xs:annotation>
+					<xs:documentation>Prospective Marriage visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="309">
+				<xs:annotation>
+					<xs:documentation>Partner (Provisional) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="400">
+				<xs:annotation>
+					<xs:documentation>Temporary Work (Short Stay Specialist) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="401">
+				<xs:annotation>
+					<xs:documentation>Repealed - Temporary Work (long Stay Activity) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="402">
+				<xs:annotation>
+					<xs:documentation>Repealed - Training and Research visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="403">
+				<xs:annotation>
+					<xs:documentation>Temporary Work (International Relations) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="405">
+				<xs:annotation>
+					<xs:documentation>Investor Retirement visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="406">
+				<xs:annotation>
+					<xs:documentation>Repealed - Government Agreement visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="407">
+				<xs:annotation>
+					<xs:documentation>Training visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="408">
+				<xs:annotation>
+					<xs:documentation>Temporary Activity visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="410">
+				<xs:annotation>
+					<xs:documentation>Retirement visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="411">
+				<xs:annotation>
+					<xs:documentation>Repealed - Exchange visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="415">
+				<xs:annotation>
+					<xs:documentation>Repealed - Foreign Government Agency</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="416">
+				<xs:annotation>
+					<xs:documentation>Repealed - Special Program visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="417">
+				<xs:annotation>
+					<xs:documentation>Working Holiday visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="419">
+				<xs:annotation>
+					<xs:documentation>Repealed - Visiting Academic visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="420">
+				<xs:annotation>
+					<xs:documentation>Repealed - Temporary Work (Entertainment) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="421">
+				<xs:annotation>
+					<xs:documentation>Repealed - Sport visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="422">
+				<xs:annotation>
+					<xs:documentation>Repealed - Medical Practitioner visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="423">
+				<xs:annotation>
+					<xs:documentation>Repealed - Media and Film Staff visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="426">
+				<xs:annotation>
+					<xs:documentation>Repealed - Domestic Worker (Temporary) Diplomatic and Consular visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="428">
+				<xs:annotation>
+					<xs:documentation>Repealed - Religious Worker visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="444">
+				<xs:annotation>
+					<xs:documentation>Special Category visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="456">
+				<xs:annotation>
+					<xs:documentation>Repealed - Business (Short Stay) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="457">
+				<xs:annotation>
+					<xs:documentation>Repealed - Temporary Work (Skilled) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="461">
+				<xs:annotation>
+					<xs:documentation>New Zealand Citizen Family Relationship (temporary) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="462">
+				<xs:annotation>
+					<xs:documentation>Work and Holiday visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="475">
+				<xs:annotation>
+					<xs:documentation>Repealed - Skilled Regional Sponsored visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="476">
+				<xs:annotation>
+					<xs:documentation>Skilled-Recognised Graduate visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="482">
+				<xs:annotation>
+					<xs:documentation>Temporary Skill Shortage visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="485">
+				<xs:annotation>
+					<xs:documentation>Temporary Graduate visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="487">
+				<xs:annotation>
+					<xs:documentation>Repealed - Skilled Regional Sponsored</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="488">
+				<xs:annotation>
+					<xs:documentation>Repealed - Superyacht Crew visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="489">
+				<xs:annotation>
+					<xs:documentation>Skilled Regional (provisional) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="495">
+				<xs:annotation>
+					<xs:documentation>Repealed - Skilled Independent Regional (Provisional) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="496">
+				<xs:annotation>
+					<xs:documentation>Repealed - Skilled Designated Area Sponsored visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="500">
+				<xs:annotation>
+					<xs:documentation>Student visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="570">
+				<xs:annotation>
+					<xs:documentation>Repealed - Independent ELICOS Sector visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="571">
+				<xs:annotation>
+					<xs:documentation>Repealed - School Sector visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="572">
+				<xs:annotation>
+					<xs:documentation>Repealed - Vocational Education and Training Sector visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="573">
+				<xs:annotation>
+					<xs:documentation>Repealed - Higher Education Sector visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="574">
+				<xs:annotation>
+					<xs:documentation>Repealed - Postgraduate Research Sector visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="575">
+				<xs:annotation>
+					<xs:documentation>Repealed - Non Award Sector visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="576">
+				<xs:annotation>
+					<xs:documentation>Repealed - Foreign Affairs or Defence sector visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="580">
+				<xs:annotation>
+					<xs:documentation>Repealed - Student Guardian visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="590">
+				<xs:annotation>
+					<xs:documentation>Student Guardian visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="600">
+				<xs:annotation>
+					<xs:documentation>Visitor</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="601">
+				<xs:annotation>
+					<xs:documentation>Electronic Travel Authority</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="602">
+				<xs:annotation>
+					<xs:documentation>Medical Treatment visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="651">
+				<xs:annotation>
+					<xs:documentation>eVisitor</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="675">
+				<xs:annotation>
+					<xs:documentation>Repealed - Medical Treatment (Short Stay) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="676">
+				<xs:annotation>
+					<xs:documentation>Repealed - Tourist visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="685">
+				<xs:annotation>
+					<xs:documentation>Repealed - Medical Treatment Long Stay visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="771">
+				<xs:annotation>
+					<xs:documentation>Transit visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="790">
+				<xs:annotation>
+					<xs:documentation>Safe Haven Enterprise visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="801">
+				<xs:annotation>
+					<xs:documentation>Partner visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="802">
+				<xs:annotation>
+					<xs:documentation>Child visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="804">
+				<xs:annotation>
+					<xs:documentation>Aged Parent visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="808">
+				<xs:annotation>
+					<xs:documentation>Confirmatory (Residence) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="820">
+				<xs:annotation>
+					<xs:documentation>Partner (Extended Eligibility) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="835">
+				<xs:annotation>
+					<xs:documentation>Remaining Relative visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="836">
+				<xs:annotation>
+					<xs:documentation>Carer visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="837">
+				<xs:annotation>
+					<xs:documentation>Orphan Relative</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="838">
+				<xs:annotation>
+					<xs:documentation>Aged Dependent Relative visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="845">
+				<xs:annotation>
+					<xs:documentation>Repealed - Established Business in Australia visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="846">
+				<xs:annotation>
+					<xs:documentation>Repealed - State or Territory Sponsored Regional Established Business in Australia visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="855">
+				<xs:annotation>
+					<xs:documentation>Repealed - Labour Agreement visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="856">
+				<xs:annotation>
+					<xs:documentation>Repealed - Employer Nomination Scheme</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="857">
+				<xs:annotation>
+					<xs:documentation>Repealed - Regional Sponsor Migration Scheme</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="858">
+				<xs:annotation>
+					<xs:documentation>Distinguished Talent visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="864">
+				<xs:annotation>
+					<xs:documentation>Contributory Aged Parent visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="866">
+				<xs:annotation>
+					<xs:documentation>Protection visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="884">
+				<xs:annotation>
+					<xs:documentation>Contributory Aged Parent (Temporary) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="885">
+				<xs:annotation>
+					<xs:documentation>Repealed - Skilled Independent visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="886">
+				<xs:annotation>
+					<xs:documentation>Repealed - Sponsored visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="887">
+				<xs:annotation>
+					<xs:documentation>Skilled Regional visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="888">
+				<xs:annotation>
+					<xs:documentation>Business Innovation and Investment (permanent) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="890">
+				<xs:annotation>
+					<xs:documentation>Business Owner</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="891">
+				<xs:annotation>
+					<xs:documentation>Investor visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="892">
+				<xs:annotation>
+					<xs:documentation>State or Territory Sponsored Business Owner visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="893">
+				<xs:annotation>
+					<xs:documentation>State or Territory Sponsored Investor visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="942">
+				<xs:annotation>
+					<xs:documentation>Crew Travel Authority visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="956">
+				<xs:annotation>
+					<xs:documentation>Repealed - Electronic Travel Authority (Business Entrant) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="976">
+				<xs:annotation>
+					<xs:documentation>Repealed - Electronic Travel Authority (Visitor) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="977">
+				<xs:annotation>
+					<xs:documentation>Repealed - Electronic Travel Authority (Business Entrant) visa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="988">
+				<xs:annotation>
+					<xs:documentation>Maritime Crew visa</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
@@ -22833,6 +22858,11 @@
 			<xs:enumeration value="20">
 				<xs:annotation>
 					<xs:documentation>Guardian</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="40">
+				<xs:annotation>
+					<xs:documentation>Medical Contact</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="99">
@@ -23566,6 +23596,16 @@
 			<xs:enumeration value="1931">
 				<xs:annotation>
 					<xs:documentation>Not enrolled, unknown status</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1940">
+				<xs:annotation>
+					<xs:documentation>Deceased</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1941">
+				<xs:annotation>
+					<xs:documentation>Permanently incapacitated</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="3499">
@@ -25669,6 +25709,143 @@
 			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="AUCodeSetsPermissionCategoryCodeType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="OKPrintedMaterial">
+				<xs:annotation>
+					<xs:documentation>OKPrintedMaterial</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OKOnlineMaterial">
+				<xs:annotation>
+					<xs:documentation>OKOnlineMaterial</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OKMediaRelease">
+				<xs:annotation>
+					<xs:documentation>OKMediaRelease</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="School/College Newsletter">
+				<xs:annotation>
+					<xs:documentation>School/College Newsletter</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="School/College Yearbook">
+				<xs:annotation>
+					<xs:documentation>School/College Yearbook</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Jurisdiction Promotional">
+				<xs:annotation>
+					<xs:documentation>Jurisdiction Promotional</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Jurisdiction Educational">
+				<xs:annotation>
+					<xs:documentation>Jurisdiction Educational</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OKPublishInfo">
+				<xs:annotation>
+					<xs:documentation>OKPublishInfo</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OKOnLineServices">
+				<xs:annotation>
+					<xs:documentation>OKOnLineServices</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AUCodeSetsGroupCategoryCodeType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="PastoralGroup">
+				<xs:annotation>
+					<xs:documentation>Pastoral Group</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MentorGroup">
+				<xs:annotation>
+					<xs:documentation>Mentor Group</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RollGroup">
+				<xs:annotation>
+					<xs:documentation>Roll Group</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AfterSchoolGroup">
+				<xs:annotation>
+					<xs:documentation>After School Group</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OtherGroup">
+				<xs:annotation>
+					<xs:documentation>Other Group</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AUCodeSetsAGSubmissionStatusType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="Not Started">
+				<xs:annotation>
+					<xs:documentation>When the round opens, and ready for submission</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="In Progress">
+				<xs:annotation>
+					<xs:documentation>When the first data is entered in the response and passed first round of validation</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Declaration Pending">
+				<xs:annotation>
+					<xs:documentation>When all data is entered and all warnings have been addressed by the client</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Declared">
+				<xs:annotation>
+					<xs:documentation>When an authorised user declares via SchoolsHUB</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="In Review">
+				<xs:annotation>
+					<xs:documentation>When a CRM user selects the response and selects Begin Review</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Exempt">
+				<xs:annotation>
+					<xs:documentation>When a CRM user sets the questionnaire and client to Exempt during the collection</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Finalised">
+				<xs:annotation>
+					<xs:documentation>When Finalise is selected by a CRM user during review</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Reopened">
+				<xs:annotation>
+					<xs:documentation>When reopen is selected by a CRM user during a review</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Processing">
+				<xs:annotation>
+					<xs:documentation>When data has been submitted via Upload and yet to undergo first round of validation</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="In Error">
+				<xs:annotation>
+					<xs:documentation>When an error has been triggered during upload processing, before the second round validation step</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Cancelled">
+				<xs:annotation>
+					<xs:documentation>When an departmental user has cancelled the submission</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="ISO4217CurrencyNamesAndCodeElementsType">
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="AED">
@@ -26563,6 +26740,684 @@
 			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
+	<!--StudentGroupListType-->
+	<xs:complexType name="StudentGroupListType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar/>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="StudentGroup" type="StudentGroupType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>OR</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--StudentGroupType-->
+	<xs:complexType name="StudentGroupType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar/>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation>.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GroupCategory" type="AUCodeSetsGroupCategoryCodeType">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>The category or type of group being described.  Code set driven so permissions can increase as required.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GroupLocalId" type="LocalIdType">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>LocalId of the Group.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GroupDescription" type="xs:normalizedString" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Local Description of the Group.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--PublishingPermissionListType-->
+	<xs:complexType name="PublishingPermissionListType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar/>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PublishingPermission" type="PublishingPermissionType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>OR</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--PublishingPermissionType-->
+	<xs:complexType name="PublishingPermissionType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar/>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation>.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PermissionCategory" type="AUCodeSetsPermissionCategoryCodeType">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>What is the category of the permission is?  Code set driven so permissions can increase as required.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PermissionValue" type="AUCodeSetsYesOrNoCategoryType">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Actual value of the Permission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--AGReportingObjectResponseListType-->
+	<xs:complexType name="AGReportingObjectResponseListType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar/>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation>A list of the Reporting Objects being responsed to.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="AGReportingObjectResponse" type="AGReportingObjectResponseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>OR</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>The AG Reporting Object's response.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--AGReportingObjectResponseType-->
+	<xs:complexType name="AGReportingObjectResponseType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar/>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation>The AG Reporting Object's response.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SubmittedRefId" type="IdRefType" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Original Reporting RefId of the submission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SIFRefId" type="IdRefType" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>AG assigned for a submission (they can be the same as the original submission but at the discretion of the AG). Only required to be sent if different from the initial RefId submitted.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="HTTPStatusCode" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>HTTP Status Code of the original submission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ErrorText" type="xs:normalizedString" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Text associated with an error status.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CommonwealthId" type="xs:normalizedString">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating>Low</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>Commonwealth identifier for this school/campus or entity being reported on.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EntityName" type="xs:normalizedString" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating>Medium</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>Name of the Entity who this submission is for, if a School, it will be the SchoolName.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AGSubmissionStatusCode" type="AUCodeSetsAGSubmissionStatusType">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating>Low</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>AG Status Code of the entity's submission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AGRuleList" type="AGRuleListType" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating>High</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>A list of Rules associated with this submission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--FQReportingListType-->
+	<xs:complexType name="FQReportingListType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar/>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation>A list of FQ Reports.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FQReporting" type="FQReportingType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>MR</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>The FQ being reported on.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--FQReportingType-->
+	<xs:complexType name="FQReportingType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar>MR</sifChar>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation>The FQ being reported on.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FQRefId" type="IdRefType" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating>Low</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>A GUID associated with this packet of an FQReport.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EntityLevel" type="xs:normalizedString">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating>Medium</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>Level of the Submission, current valid values "School", "Diocese", "System".</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SchoolInfoRefId" type="IdRefType" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating>High</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>A pointer back to the SchoolObject underlying this Report if it exists.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LocalId" type="LocalIdType" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating>Low</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>The locally-assigned identifier for the entity being reported on.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StateProvinceId" type="StateProvinceIdType" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating>Low</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>The state-assigned identifier for entity being reported on.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CommonwealthId" type="xs:normalizedString">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating>Low</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>Commonwealth identifier for this school/campus or entity being reported on.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ACARAId" type="xs:normalizedString" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating>Low</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>ACARA identifier for this school/campus.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EntityName" type="xs:normalizedString" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating>Medium</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>Name of the Entity who this submission is for, if a School, it will be the SchoolName.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EntityContact" type="EntityContactInfoType">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating>High</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>Information on the Contact for the submission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FQContextualQuestionList" type="FQContextualQuestionListType" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating>High</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>A list of Financial questions to set the context for the AG Collection.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FQItemList" type="FQItemListType">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating>High</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>A list of Financial Items being reported on for the AG Collection.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AGRuleList" type="AGRuleListType" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating>High</privacyRating>
+					</xs:appinfo>
+					<xs:documentation>A list of Rules associated with this submission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--FQContextualQuestionListType-->
+	<xs:complexType name="FQContextualQuestionListType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar/>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation>A list of Contextual Questions.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FQContextualQuestion" type="FQContextualQuestionType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>OR</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>The FQItem being reported on.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--FQContextualQuestionType-->
+	<xs:complexType name="FQContextualQuestionType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar/>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation>The FQItem contextual question.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FQContext" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FQAnswer" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--FQItemListType-->
+	<xs:complexType name="FQItemListType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar/>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation>A list of FQ Items reported on.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FQItem" type="FQItemType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>OR</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>The FQItem being reported on.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--FQItemType-->
+	<xs:complexType name="FQItemType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar/>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation>The FQItem being reported on.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FQItemCode" type="xs:string">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TuitionAmount" type="xs:decimal" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Amount associated with Tuition.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="BoardingAmount" type="xs:decimal" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Amount associated with Boarding.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SystemAmount" type="xs:decimal" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Amount associated with the System.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DioceseAmount" type="xs:decimal" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Amount associated with the Diocese.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FQComments" type="xs:string" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Comments associated with a FQ Item</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--AGRuleListType-->
+	<xs:complexType name="AGRuleListType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar/>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation>A list of Rules associated with the Item.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="AGRule" type="AGRuleType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>OR</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Rule associated with the Collection Item.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--AGRuleType-->
+	<xs:complexType name="AGRuleType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar/>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation>Rule.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="AGRuleCode" type="xs:normalizedString" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Collection Data Rule Code.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AGRuleComment" type="xs:normalizedString" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Comment associated with a Rule.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AGRuleResponse" type="xs:normalizedString" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Response associated with a Rule comment on response to a submission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AGRuleStatus" type="xs:normalizedString" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Status associated with a particular Rule, if there is one.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--SoftwareVendorInfoContainerType-->
+	<xs:complexType name="SoftwareVendorInfoContainerType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar>O</sifChar>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation>Container for elements containing information on the Software Product and Vendor.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SoftwareProduct" type="xs:normalizedString">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Product used to create the Submission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SoftwareVersion" type="xs:normalizedString">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Version of the sofware used to create the Submission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--EntityContactInfoType-->
+	<xs:complexType name="EntityContactInfoType">
+		<xs:annotation>
+			<xs:appinfo>
+				<sifChar/>
+				<privacyRating/>
+			</xs:appinfo>
+			<xs:documentation>Common element used to supply information for a contact person at a school, LEA, or other institution.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Name" type="NameType">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Name of the Contact Person for this entity. Note: For an AG Submission, Given Name and Surname are Mandatory.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PositionTitle" type="xs:normalizedString" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>The contact person's position title.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Role" type="xs:normalizedString" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Role played by this contact in this instance.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RegistrationDetails" type="xs:normalizedString" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Registration Details of the Contact.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Qualifications" type="xs:normalizedString" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Qualifications of the Contact.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Address" type="AddressType" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Address of the contact.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Email" type="EmailType">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Email address of the contact.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PhoneNumber" type="PhoneNumberType">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>M</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Phone number of the contact.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<!--CopyRightContainerType-->
 	<xs:complexType name="CopyRightContainerType">
 		<xs:annotation>
@@ -26887,7 +27742,7 @@
 	<xs:complexType name="StudentGradeMarkersListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>A list of staff members who were involved with the grading of the student, or who were responsible for any associated teacher judgement/s.</xs:documentation>
@@ -26938,7 +27793,7 @@
 	<xs:complexType name="GradingScoreListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Assignments that the student went through to achieve this summative assessment.</xs:documentation>
@@ -27052,7 +27907,7 @@
 	<xs:complexType name="LearningStandardListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>References to LearningStandardItems.</xs:documentation>
@@ -27079,10 +27934,10 @@
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="LearningStandardItemRefId" type="IdRefType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="LearningStandardItemRefId" type="IdRefType" nillable="true" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>OR</sifChar>
+						<sifChar>O</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation>GUID of a LearningStandardItem object, presenting the learning standard as part of a well-defined hierarchy (which a client would need to recover and reconstruct).</xs:documentation>
@@ -27112,7 +27967,7 @@
 	<xs:complexType name="AssignmentListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -27172,7 +28027,7 @@
 	<xs:complexType name="MedicationListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>A list of Medications.</xs:documentation>
@@ -27250,7 +28105,7 @@
 	<xs:complexType name="WellbeingEventCategoryListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of Categories of WellbeingEvent.</xs:documentation>
@@ -27304,7 +28159,7 @@
 	<xs:complexType name="WellbeingEventSubCategoryListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of SubTypes associated with a Category.</xs:documentation>
@@ -27367,10 +28222,10 @@
 	<xs:complexType name="FollowUpActionListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
-			<xs:documentation>List of Actions where an action resulted and is known – maybe just a link to a WellbeingResponse Object</xs:documentation>
+			<xs:documentation>List of Actions where an action resulted and is known - maybe just a link to a WellbeingResponse Object</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="FollowUpAction" type="FollowUpActionType" minOccurs="0" maxOccurs="unbounded">
@@ -27427,7 +28282,7 @@
 	<xs:complexType name="PersonInvolvementListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of People involved in the Wellbeing event/response.  Mandatory if more people than the student to which this event/response occurs is involved.</xs:documentation>
@@ -27511,7 +28366,7 @@
 	<xs:complexType name="WithdrawalTimeListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Where a student is to be removed or withdrawn partially for particular times in a week within the Start and End dates of the Response.</xs:documentation>
@@ -27610,7 +28465,7 @@
 						<sifChar>M</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
-					<xs:documentation>Categorisation of a Suspension record to fall into, In School, Withdrawal, Expulsion/Exclusion etc.  In School is usually NOT formally recognised by a jurisdiction but managed at a school level where the student is temporarily withdrawn from normal classes. Expulsion/Exclusion may mean the student’s attendance at a school is terminated.
+					<xs:documentation>Categorisation of a Suspension record to fall into, In School, Withdrawal, Expulsion/Exclusion etc.  In School is usually NOT formally recognised by a jurisdiction but managed at a school level where the student is temporarily withdrawn from normal classes. Expulsion/Exclusion may mean the student's attendance at a school is terminated.
 		  </xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -27629,7 +28484,7 @@
 						<sifChar>O</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
-					<xs:documentation>The duration of a Suspension in days 0.00 – X.xx.  (Half Day = 0.5, Full Day = 1.0 or the percentage of any day.)  Must be provided for a Suspension when known.</xs:documentation>
+					<xs:documentation>The duration of a Suspension in days 0.00 - X.xx.  (Half Day = 0.5, Full Day = 1.0 or the percentage of any day.)  Must be provided for a Suspension when known.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="AdvisementDate" type="xs:date" nillable="true" minOccurs="0">
@@ -27647,7 +28502,7 @@
 						<sifChar>O</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
-					<xs:documentation>The date and time at which a meeting with the student’s parents/carers was held to resolve the Suspension.</xs:documentation>
+					<xs:documentation>The date and time at which a meeting with the student's parents/carers was held to resolve the Suspension.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ResolutionNotes" type="xs:string" nillable="true" minOccurs="0">
@@ -27771,7 +28626,7 @@
 	<xs:complexType name="PlanRequiredListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List to contain information of any plans that may eventuate.</xs:documentation>
@@ -27936,7 +28791,7 @@
 	<xs:complexType name="WellbeingDocumentListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List which describes the Location of any associated documents kept in relation. These include evidentiary documents, and action plans.</xs:documentation>
@@ -27996,7 +28851,7 @@
 						<sifChar>O</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
-					<xs:documentation>Type of Document – could be a ‘Plan’.</xs:documentation>
+					<xs:documentation>Type of Document - could be a 'Plan'.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="DocumentReviewDate" type="xs:date" nillable="true" minOccurs="0">
@@ -28392,16 +29247,16 @@
 	<xs:complexType name="PlausibleScaledValueListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="PlausibleScaledValue" type="xs:decimal" maxOccurs="unbounded">
+			<xs:element name="PlausibleScaledValue" type="xs:decimal" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>OR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation>Plausible values used for reporting to determine cut points, there are 5 per student per domain.</xs:documentation>
@@ -28413,16 +29268,16 @@
 	<xs:complexType name="SubstituteItemListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="SubstituteItem" type="SubstituteItemType" maxOccurs="unbounded">
+			<xs:element name="SubstituteItem" type="SubstituteItemType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>OR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation/>
@@ -28434,7 +29289,7 @@
 	<xs:complexType name="SubstituteItemType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>MR</sifChar>
+				<sifChar>OR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -28473,16 +29328,16 @@
 	<xs:complexType name="CodeFrameTestItemListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="TestItem" type="CodeFrameTestItemType" maxOccurs="unbounded">
+			<xs:element name="TestItem" type="CodeFrameTestItemType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>OR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation/>
@@ -28494,7 +29349,7 @@
 	<xs:complexType name="CodeFrameTestItemType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>MR</sifChar>
+				<sifChar>OR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -28533,16 +29388,16 @@
 	<xs:complexType name="StimulusLocalIdListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="StimulusLocalId" type="LocalIdType" maxOccurs="unbounded">
+			<xs:element name="StimulusLocalId" type="LocalIdType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>OR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation>LocalId of Stimulus</xs:documentation>
@@ -28830,16 +29685,16 @@
 	<xs:complexType name="NAPTestItemListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="TestItem" type="NAPTestItem2Type" maxOccurs="unbounded">
+			<xs:element name="TestItem" type="NAPTestItem2Type" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>OR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation/>
@@ -28851,7 +29706,7 @@
 	<xs:complexType name="NAPTestItem2Type">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>MR</sifChar>
+				<sifChar>OR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -28890,16 +29745,16 @@
 	<xs:complexType name="NAPCodeFrameTestletListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Testlet" type="NAPTestletCodeFrameType" maxOccurs="unbounded">
+			<xs:element name="Testlet" type="NAPTestletCodeFrameType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>OR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation/>
@@ -28911,7 +29766,7 @@
 	<xs:complexType name="NAPTestletCodeFrameType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>MR</sifChar>
+				<sifChar>OR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -28950,16 +29805,16 @@
 	<xs:complexType name="NAPStudentResponseTestletListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Testlet" type="NAPTestletResponseType" maxOccurs="unbounded">
+			<xs:element name="Testlet" type="NAPTestletResponseType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>OR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation>Scores received by the student for each testlet in the test.</xs:documentation>
@@ -28971,7 +29826,7 @@
 	<xs:complexType name="NAPTestletResponseType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>MR</sifChar>
+				<sifChar>OR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -29019,7 +29874,7 @@
 	<xs:complexType name="NAPTestletItemResponseListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -29040,7 +29895,7 @@
 	<xs:complexType name="NAPTestletResponseItemType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>MR</sifChar>
+				<sifChar>OR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Scores received by the student for teach item in the testlet</xs:documentation>
@@ -29133,7 +29988,7 @@
 	<xs:complexType name="NAPSubscoreListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -29154,7 +30009,7 @@
 	<xs:complexType name="NAPSubscoreType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>MR</sifChar>
+				<sifChar>OR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -29241,7 +30096,7 @@
 						<sifChar>M</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
-					<xs:documentation>The integer value of the performance band that the student’s score is in for the NAP test domain.</xs:documentation>
+					<xs:documentation>The integer value of the performance band that the student's score is in for the NAP test domain.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="StudentProficiency" type="xs:normalizedString" nillable="true" minOccurs="0">
@@ -29250,13 +30105,13 @@
 						<sifChar>O</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
-					<xs:documentation>The Skill Progression Level that the student’s score is in for the NAP test domain.</xs:documentation>
+					<xs:documentation>The Skill Progression Level that the student's score is in for the NAP test domain.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PlausibleScaledValueList" type="PlausibleScaledValueListType" maxOccurs="unbounded">
+			<xs:element name="PlausibleScaledValueList" type="PlausibleScaledValueListType">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>M</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation/>
@@ -29268,16 +30123,16 @@
 	<xs:complexType name="NAPWritingRubricListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="NAPWritingRubric" type="NAPWritingRubricType" maxOccurs="unbounded">
+			<xs:element name="NAPWritingRubric" type="NAPWritingRubricType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>OR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation/>
@@ -29289,7 +30144,7 @@
 	<xs:complexType name="NAPWritingRubricType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>MR</sifChar>
+				<sifChar>OR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -29328,16 +30183,16 @@
 	<xs:complexType name="ScoreListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Score" type="ScoreType" maxOccurs="unbounded">
+			<xs:element name="Score" type="ScoreType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>OR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation/>
@@ -29349,7 +30204,7 @@
 	<xs:complexType name="ScoreType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>MR</sifChar>
+				<sifChar>OR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>.</xs:documentation>
@@ -29379,16 +30234,16 @@
 	<xs:complexType name="ScoreDescriptionListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ScoreDescription" type="ScoreDescriptionType" maxOccurs="unbounded">
+			<xs:element name="ScoreDescription" type="ScoreDescriptionType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>OR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation/>
@@ -29400,7 +30255,7 @@
 	<xs:complexType name="ScoreDescriptionType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>MR</sifChar>
+				<sifChar>OR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -29430,16 +30285,16 @@
 	<xs:complexType name="StimulusListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Stimulus" type="StimulusType" maxOccurs="unbounded">
+			<xs:element name="Stimulus" type="StimulusType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>OR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation/>
@@ -29451,7 +30306,7 @@
 	<xs:complexType name="StimulusType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>MR</sifChar>
+				<sifChar>OR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Description of a trigger  for a response in a NAP test.</xs:documentation>
@@ -29517,16 +30372,16 @@
 	<xs:complexType name="ContentDescriptionListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ContentDescription" type="xs:normalizedString" maxOccurs="unbounded">
+			<xs:element name="ContentDescription" type="xs:normalizedString" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>OR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation>Content description in the Australian Curriculum that is relevant to the test item.</xs:documentation>
@@ -29544,10 +30399,10 @@
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="PNPCode" type="AUCodeSetsPNPCodeType" maxOccurs="unbounded">
+			<xs:element name="PNPCode" type="AUCodeSetsPNPCodeType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>OR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation>Personal Needs and Preferences Code(s) applied to the domain.</xs:documentation>
@@ -29589,16 +30444,16 @@
 	<xs:complexType name="TestDisruptionListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="TestDisruption" type="TestDisruptionType" maxOccurs="unbounded">
+			<xs:element name="TestDisruption" type="TestDisruptionType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:appinfo>
-						<sifChar>MR</sifChar>
+						<sifChar>OR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
 					<xs:documentation>An event disrupting a test session</xs:documentation>
@@ -29610,7 +30465,7 @@
 	<xs:complexType name="TestDisruptionType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>MR</sifChar>
+				<sifChar>OR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>This is an alert message that is associated with the student.</xs:documentation>
@@ -29631,7 +30486,7 @@
 	<xs:complexType name="CalendarSummaryListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -29682,7 +30537,7 @@
 						<sifChar>O</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
-					<xs:documentation>Authority to Enroll Expiry Date if one exists. Authority to Enroll Expiry date is also required to ensure the validity of a  student’s enrolment.</xs:documentation>
+					<xs:documentation>Authority to Enroll Expiry Date if one exists. Authority to Enroll Expiry date is also required to ensure the validity of a  student's enrolment.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ATEStartDate" type="xs:date" nillable="true" minOccurs="0">
@@ -29691,7 +30546,7 @@
 						<sifChar>O</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
-					<xs:documentation>Authority to Enroll Start Date if one exists. Authority to Enroll Start is also required to ensure the validity of a  student’s enrolment.</xs:documentation>
+					<xs:documentation>Authority to Enroll Start Date if one exists. Authority to Enroll Start is also required to ensure the validity of a  student's enrolment.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="VisaStatisticalCode" type="xs:normalizedString" nillable="true" minOccurs="0">
@@ -29709,7 +30564,7 @@
 	<xs:complexType name="VisaSubClassListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of Visas</xs:documentation>
@@ -29741,7 +30596,7 @@
 	<xs:complexType name="LanguageBaseType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>MR</sifChar>
+				<sifChar>OR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -29789,7 +30644,7 @@
 	<xs:complexType name="ReligiousEventListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of Religious events</xs:documentation>
@@ -29900,7 +30755,7 @@
 	<xs:complexType name="CountryListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -29921,7 +30776,7 @@
 	<xs:complexType name="CountryList2Type">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -31230,7 +32085,7 @@
 	<xs:complexType name="HouseholdContactInfoListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of Households this Person is associated with</xs:documentation>
@@ -31317,7 +32172,7 @@
 	<xs:complexType name="StatementCodesType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -31338,7 +32193,7 @@
 	<xs:complexType name="StatementsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -31359,7 +32214,7 @@
 	<xs:complexType name="ProgramFundingSourcesType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of funding sources</xs:documentation>
@@ -31410,7 +32265,7 @@
 	<xs:complexType name="AttendanceTimesType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Breakdown of times that the student entered or returned to school.</xs:documentation>
@@ -31521,7 +32376,7 @@
 	<xs:complexType name="PeriodAttendancesType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Breakdown of grouped period attendance.</xs:documentation>
@@ -31707,7 +32562,7 @@
 	<xs:complexType name="StaffSubjectListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Subject(s) Staff member is eligible to teach.</xs:documentation>
@@ -31767,7 +32622,7 @@
 	<xs:complexType name="TeachingGroupListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Teaching groups which are scheduled to attend the event. Not required for cyclical events, as this would be expected to be provided from TimeTableCell/TeachingGroup instead.</xs:documentation>
@@ -31788,7 +32643,7 @@
 	<xs:complexType name="ScheduledTeacherListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>A listing of the teachers assigned to the activity, and the type of supervision they are credited with. If no teachers are listed, the activity is assumed to be unsupervised.</xs:documentation>
@@ -31884,7 +32739,7 @@
 	<xs:complexType name="RoomListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of rooms in which the scheduled activity is held. Used for onsite venues which are represented in the source system as rooms. Can include large venues (ovals, library, etc), if they have been represented as rooms; source system practice varies.</xs:documentation>
@@ -31905,7 +32760,7 @@
 	<xs:complexType name="StaffListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -31926,7 +32781,7 @@
 	<xs:complexType name="AuthorsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -31947,7 +32802,7 @@
 	<xs:complexType name="OrganizationsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -31968,7 +32823,7 @@
 	<xs:complexType name="PurchasingItemsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Listing of line items from original purchase order. Included to indicate any variation between the items, item cost, or item quantity ordered, and what has been delivered.</xs:documentation>
@@ -32082,7 +32937,7 @@
 	<xs:complexType name="ExpenseAccountsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -32151,7 +33006,7 @@
 	<xs:complexType name="SchoolProgramListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of School Programs</xs:documentation>
@@ -32211,7 +33066,7 @@
 	<xs:complexType name="LearningObjectivesType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Educational objectives of the activity.</xs:documentation>
@@ -32232,7 +33087,7 @@
 	<xs:complexType name="RecognitionListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of awards and other types of recognition given to the student for this activity. </xs:documentation>
@@ -32253,7 +33108,7 @@
 	<xs:complexType name="LResourcesType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Learning resources that support this activity.</xs:documentation>
@@ -32305,7 +33160,7 @@
 	<xs:complexType name="SourceObjectsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Source objects assigned to students.</xs:documentation>
@@ -32349,7 +33204,7 @@
 	<xs:complexType name="StudentsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>GUID from the StudentPersonal  Object that identifies the student.</xs:documentation>
@@ -32370,7 +33225,7 @@
 	<xs:complexType name="PrerequisitesType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Skills or competencies the student must have to engage in activity.</xs:documentation>
@@ -32391,7 +33246,7 @@
 	<xs:complexType name="EssentialMaterialsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Essential materials required to engage in this activity.</xs:documentation>
@@ -32412,7 +33267,7 @@
 	<xs:complexType name="TechnicalRequirementsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of Operating system, network, and other technical requirements for the activity, if applicable.</xs:documentation>
@@ -32433,7 +33288,7 @@
 	<xs:complexType name="SoftwareRequirementListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Contains information about required software.</xs:documentation>
@@ -32502,7 +33357,7 @@
 	<xs:complexType name="HouseholdListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -32523,7 +33378,7 @@
 	<xs:complexType name="StudentSubjectChoiceListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of Student Subject Choices where available.</xs:documentation>
@@ -32592,7 +33447,7 @@
 	<xs:complexType name="IdentityAssertionsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>The list of identity assertions for this user.</xs:documentation>
@@ -32628,7 +33483,7 @@
 	<xs:complexType name="LearningStandardsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>References to LearningStandardItems.</xs:documentation>
@@ -32649,7 +33504,7 @@
 	<xs:complexType name="LearningResourcesType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Container for related resources.</xs:documentation>
@@ -32670,7 +33525,7 @@
 	<xs:complexType name="LearningStandardsDocumentType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>References to LearningStandard Documents.</xs:documentation>
@@ -32691,7 +33546,7 @@
 	<xs:complexType name="ComponentsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Lesson or activity-sized portions of a resource.</xs:documentation>
@@ -32769,7 +33624,7 @@
 	<xs:complexType name="StrategiesType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Teaching/learning strategies used in the learning resource.</xs:documentation>
@@ -32790,7 +33645,7 @@
 	<xs:complexType name="AssociatedObjectsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>References from component to associated elements within another SIF object.</xs:documentation>
@@ -32826,7 +33681,7 @@
 	<xs:complexType name="EvaluationsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Evaluations/review of the resource.</xs:documentation>
@@ -32895,7 +33750,7 @@
 	<xs:complexType name="ApprovalsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Authorizations to use this resource. For example, this resource may be included as part of the district's standard curriculum model.</xs:documentation>
@@ -32946,12 +33801,10 @@
 	<xs:complexType name="MediaTypesType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
-			<xs:documentation>
-        Resource media types.
-      </xs:documentation>
+			<xs:documentation>Resource media types.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="MediaType" type="xs:token" minOccurs="0" maxOccurs="unbounded">
@@ -32971,7 +33824,7 @@
 	<xs:complexType name="LEAContactListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -33022,7 +33875,7 @@
 	<xs:complexType name="FinancialAccountRefIdListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of RefIds of financial account codes.</xs:documentation>
@@ -33043,7 +33896,7 @@
 	<xs:complexType name="PasswordListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Allows a provider or publisher to specify the same password using multiple algorithms, if supported.</xs:documentation>
@@ -33099,7 +33952,7 @@
 	<xs:complexType name="ExclusionRulesType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Rules for which statistic may not be reported.</xs:documentation>
@@ -33149,12 +34002,10 @@
 	<xs:complexType name="CharacteristicsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
-			<xs:documentation>
-        Reference to one or more AggregateCharacteristicInfo objects.
-      </xs:documentation>
+			<xs:documentation>Reference to one or more AggregateCharacteristicInfo objects.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="AggregateCharacteristicInfoRefId" type="IdRefType" maxOccurs="unbounded">
@@ -33174,7 +34025,7 @@
 	<xs:complexType name="ContactsType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Contains contact information about resource authors.</xs:documentation>
@@ -33243,7 +34094,7 @@
 	<xs:complexType name="TeachingGroupPeriodListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>A List of schedule information that can be published by an SIS which is a subset of information available in the TimeTableCell object.</xs:documentation>
@@ -33339,10 +34190,10 @@
 	<xs:complexType name="TeacherListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
-			<xs:documentation>A List of teachers associated with the group –  may or may not include the teacher timetabled in the schedule.</xs:documentation>
+			<xs:documentation>A List of teachers associated with the group - may or may not include the teacher timetabled in the schedule.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="TeachingGroupTeacher" type="TeachingGroupTeacherType" maxOccurs="unbounded">
@@ -33351,7 +34202,7 @@
 						<sifChar>MR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
-					<xs:documentation>Teacher associated with the Teaching group –  may or may not be the teacher timetabled in the schedule</xs:documentation>
+					<xs:documentation>Teacher associated with the Teaching group - may or may not be the teacher timetabled in the schedule</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -33363,7 +34214,7 @@
 				<sifChar>MR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
-			<xs:documentation>Teacher associated with the Teaching group –  may or may not be the teacher timetabled in the schedule</xs:documentation>
+			<xs:documentation>Teacher associated with the Teaching group -  may or may not be the teacher timetabled in the schedule</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="StaffPersonalRefId" type="IdRefType" nillable="true" minOccurs="0">
@@ -33408,7 +34259,7 @@
 	<xs:complexType name="StudentListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of Students in this Teaching Group</xs:documentation>
@@ -33468,7 +34319,7 @@
 	<xs:complexType name="TimeTableDayListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Container for TimeTableDays in Schedule</xs:documentation>
@@ -33480,7 +34331,7 @@
 						<sifChar>MR</sifChar>
 						<privacyRating/>
 					</xs:appinfo>
-					<xs:documentation>This element identifies a ‘day’ in a TimeTable.</xs:documentation>
+					<xs:documentation>This element identifies a 'day' in a TimeTable.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -33492,7 +34343,7 @@
 				<sifChar>MR</sifChar>
 				<privacyRating/>
 			</xs:appinfo>
-			<xs:documentation>This element identifies a ‘day’ in a TimeTable.</xs:documentation>
+			<xs:documentation>This element identifies a 'day' in a TimeTable.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="DayId" type="LocalIdType">
@@ -33528,7 +34379,7 @@
 	<xs:complexType name="TimeTablePeriodListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>M</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -33651,11 +34502,10 @@
 	<xs:complexType name="NAPLANClassListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
-			<xs:documentation>
-        Container for a list of classes a teacher may be responsible for with regard to NAPLAN only.</xs:documentation>
+			<xs:documentation>Container for a list of classes a teacher may be responsible for with regard to NAPLAN only.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="ClassCode" type="xs:normalizedString" minOccurs="0" maxOccurs="unbounded">
@@ -33673,7 +34523,7 @@
 	<xs:complexType name="SchoolGroupListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -33694,7 +34544,7 @@
 	<xs:complexType name="YearLevelEnrollmentListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List of number of students enrolled per year level.</xs:documentation>
@@ -33745,7 +34595,7 @@
 	<xs:complexType name="SchoolFocusListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>List containing the education focus codes of the campus/school.</xs:documentation>
@@ -33766,7 +34616,7 @@
 	<xs:complexType name="AlertMessagesType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -33818,7 +34668,7 @@
 	<xs:complexType name="MedicalAlertMessagesType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
@@ -33871,7 +34721,7 @@
 	<xs:complexType name="OtherIdListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Lists all "other" identifiers associated with the entity.</xs:documentation>
@@ -34326,9 +35176,7 @@
 				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
-			<xs:documentation>
-        List of year levels.
-      </xs:documentation>
+			<xs:documentation>List of year levels.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="YearLevel" type="YearLevelType" maxOccurs="unbounded">
@@ -34705,8 +35553,9 @@
 					</xs:appinfo>
 					<xs:documentation>Date the address ceases to be active.</xs:documentation>
 				</xs:annotation>
-			</xs:element>
-			<xs:element name="Street" type="AddressStreetType">
+                              </xs:element>
+                              <!-- NN 20190417 MADE OPTIONAL -->
+			<xs:element name="Street" type="AddressStreetType"  nillable="true" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<sifChar>M</sifChar>
@@ -34714,8 +35563,9 @@
 					</xs:appinfo>
 					<xs:documentation>The street element is a complex element and breaks the street down into several parts. (Allow for PO Box here)</xs:documentation>
 				</xs:annotation>
-			</xs:element>
-			<xs:element name="City" type="xs:normalizedString">
+                              </xs:element>
+                              <!-- NN 20190417 MADE OPTIONAL -->
+			<xs:element name="City" type="xs:normalizedString"  nillable="true" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<sifChar>M</sifChar>
@@ -34742,7 +35592,8 @@
 					<xs:documentation>The country code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PostalCode" type="xs:normalizedString">
+                              <!-- NN 20190417 MADE OPTIONAL -->
+			<xs:element name="PostalCode" type="xs:normalizedString" nillable="true" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
 						<sifChar>M</sifChar>
@@ -34879,7 +35730,7 @@
 	<xs:complexType name="StatisticalAreasType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>A list of Statistical Areas associated with an address that will be referenced back to ABS 1270.  Only applicable to a physical address, e.g. not relevant for a Post Office Box.</xs:documentation>
@@ -35232,7 +36083,7 @@
 	<xs:complexType name="OtherNamesType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation>Previous, alternate or other names or aliases associated with a person.</xs:documentation>
@@ -35479,6 +36330,15 @@
 					<xs:documentation>Language Background is Other Than English. (http://www.acara.edu.au/verve/_resources/DSM_1.pdf), the LBOTE metric is under review. Currently it can be derived from Student and Parents Language Background.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="InterpreterRequired" type="AUCodeSetsYesOrNoCategoryType" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<sifChar>O</sifChar>
+						<privacyRating/>
+					</xs:appinfo>
+					<xs:documentation>Is an interpreter required for the school to communicate with this person?</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="ImmunisationCertificateStatus" type="AUCodeSetsImmunisationCertificateStatusType" nillable="true" minOccurs="0">
 				<xs:annotation>
 					<xs:appinfo>
@@ -35551,7 +36411,7 @@
 	<xs:complexType name="LanguageListType">
 		<xs:annotation>
 			<xs:appinfo>
-				<sifChar>O</sifChar>
+				<sifChar/>
 				<privacyRating/>
 			</xs:appinfo>
 			<xs:documentation/>
