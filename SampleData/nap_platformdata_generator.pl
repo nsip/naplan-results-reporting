@@ -92,8 +92,8 @@ my @valid_node_pathways_numeracy7 = (
 my @pnp_extratime = qw(ETA ETB ETC ETD);
 my @pnp_unlockedbrowser = qw(AST COL);
 my @pnp_nosystemaction = qw(SUP OSS SCR RBK OFF BNB BNG BNL BNW BNY ENZ EST LFS RZL ZOF ZTFAO);
-my @item_types = qw(ET HS HT IA IC IGA IGGM IGM IGO IM IO MC MCS PO SL SP TE CO);
-my @item_types_remainder = qw(ET HS HT IA IC IGA IGGM IGM IGO IM IO MCS PO SL SP CO);
+my @item_types = qw(ET HS TS IA IC IGA IGGM IGM IGO IM IO MC MCS PO SL SP TE COMP);
+my @item_types_remainder = qw(ET HS TS IA IC IGA IGGM IGM IGO IM IO MCS PO SL SP COMP);
 my @writing_rubrics = (
 "Text Structure", "Ideas", "Persuasive Devices", "Audience", "Vocabulary", "Cohesion", "Paragraphing", "Sentence structure", "Punctuation", "Spelling");
 
