@@ -1,4 +1,5 @@
-# call with ARGV[0] and ARGV[1] as student per school count and school count
+# call with ARGV[0], ARGV[1], ARGV[2] as student per school count, school count, 
+# optional school list CSV without header containing: State, School Name, Sector, ACARA ID, Town
 
 use Data::GUID::Any 'guid_as_string';
 use Data::Random::Contact;
@@ -10,6 +11,7 @@ use MIME::Base64;
 use Storable qw(dclone);
 use List::Compare;
 use Text::Lorem;
+use Text::CSV;
 
 system "rm -f schooldata_*xml";
 
@@ -27,6 +29,10 @@ my @domainsLC = (
 
 my @domainsLC_tests = (
 "Reading", "Writing", "Writing_alt", "Numeracy", "Grammar and Punctuation", "Spelling"
+);
+
+my %jurisdictionid = (
+  NSW => 1, VIC => 2, QLD => 3, SA => 4, WA => 5, TAS => 6, NT => 7, ACT => 8, OTHER => 9
 );
 
 my @testlevels = (3, 5, 7, 9);
@@ -112,19 +118,28 @@ $schoolcount = 2;
 
 my $randomizer = Data::Random::Contact->new();
 
+if ($ARGV[2]) {
 	# we will base our students and schools off existing csv file
-	open F, "<$ARGV[0]";
-	<F>;
-	while(<F>) {
-		@a = split m/,/;
-
+        my $csv = Text::CSV->new({ sep_char => ',' });
+        open(my $data, '<', $ARGV[2]);
+        #$line = <$data>;
+for ($i=0,$line = <$data>; $i < $schoolcount && $line; $line = <$data>,$i++) {
+  chomp;
+  if ($csv->parse($line)) {
+    my @a = $csv->fields();
+$school[$i] = {LOCALID => 'x7286' . $i , ACARAID =>  $a[3], GUID => lc guid_as_string(), NAME => $a[1], 
+  STATE => $a[0], SECTOR => $a[2],
+LEVEL => $level > 0.66 ? "Secondary" : $level > 0.33 ? "Primary" : "Combined" };
+}
 	}
-
+        $schoolcount = $i if !$line;
+      } else {
 @schoolnames = $random_word->get_words($schoolcount);
 for ($i=0; $i < $schoolcount; $i++) {
   $level = rand();
 $school[$i] = {LOCALID => 'x7286' . $i , ACARAID =>  21212 + $i, GUID => lc guid_as_string(), NAME => ucfirst $schoolnames[$i],
-LEVEL => $level > 0.66 ? "Secondary" : $level > 0.33 ? "Primary" : "Combined" };
+STATE => "NSW", SECTOR => "Independent", LEVEL => $level > 0.66 ? "Secondary" : $level > 0.33 ? "Primary" : "Combined" };
+}
 }
 
 open SCHOOLLIST, ">schoollist.xml";
@@ -154,7 +169,7 @@ $schoolxml = sprintf qq{
   <SchoolContactList xsi:nil="true" />
     <AddressList>
     <Address Type="0123" Role="012A">
-      <StateProvince>OS</StateProvince>
+      <StateProvince>%s</StateProvince>
       <GridLocation xsi:nil="true" />
       <RadioContact xsi:nil="true" />
       <Community xsi:nil="true" />
@@ -166,7 +181,7 @@ $schoolxml = sprintf qq{
   <PhoneNumberList xsi:nil="true" />
   <YearLevels xsi:nil="true" />
   <Campus xsi:nil="true" />
-  <SchoolSector>NG</SchoolSector>
+  <SchoolSector>%s</SchoolSector>
   <SchoolGeographicLocation>15</SchoolGeographicLocation>
   <LocalGovernmentArea xsi:nil="true" />
   <JurisdictionLowerHouse xsi:nil="true" />
@@ -182,6 +197,8 @@ $$s{LOCALID},
 $$s{ACARAID},
 $$s{NAME},
 $$s{LEVEL},
+$$s{STATE},
+$$s{SECTOR} == "Government" ? "G" : "NG",
 ;
 print F $schoolxml;
 print SCHOOLLIST $schoolxml;
@@ -218,7 +235,7 @@ printf F qq{<StudentPersonal xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:
   <StateProvinceId />
   <ElectronicIdList xsi:nil="true" />
   <OtherIdList>
-    <OtherId Type="JurisdictionId">9</OtherId>
+    <OtherId Type="JurisdictionId">%d</OtherId>
     <OtherId Type="SectorStudentId">%s</OtherId>
     <OtherId Type="DiocesanStudentId"></OtherId>
     <OtherId Type="TAAStudentId">%s</OtherId>
@@ -344,6 +361,7 @@ printf F qq{<StudentPersonal xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:
 }, 
 $refid, 
 $localid,
+$jurisdictionid{$school[$j]{'STATE'}},
 ceil(rand(100000)),
 $localid,
 ceil(rand(100000)),
@@ -1216,6 +1234,7 @@ close F;
 #printf F qq{<NAPStudentResponseSets xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
 foreach $d (@domainsLC_tests) {
 foreach $e (@{$events{$d}}) {
+    next if $$e{PARTICIPATION} eq 'F';
     next if $$e{PARTICIPATION} eq 'A';
     next if $$e{PARTICIPATION} eq 'C';
     next if $$e{PARTICIPATION} eq 'E';
@@ -1713,6 +1732,7 @@ sub encode($){
 sub participation() {
     my $r = rand();
     return 
+    	$r < .84 ? 'F' :
     	$r < .86 ? 'P' :
     	$r < .88 ? 'C' :
         $r < .9 ? 'X' :
@@ -1724,6 +1744,7 @@ sub participation() {
 
 sub participation_encoding($){
     my ($p) = @_;
+    return "Alternate Format" if $p eq 'F';
     return "Present" if $p eq 'P';
     return "Absent" if $p eq 'A';
     return "Exempt" if $p eq 'E';
