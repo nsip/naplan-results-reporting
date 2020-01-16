@@ -35,6 +35,18 @@ my %jurisdictionid = (
   NSW => 1, VIC => 2, QLD => 3, SA => 4, WA => 5, TAS => 6, NT => 7, ACT => 8, OTHER => 9
 );
 
+my %psistate = (
+  NSW => 1,
+  VIC => 2,
+  QLD => 3,
+  SA => 4,
+  WA => 5,
+  TAS => 6,
+  NT => 7,
+  ACT => 8,
+  OTHER => 9,
+);
+
 my @testlevels = (3, 5, 7, 9);
 my @nodesRWN = qw(A B C D E F);
 my @nodesN3 = qw(A CA NC B C D E F);
@@ -127,7 +139,7 @@ for ($i=0,$line = <$data>; $i < $schoolcount && $line; $line = <$data>,$i++) {
   chomp;
   if ($csv->parse($line)) {
     my @a = $csv->fields();
-$school[$i] = {LOCALID => 'x7286' . $i , ACARAID =>  $a[3], GUID => lc guid_as_string(), NAME => $a[1], 
+$school[$i] = {LOCALID => 'x7286' . $i , ACARAID =>  $a[3], GUID => lc guid_as_string(), NAME => xml_safe($a[1]), 
   STATE => $a[0], SECTOR => $a[2],
 LEVEL => $level > 0.66 ? "Secondary" : $level > 0.33 ? "Primary" : "Combined" };
 }
@@ -215,7 +227,8 @@ for ($j=0;$j<$schoolcount;$j++){
 for ($i=0;$i<$studentsperschool;$i++){
 
 $refid = lc guid_as_string();
-$psi = psi('R', '1', $studentsperschool*$j+$i);
+#$psi = psi('R', $school[$j]{STATE}, $studentsperschool*$j+$i);
+$psi = psi('R', $school[$j]{STATE}, $school[$j]{ACARAID}*1000+$i);
 my $person = $randomizer->person();
 $$person{'address'}{'home'}{'street_1'} =~ s/\&/\&amp;/g;
 
@@ -226,7 +239,7 @@ $yearlevel = ceil(rand(2))*2+5;
 if ($school[$j]{LEVEL} eq "Primary") {
 $yearlevel = ceil(rand(2))*2+1;
 }
-my $localid =  ceil(rand(1000000000));
+my $localid =  ceil(rand(100000)) + 100000 * $school[$j]{ACARAID};
 
 printf F qq{<StudentPersonal xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <AlertMessages xsi:nil="true" />
@@ -1705,10 +1718,10 @@ sub dateofbirth($){
 	return sprintf "%s-%02d-%02d", $year, rand(12)+1, rand(28)+1;
 }
 
-
-sub psi($){
+sub psi($$$){
         my ($source, $state, $i) = @_;
-        my $digits = $state * 100000000 + $i;
+        my $statenum = $psistate{$state};
+        my $digits = $statenum * 100000000 + $i;
         my $c = check_digit($i);
         return sprintf "%s%09d%s", $source, $digits, encode($c);
 }
@@ -1732,8 +1745,8 @@ sub encode($){
 sub participation() {
     my $r = rand();
     return 
-    	$r < .84 ? 'F' :
-    	$r < .86 ? 'P' :
+    	$r < .84 ? 'P' :
+    	$r < .86 ? 'F' :
     	$r < .88 ? 'C' :
         $r < .9 ? 'X' :
         $r < .92 ? 'A' :
@@ -2096,4 +2109,10 @@ sub subdomain($$){
   return '??';
 }
 
-
+sub xml_safe($) {
+my ($s) = @_;
+$s =~ s/&(?!=[a-zA-z])/&amp;/g;
+$s =~ s/</&lt;/g;
+$s =~ s/>/&gt;/g;
+return $s;
+}
