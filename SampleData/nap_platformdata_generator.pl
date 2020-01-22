@@ -1371,7 +1371,7 @@ foreach $e (@{$events{$d}}) {
         </Testlet>}, 
 $$current_testlet{GUID},
 $$current_testlet{LOCALID},
-$hasreponse ? sprintf("\n            <TestletSubScore>%d</TestletSubScore>",$testlet_score) : '',
+$hasresponse ? sprintf("\n            <TestletSubScore>%d</TestletSubScore>",$testlet_score) : '',
 $items,
 ;
 
