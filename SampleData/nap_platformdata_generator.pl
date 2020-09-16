@@ -51,9 +51,8 @@ my @testlevels = (3, 5, 7, 9);
 my @nodesRWN = qw(A B C D E F);
 my @nodesN3 = qw(A CA NC B C D E F);
 my @nodesN7 = qw(CA NC B C D E F);
-my @nodesLC = qw(GC GE GF SA SB SD PB PD);
 my @nodesLCS = qw(SA SB SD PB PD);
-my @nodesLCGP = qw(GC GE GF);
+my @nodesLCGP = qw(AG BG CG DG EG FG CGEarly BGLate);
 my @nodesW = qw(Blank);
 my @valid_node_pathways = ( 
 	['A', 'B', 'C'],
@@ -63,6 +62,15 @@ my @valid_node_pathways = (
 	['A', 'D', 'E'],
 	['A', 'D', 'F'],
 	['A', 'C', 'B'],
+);
+my @valid_node_pathways_GP = ( 
+        ['AG', 'DG', 'FG'],
+        ['AG', 'DG', 'EG'],
+        ['AG', 'DG', 'CG'],
+        ['AG', 'BG', 'FG'],
+        ['AG', 'BG', 'EG'],
+        ['AG', 'BG', 'CG'],
+        ['AG', 'CGEarly', 'BGLate'],
 );
 my @valid_node_pathways_numeracy3 = (
         ['A', 'B', 'C'],
@@ -113,10 +121,11 @@ my @pnp_nosystemaction = qw(SUP OSS SCR RBK OFF BNB BNG BNL BNW BNY ENZ EST LFS 
 my @item_types = qw(ET HS TS IA IC IGA IGGM IGM IGO IM IO MC MCS PO SL SP TE COMP);
 my @item_types_remainder = qw(ET HS TS IA IC IGA IGGM IGM IGO IM IO MCS PO SL SP COMP);
 my @writing_rubrics = (
-"Text Structure", "Ideas", "Persuasive Devices", "Audience", "Vocabulary", "Cohesion", "Paragraphing", "Sentence structure", "Punctuation", "Spelling");
+"Text structure", "Ideas", "Character and setting", "Audience", "Vocabulary", "Cohesion", "Paragraphing", "Sentence structure", "Punctuation", "Spelling");
 
 my %testletcountpernode = (A => 4, CA => 2, NC => 2, B => 2, D => 2, E => 2, C => 1, F => 1, Blank => 1,
-GC => 2, GE => 2, GF => 2, SA => 2, SB => 2, SD => 2, PB => 2, PD => 2);
+GC => 2, GE => 2, GF => 2, SA => 2, SB => 2, SD => 2, PB => 2, PD => 2, CGEarly => 1, BGLate => 2, AG =>4,
+BG => 4, CG => 4, DG => 4, EG => 4, FG => 4);
 my $studentsperschool = $ARGV[0];
 my $schoolcount = $ARGV[1];
 my %yearlevel_averages = (3 => 390, 5 => 500, 7 => 550, 9 => 580);
@@ -210,7 +219,7 @@ $$s{ACARAID},
 $$s{NAME},
 $$s{LEVEL},
 $$s{STATE},
-$$s{SECTOR} == "Government" ? "G" : "NG",
+$$s{SECTOR} eq "Government" ? "Gov" : "NG",
 ;
 print F $schoolxml;
 print SCHOOLLIST $schoolxml;
@@ -240,7 +249,7 @@ if ($school[$j]{LEVEL} eq "Primary") {
 $yearlevel = ceil(rand(2))*2+1;
 }
 my $localid =  ceil(rand(100000)) + 100000 * $school[$j]{ACARAID};
-
+my $lang = language();
 printf F qq{<StudentPersonal xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <AlertMessages xsi:nil="true" />
   <MedicalAlertMessages xsi:nil="true" />
@@ -300,6 +309,7 @@ printf F qq{<StudentPersonal xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:
       <ReligiousEventList xsi:nil="true" />
       <ReligiousRegion xsi:nil="true" />
       <VisaSubClass />
+      <LBOTE>%s</LBOTE>
       <VisaStatisticalCode xsi:nil="true" />
       <VisaSubClassList xsi:nil="true" />
     </Demographics>
@@ -385,7 +395,8 @@ ceil(rand(4)),
 $$person{'gender'} eq 'male' ? 1 : 2,
 dateofbirth($yearlevel),
 country(),
-language(),
+$lang,
+($lang ==  "1201" ? "N" : "Y"),
 $yearlevel,
 language(),
 language(),
@@ -420,6 +431,7 @@ foreach $domain (@domainsLC_tests) {
     $domain_out = $domain;
     $domain_out =~ s/_alt//;
     next if $domain_out eq 'Writing' and $testlevel == 3;
+    next if $domain_out eq 'Writing_alt' and $testlevel == 3;
     
     printf TESTDATA qq{<NAPTest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <TestContent>
@@ -475,11 +487,80 @@ foreach $domain (@domainsLC_tests) {
     $testlevel, 
     $testlevel,
     $domain_out,
-    $domain eq 'Spelling' ? 2 : 3;
+    $domain eq 'Spelling' ? 2 : $domain eq 'Writing' ? 1 : 3;
     
     $naptests{$domain}{$testlevel} = {GUID => $refid, LOCALID => $localid};
 
 }}
+
+# NN 2020 writing AF tests
+foreach $testlevel (@testlevels) {
+
+    $refid = lc guid_as_string();
+    $domain = "Writing_AF";
+    $domain_out = "Writing";
+    $localid = sprintf "x0010680%d_%s", ++$j, $domain;
+
+    printf TESTDATA qq{<NAPTest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
+  <TestContent>
+    <NAPTestLocalId>%s</NAPTestLocalId>
+    <TestName>%s Year %s</TestName>
+    <TestLevel>
+      <Code>%s</Code>
+    </TestLevel>
+    <TestType>Normal</TestType>
+    <Domain>%s</Domain>
+    <TestYear>2017</TestYear>
+    <StagesCount>%d</StagesCount>
+    <DomainBands>
+      <Band1Lower>0</Band1Lower>
+      <Band1Upper>258</Band1Upper>
+      <Band2Lower>259</Band2Lower>
+      <Band2Upper>318</Band2Upper>
+      <Band3Lower>319</Band3Lower>
+      <Band3Upper>368</Band3Upper>
+      <Band4Lower>369</Band4Lower>
+      <Band4Upper>417</Band4Upper>
+      <Band5Lower>418</Band5Lower>
+      <Band5Upper>466</Band5Upper>
+      <Band6Lower>467</Band6Lower>
+      <Band6Upper>526</Band6Upper>
+      <Band7Lower>527</Band7Lower>
+      <Band7Upper>574</Band7Upper>
+      <Band8Lower>575</Band8Lower>
+      <Band8Upper>633</Band8Upper>
+      <Band9Lower>634</Band9Lower>
+      <Band9Upper>681</Band9Upper>
+      <Band10Lower>682</Band10Lower>
+      <Band10Upper>999</Band10Upper>
+    </DomainBands>
+    <DomainProficiency>
+       <Level1Lower>10</Level1Lower>
+       <Level1Upper>500</Level1Upper>
+       <Level2Lower>500</Level2Lower>
+       <Level2Upper>700</Level2Upper>
+       <Level3Lower>700</Level3Lower>
+       <Level3Upper>900</Level3Upper>
+       <Level4Lower>0</Level4Lower>
+       <Level4Upper>0</Level4Upper>
+    </DomainProficiency>
+  </TestContent>
+  <SIF_Metadata xsi:nil="true" />
+  <SIF_ExtendedElements xsi:nil="true" />
+</NAPTest>
+},
+    $refid,
+    $localid,
+    $domain_out,
+    $testlevel, 
+    $testlevel, 
+    $domain_out,
+    1;
+    
+    $naptests{$domain}{$testlevel} = {GUID => $refid, LOCALID => $localid};
+
+}
+
 
 $asset = 0;
 
@@ -488,7 +569,7 @@ $asset = 0;
 foreach $domain (sort keys %naptests) {
 foreach $testlevel (sort keys %{$naptests{$domain}}) {
   $domain_out = $domain;
-  $domain_out =~ s/_alt//;
+  $domain_out =~ s/_alt|_AF//;
 my @localnodes = @nodesRWN;
 @localnodes = @nodesLCS if $domain_out eq 'Spelling';
 @localnodes = @nodesLCGP if $domain_out eq 'Grammar and Punctuation';
@@ -552,7 +633,7 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
 	    $itemlist{$itemrefid}{TYPE} =  item_type($node);
 	    $itemlist{$itemrefid}{NODE} =  $node;
 	    $itemlist{$itemrefid}{RELEASED} = ($node =~ m#^(A|B|E)$# && $i == 0);
-            $itemlist{$itemrefid}{ANSWER} = response("", $itemlist{$itemrefid}{TYPE}, "", $domain);
+            $itemlist{$itemrefid}{ANSWER} = response("", $itemlist{$itemrefid}{TYPE}, "", $domain_out);
 
 
 	      push @{$itemlist{$itemrefid}{TESTLET}}, {REFID => $refid, LOCALID => $localid, SEQ => $j, NODE =>  $node, TESTLETNO => $i};
@@ -571,14 +652,16 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
 		if($domain_out eq 'Numeracy' && $j == itempertestlet($testlevel, $node, $domain_out) - 1) {
 			foreach $p (qw(CAL)) {
     		$itemrefid2 = lc guid_as_string();
-                $itemlocalid2 = sprintf "x001%05d", ++$asset;
+                $itemlocalid2 = sprintf "x001%05d-CAL", ++$asset;
             $itemlist{$itemrefid2}{LOCALID} = $itemlocalid2;
             $itemlist{$itemrefid2}{DOMAIN} = $domain;
 	        $itemlist{$itemrefid2}{TYPE} =  item_type($node);
             $itemlist{$itemrefid2}{TESTLEVEL} = $testlevel;
-            $itemlist{$itemrefid2}{ANSWER} = response("", $itemlist{$itemrefid2}{TYPE}, "", $domain);
-		push @{$naptestitem{$refid}}, {GUID => $itemrefid2, LOCALID => $itemlocalid2, SEQ => $j, TOTAL => itempertestlet($testlevel, $node, $domain_out)};
+            $itemlist{$itemrefid2}{ANSWER} = response("", $itemlist{$itemrefid2}{TYPE}, "", $domain_out);
+		push @{$naptestitem{$refid}}, {GUID => $itemrefid2, LOCALID => $itemlocalid2, SEQ => $j, TOTAL => itempertestlet($testlevel, $node, $domain_out), SUB=>1};
               push @{$itemlist{$itemrefid2}{TESTLET}}, {REFID => $refid, LOCALID => $localid, SEQ => $j, NODE =>  $node, TESTLETNO => $i};
+              $itemlist{$itemrefid}{SUBSTITUTED} = [] unless exists($itemlist{$itemrefid}{SUBSTITUTED});
+              $itemlist{$itemrefid2}{SUBSTITUTES} = [] unless exists($itemlist{$itemrefid2}{SUBSTITUTES});
 		    push @{$itemlist{$itemrefid}{SUBSTITUTED}} , {REFID => $itemrefid2, LOCALID => $itemlocalid2, PNP => [$p]};
 		    push @{$itemlist{$itemrefid2}{SUBSTITUTES}} , {REFID => $itemrefid, LOCALID => $itemlocalid, PNP => [$p]};
 		    }	   
@@ -597,13 +680,17 @@ for($i = 0; $i < $testletcountpernode{$node}; $i++) {
 	        $itemlist{$itemrefid2}{TYPE} =  item_type($node);
             $itemlist{$itemrefid2}{TESTLEVEL} = $testlevel;
               push @{$itemlist{$itemrefid2}{TESTLET}}, {REFID => $refid, LOCALID => $localid, SEQ => $j, NODE =>  $node, TESTLETNO => $i};
+              $itemlist{$itemrefid}{SUBSTITUTED} = [] unless exists($itemlist{$itemrefid}{SUBSTITUTED});
+              $itemlist{$itemrefid2}{SUBSTITUTES} = [] unless exists($itemlist{$itemrefid2}{SUBSTITUTES});
 		    push @{$itemlist{$itemrefid}{SUBSTITUTED}} , {REFID => $itemrefid2, LOCALID => $itemlocalid2, PNP => ["AIA"]};
 		    push @{$itemlist{$itemrefid2}{SUBSTITUTES}} , {REFID => $itemrefid, LOCALID => $itemlocalid, PNP => ["AIA"]};
 		    if($j==1) {
+              $itemlist{$itemrefid2}{SUBSTITUTES} = [] unless exists($itemlist{$itemrefid2}{SUBSTITUTES});
+              $itemlist{$previtemrefid}{SUBSTITUTED} = [] unless exists($itemlist{$previtemrefid}{SUBSTITUTED});
 		        push @{$itemlist{$itemrefid2}{SUBSTITUTES}} , {REFID => $previtemrefid, LOCALID => $previtemlocalid, PNP => ["AIA"]} ;
 		        push @{$itemlist{$previtemrefid}{SUBSTITUTED}} , {REFID => $itemrefid2, LOCALID => $itemlocalid2, PNP => ["AIA"]} ;
 		    } else {
-		push @{$naptestitem{$refid}}, {GUID => $itemrefid2, LOCALID => $itemlocalid2, SEQ => $j, TOTAL => itempertestlet($testlevel, $node, $domain_out)};
+		push @{$naptestitem{$refid}}, {GUID => $itemrefid2, LOCALID => $itemlocalid2, SEQ => $j, TOTAL => itempertestlet($testlevel, $node, $domain_out), SUB=>1};
 	}
 		    
 		}
@@ -638,7 +725,7 @@ $localid,
 $testletname,
 #node2domain($node, $domain),
 print_node($node), 
-($node == 'Blank' ? '<LocationInStage xsi:nil="true" />' : sprintf("<LocationInStage>%d</LocationInStage>", $i+1)),
+($node eq 'Blank' ? '<LocationInStage xsi:nil="true" />' : sprintf("<LocationInStage>%d</LocationInStage>", $i+1)),
 $testletsubscore,
 #$testletrulelist,
 $items,
@@ -727,7 +814,7 @@ foreach $refid (keys  %itemlist) {
                 <Descriptor>The writer’s capacity to orient, engage and affect the reader</Descriptor>
               </NAPWritingRubric>
               <NAPWritingRubric>
-                <RubricType>Text Structure</RubricType>
+                <RubricType>Text structure</RubricType>
                 <ScoreList>
                   <Score>
                     <MaxScoreValue>4</MaxScoreValue>
@@ -793,7 +880,7 @@ foreach $refid (keys  %itemlist) {
                 <Descriptor>The creation, selection and crafting of ideas for a Persuasive text.</Descriptor>
               </NAPWritingRubric>
               <NAPWritingRubric>
-                <RubricType>Persuasive Devices</RubricType>
+                <RubricType>Character and setting</RubricType>
                 <ScoreList>
                   <Score>
                     <MaxScoreValue>4</MaxScoreValue>
@@ -890,7 +977,7 @@ foreach $refid (keys  %itemlist) {
                 <Descriptor>The control of multiple threads and relationships over the whole text, achieved through the use of referring words, substitutions, word associations and text connectives.</Descriptor>
               </NAPWritingRubric>
               <NAPWritingRubric>
-                <RubricType>Paragraping</RubricType>
+                <RubricType>Paragraphing</RubricType>
                 <ScoreList>
                   <Score>
                     <MaxScoreValue>3</MaxScoreValue>
@@ -1055,7 +1142,7 @@ focused on a single idea or set of like ideas that assist the reader to digest c
             </PNPCodeList>
           </SubstituteItem>
 }, $$s{REFID}, $$s{LOCALID}, join("</PNPCode>\n        <PNPCode>", @{$$s{PNP}})) ;}
-    if ($substitute == "") {
+    if ($substitute ne "") {
     $substitute = sprintf qq{<ItemSubstitutedForList>
 %s    </ItemSubstitutedForList>}, $substitute;
     } else {
@@ -1136,13 +1223,18 @@ foreach $student (@{$students{$school}{$yearlevel}}) {
 $alt_writing_test = rand() > .5;
 
 foreach $domain (sort keys %naptests) {
+  next if $domain eq "Writing_AF";
     next if $domain eq 'Writing' and $alt_writing_test;
     next if $domain eq 'Writing_alt' and !$alt_writing_test;
-    next unless exists $naptests{$domain}{$yearlevel};
     $domain_out = $domain;
     $domain_out =~ s/_alt//;
+    my $key = $domain;
     $refid = lc guid_as_string();
     $participation = participation();
+    # NN 2020 AF for yr 3 writing
+    $participation = "AF" if $domain_out eq "Writing" && $yearlevel eq "3";
+    next unless exists $naptests{$key}{$yearlevel} || $participation eq "AF" && $domain_out eq "Writing";
+    $key = "Writing_AF" if ($domain_out eq "Writing" && $participation eq "AF");
     my @adjustments = adjustments($domain_out);
     $adjustment_link{$$student{GUID}}{$domain_out} = dclone(\@adjustments);
 
@@ -1158,7 +1250,7 @@ printf F qq{<NAPEventStudentLink xmlns:xsd="http://www.w3.org/2001/XMLSchema" xm
   <ReportingSchoolName />
   <ParticipationCode>%s</ParticipationCode>
   <ParticipationText>%s</ParticipationText>
-  <Device xsi:nil="true" />
+  <Device>MacOS</Device>
   <LapsedTimeTest xsi:nil="true" />
   %s
   <PersonalDetailsChanged>false</PersonalDetailsChanged>
@@ -1176,8 +1268,8 @@ $$student{GUID},
 $$student{PSI},
 $school[$school]{GUID},
 $school[$school]{ACARAID},
-$naptests{$domain}{$yearlevel}{GUID},
-$naptests{$domain}{$yearlevel}{LOCALID},
+$naptests{$key}{$yearlevel}{GUID},
+$naptests{$key}{$yearlevel}{LOCALID},
 $participation,
 participation_encoding($participation),
 exemption_reason($participation),
@@ -1188,9 +1280,10 @@ adjustment_print($domain_out, @adjustments)
 push @{$events{$domain}}, {
     STUDENTGUID => $$student{GUID},
     PSI => $$student{PSI},
-    NAPTESTGUID => $naptests{$domain}{$yearlevel}{GUID},
-    NAPTESTLOCALID => $naptests{$domain}{$yearlevel}{LOCALID},
+    NAPTESTGUID => $naptests{$key}{$yearlevel}{GUID},
+    NAPTESTLOCALID => $naptests{$key}{$yearlevel}{LOCALID},
     DOMAIN => $domain_out,
+    DOMAIN_KEY => $key,
     PARTICIPATION => $participation,
     YEARLEVEL => $yearlevel,
     SCHOOL => $school[$school]{GUID},
@@ -1245,9 +1338,9 @@ close F;
 %x = ();
 
 #printf F qq{<NAPStudentResponseSets xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sifassociation.org/datamodel/au/3.4">};
+@keys = @domainsLC_tests;
 foreach $d (@domainsLC_tests) {
 foreach $e (@{$events{$d}}) {
-    next if $$e{PARTICIPATION} eq 'F';
     next if $$e{PARTICIPATION} eq 'A';
     next if $$e{PARTICIPATION} eq 'C';
     next if $$e{PARTICIPATION} eq 'E';
@@ -1260,46 +1353,60 @@ foreach $e (@{$events{$d}}) {
     $refid = lc guid_as_string();
     @path = ();
     $testlets = '';
+    $event_domain = $$e{DOMAIN};
+    $event_domain =~ s/_alt|_AF//;
+    if ($event_domain eq 'Writing' && $$e{YEARLEVEL} eq "3") {
+      $i = $i;
+    }
+  next if $$e{PARTICIPATION} eq "AF" && $event_domain ne "Writing";
+
     @pathway = @{$valid_node_pathways[int(rand(@valid_node_pathways))]};
-    if($$e{DOMAIN} eq 'Numeracy' && ($$e{YEARLEVEL} == 3 || $$e{YEARLEVEL} == 5)) {
+    if($event_domain eq 'Numeracy' && ($$e{YEARLEVEL} == 3 || $$e{YEARLEVEL} == 5)) {
     @pathway = @{$valid_node_pathways_numeracy3[int(rand(@valid_node_pathways_numeracy3))]};
     }
-    if($$e{DOMAIN} eq 'Numeracy' && ($$e{YEARLEVEL} == 7 || $$e{YEARLEVEL} == 9)) {
+    if($event_domain eq 'Numeracy' && ($$e{YEARLEVEL} == 7 || $$e{YEARLEVEL} == 9)) {
     @pathway = @{$valid_node_pathways_numeracy7[int(rand(@valid_node_pathways_numeracy7))]};
     }
-    if($$e{DOMAIN} eq 'Reading') {
+    if($event_domain eq 'Reading') {
         $reading_end{$$e{STUDENTGUID}} = $pathway[-1];
     }
-    if($$e{DOMAIN} eq "Grammar and Punctuation") {
-        @pathway = lang_conv_pathway($reading_end{$$e{STUDENTGUID}});
+    # NN 2020 update to GP pathways
+    if($event_domain eq "Grammar and Punctuation") {
+        @pathway = @{$valid_node_pathways_GP[int(rand(@valid_node_pathways_GP))]};
     }
-    if($$e{DOMAIN} eq "Spelling") {
+    if($event_domain eq "Spelling") {
         @pathway = spelling_pathway();
     }
-    if($$e{DOMAIN} eq "Writing") {
+    if($event_domain eq "Writing") {
         @pathway = writing_pathway();
     }
     $test_score = 0;
     $max_score = 0;
 
-    if($d eq 'Writing_alt'){
-      $d = $d;
-    }
-
     foreach $node (@pathway) {
 	$hasresponse = 0; # random for S, 0 for R
 	$hasresponse = 1 if $$e{PARTICIPATION} eq 'P';
+	$hasresponse = 1 if $$e{PARTICIPATION} eq 'AF';
 	$hasresponse = 1 if $$e{PARTICIPATION} eq 'S' and rand() < .2;
+        if ($$e{DOMAIN_KEY} eq "Writing_AF") {
+          $i = $i;
+        }
 
         $testletid = int(rand($testletcountpernode{$node}));
         push @path, $node . $testletid;
-        $current_testlet = $naptestlet{$$e{DOMAIN}}{$$e{YEARLEVEL}}{$node}[$testletid];
+        $current_testlet = $naptestlet{$$e{DOMAIN_KEY}}{$$e{YEARLEVEL}}{$node}[$testletid];
         $items = '';
         $j = 0;
         $testlet_score = 0;
-        foreach $item (@{$naptestitem{$$current_testlet{GUID}}}){
+        my $i;
+        #foreach $item (@{$naptestitem{$$current_testlet{GUID}}})
+        if ($event_domain eq 'Spelling') {
+            $i=$i;
+          }
+        foreach $item (@{$naptestitem{$$current_testlet{GUID}}}) {
+          #$item = @{$naptestitem{$$current_testlet{GUID}}}[$i];
         $subscores = '';
-        if($$e{DOMAIN} eq 'Writing' && ($$e{PARTICIPATION} eq 'P' || $$e{PARTICIPATION} eq 'R' )) {
+        if($event_domain eq 'Writing' && ($$e{PARTICIPATION} eq 'P' || $$e{PARTICIPATION} eq 'R' || $$e{PARTICIPATION} eq 'AF' )) {
             foreach $w (@writing_rubrics) {
                 $subscores .= sprintf qq{  <Subscore>
                             <SubscoreType>%s</SubscoreType>
@@ -1335,7 +1442,7 @@ foreach $e (@{$events{$d}}) {
 
 
         $correctness =                 $hasresponse ? response_correctness($itemlist{$itemrefid}{TYPE}) : 'NotAttempted';
-        $response = response($correctness, $itemlist{$itemrefid}{TYPE}, $itemlist{$itemrefid}{ANSWER}, $$e{DOMAIN});
+        $response = response($correctness, $itemlist{$itemrefid}{TYPE}, $itemlist{$itemrefid}{ANSWER}, $event_domain);
         $is_correct = ($correctness eq 'Correct'); 
         $itemscore = ($is_correct ? 1 : 0);
         $items .= sprintf qq{
@@ -1349,12 +1456,12 @@ foreach $e (@{$events{$d}}) {
                 $itemrefid, $itemlocalid,
                 #$hasresponse ? 
                 # SUPPRESS ITEM ANSWERS 2019
-                ($hasresponse && $$e{DOMAIN} eq 'Writing') ?
+                ($hasresponse && $event_domain eq 'Writing' && $$e{PARTICIPATION} ne 'AF') ?
                         sprintf("\n                    <Response>%s</Response>",$response) :
                         qq{\n                    <Response xsi:nil="true" />},
                 $correctness,
-		$$e{PARTICIPATION} eq 'P' ? sprintf("\n                    <Score>%d</Score>", $itemscore) : '',
-                $hasresponse ? sprintf("\n                    <LapsedTimeItem>PT50S</LapsedTimeItem>"):'',
+		$$e{PARTICIPATION} eq 'P' || $$e{PARTICIPATION} eq "AF" ? sprintf("\n                    <Score>%d</Score>", $itemscore) : '',
+                ($hasresponse && $$e{PARTICIPATION} ne 'AF') ? sprintf("\n                    <LapsedTimeItem>PT50S</LapsedTimeItem>"):'',
                 ++$j,
                 $subscores,
                 ;
@@ -1371,7 +1478,7 @@ foreach $e (@{$events{$d}}) {
         </Testlet>}, 
 $$current_testlet{GUID},
 $$current_testlet{LOCALID},
-$hasresponse ? sprintf("\n            <TestletSubScore>%d</TestletSubScore>",$testlet_score) : '',
+($hasresponse && $$e{PARTICIPATION} ne 'S') ? sprintf("\n            <TestletSubScore>%d</TestletSubScore>",$testlet_score) : '',
 $items,
 ;
 
@@ -1400,7 +1507,7 @@ $items,
     rand() > .95 ? 'true' : 'false' ,
     rand() > .95 ? 'true' : 'false' ,
     rand() > .95 ? 'true' : 'false' ,
-    ($$e{DOMAIN} eq 'Writing' ? 
+    (($event_domain eq 'Writing' ||  $$e{PARTICIPATION} eq 'R') ? 
       qq{<PathTakenForDomain xsi:nil="true" />\n    <ParallelTest xsi:nil="true" />} : 
       sprintf("<PathTakenForDomain>%s</PathTakenForDomain>\n    <ParallelTest>%s</ParallelTest>",check_path_sep($nodepath), check_path_sep($testletpath))),
     $$e{STUDENTGUID},
@@ -1449,11 +1556,11 @@ $items,
     rand(5)+18,
     rand(5)+18,
     domain_band($test_score, $max_score, $$e{YEARLEVEL}),
-    if ($$e{PARTICIPATION} eq 'P' );
+    if ($$e{PARTICIPATION} eq 'P'  || $$e{PARTICIPATION} eq 'AF');
     printf F qq{
     <TestletList>%s
     </TestletList> },
-    $testlets if ($$e{PARTICIPATION} eq 'P' || $$e{PARTICIPATION} eq 'S') ;
+    $testlets if ($$e{PARTICIPATION} eq 'P' || $$e{PARTICIPATION} eq 'AF' || $$e{PARTICIPATION} eq 'S') ;
     print F qq{
   <SIF_Metadata xsi:nil="true" />
   <SIF_ExtendedElements xsi:nil="true" />
@@ -1528,34 +1635,36 @@ foreach $testlevel (@testlevels) {
     $domain_out, $testlevel,
     $testlevel,
     $domain_out,
-    $domain_out eq 'Spelling' ? 2 : 3,
-    ;
+    $domain eq 'Spelling' ? 2 : $domain_out eq 'Writing' ? 1 : 3;
 foreach $node (sort keys %{$naptestlet{$domain}{$testlevel}}) {
 my $i=0;
 foreach $testlet (@{$naptestlet{$domain}{$testlevel}{$node}}) {
 
-
+if($domain eq "Writing"){
+  $node = $node;
+}
 
 printf TESTDATA qq{<Testlet>
       <NAPTestletRefId>%s</NAPTestletRefId>
       <TestletContent>
         <NAPTestletLocalId>%s</NAPTestletLocalId>
         <TestletName>%s</TestletName>
-        <Node>%s</Node>
-        <LocationInStage>%d</LocationInStage>
+        %s
+        %s
         <TestletMaximumScore>%d</TestletMaximumScore>
       </TestletContent>
       <TestItemList>      },
     $$testlet{GUID},
     $$testlet{LOCALID},
     $$testlet{NAME},
-    $node,
-    ++$i,
+    print_node($node),
+    ($node eq 'Blank' ? '<LocationInStage xsi:nil="true" />' : sprintf("<LocationInStage>%d</LocationInStage>", ++$i)),
     $$testlet{SUBSCORE},
     ;
     
 foreach $item ( @{$naptestitem{$$testlet{GUID}}})  {
 $refid = $$item{GUID};
+next if $$item{SUB} == 1;
 =pod=
 $stimulus = '';
 if($itemlist{$refid}{STIMULI}) {
@@ -1635,7 +1744,7 @@ printf TESTDATA qq{
         %s
 	  </TestItemContent>
         </TestItem>},
-        $refid, $$item{SEQ}, $$item{LOCALID}, $itemlist{$refid}{XML};
+        $refid, $$item{SEQ}+1, $$item{LOCALID}, $itemlist{$refid}{XML};
   }  
 printf TESTDATA qq{
       </TestItemList>
@@ -1746,7 +1855,7 @@ sub participation() {
     my $r = rand();
     return 
     	$r < .84 ? 'P' :
-    	$r < .86 ? 'F' :
+    	$r < .86 ? 'AF' :
     	$r < .88 ? 'C' :
         $r < .9 ? 'X' :
         $r < .92 ? 'A' :
@@ -1757,7 +1866,7 @@ sub participation() {
 
 sub participation_encoding($){
     my ($p) = @_;
-    return "Alternate Format" if $p eq 'F';
+    return "Alternate Format" if $p eq 'AF';
     return "Present" if $p eq 'P';
     return "Absent" if $p eq 'A';
     return "Exempt" if $p eq 'E';
@@ -1912,19 +2021,24 @@ sub check_path_sep() {
 
 sub itempertestlet($$$) {
     my ($yrlevel, $node, $domain) = @_;
-    return 25 if $node eq 'GC';
-    return 25 if $node eq 'GE';
-    return 25 if $node eq 'GF';
+    return 9 if $node eq 'AG';
+    return 9 if $node eq 'BG';
+    return 9 if $node eq 'CG';
+    return 9 if $node eq 'DG';
+    return 9 if $node eq 'EG';
+    return 9 if $node eq 'FG';
+    return 9 if $node eq 'CGEarly';
+    return 9 if $node eq 'BGLate';
     return 6 if $node eq 'SA';
     return 9 if $node eq 'SB';
     return 9 if $node eq 'SD';
     return 10 if $node eq 'PB';
     return 10 if $node eq 'PD';
     return 1 if $node eq 'Blank';
-    return 13 if $yrlevel == 3 && $domain == "Reading";
-    return 15 if $yrlevel == 5 && $domain == "Reading";
-    return 12 if $yrlevel == 3 && $domain == "Numeracy";
-    return 14 if $yrlevel == 5 && $domain == "Numeracy";
+    return 13 if $yrlevel == 3 && $domain eq "Reading";
+    return 15 if $yrlevel == 5 && $domain eq "Reading";
+    return 12 if $yrlevel == 3 && $domain eq "Numeracy";
+    return 14 if $yrlevel == 5 && $domain eq "Numeracy";
     return 16 if $yrlevel == 7;
     return 16 if $yrlevel == 9;
     print "ITEM COUNT ERROR\n";
@@ -2115,4 +2229,17 @@ $s =~ s/&(?!=[a-zA-z])/&amp;/g;
 $s =~ s/</&lt;/g;
 $s =~ s/>/&gt;/g;
 return $s;
+}
+
+sub randomlist($$) {
+  my ($m, $n) = @_;
+  my @ret;
+  my %seen;
+
+  for (1..$m) {
+    my $candidate = int rand($n);
+    redo if $seen{$candidate}++;
+    push @ret, $candidate;
+  }
+  return @ret;
 }
