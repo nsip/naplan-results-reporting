@@ -41,6 +41,7 @@ Please note, these files contain valid data in all elements, but do not constitu
     * _SampleData/nap_platformdata_generator.pl_ generates data in as close a format to the current (PRT 2017) platform output format as possible, though it does not preserve indentation. The two command line variables set the number of students per school, and the number of schools in the sample. So _perl nap_platformdata_generator.pl 200 5_ creates a sample file with 5 schools, and 200 students per school. The script generates output both in a single file (`rrd.xml`), and in the file chunks expected through the NAPLAN Results & Reporting API (as described above)
 * `API/`: NAPLAN Results & Reporting API
   * _API/naplan_api.zip_: Node package which generates timestamped SIF_HMACSHA256 authentication tokens, and inserts them into the headers of HTTP requests originating from the [Insomnia](https://insomnia.rest) REST client. Used to enable Insomnia to generate correctly authorised NAPLAN Results & Reporting API requests; users will need to edit the script to insert their own credentials.
+  * _API/National Assessment Platform - Results and Reporting API documentation v1.4.pdf_: Documentation of how to use API, including both production environment and HITS test harness, and guidance on using Insomnia for testing.
 
 ## Specification Overview
 The results reporting objects are organised as follows:
