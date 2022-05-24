@@ -1772,7 +1772,8 @@ close TESTDATA;
 
 # now concatenate all of the above into an RRD file
 #
-system "cat schooldata_*xml testdata.xml > rrd1.xml";
+system "cat schooldata_*xml testdata.xml | perl -p -e 's/\\n/\\r\\n/' > rrd1.xml";
+# system "rm -f schooldata_*xml testdata.xml"; # remove if generating API files
 open F, "<rrd1.xml";
 open OUT, ">rrd.xml";
 printf OUT qq{<NAPResultsReporting xmlns="http://www.sifassociation.org/datamodel/au/3.4">\n};
