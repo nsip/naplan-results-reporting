@@ -1605,7 +1605,7 @@ join("", @items_out)
     rand(5)+18,
     rand(5)+18,
     domain_band($test_score, $max_score, $$e{YEARLEVEL}),
-    student_proficiency(),
+    student_proficiency($test_score, $max_score),
     if ($$e{PARTICIPATION} eq 'P'  || $$e{PARTICIPATION} eq 'AF');
     printf F qq{
     <TestletList>%s
@@ -1872,11 +1872,12 @@ sub country(){
   $r < .95 ? 4111 : 3307;
 }
 
-sub student_proficiency(){
-  my $r = rand();
-  return $r < .25 ? "Support required" :
-  $r < .5 ? "Developing" :
-  $r < .75 ? "Proficient" : "Highly proficient"
+sub student_proficiency($$){
+  my ($test_score, $max_score) = @_;
+  my $r = $test_score, $max_score;
+  return $r < .7 ? "Needs additional support" :
+  $r < .8 ? "Developing" :
+  $r < .9 ? "Exceeding" : "Strong"
   ; 
 }
 
