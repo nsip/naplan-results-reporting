@@ -158,8 +158,11 @@ LEVEL => $level > 0.66 ? "Secondary" : $level > 0.33 ? "Primary" : "Combined" };
 @schoolnames = $random_word->get_words($schoolcount);
 for ($i=0; $i < $schoolcount; $i++) {
   $level = rand();
+  @city = $random_word->get_words(1);
 $school[$i] = {LOCALID => 'x7286' . $i , ACARAID =>  21212 + $i, GUID => lc guid_as_string(), NAME => ucfirst $schoolnames[$i],
-STATE => "NSW", SECTOR => "Independent", LEVEL => $level > 0.66 ? "Secondary" : $level > 0.33 ? "Primary" : "Combined" };
+STATE => "NSW", SECTOR => "Independent", LEVEL => $level > 0.66 ? "Secondary" : $level > 0.33 ? "Primary" : "Combined",
+CAMPUS => ceil(rand(4)), POSTCODE => floor(rand(1000)) + 2000, CITY => ucfirst($city[0]),
+};
 }
 }
 
@@ -190,7 +193,9 @@ $schoolxml = sprintf qq{
   <SchoolContactList xsi:nil="true" />
     <AddressList>
     <Address Type="0123" Role="012A">
+      <City>%s</City>
       <StateProvince>%s</StateProvince>
+      <PostalCode>%s</PostalCode>
       <GridLocation xsi:nil="true" />
       <RadioContact xsi:nil="true" />
       <Community xsi:nil="true" />
@@ -201,7 +206,7 @@ $schoolxml = sprintf qq{
   </AddressList>
   <PhoneNumberList xsi:nil="true" />
   <YearLevels xsi:nil="true" />
-  <Campus xsi:nil="true" />
+  <Campus><SchoolCampusId>%s</SchoolCampusId></Campus>
   <SchoolSector>%s</SchoolSector>
   <SchoolGeographicLocation>15</SchoolGeographicLocation>
   <LocalGovernmentArea xsi:nil="true" />
@@ -218,7 +223,10 @@ $$s{LOCALID},
 $$s{ACARAID},
 $$s{NAME},
 $$s{LEVEL},
+$$s{CITY},
 $$s{STATE},
+$$s{POSTCODE},
+$$s{CAMPUS},
 $$s{SECTOR} eq "Government" ? "Gov" : "NG",
 ;
 print F $schoolxml;
@@ -250,16 +258,31 @@ $yearlevel = ceil(rand(2))*2+1;
 }
 my $localid =  ceil(rand(100000)) + 100000 * $school[$j]{ACARAID};
 my $lang = language();
+$otherschool = ceil(rand($schoolcount - 2));
+if ($otherschool == $j) {
+  $otherschool++;
+}
+$reptschool = ceil(rand($schoolcount - 2));
+if ($reptschool == $j) {
+  $reptschool++;
+}
+if($schoolcount == 1) {
+  $otherschool = $reptschool = 0;
+}
+@words = $random_word->get_words(1);
+$middle = ucfirst(@words[0]);
+$prefgiven = rand() > 0.9 ? $middle : $$person{'given'};
+
 printf F qq{<StudentPersonal xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <AlertMessages xsi:nil="true" />
   <MedicalAlertMessages xsi:nil="true" />
   <LocalId>%s</LocalId>
-  <StateProvinceId />
+  <StateProvinceId>%d</StateProvinceId>
   <ElectronicIdList xsi:nil="true" />
   <OtherIdList>
     <OtherId Type="JurisdictionId">%d</OtherId>
     <OtherId Type="SectorStudentId">%s</OtherId>
-    <OtherId Type="DiocesanStudentId"></OtherId>
+    <OtherId Type="DiocesanStudentId">%d</OtherId>
     <OtherId Type="TAAStudentId">%s</OtherId>
     <OtherId Type="OtherStudentId">%s</OtherId>
     <OtherId Type="NationalStudentId"></OtherId>
@@ -280,9 +303,9 @@ printf F qq{<StudentPersonal xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:
       <Title xsi:nil="true" />
       <FamilyName>%s</FamilyName>
       <GivenName>%s</GivenName>
-      <MiddleName xsi:nil="true" />
+      <MiddleName>%s</MiddleName>
       <PreferredFamilyName xsi:nil="true" />
-      <PreferredGivenName xsi:nil="true" />
+      <PreferredGivenName>%s</PreferredGivenName>
       <Suffix xsi:nil="true" />
       <FullName xsi:nil="true" />
     </Name>
@@ -369,9 +392,11 @@ printf F qq{<StudentPersonal xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:
     </TestLevel>
     <Homegroup xsi:nil="true" />
     <ClassCode>%s</ClassCode>
+    <MembershipType>01</MembershipType>
     <FFPOS>%s</FFPOS>
-    <ReportingSchoolId />
-    <OtherEnrollmentSchoolACARAId />
+    <ReportingSchoolId>%s</ReportingSchoolId>
+    <OtherEnrollmentSchoolACARAId>%s</OtherEnrollmentSchoolACARAId>
+    <OtherSchoolName>%s</OtherSchoolName>
   </MostRecent>
   <EducationSupport>N</EducationSupport>
   <HomeSchooledStudent>N</HomeSchooledStudent>
@@ -384,13 +409,17 @@ printf F qq{<StudentPersonal xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:
 }, 
 $refid, 
 $localid,
+ceil(rand(100000)),
 $jurisdictionid{$school[$j]{'STATE'}},
+ceil(rand(100000)),
 ceil(rand(100000)),
 $localid,
 ceil(rand(100000)),
 $psi,
 $$person{'surname'} ,
 $$person{'given'},
+$middle,
+$prefgiven,
 ceil(rand(4)),
 $$person{'gender'} eq 'male' ? 1 : 2,
 dateofbirth($yearlevel),
@@ -410,6 +439,9 @@ $school[$j]{'ACARAID'},
 $yearlevel,
 $yearlevel . chr(ord('A') + rand(6)),
 ceil(rand(2)),
+$school[$reptschool]{'ACARAID'},
+$school[$otherschool]{'ACARAID'},
+$school[$otherschool]{'NAME'},
 ;
 
 push @{$students{$j}{$yearlevel}}, {GUID => $refid, PSI => $psi};
@@ -1237,6 +1269,7 @@ foreach $domain (sort keys %naptests) {
     $key = "Writing_AF" if ($domain_out eq "Writing" && $participation eq "AF");
     my @adjustments = adjustments($domain_out);
     $adjustment_link{$$student{GUID}}{$domain_out} = dclone(\@adjustments);
+    @rept_school = $random_word->get_words(1);
 
 printf F qq{<NAPEventStudentLink xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" RefId="%s" xmlns="http://www.sifassociation.org/datamodel/au/3.4">
   <StudentPersonalRefId>%s</StudentPersonalRefId>
@@ -1247,7 +1280,7 @@ printf F qq{<NAPEventStudentLink xmlns:xsd="http://www.w3.org/2001/XMLSchema" xm
   <NAPTestLocalId>%s</NAPTestLocalId>
   <SchoolSector>NG</SchoolSector>
   <SchoolGeolocation>15</SchoolGeolocation>
-  <ReportingSchoolName />
+  <ReportingSchoolName>%s Comprehensive School</ReportingSchoolName>
   <ParticipationCode>%s</ParticipationCode>
   <ParticipationText>%s</ParticipationText>
   <Device>MacOS</Device>
@@ -1270,6 +1303,7 @@ $school[$school]{GUID},
 $school[$school]{ACARAID},
 $naptests{$key}{$yearlevel}{GUID},
 $naptests{$key}{$yearlevel}{LOCALID},
+ucfirst ($rept_school[0]),
 $participation,
 participation_encoding($participation),
 exemption_reason($participation),
@@ -1395,7 +1429,7 @@ foreach $e (@{$events{$d}}) {
         $testletid = int(rand($testletcountpernode{$node}));
         push @path, $node . $testletid;
         $current_testlet = $naptestlet{$$e{DOMAIN_KEY}}{$$e{YEARLEVEL}}{$node}[$testletid];
-        $items = '';
+        @items = ();
         $j = 0;
         $testlet_score = 0;
         my $i;
@@ -1445,7 +1479,8 @@ foreach $e (@{$events{$d}}) {
         $response = response($correctness, $itemlist{$itemrefid}{TYPE}, $itemlist{$itemrefid}{ANSWER}, $event_domain);
         $is_correct = ($correctness eq 'Correct'); 
         $itemscore = ($is_correct ? 1 : 0);
-        $items .= sprintf qq{
+
+        push @items, sprintf(qq{
                 <ItemResponse>
                     <NAPTestItemRefId>%s</NAPTestItemRefId>
                     <NAPTestItemLocalId>%s</NAPTestItemLocalId>%s
@@ -1464,11 +1499,25 @@ foreach $e (@{$events{$d}}) {
                 ($hasresponse && $$e{PARTICIPATION} ne 'AF') ? sprintf("\n                    <LapsedTimeItem>PT50S</LapsedTimeItem>"):'',
                 ++$j,
                 $subscores,
-                ;
+              );
             $testlet_score += $itemscore;
 	    $max_score += 1;
         }
 	next unless $$current_testlet{GUID};
+
+        # emulate RRD in swapping substitute responses with their predecessor
+        my @items_out = ($items[0]);
+        for ($i = 1; $i < @items; $i++) {
+          $items[$i] =~ /<NAPTestItemRefId>([^<]+)<\/NAPTestItemRefId>/;
+          if ($itemlist{$1}{SUBSTITUTES}) {
+            $j = pop @items_out;
+            push @items_out, $items[$i];
+            push @items_out, $j;
+          } else {
+            push @items_out, $items[$i];
+          }
+        }
+
         $testlets .= sprintf qq{
         <Testlet>
             <NAPTestletRefId>%s</NAPTestletRefId>
@@ -1479,7 +1528,7 @@ foreach $e (@{$events{$d}}) {
 $$current_testlet{GUID},
 $$current_testlet{LOCALID},
 ($hasresponse && $$e{PARTICIPATION} ne 'S') ? sprintf("\n            <TestletSubScore>%d</TestletSubScore>",$testlet_score) : '',
-$items,
+join("", @items_out)
 ;
 
 #if($$e{PARTICIPATION} eq 'P' and $$e{DOMAIN} eq "Writing" and $hasresponse == 0) {
@@ -1541,7 +1590,7 @@ $items,
         <ScaledScoreStandardError>%.2f</ScaledScoreStandardError>
         <ScaledScoreLogitStandardError>%.2f</ScaledScoreLogitStandardError>
         <StudentDomainBand>%d</StudentDomainBand>
-        <StudentProficiency>Proficient</StudentProficiency>
+        <StudentProficiency>%s</StudentProficiency>
         <PlausibleScaledValueList>
           <PlausibleScaledValue>14</PlausibleScaledValue>
           <PlausibleScaledValue>15</PlausibleScaledValue>
@@ -1556,6 +1605,7 @@ $items,
     rand(5)+18,
     rand(5)+18,
     domain_band($test_score, $max_score, $$e{YEARLEVEL}),
+    student_proficiency(),
     if ($$e{PARTICIPATION} eq 'P'  || $$e{PARTICIPATION} eq 'AF');
     printf F qq{
     <TestletList>%s
@@ -1821,6 +1871,15 @@ sub country(){
   $r < .9 ? 2100 :
   $r < .95 ? 4111 : 3307;
 }
+
+sub student_proficiency(){
+  my $r = rand();
+  return $r < .25 ? "Support required" :
+  $r < .5 ? "Developing" :
+  $r < .75 ? "Proficient" : "Highly proficient"
+  ; 
+}
+
 
 sub dateofbirth($){
 	my $yearlevel = @_;
