@@ -1,17 +1,11 @@
 # naplan-results-reporting
 
 
-## NAPLAN Results and Reporting draft dataset. 
-This is a draft of objects to be used to  encode results from NAPLAN, for communicating results between the National Assessment Platform and Test Administration Authorities.
+## NAPLAN Results and Reporting dataset. 
+These are the objects used to  encode results from NAPLAN, for communicating results between the National Assessment Platform and Test Administration Authorities.
 
 ## Important Notes
 
-_Please note the version of the Results and Reporting Dataset for NAPLAN Online published here is a work in progress and is published as an indication of the likely data produced by the platform._
- 
-_An Excel version was approved by OAWG at their November 2016 meeting. This format applies to the 2017 NAPLAN cycle only, and is expected to be revised for future cycles._ 
-
-
-This version of the results reporting dataset is provided as an early access release intended to help systems integrators who need to understand the high-level concepts of the results reporting data structure.
 
 NSIP strongly recommends that users of this specification register as GitHub users, and click on the 'Watch' button in the top right-hand corner of the GitHub web interface - this will ensure that if and when changes are made to the specification you will be notified automatically.
 
