@@ -1874,7 +1874,7 @@ sub country(){
 
 sub student_proficiency($$){
   my ($test_score, $max_score) = @_;
-  my $r = $test_score, $max_score;
+  my $r = $test_score / $max_score;
   return $r < .7 ? "Needs additional support" :
   $r < .8 ? "Developing" :
   $r < .9 ? "Exceeding" : "Strong"
